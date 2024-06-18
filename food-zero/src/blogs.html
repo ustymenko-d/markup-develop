@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+@@include('html/head.html', {
+'title': 'Blogs - FoodZero'
+})
+
+<body class="page blogs-page">
+
+	<div class="loader-wrapper">
+		<div class="loader">
+			<div class="spinner-rolling">
+				<div></div>
+			</div>
+		</div>
+		<p class="loader-wrapper__text">Loading</p>
+	</div>
+
+	<button class="arrow-to-top hidden">
+		<img src="img/icon/arrow-left.svg" alt="arrow">
+	</button>
+
+	<main class="hidden">
+		<div class="hero">
+			<div class="container hero__wrapper">
+
+				@@include('html/header.html')
+
+				<div class="hero__content">
+					<h1 class="hero__title title">Blogs</h1>
+					<p class="hero__description">It is easy way to create your beatiful blog for daily</p>
+				</div>
+
+			</div>
+		</div>
+
+		<div class="blogs">
+			<div class="container">
+				<div class="blogs__wrapper">
+					<div class="blogs__breadcrumbs breadcrumbs">
+						<a class="text breadcrumbs__link" href="index.html">Home</a>
+						<span class="text">/</span>
+						<a class="text">Blog</a>
+					</div>
+
+					<div class="blogs__grid">
+						@@include('html/article.html', {
+						'image': 'img/blogs/main-fourth.jpg',
+						'user': 'img/user-photo-2.png',
+						'user-name': 'Julie Christie',
+						'alt': 'Avocado',
+						'title': 'Fruit and vegetables and protection against diseases',
+						'link': 'coming-soon.html'
+						})
+
+						@@include('html/article.html', {
+						'image': 'img/blogs/main-fifth.jpg',
+						'user': 'img/user-photo-1.png',
+						'user-name': 'Julie Christie',
+						'alt': 'Asparagus Spring',
+						'title': 'Asparagus Spring Salad with Rocket, Goat&#8242;s Cheese',
+						'link': 'coming-soon.html'
+						})
+
+						@@include('html/article.html', {
+						'image': 'img/blogs/blog-3.jpg',
+						'user': 'img/user-photo-3.png',
+						'user-name': 'Dianne Russell',
+						'alt': 'Blue bowl with green vaetable',
+						'title': 'The Best Style of Dough for Dumplings',
+						'link': 'coming-soon.html'
+						})
+
+						@@include('html/article.html', {
+						'image': 'img/blogs/blog-4.jpg',
+						'user': 'img/user-photo-1.png',
+						'user-name': 'Julie Christie',
+						'alt': 'Yellow fruits in blue and white ceramic bowl',
+						'title': '7 Reasons to Start Your Day With Lemon Water',
+						'link': 'coming-soon.html'
+						})
+
+						@@include('html/article.html', {
+						'image': 'img/blogs/blog-5.jpg',
+						'user': 'img/user-photo-2.png',
+						'user-name': 'Julie Christie',
+						'alt': 'Stainless steel fork on white ceramic plate',
+						'title': 'Three Ideas for Cooking Goat Meat at Home',
+						'link': 'coming-soon.html'
+						})
+
+						@@include('html/article.html', {
+						'image': 'img/blogs/blog-6.jpg',
+						'user': 'img/user-photo-1.png',
+						'user-name': 'Julie Christie',
+						'alt': ' clear drinking glass with strawberry juice',
+						'title': '12 Sparkling Wines We&#8242;re Loving This Summer',
+						'link': 'coming-soon.html'
+						})
+					</div>
+
+					<div class="blogs__navigation">
+						<a href="#" class="navigation-button button text">Prev</a>
+						<a href="#" class="navigation-button button text active">1</a>
+						<a href="#" class="navigation-button button text">2</a>
+						<a href="#" class="navigation-button button text">3</a>
+						<a href="#" class="navigation-button button text">Next</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		@@include('html/reservation.html')
+
+	</main>
+
+	@@include('html/footer.html')
+
+</body>
+
+</html>

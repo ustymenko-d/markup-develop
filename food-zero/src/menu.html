@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+@@include('html/head.html', {
+'title': 'Our Menu - FoodZero'
+})
+
+<body class="page food-page">
+
+	<div class="loader-wrapper">
+		<div class="loader">
+			<div class="spinner-rolling">
+				<div></div>
+			</div>
+		</div>
+		<p class="loader-wrapper__text">Loading</p>
+	</div>
+
+	<button class="arrow-to-top hidden">
+		<img src="img/icon/arrow-left.svg" alt="arrow">
+	</button>
+
+	<main class="hidden">
+		<div class="hero">
+			<div class="container hero__wrapper">
+
+				@@include('html/header.html')
+
+				<div class="hero__content">
+					<h1 class="hero__title title">View&nbsp;Our New&nbsp;Menu</h1>
+					<p class="hero__description">The freshest ingredients for you every day</p>
+				</div>
+
+			</div>
+		</div>
+
+		<div class="food-menu">
+			<div class="container">
+
+				<div class="food-menu__block">
+					<h2 class="food-menu__title title">Starters</h2>
+					<p class="food-menu__description text">This is a section of your menu. Give your section a brief description
+					</p>
+					<div class="food-menu__wrapper">
+						<div class="food-menu__image">
+							<img src="img/food-menu/menu-1.jpg" alt="Cheese and tomato on plate">
+						</div>
+						<div class="food-menu__position">
+							@@include('html/menu-item.html', {
+							'price': '$20',
+							'title': 'Grilled Okra and Tomatoes ',
+							'description': 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium, iusto harum.'
+							})
+							@@include('html/menu-item.html', {
+							'price': '$18',
+							'title': 'Cucumber Salad',
+							'description': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+							})
+							@@include('html/menu-item.html', {
+							'price': '$12',
+							'title': ' Basil Pancakes',
+							'description': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+							})
+						</div>
+					</div>
+				</div>
+
+				<div class="food-menu__block">
+					<h2 class="food-menu__title title">Mains</h2>
+					<p class="food-menu__description text">This is a section of your menu. Give your section a brief description
+					</p>
+					<div class="food-menu__wrapper food-menu__wrapper_inverted">
+						<div class="food-menu__image">
+							<img src="img/food-menu/menu-2.jpg" alt="Beef steak with fork">
+						</div>
+						<div class="food-menu__position">
+							@@include('html/menu-item.html', {
+							'price': '$20',
+							'title': 'Deep Sea Snow White Cod Fillet',
+							'description': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+							})
+							@@include('html/menu-item.html', {
+							'price': '$22',
+							'title': 'Steak With Rosemary Butter',
+							'description': 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium, iusto harum. Laudantium culpa necessitatibus, inventore ipsa consectetur amet officiis blanditiis?'
+							})
+							@@include('html/menu-item.html', {
+							'price': '$20',
+							'title': 'Steaks with Grilled Kimchi',
+							'description': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+							})
+						</div>
+					</div>
+				</div>
+
+				<div class="food-menu__block">
+					<h2 class="food-menu__title food-menu__title_bg title">Pastries & Drinks</h2>
+					<p class="food-menu__description food-menu__description_bg text">This is a section of your menu. Give your
+						section a brief description</p>
+					<div class="food-menu__wrapper">
+						<div class="food-menu__image">
+							<img src="img/food-menu/menu-3.jpg" alt="Three glass cups on white surface">
+						</div>
+						<div class="food-menu__position">
+							@@include('html/menu-item.html', {
+							'price': '$158',
+							'title': 'Wine Pairing',
+							'description': 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium, iusto harum. Laudantium culpa necessitatibus, inventore ipsa consectetur amet officiis blanditiis?'
+							})
+							@@include('html/menu-item.html', {
+							'price': '$168',
+							'title': 'Natural Wine Pairing',
+							'description': 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium, iusto harum. Laudantium culpa necessitatibus, inventore ipsa consectetur amet officiis blanditiis?'
+							})
+							@@include('html/menu-item.html', {
+							'price': '$90',
+							'title': 'Whisky Flyer',
+							'description': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium, iusto harum. Laudantium culpa necessitatibus, inventore ipsa consectetur amet officiis blanditiis?'
+							})
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		@@include('html/reservation.html')
+	</main>
+
+	@@include('html/footer.html')
+
+</body>
+
+</html>

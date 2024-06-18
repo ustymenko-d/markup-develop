@@ -1,0 +1,126 @@
+.reservation {
+	background-color: var(--crema-color);
+
+	&__wrapper {
+		padding: 100px 0;
+		text-align: center;
+
+		@media screen and (min-width: 1024px) {
+			padding: calc(var(--size-index) * 7.66) 0 calc(var(--size-index) * 8.34);
+		}
+	}
+
+	// .reservation__title
+
+	&__title {
+		font-size: 50px;
+		line-height: 60px;
+
+		@media screen and (min-width: 1024px) {
+			font-size: 60px;
+			line-height: 75px;
+		}
+
+		@media screen and (min-width: 1440px) {
+			font-size: 108px;
+			line-height: 120px;
+		}
+
+		@media screen and (min-width: 1920px) {
+			font-size: calc(var(--size-index) * 1.6);
+			line-height: calc(var(--size-index) * 2.13);
+		}
+	}
+
+	// .reservation__description
+
+	&__description {
+		margin-bottom: 50px;
+		color: var(--grey-color);
+
+		@media screen and (min-width: 1024px) {
+			margin-bottom: calc(var(--size-index) * 4.3);
+		}
+	}
+
+	// .reservation__form
+
+	&__form {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 20px;
+
+		@media screen and (min-width: 768px) {
+			grid-template-columns: repeat(2, 1fr);
+			grid-template-rows: repeat(2, 1fr);
+			gap: 40px 10px;
+		}
+
+		@media screen and (min-width: 992px) {
+			grid-template-columns: repeat(3, 1fr);
+			grid-template-rows: auto;
+		}
+
+		@media screen and (min-width: 1024px) {
+			gap: calc(var(--size-index) * 4.3) calc(var(--size-index) * 2);
+		}
+	}
+
+	// .reservation__input
+
+	&__input {
+		width: 100%;
+		background-color: transparent;
+		color: var(--black-color);
+		cursor: pointer;
+
+		&:focus-visible {
+			background-color: var(--main-light-color);
+			transition: var(--transition);
+		}
+
+		@media (hover: hover) {
+			&:hover {
+				background-color: var(--main-light-color);
+				transition: var(--transition);
+			}
+		}
+
+		@media (hover: none) {
+			&:active {
+				background-color: var(--main-light-color);
+				transition: var(--transition);
+			}
+		}
+	}
+
+	// .reservation__button
+
+	&__button {
+		background-color: var(--main-dark-color);
+		color: var(--white-color);
+
+		@media screen and (min-width: 768px) {
+			grid-column: 2;
+		}
+
+		&:focus-visible {
+			background-color: var(--main-light-color);
+			transition: var(--transition);
+		}
+
+		@media (hover: hover) {
+			&:hover {
+				background-color: var(--main-light-color);
+				transition: var(--transition);
+			}
+		}
+
+		@media (hover: none) {
+			&:active {
+				background-color: var(--main-light-color);
+				transition: var(--transition);
+			}
+		}
+	}
+}

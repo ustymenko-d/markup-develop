@@ -1,0 +1,73 @@
+.home-page .hero {
+	background: linear-gradient(0deg, rgba(0, 0, 0, 0.46), rgba(0, 0, 0, 0.46)), url("../img/home/main-bg.jpg");
+	background-position: center;
+	background-size: cover, cover;
+	background-repeat: no-repeat;
+
+	@media screen and (min-width: 1440px) {
+		background-attachment: fixed;
+	}
+
+	// .hero__wrapper
+
+	&__wrapper {
+		position: relative;
+		justify-content: center;
+		align-items: center;
+	}
+
+	// .hero__content
+
+	&__content {
+		text-align: center;
+	}
+
+	// .hero__title
+
+	&__title {
+		margin: 0;
+	}
+
+	// .hero__pointer
+
+	&__pointer {
+		display: none;
+		font-size: 28px;
+		line-height: 32px;
+		writing-mode: vertical-rl;
+		text-orientation: mixed;
+		position: absolute;
+
+		gap: 8px;
+		color: var(--white-color);
+		justify-content: space-between;
+		align-items: center;
+
+		bottom: 0;
+		left: 50%;
+		transform: translateX(-50%);
+
+		@media screen and (min-width: 1024px) {
+			display: flex;
+		}
+
+		@media screen and (min-width: 1920px) {
+			font-size: calc(var(--size-index) * 1.6);
+			line-height: calc(var(--size-index) * 2.13);
+		}
+
+		&::after {
+			content: "";
+			display: block;
+			flex-grow: 1;
+			height: calc(var(--size-index) * 4);
+			width: 2px;
+			border-left: 3.3px dashed;
+
+			@media screen and (min-width: 1440px) {
+				height: calc(var(--size-index) * 2.5);
+			}
+
+		}
+	}
+}

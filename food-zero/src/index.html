@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+@@include('html/head.html', {
+'title': 'FoodZero - Restaurant and Food'
+})
+
+<body class="page home-page">
+
+	<div class="loader-wrapper">
+		<div class="loader">
+			<div class="spinner-rolling">
+				<div></div>
+			</div>
+		</div>
+		<p class="loader-wrapper__text">Loading</p>
+	</div>
+
+	<button class="arrow-to-top hidden">
+		<img src="img/icon/arrow-left.svg" alt="arrow">
+	</button>
+
+	<main class="hidden">
+
+		<div class="hero">
+			<div class="container hero__wrapper">
+
+				@@include('html/header.html')
+
+				<div class="hero__content">
+					<h1 class="hero__title title">Healthy Eating is important part of lifestyle</h1>
+					<div class="hero__pointer">
+						<p class="title">Scroll</p>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+		<section class="intro main-page__intro">
+			<div class="container">
+				@@include('html/home/intro.html')
+			</div>
+		</section>
+		<section class="our-menu">
+			<div class="container">
+				<div class="our-menu__wrapper">
+					<h2 class="our-menu__title title">Our Menu</h2>
+					<p class="our-menu__title-description text">This is a section of your menu. Give your section a brief
+						description
+					</p>
+					<div class="our-menu__grid">
+						@@include('html/menu-item.html', {
+						'price': '$20',
+						'title': 'Deep Sea Snow White Cod Fillet',
+						'description': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+						})
+						@@include('html/menu-item.html', {
+						'price': '$18',
+						'title': 'Steak With Rosemary Butter',
+						'description': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+						})
+						@@include('html/menu-item.html', {
+						'price': '$22',
+						'title': 'Cucumber Salad',
+						'description': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+						})
+						@@include('html/menu-item.html', {
+						'price': '$90',
+						'title': 'Natural Wine Pairing',
+						'description': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+						})
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="excelent-cook">
+			<div class="container">
+				<div class="excelent-cook__wrapper">
+					<div class="excelent-cook__image">
+						<img class="excelent-cook__plate" src="img/home/main-plate.png" width="452" height="809" alt="Plate">
+						<img class="excelent-cook__chef" src="img/home/main-chef.png" width="935" height="933" alt="Cooker">
+					</div>
+					<div class="excelent-cook__content">
+						<h2 class="excelent-cook__title title">Excellent cook</h2>
+						<p class="excelent-cook__text text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Purus lorem id
+							penatibus imperdiet. Turpis egestas ultricies purus auctor tincidunt lacus nunc. </p>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="qualities">
+			<div class="container">
+				<div class="qualities__wrapper">
+					<div class="qualities__item">
+						<div class="qualities__picture">
+							<span class="icon-fish"></span>
+						</div>
+						<h3 class="qualities__title title">Premium Quality</h3>
+						<p class="qualities__description text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos,
+							provident
+							fugit.</p>
+					</div>
+					<div class="qualities__item">
+						<div class="qualities__picture">
+							<span class="icon-carrot"></span>
+						</div>
+						<h3 class="qualities__title title">Seasonal Vegetables</h3>
+						<p class="qualities__description text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos,
+							provident
+							fugit.</p>
+					</div>
+					<div class="qualities__item">
+						<div class="qualities__picture">
+							<span class="icon-lemon"></span>
+						</div>
+						<h3 class="qualities__title title">Fresh Fruit</h3>
+						<p class="qualities__description text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos,
+							provident
+							fugit.</p>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="blogs-articles">
+			<div class="container">
+				<div class="blogs-articles__wrapper">
+					@@include('html/article.html', {
+					'image': 'img/blogs/main-fourth.jpg',
+					'user': 'img/user-photo-2.png',
+					'user-name': 'Julie Christie',
+					'alt': 'Avocado',
+					'title': 'Fruit and vegetables and protection against diseases',
+					'link': 'coming-soon.html'
+					})
+
+					@@include('html/article.html', {
+					'image': 'img/blogs/main-fifth.jpg',
+					'user': 'img/user-photo-3.png',
+					'user-name': 'Dianne Russell',
+					'alt': 'Asparagus Spring',
+					'title': 'Asparagus Spring Salad with Rocket, Goat&#39;s Cheese',
+					'link': 'coming-soon.html'
+					})
+				</div>
+			</div>
+		</section>
+		@@include('html/reservation.html')
+		<section class="calories">
+			<div class="container">
+				<h2 class="calories__title title">Calories Energy Balance</h2>
+				<p class="calories__description text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+				<div class="calories__wrapper">
+					<a href="menu.html" class="calories__link">
+						<div class="calories__item calories__item_first">
+							<span class="calories__item-title title">Starters</span>
+							<div class="icon-arrow-right"></div>
+						</div>
+					</a>
+					<a href="menu.html" class="calories__link">
+						<div class="calories__item calories__item_second">
+							<p class="calories__item-title title">Mains</p>
+							<div class="icon-arrow-right"></div>
+						</div>
+					</a>
+					<a href="menu.html" class="calories__link">
+						<div class="calories__item calories__item_third">
+							<p class="calories__item-title title">Soups</p>
+							<div class="icon-arrow-right"></div>
+						</div>
+					</a>
+				</div>
+			</div>
+		</section>
+		<div class="reviews">
+			<div class="container">
+				<div class="swiper">
+					<div class="swiper-wrapper">
+						<div class="reviews__wrapper swiper-slide">
+							<p class="reviews__text title">“ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Purus lorem id
+								penatibus imperdiet.
+								Turpis egestas ultricies purus Lorem ipsum dolor sit amet.</p>
+							<div class="swiper__bottom">
+								<div class="reviews__author">
+									<img class="author__photo" src="img/user-photo-1.png" width="170" height="170"
+										alt="A woman with a camera">
+									<div class="author__name">
+										<p class="reviews__name title">John Doe</p>
+										<span class="reviews__job tag">Bloger</span>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="reviews__wrapper swiper-slide">
+							<p class="reviews__text title">“ Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis
+								adipisci repudiandae earum accusantium dignissimos pariatur aliquam facilis officiis eius minima!</p>
+							<div class="swiper__bottom">
+								<div class="reviews__author">
+									<img class="author__photo" src="img/user-photo-2.png" width="170" height="170"
+										alt="A woman with a camera">
+									<div class="author__name">
+										<p class="reviews__name title">Julie Christie</p>
+										<span class="reviews__job tag">Bloger</span>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="reviews__wrapper swiper-slide">
+							<p class="reviews__text title">“ Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cumque, et ut
+								explicabo consequuntur doloremque accusantium!</p>
+							<div class="swiper__bottom">
+								<div class="reviews__author">
+									<img class="author__photo" src="img/user-photo-3.png" width="170" height="170"
+										alt="A woman with a camera">
+									<div class="author__name">
+										<p class="reviews__name title">Dianne Russell</p>
+										<span class="reviews__job tag">Bloger</span>
+									</div>
+								</div>
+							</div>
+						</div>
+
+					</div>
+
+					<div class="reviews__navigation">
+						<div class="swiper-button-prev reviews__button icon-arrow-left"></div>
+						<div class="swiper-pagination reviews__fraction title"></div>
+						<div class="swiper-button-next reviews__button icon-arrow-right"></div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</main>
+
+	@@include('html/footer.html')
+
+</body>
+
+</html>

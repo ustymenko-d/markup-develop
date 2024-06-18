@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+@@include('html/head.html', {
+'title': 'Contact - FoodZero'
+})
+
+<body class="page contact-page">
+
+	<div class="loader-wrapper">
+		<div class="loader">
+			<div class="spinner-rolling">
+				<div></div>
+			</div>
+		</div>
+		<p class="loader-wrapper__text">Loading</p>
+	</div>
+
+	<button class="arrow-to-top hidden">
+		<img src="img/icon/arrow-left.svg" alt="arrow">
+	</button>
+
+	<main class="hidden">
+		<div class="hero">
+			<div class="container hero__wrapper">
+
+				@@include('html/header.html')
+
+				<div class="hero__content">
+
+					<div class="hero__title-wrapper">
+						<h1 class="hero__title title">Get in Touch</h1>
+						<p class="hero__description">The freshest ingredients for you every day</p>
+					</div>
+
+					<div class="open-time">
+						<div class="open-time__head">
+							<h4 class="open-time__title title">Open Time</h4>
+							<span class="open-time__days text">Sunday - Friday</span>
+						</div>
+						<div class="open-time__body">
+							<div class="open-time__item text">
+								<p class="open-time__part">Brunch</p>
+								<p class="open-time__time">11:00–12:00</p>
+							</div>
+							<div class="open-time__item text">
+								<p class="open-time__part">Lunch</p>
+								<p class="open-time__time">13:00–17:00</p>
+							</div>
+							<div class="open-time__item text">
+								<p class="open-time__part">Dinner</p>
+								<p class="open-time__time">18:00–20:00</p>
+							</div>
+						</div>
+					</div>
+
+				</div>
+
+
+			</div>
+		</div>
+
+		<div class="our-contact">
+			<div class="container">
+				<div class="our-contact__wrapper">
+
+					<div class="our-contact__image">
+						<img src="img/contact/reservations-1.jpg" alt="Yellow fruit on white table cloth">
+					</div>
+
+					<div class="our-contact__info">
+						<p class="text">We can be contacted via email&nbsp;<a class="animated-underline"
+								href="mailto:info@foodzero.com">info@foodzero.com</a><br>telephone on&nbsp;<a class="animated-underline"
+								href="tel:+98765432100">+98&nbsp;765&nbsp;432&nbsp;100</a></p>
+					</div>
+
+					<div class="our-contact__address">
+						<p class="text">We are located in 1959 Sepulveda Blvd. Culver City, CA, 90230</p>
+						<a class="button text" href="https://www.google.com/maps">View in maps</a>
+					</div>
+
+					<div class="our-contact__image">
+						<img src="img/contact/reservations-2.jpg" alt="People sitting on chairs near green trees during daytime">
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+		<div class="our-contact__reservation full-reservation">
+			<div class="container">
+
+				<div class="full-reservation__wrapper">
+					<h2 class="full-reservation__title title">Make a Reservation</h2>
+					<p class="full-reservation__description text">Get in touch with restaurant</p>
+				</div>
+
+				<form class="full-reservation__form">
+					<input name="first-name" type="text" class="reservation__input button text" placeholder="First Name" required>
+					<input name="last-name" type="text" class="reservation__input button text" placeholder="Last Name">
+					<input name="email" type="email" class="reservation__input reservation__email button text"
+						placeholder="Email">
+					<input name="phone" type="tel" class="reservation__input reservation__phone button text" placeholder="Phone"
+						required>
+					<input name="date" class="reservation__input button text" type="date" required>
+					<input name="time" class="reservation__input button text" type="time" value="13:00" required>
+					<select class="reservation__input reservation__number button text" name="number-of-people">
+						<option value="1">1 Person</option>
+						<option value="2" selected>2 Person</option>
+						<option value="3">3 Person</option>
+						<option value="4">4 Person</option>
+						<option value="5">5 Person</option>
+						<option value="6">6 Person</option>
+					</select>
+					<input class="full-reservation__button reservation__button button" type="submit" value="Book Now">
+				</form>
+
+			</div>
+		</div>
+	</main>
+
+	@@include('html/footer.html')
+
+</body>
+
+</html>
