@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+
+@@include('html/head.html', {
+'title': 'Draft Banking'
+})
+
+<body class="page">
+	<div class="loader-wrapper">
+		<div class="loader">
+			<svg class="smoothing">
+				<defs>
+					<filter id="smoothing">
+						<feGaussianBlur in="SourceGraphic" stdDeviation="7" result="blur" />
+						<feColorMatrix in="blur" values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 20 -10"
+							result="inreSmoothing" />
+						<feComposite in="SourceGraphic" in2="inreSmoothing" operator="atop" />
+					</filter>
+				</defs>
+			</svg>
+			<svg class="snurra" width="200" height="200" viewBox="0 0 200 200">
+				<defs>
+					<linearGradient id="lineGradient">
+						<stop class="stopp1" offset="0" />
+						<stop class="stopp2" offset="1" />
+					</linearGradient>
+					<linearGradient y2="160" x2="160" y1="40" x1="40" gradientUnits="userSpaceOnUse" id="gradient"
+						xlink:href="#lineGradient" />
+				</defs>
+				<path class="half"
+					d="m 164,100 c 0,-35.346224 -28.65378,-64 -64,-64 -35.346224,0 -64,28.653776 -64,64 0,35.34622 28.653776,64 64,64 35.34622,0 64,-26.21502 64,-64 0,-37.784981 -26.92058,-64 -64,-64 -37.079421,0 -65.267479,26.922736 -64,64 1.267479,37.07726 26.703171,65.05317 64,64 37.29683,-1.05317 64,-64 64,-64" />
+				<circle class="lines" cx="100" cy="100" r="64" />
+			</svg>
+			<svg class="shadow" width="200" height="200" viewBox="0 0 200 200">
+				<path class="half"
+					d="m 164,100 c 0,-35.346224 -28.65378,-64 -64,-64 -35.346224,0 -64,28.653776 -64,64 0,35.34622 28.653776,64 64,64 35.34622,0 64,-26.21502 64,-64 0,-37.784981 -26.92058,-64 -64,-64 -37.079421,0 -65.267479,26.922736 -64,64 1.267479,37.07726 26.703171,65.05317 64,64 37.29683,-1.05317 64,-64 64,-64" />
+				<circle class="lines" cx="100" cy="100" r="64" />
+			</svg>
+		</div>
+	</div>
+
+	<button class="to-top hidden"></button>
+
+	<section class="hero">
+		<div class="container">
+			<header class="header">
+				<a href="#" class="header__logo">
+					<img src="img/logo.svg" alt="Page logo">
+				</a>
+				<nav class="header__navigation">
+					<ul>
+						<li><a class="text" href="index.html">Home</a></li>
+						<li><a class="text" href="#feauture">Feauture</a></li>
+						<li><a class="text" href="#prices">Pricing</a></li>
+					</ul>
+				</nav>
+				<button class="button text">Sign Up</button>
+			</header>
+
+			<div class="intro">
+				<div class="intro__text-content">
+					<h1 class="title element-animation">Smart Banking for freelancers</h1>
+					<p class="text element-animation">Draft is a revolutionary mobile app built to help you manage your business
+						easily and save
+						your money.</p>
+					<button class="button element-animation">Register Now</button>
+				</div>
+				<div class="intro__image">
+					<img class="img" src="img/phone.png" alt="Mobile bank screenshot">
+					<div class="test"></div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<main class="page-content">
+		<div class="container">
+
+			<div class="about" id="feauture">
+				<article class="card">
+					<div class="card__text-content">
+						<h2 class="title element-animation">One card for all your payments</h2>
+						<p class="text element-animation">Get 3% back on everything you buy with the Draft card. Register today and
+							enjoy every aspect
+							of your
+							business.</p>
+					</div>
+					<div class="card__image">
+						<img src="img/card.png" alt="Credit card">
+					</div>
+				</article>
+
+				<article class="management">
+					<div class="management__stats stats countSection">
+						<div class="stats__item">
+							<span class="text">Balance</span>
+							<br>
+							<span class="title">$5,600</span>
+						</div>
+
+						<div class="stats__item">
+							<span class="text">Last&nbsp;Transaction</span>
+							<br>
+							<span class="title">$230</span>
+						</div>
+
+						<div class="stats__item element-animation">
+							<div class="stats__day day">
+								<div class="day__lines">
+									<div class="line_blue"></div>
+									<div class="line_red"></div>
+								</div>
+								<span>MON</span>
+							</div>
+							<div class="stats__day day">
+								<div class="day__lines">
+									<div class="line_blue"></div>
+									<div class="line_red"></div>
+								</div>
+								<span>TUE</span>
+							</div>
+							<div class="stats__day day">
+								<div class="day__lines">
+									<div class="line_blue"></div>
+									<div class="line_red"></div>
+								</div>
+								<span>WED</span>
+							</div>
+							<div class="stats__day day">
+								<div class="day__lines">
+									<div class="line_blue"></div>
+									<div class="line_red"></div>
+								</div>
+								<span>THU</span>
+							</div>
+							<div class="stats__day day">
+								<div class="day__lines">
+									<div class="line_blue"></div>
+									<div class="line_red"></div>
+								</div>
+								<span>FRI</span>
+							</div>
+							<div class="stats__day day">
+								<div class="day__lines">
+									<div class="line_blue"></div>
+									<div class="line_red"></div>
+								</div>
+								<span>SAT</span>
+							</div>
+							<div class="stats__day day">
+								<div class="day__lines">
+									<div class="line_blue"></div>
+									<div class="line_red"></div>
+								</div>
+								<span>SUN</span>
+							</div>
+						</div>
+					</div>
+					<div class="management__text-content">
+						<h2 class="title element-animation">Manage your finances like a pro in no time</h2>
+						<p class="text element-animation">With Draft, book keeping, banking, and invoices are all in one place. You
+							will always know
+							where you
+							stand.</p>
+						<a class="button text element-animation" href="#">Learn More</a>
+					</div>
+				</article>
+
+				<article class="support">
+					<div class="support__text-content">
+						<h2 class="title element-animation">We support you in 5 different languages</h2>
+						<p class="text element-animation">Our support team in here to help you in 5 languages - English, French,
+							Spanish,Polish and
+							German.</p>
+						<div class="support__team">
+							<img class="support__photo element-animation" src="img/man_1.png" alt="Photo of the assistant">
+							<img class="support__photo element-animation" src="img/man_2.png" alt="Photo of the assistant">
+							<img class="support__photo element-animation" src="img/man_3.png" alt="Photo of the assistant">
+							<img class="support__photo element-animation" src="img/man_4.png" alt="Photo of the assistant">
+							<img class="support__photo element-animation" src="img/woman_1.png" alt="Photo of the assistant">
+							<span class="text element-animation">+20</span>
+						</div>
+					</div>
+
+					<div class="support__message">
+						<div class="message__item element-animation">
+							<div class="message__user-photo"><img src="img/woman_1.png" alt="Photo of the assistant"></div>
+							<div class="message__text">Hi Mike, How can I help you?</div>
+							<span class="message__time">Clair, 12:22 pm</span>
+						</div>
+						<div class="message__item element-animation message__item_reverse">
+							<div class="message__user-photo"><img src="img/user.png" alt="User photo"></div>
+							<div class="message__text">My credit card is stolen...</div>
+							<span class="message__time">Mike, 12:24 pm</span>
+						</div>
+						<div class="message__item element-animation">
+							<div class="message__user-photo"><img src="img/woman_1.png" alt="Photo of the assistant"></div>
+							<div class="message__text">Ok. No problem. We will take care of this.</div>
+							<span class="message__time">Clair, 12:25 pm</span>
+						</div>
+					</div>
+				</article>
+			</div>
+
+			<section class="prices" id="prices">
+				<h2 class="title">An exceptional service, <span>at the right price.</span></h2>
+				<p class="text">Start with our free plan and switch to premium as you grow</p>
+				<div class="prices__wrapper">
+					<div class="prices__item">
+						<p class="text title">FREE</p>
+						<span>$0/m</span>
+						<p class="text prices__description">Manage your business with a simple and efficient account</p>
+						<a href="#" class="button">Get Started</a>
+						<img src="img/card.png" alt="Credit card">
+						<ul>
+							<li>10 free local transfer</li>
+							<li>10 free local transfer</li>
+							<li>Multi-user access</li>
+							<li>Prepaid debit cards</li>
+							<li>Virtual cards</li>
+							<li class="disabled">Priority 24/7 support</li>
+							<li class="disabled">Exchange 24 currencies</li>
+							<li class="disabled">Free payment to other Draft accounts</li>
+						</ul>
+					</div>
+					<div class="prices__item">
+						<p class="text title">PREMIUM</p>
+						<span>$8/m</span>
+						<p class="text prices__description">Priority support and multi-user access to maximize your productivity.
+						</p>
+						<a href="#" class="button">Get Started</a>
+						<img src="img/card.png" alt="Credit card">
+						<ul>
+							<li>10 free local transfer</li>
+							<li>10 free local transfer</li>
+							<li>Multi-user access</li>
+							<li>Prepaid debit cards</li>
+							<li>Virtual cards</li>
+							<li>Priority 24/7 support</li>
+							<li>Exchange 24 currencies</li>
+							<li>Free payment to other Draft accounts</li>
+						</ul>
+					</div>
+				</div>
+			</section>
+
+			<section class="faq">
+				<h2 class="title">Frequently <span>asked questions</span></h2>
+				<p class="text">If you are not sure whether Draft is suitable is for you or not, do not worry. We are here to
+					explain
+					everything you might want to know</p>
+
+				<div class="faq__accordion accordion">
+					<div class="accordion-item">
+						<button class="accordion-item__trigger">
+							What is the difference between Draft and a traditional bank account?
+						</button>
+						<div class="accordion-item__content">
+							Lorem ipsum, dolor sit amet consectetur adipisicing elit. Distinctio placeat aliquid necessitatibus
+							facilis quidem ea vel ipsam omnis tenetur cumque.
+						</div>
+					</div>
+					<div class="accordion-item">
+						<button class="accordion-item__trigger">
+							Who can open a Draft account?
+						</button>
+						<div class="accordion-item__content">
+							Lorem ipsum, dolor sit amet consectetur adipisicing elit. Distinctio placeat aliquid necessitatibus
+							facilis quidem ea vel ipsam omnis tenetur cumque.
+						</div>
+					</div>
+					<div class="accordion-item">
+						<button class="accordion-item__trigger">
+							What if I withdraw money abroad?
+						</button>
+						<div class="accordion-item__content">
+							Lorem ipsum, dolor sit amet consectetur adipisicing elit. Distinctio placeat aliquid necessitatibus
+							facilis quidem ea vel ipsam omnis tenetur cumque.
+						</div>
+					</div>
+					<div class="accordion-item">
+						<button class="accordion-item__trigger">
+							What happens if I withdraw more than $250?
+						</button>
+						<div class="accordion-item__content">
+							Lorem ipsum, dolor sit amet consectetur adipisicing elit. Distinctio placeat aliquid necessitatibus
+							facilis quidem ea vel ipsam omnis tenetur cumque.
+						</div>
+					</div>
+					<div class="accordion-item">
+						<button class="accordion-item__trigger">
+							Can I cancel my subscrption or switch to another plan anytime?
+						</button>
+						<div class="accordion-item__content">
+							Lorem ipsum, dolor sit amet consectetur adipisicing elit. Distinctio placeat aliquid necessitatibus
+							facilis quidem ea vel ipsam omnis tenetur cumque.
+						</div>
+					</div>
+				</div>
+			</section>
+		</div>
+	</main>
+
+	<div class="offset"></div>
+
+	<footer class="footer">
+		<div class="footer__content container">
+			<div class="footer__copyright">
+				<img src="img/logo.svg" alt="Page logo" class="footer__logo">
+				<p class="text">© 2020 Page example<br>
+					<a class="portfolio-link" href="https://yllaciarbegla.github.io/portfolio/">Back to portfolio</a>
+				</p>
+			</div>
+			<div class="footer__links">
+				<ul>
+					<li><a class="text" href="#">Team</a></li>
+					<li><a class="text" href="#">Press</a></li>
+					<li><a class="text" href="#">Fees</a></li>
+					<li><a class="text" href="#">Services</a></li>
+					<li><a class="text" href="#">Projects</a></li>
+					<li><a class="text" href="#">Affiliate</a></li>
+					<li><a class="text" href="#">Terms of use</a></li>
+					<li><a class="text" href="#">Privacy policy</a></li>
+					<li><a class="text" href="#">Contact us</a></li>
+				</ul>
+			</div>
+		</div>
+	</footer>
+
+</body>
+
+</html>

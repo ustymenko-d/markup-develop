@@ -1,0 +1,236 @@
+@import 'reset';
+@import 'fonts';
+
+:root {
+	--black: #0B0C0E;
+	--grey: #F1F1F1;
+
+	--off-150: 150px;
+
+	@media (max-width: 768px) {
+		--off-150: 100px;
+	}
+}
+
+section {
+	margin-bottom: var(--off-150);
+}
+
+img {
+	max-width: 100%;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+.page {
+	font-family: Satoshi;
+	position: relative;
+	overflow-y: hidden;
+}
+
+.loader {
+	position: fixed;
+	top: 0;
+	left: 0;
+	background-color: var(--black);
+	width: 100%;
+	height: 100%;
+	z-index: 100;
+
+	display: flex;
+	justify-content: center;
+	padding: 5%;
+	align-items: center;
+}
+
+.loader__image {
+	width: 50%;
+	height: 50%;
+	animation: 1.4s linear infinite rolling;
+}
+
+@keyframes rolling {
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+/* toTop Button */
+
+.to-top {
+	box-sizing: content-box;
+	width: 20px;
+	height: 20px;
+	position: fixed;
+	bottom: 17px;
+	right: 17px;
+	z-index: 2;
+	background-color: var(--black);
+	border-radius: 50%;
+	border: 2px solid;
+	padding: 15px;
+	transition: all .4s;
+	color: white;
+}
+
+.to-top::after {
+	content: '';
+	position: absolute;
+	width: 2px;
+	height: 18px;
+	left: calc(50% - 1px);
+	top: calc(50% - 9px);
+	background-color: white;
+}
+
+.to-top::before {
+	content: '';
+	position: absolute;
+	width: 14px;
+	height: 14px;
+	left: calc(36%);
+	top: calc(50% - 9px);
+	border-top: 2px solid;
+	border-left: 2px solid;
+	transform: rotate(45deg);
+	color: white;
+}
+
+.to-top:focus-visible {
+	background-color: #414141;
+}
+
+@media (hover: hover) {
+	.to-top:hover {
+		background-color: #414141;
+	}
+}
+
+@media (hover: none) {
+	.to-top:active {
+		background-color: #414141;
+	}
+}
+
+.to-top.hidden {
+	display: none;
+}
+
+//
+
+.container {
+	max-width: 93%;
+	margin: 0 auto;
+}
+
+.logo {
+	user-select: none;
+	color: #FFF;
+	font-size: 50px;
+	font-style: normal;
+	font-weight: 700;
+	line-height: 120%;
+
+	&_black {
+		color: var(--black);
+	}
+}
+
+.title {
+	font-style: normal;
+	font-weight: 400;
+	line-height: 120%;
+}
+
+.text {
+	font-size: 20px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 150%;
+}
+
+.button {
+	padding: 20px 40px;
+	border-radius: 60px;
+	transition: all .4s;
+
+	&:focus-visible {
+		background-color: #414141;
+	}
+
+	@media (hover: hover) {
+		&:hover {
+			background-color: #414141;
+		}
+	}
+
+	@media (hover: none) {
+		&:active {
+			background-color: #414141;
+		}
+	}
+
+	&_dark-grey {
+		color: #BBB;
+		background-color: #212121;
+		border: 1px solid #414141;
+	}
+
+	&_black {
+		color: white;
+		background-color: var(--black);
+	}
+
+	&_grey {
+		background-color: var(--grey);
+
+		&:focus-visible {
+			color: white;
+		}
+
+		@media (hover: hover) {
+			&:hover {
+				color: white;
+			}
+		}
+
+		@media (hover: none) {
+			&:active {
+				color: white;
+			}
+		}
+	}
+}
+
+@import 'components/hero';
+@import 'components/introduction';
+@import 'components/testimonials';
+@import 'components/benefits';
+@import 'components/footer';
+
+.portfolio-link {
+	background-image: linear-gradient(currentColor, currentColor);
+	background-position: 0 100%;
+	background-repeat: no-repeat;
+	background-size: 0% 1px;
+	transition: background-size .3s;
+	color: #59607C;
+}
+
+.portfolio-link:focus-visible {
+	background-size: 100% 1px;
+}
+
+@media (hover: hover) {
+	.portfolio-link:hover {
+		background-size: 100% 1px;
+	}
+}
+
+@media (hover: none) {
+	.portfolio-link:active {
+		background-size: 100% 1px;
+	}
+}

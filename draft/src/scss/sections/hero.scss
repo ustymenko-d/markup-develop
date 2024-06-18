@@ -1,0 +1,391 @@
+.hero {
+	position: relative;
+	background-image: url(../img/figure.svg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: 0 bottom;
+
+	.button {
+		border: 2px solid white;
+	}
+
+	&::before {
+		content: '';
+		z-index: -2;
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		left: 0;
+		top: 0;
+		background-image: url(../img/back.jpg);
+		background-repeat: no-repeat;
+		background-size: cover;
+	}
+
+	&::after {
+		z-index: -1;
+		content: '';
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		left: 0;
+		top: 0;
+		backdrop-filter: blur(4.6875rem);
+	}
+}
+
+.header {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	align-items: center;
+	margin-bottom: 2rem;
+	padding-top: 2rem;
+
+	@media screen and (min-width: 768px) {
+		margin-bottom: 2.5rem;
+		padding-top: 2.5rem;
+	}
+
+	.text {
+		font-size: 1.0625rem;
+
+		@media screen and (min-width: 1440px) {
+			font-size: 1.5625rem;
+		}
+	}
+
+	&__logo {
+		max-width: 3.125rem;
+
+		&:focus-visible {
+			outline: solid var(--neutral);
+			border-radius: 15px;
+		}
+	}
+
+	&__navigation {
+		display: none;
+
+		@media screen and (min-width: 48rem) {
+			display: block;
+		}
+
+		ul {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			flex-wrap: wrap;
+			gap: 80px;
+		}
+
+		a {
+			color: white;
+			background-image: linear-gradient(currentColor, currentColor);
+			background-position: 0% 100%;
+			background-repeat: no-repeat;
+			background-size: 0% 1px;
+			transition: background-size .3s;
+
+			&:focus-visible {
+				background-size: 100% 1px;
+			}
+
+			@media (hover: hover) {
+				&:hover {
+					background-size: 100% 1px;
+				}
+			}
+
+			@media (hover: none) {
+				&:active {
+					background-size: 100% 1px;
+				}
+			}
+		}
+	}
+
+	.button {
+		background-color: var(--accent);
+		color: white;
+		padding: .9375rem 3.4375rem;
+
+		&:focus-visible {
+			background-color: var(--dark-color);
+		}
+
+		@media (hover: hover) {
+			&:hover {
+				background-color: var(--dark-color);
+			}
+		}
+
+		@media (hover: none) {
+			&:active {
+				background-color: var(--dark-color);
+			}
+		}
+	}
+}
+
+.intro {
+	padding-top: 1.25rem;
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: repeat(2, auto);
+	text-align: center;
+	gap: 6.25rem;
+
+	@media screen and (min-width: 768px) {
+		text-align: left;
+	}
+
+	@media screen and (min-width: 1024px) {
+		grid-template-columns: repeat(2, 1fr);
+		grid-template-rows: 1fr;
+		gap: 8.125rem;
+	}
+
+	&__text-content {
+		color: white;
+
+		@media screen and (min-width: 1920px) {
+			justify-self: center;
+		}
+
+		.button {
+			position: relative;
+			padding: .9375rem 4.5625rem .9375rem 2.3125rem;
+			font-size: .9375rem;
+			background-color: var(--dark-color);
+			color: white;
+
+			opacity: 0;
+
+			&._element-show {
+				opacity: 1;
+			}
+
+			@media screen and (min-width: 1440px) {
+				font-size: 1.5625rem;
+			}
+
+			&:focus-visible {
+				background-color: var(--accent);
+
+				&::before {
+					border-color: white;
+				}
+
+				&::after {
+					background-color: white;
+				}
+			}
+
+			@media (hover: hover) {
+				&:hover {
+					background-color: var(--accent);
+
+					&::before {
+						border-color: white;
+					}
+
+					&::after {
+						background-color: white;
+					}
+				}
+			}
+
+			@media (hover: none) {
+				&:active {
+					background-color: var(--accent);
+
+					&::before {
+						border-color: white;
+					}
+
+					&::after {
+						background-color: white;
+					}
+				}
+			}
+
+			&::after {
+				content: '';
+				z-index: 1;
+				position: absolute;
+				top: calc(50% - .0625rem);
+				right: 2.5rem;
+				height: .125rem;
+				width: 1.25rem;
+				border-radius: 20px;
+				background-color: #3EBDF2;
+
+				transition: all 0.3s;
+			}
+
+			&::before {
+				content: '';
+				z-index: 2;
+				transform: rotate(50deg);
+				position: absolute;
+				top: 37%;
+				right: 2.5625rem;
+				height: .75rem;
+				width: .75rem;
+				border: 2px solid var(--accent);
+				border-bottom: none;
+				border-left: none;
+				border-radius: 2px;
+
+				transition: all 0.3s;
+
+				@media screen and (min-width: 1920px) {
+					top: 39%;
+				}
+			}
+		}
+	}
+
+	&__image {
+		position: relative;
+
+		&::before {
+			content: '';
+			position: absolute;
+			bottom: -3.125rem;
+			right: 0;
+			width: 5rem;
+			height: 5rem;
+			background-image: url(../img/bagel.svg);
+			background-size: contain;
+			background-repeat: no-repeat;
+
+			animation: bounce 3s infinite;
+
+			@media screen and (min-width: 500px) {
+				width: 22%;
+				height: 22%;
+				bottom: -6.25rem;
+			}
+
+			@media screen and (min-width: 768px) {
+				right: -.625rem;
+			}
+		}
+
+		&::after {
+			content: '';
+			position: absolute;
+			top: 0;
+			right: 0;
+			width: 5rem;
+			height: 5rem;
+			background-image: url(../img/notif_red.svg);
+			background-size: contain;
+			background-repeat: no-repeat;
+
+			animation: bounce 3s infinite;
+
+			@media screen and (min-width: 500px) {
+				width: 22%;
+				height: 22%;
+			}
+
+			@media screen and (min-width: 768px) {
+				top: -20px;
+				right: 20px;
+			}
+		}
+
+		@media screen and (min-width: 500px) {
+			margin: 0 auto;
+		}
+
+		@media screen and (min-width: 768px) {
+			margin: 0;
+		}
+
+		.test {
+			width: 100%;
+			height: 100%;
+			left: 0;
+			top: 0;
+			position: absolute;
+
+			@media screen and (min-width: 1024px) {
+				&::before {
+					content: '';
+					position: absolute;
+					bottom: -2%;
+					left: -25%;
+					width: 22%;
+					height: 22%;
+					background-image: url(../img/notif_blue.svg);
+					background-size: contain;
+					background-repeat: no-repeat;
+					animation: bounce 3s infinite;
+				}
+
+				&::after {
+					content: '';
+					position: absolute;
+					bottom: 0;
+					left: -25%;
+					width: 22%;
+					height: 22%;
+					background-image: url(../img/notif_blue.svg);
+					background-size: contain;
+					background-repeat: no-repeat;
+					animation: bounce 3s infinite;
+				}
+			}
+
+		}
+	}
+
+	.title {
+		font-size: 2.8rem;
+		margin-bottom: .625rem;
+		line-height: 120%;
+
+		transform: translate(0, 20%);
+		opacity: 0;
+		transition: all 0.6s;
+		transition-delay: .2s;
+
+		&._element-show {
+			transform: translate(0, 0);
+			opacity: 1;
+		}
+
+		@media screen and (min-width: 768px) {
+			font-size: 3.75rem;
+			line-height: 130%;
+		}
+
+		@media screen and (min-width: 1024px) {
+			padding-top: 1.5625rem;
+		}
+	}
+
+	.text {
+		max-width: 80%;
+		margin: 0 auto 3.125rem;
+		font-size: 1.25rem;
+
+		transform: translate(0, 20%);
+		opacity: 0;
+		transition: all 0.6s;
+		transition-delay: .4s;
+
+		&._element-show {
+			transform: translate(0, 0);
+			opacity: 1;
+		}
+
+		@media screen and (min-width: 768px) {
+			margin: 0 0 3.125rem;
+		}
+	}
+}
