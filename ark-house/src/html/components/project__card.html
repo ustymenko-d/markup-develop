@@ -1,0 +1,27 @@
+<div class="@@classes card">
+	<div class="card__content">
+		<picture class="card__image-wrapper">
+			<source
+				media="(max-width: 1250px)"
+				srcset="@@img@mob.webp"
+				type="image/webp" />
+			<source
+				media="(max-width: 1250px)"
+				srcset="@@img@mob.jpg" />
+			<source
+				srcset="@@img.webp"
+				type="image/webp" />
+			<img
+				class="card__image"
+				src="@@img.jpg"
+				alt=""
+				loading="lazy" />
+		</picture>
+		<p class="card__title title">
+			@@title
+			<br />
+			<span class="card__subtitle">@@subtitle</span>
+		</p>
+	</div>
+	@@include('small/logo.html')
+</div>

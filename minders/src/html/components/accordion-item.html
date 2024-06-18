@@ -1,0 +1,26 @@
+<div class="accordion-item">
+	<div class="accordion-item__trigger p-5 grid items-center gap-y-5 lg:gap-x-8">
+		<h3 class="accordion-item__title">@@title</h3>
+		<div class="accordion-item__info flex gap-8 max-w-fit">
+			<p class="accordion-item__date relative">@@date</p>
+			<p class="accordion-item__place relative">@@place</p>
+		</div>
+		<button
+			class="accordion-item__button inline-block relative"
+			aria-expanded="false"
+			aria-controls="@@id">
+			More
+		</button>
+	</div>
+	<div
+		class="accordion-item__content collapsible collapsible_collapsed"
+		id="@@id">
+		<p class="accordion-item__description mb-5">@@description</p>
+		<a
+			class="accordion-item__link inline-block relative"
+			href=""
+			tabindex="-1">
+			Sign up on the waiting list
+		</a>
+	</div>
+</div>

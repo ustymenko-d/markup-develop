@@ -1,0 +1,52 @@
+.social {
+	&__list {
+		display: flex;
+		gap: 2rem;
+
+		@media screen and (min-width: 1024px) {
+			justify-content: flex-end;
+		}
+	}
+
+	&__link {
+		display: inline-block;
+		width: 1.5rem;
+		height: 1.5rem;
+		padding: 5px;
+
+		transition: all 0.2s;
+
+		&:focus-visible {
+			outline: 1px solid var(--dark-color);
+			outline-offset: 4px;
+		}
+
+		@media (hover: hover) {
+			&:hover {
+				outline: 1px solid var(--dark-color);
+				outline-offset: 4px;
+			}
+		}
+
+		@media (hover: none) {
+			&:active {
+				outline: 1px solid var(--dark-color);
+				outline-offset: 4px;
+			}
+		}
+	}
+
+	&__link {
+		&_inst {
+			background-image: url(../img/icons/instagram.svg);
+		}
+
+		&_twitter {
+			background-image: url(../img/icons/twitter.svg);
+		}
+
+		&_linkedin {
+			background-image: url(../img/icons/linkedin.svg);
+		}
+	}
+}

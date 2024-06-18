@@ -1,0 +1,174 @@
+.application {
+	margin-block-end: 3.75rem;
+
+	@media screen and (min-width: 1024px) {
+		margin-block-end: 6.25rem;
+	}
+
+	@media screen and (max-width: 1023.9px) {
+		padding-block: 2.5rem 3.125rem;
+
+		background-color: var(--purple);
+	}
+
+	&__wrapper {
+		@media screen and (min-width: 1024px) {
+			border-radius: 5rem;
+
+			background-color: var(--purple);
+		}
+	}
+
+	&__text-content {
+		margin-block-end: 35px;
+		@media screen and (min-width: 1024px) {
+			margin-block-end: 0;
+			flex: 1 0 46.29%;
+		}
+	}
+
+	&__title {
+		color: var(--neutral-black);
+		margin-block-end: 25px;
+
+		@media screen and (min-width: 1024px) {
+			margin-block-end: 30px;
+		}
+	}
+
+	&__text {
+		color: var(--neutral-black);
+		@media screen and (min-width: 1024px) {
+			max-width: 95%;
+		}
+	}
+
+	&__form {
+		@media screen and (min-width: 1024px) {
+			flex: 1 0 46.29%;
+		}
+	}
+
+	&__terms-link {
+		color: var(--neutral-black);
+		@include underlineAnimation;
+	}
+}
+
+.form {
+	&__label {
+		left: 1.25rem;
+		top: calc(50% - 0.75rem);
+
+		transition: all 0.4s;
+
+		&_not-empty {
+			font-size: 0.875rem;
+			line-height: 1.5;
+
+			transform: translateY(-50%);
+		}
+	}
+
+	&__input-wrapper {
+		transition: margin 0.4s;
+
+		&:not(:last-child) {
+			margin-bottom: 10px;
+		}
+
+		&::after {
+			content: 'The input field must be filled out.';
+			position: absolute;
+			left: 0;
+			top: calc(100%);
+			width: 100%;
+			padding-inline: 1.25rem;
+			color: var(--neutral-black-op4);
+			font-weight: 400;
+			font-size: 0.875rem;
+			line-height: 1.5;
+			display: block;
+			visibility: hidden;
+			pointer-events: none;
+			opacity: 0;
+
+			transition: opacity 0.4s;
+		}
+
+		&-tel {
+			&:after {
+				content: 'The input field must be filled out. Format: 0123456789';
+			}
+		}
+
+		&-mail {
+			&:after {
+				content: 'The input field must be filled out. Must contain the @ symbol';
+			}
+		}
+
+		&_hint.form__input-wrapper {
+			margin-block-end: 1.875rem;
+
+			&::after {
+				visibility: visible;
+				opacity: 1;
+			}
+		}
+
+		&_hint.form__input-wrapper.form__input-wrapper-tel,
+		&_hint.form__input-wrapper.form__input-wrapper-mail {
+			margin-block-end: 2.8125rem;
+
+			@media screen and (min-width: 450px) {
+				margin-block-end: 1.875rem;
+			}
+		}
+
+		&_invalid.form__input-wrapper {
+			&::after {
+				color: rgba(255, 0, 77, 0.4);
+			}
+
+			.form__label {
+				color: rgba(255, 0, 77, 0.4);
+			}
+		}
+	}
+
+	&__input {
+		border-radius: 1.25rem;
+		border: 1px solid var(--neutral-black-op3);
+
+		background-color: transparent;
+		font-weight: 500;
+		color: var(--neutral-black);
+		transition: outline-color .4s;
+
+		&_invalid {
+			border-color: rgba(255, 0, 77, 0.3);
+			color: rgb(255, 0, 77);
+		}
+
+		&:disabled {
+			border-color: rgba(6, 5, 15, 0.1);
+			color: var(--neutral-black-op3);
+		}
+
+		&:focus {
+			outline: 0.0625rem solid;
+			outline-color: var(--neutral-black-op4);
+
+			& ~ .form__label {
+				font-size: 0.875rem;
+				line-height: 1.5;
+
+				transform: translateY(-50%);
+			}
+		}
+	}
+	&__button {
+		margin-block: 1.875rem;
+	}
+}

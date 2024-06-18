@@ -1,0 +1,28 @@
+<div class="article">
+	<picture>
+		<source
+			media="(max-width: 1024px)"
+			srcset="@@img@mob.webp"
+			type="image/webp" />
+		<source
+			media="(max-width: 1024px)"
+			srcset="@@img@mob.jpg" />
+		<source
+			srcset="@@img.webp"
+			type="image/webp" />
+		<img
+			class="article__image"
+			src="@@img.jpg"
+			loading="lazy"
+			alt="" />
+	</picture>
+	<div class="article__content">
+		<time
+			class="text article__date"
+			datetime="@@datetime">
+			@@date
+		</time>
+		<h3 class="article__title title">@@title</h3>
+		<p class="article__text text">@@text</p>
+	</div>
+</div>

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			http-equiv="X-UA-Compatible"
+			content="IE=edge" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0" />
+		<title>ARK House - Our Projects</title>
+
+		<meta
+			name="author"
+			content="yllaciarbegla@gmail.com" />
+		<meta
+			name="description"
+			content="This is an example of a multi-page website. All interaction functions are implemented with JS without using libraries. Created using the BEM methodology. The project was built with Gulp.js." />
+
+		<link
+			rel="icon"
+			href="img/icons/favicon.svg"
+			type="image/x-icon" />
+		<link
+			rel="stylesheet"
+			href="css/style.min.css" />
+		<link
+			rel="stylesheet"
+			href="css/pages/projects/projects-no-js.min.css" />
+	</head>
+	<body class="page">
+		@@include('html/components/header.html')
+
+		<main class="page__content page__container">
+			<nav
+				aria-label="Breadcrumb"
+				class="breadcrumb page__wrapper">
+				<ol class="breadcrumb__list">
+					@@include('html/components/breadcrumbs/breadcrumbs__item.html', { 'name': 'Home', 'src': 'index.html' }) @@include('html/components/breadcrumbs/breadcrumbs__item_current.html', { 'name': 'Projects', 'src': '', 'aria-curent': 'aria-current="page"' })
+				</ol>
+			</nav>
+
+			<div class="projects page__wrapper">
+				<h1 class="projects__title title">Projects</h1>
+				<p class="projects__slogan title">Our projects are examples of attitudes rather than design</p>
+				<p class="projects__text text">
+					They are samples in a series of contextual examination rather than isolated masterpieces. They are associative rather than symbolic. They are comments rather than statements. Every story told is a shared experience of contemporary conditions set within a given frame.
+				</p>
+
+				<ul class="projects__list">
+					<li>
+						<a
+							class="projects__card-link"
+							href="project.html">
+							@@include('html/components/project__card.html', { 'img': 'img/projects-page/arc/classroom', 'title': 'UVU Classroom Building', 'subtitle': 'Omer, UT', 'classes': 'projects__card' })
+						</a>
+					</li>
+					<li>
+						<a
+							class="projects__card-link"
+							href="project.html">
+							@@include('html/components/project__card.html', { 'img': 'img/projects-page/arc/monson', 'title': 'Thomas S. Monson Center', 'subtitle': 'Salt Lake City, UT', 'classes': 'projects__card' })
+						</a>
+					</li>
+					<li>
+						<a
+							class="projects__card-link"
+							href="project.html">
+							@@include('html/components/project__card.html', { 'img': 'img/projects-page/arc/swaner', 'title': 'USU Swaner Preserve and Ecocenter', 'subtitle': 'Logan, UT', 'classes': 'projects__card' })
+						</a>
+					</li>
+					<li>
+						<a
+							class="projects__card-link"
+							href="project.html">
+							@@include('html/components/project__card.html', { 'img': 'img/projects-page/arc/fulton', 'title': 'UVU Fulton Library', 'subtitle': 'Orem, UT', 'classes': 'projects__card' })
+						</a>
+					</li>
+					<li>
+						<a
+							class="projects__card-link"
+							href="project.html">
+							@@include('html/components/project__card.html', { 'img': 'img/projects-page/landscape/1', 'title': 'UVU Fulton Library', 'subtitle': 'Orem, UT', 'classes': 'projects__card' })
+						</a>
+					</li>
+					<li>
+						<a
+							class="projects__card-link"
+							href="project.html">
+							@@include('html/components/project__card.html', { 'img': 'img/projects-page/landscape/2', 'title': 'USU College of Agriculture', 'subtitle': 'Logan, UT', 'classes': 'projects__card' })
+						</a>
+					</li>
+					<li>
+						<a
+							class="projects__card-link"
+							href="project.html">
+							@@include('html/components/project__card.html', { 'img': 'img/projects-page/landscape/3', 'title': 'Sugar House Monument Plaza', 'subtitle': 'Salt Lake City, UT', 'classes': 'projects__card' })
+						</a>
+					</li>
+					<li>
+						<a
+							class="projects__card-link"
+							href="project.html">
+							@@include('html/components/project__card.html', { 'img': 'img/projects-page/landscape/4', 'title': 'USU College of Agriculture', 'subtitle': 'Logan, UT', 'classes': 'projects__card' })
+						</a>
+					</li>
+					<li>
+						<a
+							class="projects__card-link"
+							href="project.html">
+							@@include('html/components/project__card.html', { 'img': 'img/projects-page/interior/1', 'title': 'UVU Fulton Library', 'subtitle': 'Orem, UT', 'classes': 'projects__card' })
+						</a>
+					</li>
+					<li>
+						<a
+							class="projects__card-link"
+							href="project.html">
+							@@include('html/components/project__card.html', { 'img': 'img/projects-page/interior/2', 'title': 'USU College of Agriculture', 'subtitle': 'Logan, UT', 'classes': 'projects__card' })
+						</a>
+					</li>
+					<li>
+						<a
+							class="projects__card-link"
+							href="project.html">
+							@@include('html/components/project__card.html', { 'img': 'img/projects-page/interior/3', 'title': 'Sugar House Monument Plaza', 'subtitle': 'Salt Lake City, UT', 'classes': 'projects__card' })
+						</a>
+					</li>
+					<li>
+						<a
+							class="projects__card-link"
+							href="project.html">
+							@@include('html/components/project__card.html', { 'img': 'img/projects-page/interior/4', 'title': 'USU College of Agriculture', 'subtitle': 'Logan, UT', 'classes': 'projects__card' })
+						</a>
+					</li>
+				</ul>
+			</div>
+		</main>
+
+		@@include('html/components/footer.html')
+	</body>
+</html>

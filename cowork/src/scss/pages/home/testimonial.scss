@@ -1,0 +1,83 @@
+@import '../../components/testimonial-card';
+
+.testimonial {
+	&__wrapper {
+		border-radius: 1.5rem;
+		padding: 1.5rem;
+
+		background-color: var(--black);
+
+		@media screen and (min-width: 768px) {
+			border-radius: 2rem;
+			padding: 4.5rem 2rem;
+		}
+	}
+
+	&__group {
+		margin-block-end: 1.5rem;
+		display: grid;
+		gap: 1rem;
+
+		@media screen and (min-width: 768px) {
+			margin-block-end: 2rem;
+		}
+
+		@media screen and (min-width: 1440px) {
+			grid-template-columns: 1fr auto;
+		}
+	}
+
+	&__title {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		gap: 0 6px;
+
+		color: var(--white);
+	}
+
+	&__title-icon {
+		width: 32px;
+		height: 32px;
+
+		order: 1;
+
+		background-image: url(../img/icons/clients.svg);
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: contain;
+
+		@media screen and (min-width: 768px) {
+			width: 64px;
+			height: 64px;
+		}
+		@media screen and (min-width: 1024px) {
+			order: 0;
+		}
+	}
+
+	&__slogan {
+		color: var(--white);
+		text-transform: uppercase;
+
+		@media screen and (min-width: 1440px) {
+			align-self: flex-end;
+		}
+	}
+
+	&__list {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+
+		@media screen and (min-width: 1024px) {
+			gap: 3rem;
+			flex-wrap: wrap;
+			flex-direction: row;
+			align-items: initial;
+			justify-content: center;
+		}
+	}
+}
+
+@import '../../components/carousel.scss';

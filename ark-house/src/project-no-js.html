@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			http-equiv="X-UA-Compatible"
+			content="IE=edge" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0" />
+		<title>ARK House - Central Saint Giles</title>
+
+		<meta
+			name="author"
+			content="yllaciarbegla@gmail.com" />
+		<meta
+			name="description"
+			content="This is an example of a multi-page website. All interaction functions are implemented with JS without using libraries. Created using the BEM methodology. The project was built with Gulp.js." />
+
+		<link
+			rel="icon"
+			href="img/icons/favicon.svg"
+			type="image/x-icon" />
+		<link
+			rel="stylesheet"
+			href="css/style.min.css" />
+		<link
+			rel="stylesheet"
+			href="css/style-no-js.min.css" />
+		<link
+			rel="stylesheet"
+			href="css/pages/project/project-no-js.min.css" />
+	</head>
+
+	<body class="page">
+		@@include('html/components/header.html')
+
+		<main class="page__content page__container">
+			<nav
+				aria-label="Breadcrumb"
+				class="breadcrumb page__wrapper">
+				<ol class="breadcrumb__list">
+					@@include('html/components/breadcrumbs/breadcrumbs__item.html', { 'name': 'Home', 'src': 'index.html' }) @@include('html/components/breadcrumbs/breadcrumbs__item.html', { 'name': 'Projects', 'src': 'projects.html' }) @@include('html/components/breadcrumbs/breadcrumbs__item_current.html', {
+					'name': 'Central Saint Giles', 'src': '', 'aria-curent': 'aria-current="page"' })
+				</ol>
+			</nav>
+
+			<section class="hero page__wrapper">
+				<h1 class="hero__title title">Central Saint Giles</h1>
+
+				<div class="hero__card">
+					<div class="hero__image-wrapper">
+						<picture>
+							<source
+								srcset="img/project/hero.webp"
+								type="image/webp" />
+							<img
+								class="hero__image"
+								src="img/project/hero.jpg"
+								alt="" />
+						</picture>
+					</div>
+
+					<div class="hero__characteristics">
+						<div class="characteristic">
+							<p class="characteristic__name">Location</p>
+							<p class="characteristic__value">London</p>
+						</div>
+						<div class="characteristic">
+							<p class="characteristic__name">Area</p>
+							<p class="characteristic__value">
+								70.000&nbsp;m
+								<sup>2</sup>
+							</p>
+						</div>
+						<div class="characteristic">
+							<p class="characteristic__name">CONSTRUCTION COST</p>
+							<p class="characteristic__value">130&nbsp;mill&nbsp;NOK</p>
+						</div>
+						<div class="characteristic">
+							<p class="characteristic__name">Year</p>
+							<p class="characteristic__value">2018</p>
+						</div>
+						<div class="characteristic">
+							<p class="characteristic__name">Client</p>
+							<p class="characteristic__value">Vanre</p>
+						</div>
+					</div>
+				</div>
+				<p class="hero__description text">
+					Nanchang Wave is a landscape based community centre with a varied program forming the heart of a large residential development. The double helix structure towards the wetland area gives 360 degrees overview of the neighbourhood as one walks up to the panoramic gallery at top.
+				</p>
+			</section>
+
+			<section class="gallery">
+				<div class="gallery__top topline">
+					<h2 class="gallery__title title">Gallery</h2>
+					<a
+						href="contact.html"
+						class="gallery__button button">
+						Contact&nbsp;Us
+					</a>
+				</div>
+
+				<div class="gallery__grid page__wrapper">
+					@@include('html/components/project__card.html', { 'img': 'img/project/first', 'title': 'Front facades', 'subtitle': 'London', 'classes': 'gallery__card' }) @@include('html/components/project__card.html', { 'img': 'img/project/second', 'title': 'Facades from the side', 'subtitle':
+					'London', 'classes': 'gallery__card' }) @@include('html/components/project__card.html', { 'img': 'img/project/third', 'title': 'Facades close up', 'subtitle': 'London', 'classes': 'gallery__card' }) @@include('html/components/project__card.html', { 'img': 'img/project/fourth',
+					'title': 'Facades close up', 'subtitle': 'London', 'classes': 'gallery__card' }) @@include('html/components/project__card.html', { 'img': 'img/project/fifth', 'title': 'Side glass panels', 'subtitle': 'London', 'classes': 'gallery__card' })
+					@@include('html/components/project__card.html', { 'img': 'img/project/sixth', 'title': 'Hanging balconies', 'subtitle': 'London', 'classes': 'gallery__card' })
+				</div>
+			</section>
+
+			<section class="dev-team">
+				<div class="dev-team__top topline">
+					<h2 class="dev-team__title title">Development team</h2>
+					<a
+						href="contact.html"
+						class="dev-team__button button">
+						Contact&nbsp;Us
+					</a>
+				</div>
+
+				<div class="dev-team__greed page__wrapper">
+					<div class="department">
+						<span class="department__name">Managers</span>
+						<div class="department__team">
+							@@include('html/components/teammate.html', { 'img': 'img/team/managment/jane', 'name': 'Jane Cooper', 'position': 'Art Director', })
+							@@include('html/components/teammate.html', { 'img': 'img/team/managment/cameron', 'name': 'Cameron Williamson', 'position': 'Senior Manager', })
+							@@include('html/components/teammate.html', { 'img': 'img/team/managment/brooklyn', 'name': 'Brooklyn Simmons', 'position': 'PR Manager', })
+						</div>
+					</div>
+
+					<div class="department">
+						<span class="department__name">Engineers</span>
+						<div class="department__team">
+							@@include('html/components/teammate.html', { 'img': 'img/team/arc/ava', 'name': 'Ava Reynolds', 'position': 'Mechanical Engineer', })
+							@@include('html/components/teammate.html', { 'img': 'img/team/arc/ethan', 'name': 'Ethan Anderson', 'position': 'Civil Engineer', })
+							@@include('html/components/teammate.html', { 'img': 'img/team/arc/gabriel', 'name': 'Gabriel Rivera', 'position': 'Electrical Engineer', })
+						</div>
+					</div>
+				</div>
+			</section>
+		</main>
+
+		@@include('html/components/footer.html')
+	</body>
+</html>

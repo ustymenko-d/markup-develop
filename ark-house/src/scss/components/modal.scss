@@ -1,0 +1,94 @@
+.scroll-lock {
+	overflow: hidden;
+}
+
+.dialogs {
+	z-index: 30;
+	position: fixed;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	width: 100%;
+	height: 100%;
+	visibility: hidden;
+	pointer-events: none;
+	overflow-y: auto;
+	overflow-x: hidden;
+
+	padding: 1rem;
+	background-color: rgba(23, 23, 23, 0.5);
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	&_open {
+		visibility: visible;
+		pointer-events: all;
+	}
+}
+
+.modal {
+	visibility: hidden;
+	pointer-events: none;
+
+	padding: 1rem;
+	background-color: white;
+
+	@media screen and (min-width: 768px) {
+		padding: 2rem;
+		max-width: 60%;
+	}
+
+	&_open {
+		opacity: 1;
+		position: relative;
+		visibility: visible;
+		pointer-events: all;
+	}
+
+	&__content {
+		min-height: 100%;
+	}
+
+	&__title {
+		font-size: 1.25rem;
+		margin-block-end: 0.5rem;
+
+		@media screen and (min-width: 768px) {
+			font-size: 2.5rem;
+		}
+	}
+
+	&__text {
+		margin-block-end: 1rem;
+
+		@media screen and (min-width: 768px) {
+			font-size: 1.5rem;
+		}
+	}
+
+	&__actions {
+		display: flex;
+		flex-direction: column;
+
+		@media screen and (min-width: 768px) {
+			align-items: flex-start;
+		}
+	}
+
+	&__button {
+		&:not(:last-child) {
+			margin-block-end: 1rem;
+		}
+	}
+}
+
+.close-backdrop {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+}

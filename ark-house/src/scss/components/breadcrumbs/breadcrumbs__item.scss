@@ -1,0 +1,37 @@
+.breadcrumb {
+	padding-block-start: 3rem;
+	margin-block-end: 2rem;
+
+	&__list {
+		list-style: none;
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		row-gap: 1rem;
+	}
+
+	&__item {
+		line-height: 1.3;
+		position: relative;
+
+		&:not(:first-child) {
+			margin-inline-start: 3.5rem;
+		}
+
+		& + &::before {
+			content: url(../img/icons/arrow.svg);
+			position: absolute;
+			left: calc(-16px + -23px);
+			pointer-events: none;
+		}
+	}
+
+	&__link {
+		text-transform: uppercase;
+		color: var(--dark-color);
+	}
+
+	[aria-current='page'] {
+		font-weight: 600;
+	}
+}

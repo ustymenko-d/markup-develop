@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			http-equiv="X-UA-Compatible"
+			content="IE=edge" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0" />
+		<title>ARK House - Home</title>
+
+		<noscript>
+			<meta
+				http-equiv="refresh"
+				content="0; url=no-js.html" />
+		</noscript>
+
+		<meta
+		name="author"
+		content="yllaciarbegla@gmail.com" />
+		<meta
+			name="description"
+			content="This is an example of a multi-page website. All interaction functions are implemented with JS without using libraries. Created using the BEM methodology. The project was built with Gulp.js." />
+
+		<link
+			rel="icon"
+			href="img/icons/favicon.svg"
+			type="image/x-icon" />
+		<link
+			rel="stylesheet"
+			href="css/style.min.css" />
+		<link
+			rel="stylesheet"
+			href="css/pages/home/home.min.css" />
+		<script
+			src="js/index.min.js"
+			defer></script>
+	</head>
+	<body class="page">
+		@@include('html/components/header.html')
+
+		<main class="page__content">
+			<section class="hero page__container page__wrapper">
+				<h1 class="hero__title title">
+					<span class="hero__time">Since 1975 —</span>
+					Architecture.
+					<br />
+					Planning.
+					<br />
+					Design.
+				</h1>
+				<div class="hero__links">
+					<a
+						href="contact.html"
+						class="hero__button button"
+						target="_blank">
+						Contact&nbsp;us
+					</a>
+
+					@@include('html/components/small/social.html', { 'classes': 'hero__social', })
+				</div>
+
+				<div class="hero__back"></div>
+			</section>
+
+			<section
+				id="about"
+				class="about page__container page__wrapper">
+				<h2 class="about__title title">Forming an irrational love between clients and their buildings</h2>
+				<p class="about__text text">
+					Our approach starts with...
+					<br />
+					How do you want to make people feel?
+				</p>
+
+				<div class="about__buildings buildings element-animation">
+					<div class="buildings__item">
+						<picture>
+							<source
+								srcset="img/home-page/about-1.webp"
+								type="image/webp" />
+							<img
+								class="buildings__image"
+								src="img/home-page/about-1.png"
+								alt="" />
+						</picture>
+					</div>
+					<div class="buildings__item">
+						<picture>
+							<source
+								srcset="img/home-page/about-2.webp"
+								type="image/webp" />
+							<img
+								class="buildings__image"
+								src="img/home-page/about-2.png"
+								alt="" />
+						</picture>
+					</div>
+					<div class="buildings__item">
+						<picture>
+							<source
+								srcset="img/home-page/about-3.webp"
+								type="image/webp" />
+							<img
+								class="buildings__image"
+								src="img/home-page/about-3.png"
+								alt="" />
+						</picture>
+					</div>
+				</div>
+
+				<p class="about__text text">In the face of changing trends and technologies, ARK House creates architecture that remains relevant - not based on trends, fads or dates - but on timeless human truths.</p>
+				<a
+					class="about__button button"
+					href="history.html"
+					target="_blank">
+					Our&nbsp;History
+				</a>
+			</section>
+
+			<section
+				id="services"
+				class="services page__container">
+				<div class="services__top topline">
+					<h2 class="services__title title">Services</h2>
+					<a
+						class="services__button button"
+						href="projects.html">
+						Discover&nbsp;All
+					</a>
+				</div>
+
+				<div class="services__content page__wrapper">
+					<div class="services__banner banner ">
+						<svg
+							class="banner__number"
+							width="240"
+							height="326"
+							viewBox="0 0 240 326"
+							fill="none"
+							xmlns="http://www.w3.org/2000/svg">
+							<path
+								d="M79.6105 183.46V135.256H117.276C131.971 135.256 143.812 131.328 152.801 123.473C161.932 115.618 166.497 105.406 166.497 92.8369C166.497 80.411 162.003 70.556 153.015 63.2719C144.169 55.845 132.185 52.1315 117.062 52.1315C102.081 52.1315 89.9541 56.0592 80.6805 63.9146C71.4069 71.7701 66.3421 82.4106 65.486 95.8362H5.77818C6.91955 66.5569 17.6199 43.3477 37.8792 26.2086C58.1385 9.06955 85.1033 0.5 118.774 0.5C150.447 0.5 176.484 8.35542 196.886 24.0662C217.431 39.6343 227.703 59.5585 227.703 83.8388C227.703 101.692 222.496 117.046 212.081 129.9C201.808 142.754 188.041 150.967 170.777 154.538V158.394C192.035 160.822 208.799 168.677 221.069 181.96C233.481 195.1 239.688 211.811 239.688 232.092C239.688 249.945 234.48 266.013 224.065 280.296C213.793 294.435 199.383 305.504 180.836 313.503C162.288 321.501 141.458 325.5 118.346 325.5C83.962 325.5 55.9984 316.716 34.4551 299.149C12.9117 281.581 1.42671 258.229 0 229.093H61.8479C62.8466 242.233 68.4821 252.659 78.7545 260.371C89.0268 267.941 102.438 271.726 118.988 271.726C135.11 271.726 148.235 267.584 158.365 259.3C168.637 251.016 173.773 240.304 173.773 227.164C173.773 213.596 168.78 202.956 158.793 195.243C148.806 187.388 135.181 183.46 117.918 183.46H79.6105Z"
+								fill="black" />
+						</svg>
+						<p class="banner__text">
+							Offices around
+							<br />
+							the world
+						</p>
+					</div>
+
+					<div class="services__tabs tabs">
+						<div
+							class="tabs__list"
+							role="tablist">
+							<button
+								id="services__tab-1"
+								class="tabs__button animated-underline"
+								role="tab"
+								aria-selected="true"
+								aria-controls="services__tabpanel-1">
+								Architecture
+							</button>
+							<button
+								id="services__tab-2"
+								class="tabs__button animated-underline"
+								role="tab"
+								aria-selected="false"
+								aria-controls="services__tabpanel-2">
+								Landscape
+							</button>
+							<button
+								id="services__tab-3"
+								class="tabs__button animated-underline"
+								role="tab"
+								aria-selected="false"
+								aria-controls="services__tabpanel-3">
+								Interior
+							</button>
+							<button
+								id="services__tab-4"
+								class="tabs__button animated-underline"
+								role="tab"
+								aria-selected="false"
+								aria-controls="services__tabpanel-4">
+								Design
+							</button>
+						</div>
+
+						<div class="tabs__content">
+							<div
+								id="services__tabpanel-1"
+								class="tabs__content-item"
+								role="tabpanel"
+								aria-labelledby="services__tab-1">
+								<picture>
+									<source
+										media="(max-width: 1250px)"
+										srcset="img/home-page/services-arc@mob.webp"
+										type="image/webp" />
+									<source
+										media="(max-width: 1024px)"
+										srcset="img/home-page/services-arc@mob.jpg" />
+									<source
+										srcset="img/home-page/services-arc.webp"
+										type="image/webp" />
+									<img
+										class="services__image"
+										src="img/home-page/services-arc.jpg"
+										alt=""
+										loading="lazy" />
+								</picture>
+							</div>
+							<div
+								id="services__tabpanel-2"
+								class="tabs__content-item is-hidden"
+								role="tabpanel"
+								aria-labelledby="services__tab-2">
+								<picture>
+									<source
+										media="(max-width: 1250px)"
+										srcset="img/home-page/services-landscape@mob.webp"
+										type="image/webp" />
+									<source
+										media="(max-width: 1024px)"
+										srcset="img/home-page/services-landscape@mob.jpg" />
+									<source
+										srcset="img/home-page/services-landscape.webp"
+										type="image/webp" />
+									<img
+										class="services__image"
+										src="img/home-page/services-landscape.jpg"
+										alt=""
+										loading="lazy" />
+								</picture>
+							</div>
+							<div
+								id="services__tabpanel-3"
+								class="tabs__content-item is-hidden"
+								role="tabpanel"
+								aria-labelledby="services__tab-3">
+								<picture>
+									<source
+										media="(max-width: 1250px)"
+										srcset="img/home-page/services-interior@mob.webp"
+										type="image/webp" />
+									<source
+										media="(max-width: 1024px)"
+										srcset="img/home-page/services-interior@mob.jpg" />
+									<source
+										srcset="img/home-page/services-interior.webp"
+										type="image/webp" />
+									<img
+										class="services__image"
+										src="img/home-page/services-interior.jpg"
+										alt=""
+										loading="lazy" />
+								</picture>
+							</div>
+							<div
+								id="services__tabpanel-4"
+								class="tabs__content-item is-hidden"
+								role="tabpanel"
+								aria-labelledby="services__tab-4">
+								<picture>
+									<source
+										media="(max-width: 1250px)"
+										srcset="img/home-page/services-design@mob.webp"
+										type="image/webp" />
+									<source
+										media="(max-width: 1024px)"
+										srcset="img/home-page/services-design@mob.jpg" />
+									<source
+										srcset="img/home-page/services-design.webp"
+										type="image/webp" />
+									<img
+										class="services__image"
+										src="img/home-page/services-design.jpg"
+										alt=""
+										loading="lazy" />
+								</picture>
+							</div>
+						</div>
+					</div>
+
+					<div class="services__description">
+						<p class="services__text text">At the heart of everything we do is the human experience to feel. To&nbsp;love. To&nbsp;image. To&nbsp;wonder. To&nbsp;guide. To&nbsp;jest. To&nbsp;rule. To&nbsp;serve. To&nbsp;belong.</p>
+						<a
+							class="services__button button"
+							href="contact.html"
+							target="_blank">
+							Contact&nbsp;Us
+						</a>
+					</div>
+				</div>
+			</section>
+
+			<section
+				id="projects"
+				class="projects page__container">
+				<div class="projects__top topline">
+					<h2 class="projects__title title">Recent Projects</h2>
+					<a
+						href="projects.html"
+						class="projects__button button">
+						Discover&nbsp;All
+					</a>
+				</div>
+
+				<div class="projects__content page__wrapper">
+					<a
+						data-root-modal="true"
+						data-assignment="open-dialog"
+						data-target="#dialog"
+						class="projects__card-link element-animation"
+						href="">
+					@@include('html/components/project__card.html', { 'img': 'img/projects-page/arc/classroom', 'title': 'UVU Classroom Building', 'subtitle': 'Omer, UT', 'classes': 'projects__card' })
+					</a>
+					<a
+						data-root-modal="true"
+						data-assignment="open-dialog"
+						data-target="#dialog"
+						class="projects__card-link element-animation"
+						href="">
+					@@include('html/components/project__card.html', { 'img': 'img/projects-page/arc/monson', 'title': 'Thomas S. Monson Center', 'subtitle': 'Salt Lake City, UT', 'classes': 'projects__card' })
+					</a>
+					<a
+						data-root-modal="true"
+						data-assignment="open-dialog"
+						data-target="#dialog"
+						class="projects__card-link element-animation"
+						href="">
+					@@include('html/components/project__card.html', { 'img': 'img/projects-page/arc/swaner', 'title': 'USU Swaner Preserve and Ecocenter', 'subtitle': 'Logan, UT', 'classes': 'projects__card' })
+					</a>
+					<div class="projects__banner banner">
+						<svg
+							class="banner__number"
+							width="580"
+							height="362"
+							viewBox="0 0 580 362"
+							fill="none"
+							xmlns="http://www.w3.org/2000/svg">
+							<path
+								d="M422.736 343.5C389.963 343.5 362.774 334.595 341.17 316.785C319.566 298.827 308.176 275.718 307 247.457H360.349C362.113 262.176 368.8 274.173 380.41 283.446C392.167 292.719 406.423 297.355 423.177 297.355C442.136 297.355 457.494 291.394 469.251 279.471C481.156 267.549 487.108 252.167 487.108 233.327C487.108 214.192 481.156 198.589 469.251 186.52C457.494 174.303 442.283 168.194 423.618 168.194C410.685 168.194 398.854 170.991 388.126 176.584C377.544 182.178 369.314 189.979 363.435 199.988H311.85L328.384 18.5H523.262V65.0863H373.356L365.199 158.259H366.522C373.135 147.955 382.688 139.86 395.18 133.972C407.672 127.937 421.708 124.92 437.286 124.92C467.708 124.92 492.766 135.002 512.46 155.168C532.153 175.186 542 200.724 542 231.781C542 264.899 530.904 291.836 508.712 312.59C486.667 333.197 458.008 343.5 422.736 343.5Z" />
+							<path d="M195.897 339.5V279.149H37V230.072C63.1885 180.553 107.253 110.695 169.193 20.5H250.186V232.503H293V279.149H250.186V339.5H195.897ZM88.6414 232.282V233.83H196.779V62.7238H195.897C168.972 101.779 147.418 134.055 131.234 159.551C115.051 185.048 100.853 209.291 88.6414 232.282Z" />
+						</svg>
+						<p class="banner__text">
+							Yeas of architecture,
+							<br />
+							planning, design
+						</p>
+					</div>
+					<a
+						data-root-modal="true"
+						data-assignment="open-dialog"
+						data-target="#dialog"
+						class="projects__card-link element-animation"
+						href="">
+					@@include('html/components/project__card.html', { 'img': 'img/projects-page/arc/fulton', 'title': 'UVU Fulton Library', 'subtitle': 'Orem, UT', 'classes': 'projects__card' })
+					</a>
+					<a
+						data-root-modal="true"
+						data-assignment="open-dialog"
+						data-target="#dialog"
+						class="projects__card-link element-animation"
+						href="">
+					@@include('html/components/project__card.html', { 'img': 'img/projects-page/arc/college', 'title': 'USU College of Agriculture', 'subtitle': 'Logan, UT', 'classes': 'projects__card' })
+					</a>
+					<a
+						data-root-modal="true"
+						data-assignment="open-dialog"
+						data-target="#dialog"
+						class="projects__card-link element-animation"
+						href="">
+					@@include('html/components/project__card.html', { 'img': 'img/projects-page/arc/sugar-house', 'title': 'Sugar House Monument Plaza', 'subtitle': 'Salt Lake City, UT', 'classes': 'projects__card' })
+					</a>
+					<a
+						data-root-modal="true"
+						data-assignment="open-dialog"
+						data-target="#dialog"
+						class="projects__card-link element-animation"
+						href="">
+					@@include('html/components/project__card.html', { 'img': 'img/projects-page/arc/trax', 'title': 'UTA TRAX: Mid-Jordan Line', 'subtitle': 'Salt Lake County, UT', 'classes': 'projects__card' })
+					</a>
+					<a
+						data-root-modal="true"
+						data-assignment="open-dialog"
+						data-target="#dialog"
+						class="projects__card-link element-animation"
+						href="">
+					@@include('html/components/project__card.html', { 'img': 'img/projects-page/arc/lab', 'title': 'Unified State Laboratory - Module 2', 'subtitle': 'Salt Lake City, UT', 'classes': 'projects__card' })
+					</a>
+					<a
+						data-root-modal="true"
+						data-assignment="open-dialog"
+						data-target="#dialog"
+						class="projects__card-link element-animation"
+						href="">
+					@@include('html/components/project__card.html', { 'img': 'img/projects-page/arc/sutton', 'title': 'U of U Sutton Geology and Geophysics', 'subtitle': 'Salt Lake City, UT', 'classes': 'projects__card' })
+					</a>
+					<div class="projects__banner banner">
+						<svg
+							class="banner__number"
+							width="556"
+							height="356"
+							viewBox="0 0 556 356"
+							fill="none"
+							xmlns="http://www.w3.org/2000/svg">
+							<path
+								d="M421.006 339.5C390.053 339.5 364.68 331.195 344.886 314.584C325.225 297.841 314.93 276.447 314 250.402H369.595C371.322 262.361 376.968 271.995 386.533 279.304C396.097 286.613 407.721 290.267 421.404 290.267C436.947 290.267 449.5 285.483 459.065 275.916C468.763 266.348 473.612 253.791 473.612 238.243C473.612 222.43 468.763 209.673 459.065 199.973C449.368 190.273 436.88 185.422 421.603 185.422C399.418 185.422 383.012 194.06 372.385 211.334H318.583L332.93 44.5H513.664V94.5304H379.558L373.182 168.48H376.769C389.787 149.743 410.112 140.375 437.744 140.375C464.977 140.375 487.294 149.411 504.697 167.483C522.232 185.555 531 208.677 531 236.848C531 267.411 520.904 292.194 500.712 311.196C480.519 330.065 453.951 339.5 421.006 339.5Z"
+								fill="black" />
+							<path
+								d="M307.172 327.955C300.754 334.318 292.197 337.5 281.5 337.5C270.803 337.5 262.179 334.318 255.627 327.955C249.209 321.46 246 313.108 246 302.901C246 292.826 249.209 284.607 255.627 278.244C262.179 271.748 270.803 268.5 281.5 268.5C292.197 268.5 300.754 271.682 307.172 278.045C313.724 284.408 317 292.693 317 302.901C317 313.108 313.724 321.46 307.172 327.955Z"
+								fill="black" />
+							<path
+								d="M25 130.983C25 103.211 34.7057 80.6869 54.1172 63.4122C73.5287 46.1374 98.7902 37.5 129.902 37.5C159.95 37.5 184.413 45.3401 203.293 61.0203C222.306 76.5676 231.812 96.6993 231.812 121.416C231.812 137.096 226.893 152.709 217.054 168.257C207.215 183.671 189.865 203.072 165.002 226.459L109.958 278.882V282.47H236V332.5H28.3904V290.443L122.323 198.554C142.532 178.887 156.027 164.137 162.808 154.304C169.589 144.471 172.979 134.837 172.979 125.402C172.979 113.841 168.725 104.407 160.215 97.098C151.839 89.6565 141.07 85.9358 127.907 85.9358C113.947 85.9358 102.579 90.1216 93.8043 98.4932C85.1623 106.732 80.8412 117.495 80.8412 130.784V131.98H25V130.983Z"
+								fill="black" />
+							<path
+								d="M527.758 39.957H519.5V0.5H527.758V18.082H528.25L542.824 0.5H552.012L537.629 17.8086L553.023 39.957H543.125L531.668 23.4414L527.758 28.0625V39.957Z"
+								fill="black" />
+						</svg>
+						<p class="banner__text">
+							With over 2.600
+							<br />
+							projects completed
+						</p>
+					</div>
+					<a
+						data-root-modal="true"
+						data-assignment="open-dialog"
+						data-target="#dialog"
+						class="projects__card-link element-animation"
+						href="">
+					@@include('html/components/project__card.html', { 'img': 'img/projects-page/arc/s-line', 'title': 'S - Line', 'subtitle': 'Salt Lake City, UT', 'classes': 'projects__card' })
+					</a>
+				</div>
+				<div class="projects__bottom">
+					<p class="title">Start a Project?</p>
+					<a
+						class="projects__button button"
+						href="">
+						Contact&nbsp;Us
+					</a>
+				</div>
+			</section>
+
+			<section
+				id="team"
+				class="team">
+				<div class="team__top topline page__container">
+					<h2 class="team__title title">Our team</h2>
+					<a
+						href=""
+						data-root-modal="true"
+						data-assignment="open-dialog"
+						data-target="#dialog"
+						class="team__button button">
+						Show&nbsp;All
+					</a>
+				</div>
+				<div class="team__content">
+					<div class="page__container page__wrapper">
+						<p class="team__text text">Our team of expert architects and builders, with over 45 years of combined experience, will bring your vision to life. Trust us to deliver functional and beautiful structures that exceed expectations.</p>
+						<div class="team__tabs tabs">
+							<div
+								class="tabs__list"
+								role="tablist">
+								<button
+									id="team__tab-1"
+									class="tabs__button animated-underline"
+									role="tab"
+									aria-selected="true"
+									aria-controls="team__tabpanel-1">
+									Management
+								</button>
+								<button
+									id="team__tab-2"
+									class="tabs__button animated-underline"
+									role="tab"
+									aria-selected="false"
+									aria-controls="team__tabpanel-2">
+									Architects
+								</button>
+								<button
+									id="team__tab-3"
+									class="tabs__button animated-underline"
+									role="tab"
+									aria-selected="false"
+									aria-controls="team__tabpanel-3">
+									Engineers
+								</button>
+								<button
+									id="team__tab-4"
+									class="tabs__button animated-underline"
+									role="tab"
+									aria-selected="false"
+									aria-controls="team__tabpanel-4">
+									Builders
+								</button>
+							</div>
+
+							<div class="tabs__content">
+								<div
+									id="team__tabpanel-1"
+									class="tabs__content-item"
+									role="tabpanel"
+									aria-labelledby="team__tab-1">
+									@@include('html/components/teammate.html', { 'img': 'img/team/managment/jane', 'name': 'Jane Cooper', 'position': 'Art Director', })
+									@@include('html/components/teammate.html', { 'img': 'img/team/managment/cameron', 'name': 'Cameron Williamson', 'position': 'Senior Manager', })
+									@@include('html/components/teammate.html', { 'img': 'img/team/managment/brooklyn', 'name': 'Brooklyn Simmons', 'position': 'PR Manager', })
+									@@include('html/components/teammate.html', { 'img': 'img/team/managment/jacob', 'name': 'Jacob Jones', 'position': 'Financial Director', })
+									@@include('html/components/teammate.html', { 'img': 'img/team/managment/jerome', 'name': 'Jerome Bell', 'position': 'Lead Designer', })
+									@@include('html/components/teammate.html', { 'img': 'img/team/managment/kristin', 'name': 'Kristin Watson', 'position': 'HR Manager', })
+								</div>
+								<div
+									id="team__tabpanel-2"
+									class="tabs__content-item is-hidden"
+									role="tabpanel"
+									aria-labelledby="team__tab-2">
+									@@include('html/components/teammate.html', { 'img': 'img/team/engineers/caleb', 'name': 'Caleb Hayes', 'position': 'Project Architect', })
+									@@include('html/components/teammate.html', { 'img': 'img/team/engineers/grace', 'name': 'Grace Sullivan', 'position': 'Design Architect', })
+									@@include('html/components/teammate.html', { 'img': 'img/team/engineers/isabella', 'name': 'Isabella Jordan', 'position': 'Urban Planner', })
+									@@include('html/components/teammate.html', { 'img': 'img/team/engineers/leo', 'name': 'Leo Bennett', 'position': 'Sustainable Design Specialist', })
+									@@include('html/components/teammate.html', { 'img': 'img/team/engineers/lily', 'name': 'Lily Coleman', 'position': 'Interior Architect', })
+									@@include('html/components/teammate.html', { 'img': 'img/team/engineers/owen', 'name': 'Owen Mitchell', 'position': 'BIM Specialist', })
+								</div>
+								<div
+									id="team__tabpanel-3"
+									class="tabs__content-item is-hidden"
+									role="tabpanel"
+									aria-labelledby="team__tab-3">
+									@@include('html/components/teammate.html', { 'img': 'img/team/arc/ava', 'name': 'Ava Reynolds', 'position': 'Mechanical Engineer', })
+									@@include('html/components/teammate.html', { 'img': 'img/team/arc/ethan', 'name': 'Ethan Anderson', 'position': 'Civil Engineer', })
+									@@include('html/components/teammate.html', { 'img': 'img/team/arc/gabriel', 'name': 'Gabriel Rivera', 'position': 'Electrical Engineer', })
+									@@include('html/components/teammate.html', { 'img': 'img/team/arc/mason', 'name': 'Mason Parker', 'position': 'Software Engineer', })
+									@@include('html/components/teammate.html', { 'img': 'img/team/arc/sophia', 'name': 'Sophia Myers', 'position': 'Environmental Engineer', })
+								</div>
+								<div
+									id="team__tabpanel-4"
+									class="tabs__content-item is-hidden"
+									role="tabpanel"
+									aria-labelledby="team__tab-4">
+									@@include('html/components/teammate.html', { 'img': 'img/team/builder/robert', 'name': 'Robert Fox', 'position': 'Chief Engineer', })
+									@@include('html/components/teammate.html', { 'img': 'img/team/builder/devon', 'name': 'Devon Lane', 'position': 'Lead designer', })
+									@@include('html/components/teammate.html', { 'img': 'img/team/builder/olivia', 'name': 'Olivia Turner', 'position': 'Communications Engineer', })
+									@@include('html/components/teammate.html', { 'img': 'img/team/builder/jerome', 'name': 'Jerome Bell', 'position': 'Communications Engineer', })
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section
+				id="blog"
+				class="blog page__container">
+				<div class="blog__top topline">
+					<h2 class="blog__title title">Blog</h2>
+					<a
+						class="blog__button button"
+						href=""
+						data-root-modal="true"
+						data-assignment="open-dialog"
+						data-target="#dialog">
+						Show&nbsp;More
+					</a>
+				</div>
+				<div class="blog__articles page__wrapper element-animation">
+					<a
+					data-root-modal="true"
+					data-assignment="open-dialog"
+					data-target="#dialog"
+					class="blog__article-link"
+					href="#">
+					@@include('html/components/blog__item.html', { 'img': 'img/home-page/blog-items/meet', 'title': 'Design and architecture training', 'datetime': '2023-01-01', 'date': 'Nov 01, 2023', 'text': 'Designers and architects learn through a combination of formal education, practical experience, and continuing professional development.' })
+					</a>
+					<a
+					data-root-modal="true"
+					data-assignment="open-dialog"
+					data-target="#dialog"
+					class="blog__article-link"
+					href="#">
+					@@include('html/components/blog__item.html', { 'img': 'img/home-page/blog-items/street', 'title': 'Design of public spaces', 'datetime': '2023-11-12', 'date': 'Nov 12, 2023', 'text': 'Public space design focuses on creating functional, safe, and visually appealing areas that foster social connections, community involvement, and a strong sense of place.' })
+					</a>
+				</div>
+			</section>
+		</main>
+
+		@@include('html/components/footer.html')
+
+		@@include('html/components/modal.html')
+	</body>
+</html>

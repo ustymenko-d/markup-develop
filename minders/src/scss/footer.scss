@@ -1,0 +1,60 @@
+.footer {
+	padding-block-end: 3.125rem;
+
+	@media screen and (min-width: 1024px) {
+		padding-block-end: 4.375rem;
+	}
+
+	font-size: 0.875rem;
+	line-height: 1.5;
+
+	--border: 1px solid rgba(255, 255, 255, 0.15);
+
+	&__links {
+		color: var(--simple-white);
+
+		ul:before {
+			content: attr(aria-label);
+			display: inline-block;
+			margin-bottom: 25px;
+		}
+
+		a {
+			@include underlineAnimation;
+		}
+	}
+
+	&__join {
+		@media screen and (min-width: 1024px) {
+			padding-inline-start: 3.125rem;
+			border-inline-start: var(--border);
+		}
+	}
+
+	&__contact {
+		flex: 0 0 50%;
+		padding-inline-start: 1.25rem;
+		border-inline-start: var(--border);
+
+		@media screen and (min-width: 1024px) {
+			padding-inline-start: 3.125rem;
+			flex: 0 0 auto;
+		}
+	}
+
+	&__description {
+		border-block-start: var(--border);
+		color: var(--simple-white-op5);
+
+		@media screen and (min-width: 1024px) {
+			padding-inline-start: 3.125rem;
+			border-block-start: none;
+			border-inline-start: var(--border);
+		}
+
+		a {
+			color: var(--simple-white);
+			@include underlineAnimation;
+		}
+	}
+}

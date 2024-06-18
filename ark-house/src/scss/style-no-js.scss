@@ -1,0 +1,38 @@
+.nav-toggler {
+	display: none;
+}
+
+.header__wrapper {
+	flex-direction: column;
+	gap: 1.25rem;
+
+	@media screen and (min-width: 1024px) {
+		flex-direction: row;
+	}
+}
+
+.navigation__links-list {
+	position: relative;
+	left: 0;
+	top: 0;
+	height: fit-content;
+	visibility: visible;
+	min-height: auto;
+	padding-inline: 0;
+
+	flex-direction: row;
+	justify-content: flex-start;
+	flex-wrap: wrap;
+
+	font-size: 1.8rem;
+	padding-block: 1.25rem 0;
+
+	@media screen and (min-width: 768px) {
+		justify-content: center;
+	}
+	@media screen and (min-width: 1024px) {
+		justify-content: flex-end;
+		font-size: 1.25rem;
+	}
+
+}

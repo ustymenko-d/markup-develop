@@ -1,0 +1,24 @@
+<div class="teammate">
+	<picture>
+		<source
+			media="(max-width: 1250px)"
+			srcset="@@img@mob.webp"
+			type="image/webp" />
+		<source
+			media="(max-width: 1250px)"
+			srcset="@@img@mob.jpg" />
+		<source
+			srcset="@@img.webp"
+			type="image/webp" />
+		<img
+			class="teammate__photo"
+			src="@@img.jpg"
+			alt=""
+			loading="lazy" />
+	</picture>
+	<p class="teammate__description">
+		@@name
+		<br />
+		<span class="teammate__position">@@position</span>
+	</p>
+</div>

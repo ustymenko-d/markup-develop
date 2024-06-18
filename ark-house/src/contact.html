@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			http-equiv="X-UA-Compatible"
+			content="IE=edge" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0" />
+		<title>ARK House - Contact us</title>
+
+		<noscript>
+			<meta
+				http-equiv="refresh"
+				content="0; url=contact-no-js.html" />
+		</noscript>
+
+		<meta
+			name="author"
+			content="yllaciarbegla@gmail.com" />
+		<meta
+			name="description"
+			content="This is an example of a multi-page website. All interaction functions are implemented with JS without using libraries. Created using the BEM methodology. The project was built with Gulp.js." />
+
+		<link
+			rel="icon"
+			href="img/icons/favicon.svg"
+			type="image/x-icon" />
+		<link
+			rel="stylesheet"
+			href="css/style.min.css" />
+		<link
+			rel="stylesheet"
+			href="css/pages/contact/contact.min.css" />
+		<script
+			src="js/index.min.js"
+			defer></script>
+	</head>
+
+	<body class="page">
+		@@include('html/components/header.html')
+
+		<main class="page__content contact-page">
+			<div class="contact-page__wrapper  page__container page__wrapper">
+				<form
+					method="post"
+					class="contact-page__form form">
+					<h1 class="contact-page__title title">We will be glad to contact&nbsp;you</h1>
+					<div
+						id="input-toggler"
+						class="form__toggler toggler"
+						data-input-type="tel">
+						<button
+							class="toggler__button toggler__button_phone toggler__button_active"
+							type="button">
+							Phone&nbsp;Number
+						</button>
+						<button
+							class="toggler__button toggler__button_mail"
+							type="button">
+							Email
+						</button>
+					</div>
+					<p class="contact-page__description text">Give us your number and we will call you now</p>
+					<input
+						class="form__input text"
+						name="first-name"
+						placeholder="Your Name"
+						pattern="[A-Za-z]{1,32}"
+						required
+						type="text" />
+					<input
+						class="form__input text"
+						name="phone"
+						placeholder="+0(123) 456-7890"
+						pattern="[0-9]{11}"
+						required
+						type="tel" />
+					<button class="form__button button">Contact&nbsp;us</button>
+				</form>
+			</div>
+		</main>
+
+		@@include('html/components/footer.html') @@include('html/components/modal.html')
+	</body>
+</html>

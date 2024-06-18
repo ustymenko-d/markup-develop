@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html
+	lang="en"
+	class="scroll-smooth no-js">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			http-equiv="X-UA-Compatible"
+			content="IE=edge" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0" />
+		<meta
+			name="author"
+			content="yllaciarbegla@gmail.com" />
+		<meta
+			name="description"
+			content="Landing page example. Created using the BEM methodology. I used the tailwind library to add a basic style. The project was built with Gulp.js." />
+
+		<meta
+			property="og:url"
+			content="" />
+		<meta
+			property="og:type"
+			content="website" />
+		<meta
+			property="og:title"
+			content="MINDERS - Discover the endless possibilitis of creativity" />
+		<meta
+			property="og:description"
+			content="Landing page example. Created using the BEM methodology. I used the tailwind library to add a basic style. The project was built with Gulp.js." />
+		<meta
+			property="og:image"
+			content="img/icons/favicon.svg" />
+
+		<title>MINDERS - Discover the endless possibilitis of creativity</title>
+
+		<link
+			rel="icon"
+			href="img/icons/favicon.svg"
+			type="image/x-icon" />
+
+		<link
+			rel="stylesheet"
+			href="css/style.min.css" />
+		<link
+			rel="stylesheet"
+			href="css/no-js.min.css" />
+		<link
+			rel="stylesheet"
+			href="../files/tailwind/build.css" />
+	</head>
+
+	<body class="page flex flex-col">
+		<main class="page__content grow">
+			<section class="hero mb-24">
+				<header class="hero__header header py-4 lg:py-8 w-full">
+					<div class="md:container mx-auto px-4 lg:px-5 flex flex-col flex-wrap justify-between lg:flex-row items-center">
+						<a
+							href=""
+							class="header__logo uppercase">
+							Minders
+						</a>
+						<nav class="header__navigation navigation">
+							<ul
+								id="navigation__links-list"
+								class="navigation__links-list w-full py-4 md:p-0 flex md:justify-between gap-y-6 gap-x-14 md:h-auto">
+								<li>
+									<a
+										class="navigation__link smooth-scroll-link"
+										href="#about">
+										About us
+									</a>
+								</li>
+								<li>
+									<a
+										class="navigation__link smooth-scroll-link"
+										href="#team">
+										Our team
+									</a>
+								</li>
+								<li>
+									<a
+										class="navigation__link smooth-scroll-link"
+										href="#events">
+										Events
+									</a>
+								</li>
+								<li>
+									<a
+										class="navigation__link smooth-scroll-link"
+										href="#application">
+										Join us
+									</a>
+								</li>
+							</ul>
+						</nav>
+					</div>
+				</header>
+				<div class="hero__content pt-28">
+					<div class="md:container mx-auto px-4 lg:px-5">
+						<h1 class="hero__title title text-center mb-10 lg:mb-12 text-5xl lg:text-8xl">
+							<span class="title_opacity">Discover the endless</span>
+							<br />
+							possibilitis of creativity
+						</h1>
+
+						<picture>
+							<source
+								media="(max-width: 1024px)"
+								srcset="../img/hero-bg@mob.webp"
+								type="image/webp" />
+							<source
+								media="(max-width: 1024px)"
+								srcset="../img/hero-bg@mob.jpg" />
+							<source
+								srcset="../img/hero-bg.webp 1x, ../img/hero-bg@X2.webp 2x"
+								type="image/webp" />
+
+							<img
+								class="hero__image max-w-full object-cover overflow-hidden"
+								src="../img/hero-bg.jpeg"
+								alt="Fractal abstract bagel"
+								srcset="../img/hero-bg@X2.jpg 2x" />
+						</picture>
+					</div>
+				</div>
+			</section>
+
+			@@include('html/sections/about.html')
+
+			<section
+				id="team"
+				class="team">
+				<div class="lg:container mx-auto px-4 lg:px-5 py-10 lg:py-24">
+					<h2 class="title title_black team__title mb-4 lg:mb-5 pt-5 sm:text-center lg:text-left">
+						<span class="title_opacity-black-4">The creative minds that</span>
+						<br />
+						power our projects
+					</h2>
+
+					<ul class="team__grid grid w-full gap-4 lg:gap-5 overflow-hidden">
+						<li
+							class="slider__item overflow-hidden relative select-none"
+							tabindex="0">
+							<div class="slider__content w-full h-full overflow-hidden">
+								<picture>
+									<source
+										srcset="img/first-teammate.webp"
+										type="image/webp" />
+
+									<img
+										class="slider__image w-full h-full object-cover pointer-events-none"
+										src="img/first-teammate.jpg"
+										loading="lazy"
+										alt="Photo of teammate" />
+								</picture>
+								<div class="slider_description absolute inset-0 w-full h-full overflow-hidden py-10 lg:py-14 px-8 flex flex-col justify-between gap-2.5 pointer-events-none">
+									<h3 class="slider_name title">
+										Emily Thompson,
+										<br />
+										<span class="title_opacity5">dance produser</span>
+									</h3>
+									<p class="slider_text text overflow-hidden">I love working at Minders. It&#39;s an incredibly dynamic and supportive creative community that fosters collaboration and innovation, leading to truly exceptional design work.</p>
+								</div>
+							</div>
+						</li>
+
+						<li
+							class="slider__item overflow-hidden relative select-none"
+							tabindex="0">
+							<div class="slider__content w-full h-full overflow-hidden">
+								<picture>
+									<source
+										srcset="img/second-teammate.webp"
+										type="image/webp" />
+
+									<img
+										class="slider__image w-full h-full object-cover pointer-events-none"
+										src="img/second-teammate.jpg"
+										loading="lazy"
+										alt="Photo of teammate" />
+								</picture>
+								<div class="slider_description absolute inset-0 w-full h-full overflow-hidden py-10 lg:py-14 px-8 flex flex-col justify-between gap-2.5 pointer-events-none">
+									<h3 class="slider_name title">
+										Alexander Mitchell,
+										<br />
+										<span class="title_opacity5">musician</span>
+									</h3>
+									<p class="slider_text text overflow-hidden">I love working at Minders. It&#39;s an incredibly dynamic and supportive creative community that fosters collaboration and innovation, leading to truly exceptional design work.</p>
+								</div>
+							</div>
+						</li>
+
+						<li
+							class="slider__item overflow-hidden relative select-none"
+							tabindex="0">
+							<div class="slider__content w-full h-full overflow-hidden">
+								<picture>
+									<source
+										srcset="img/third-teammate.webp"
+										type="image/webp" />
+
+									<img
+										class="slider__image w-full h-full object-cover pointer-events-none"
+										src="img/third-teammate.jpg"
+										loading="lazy"
+										alt="Photo of teammate" />
+								</picture>
+								<div class="slider_description absolute inset-0 w-full h-full overflow-hidden py-10 lg:py-14 px-8 flex flex-col justify-between gap-2.5 pointer-events-none">
+									<h3 class="slider_name title">
+										Cary Bennett,
+										<br />
+										<span class="title_opacity5">lead designer</span>
+									</h3>
+									<p class="slider_text text overflow-hidden">I love working at Minders. It&#39;s an incredibly dynamic and supportive creative community that fosters collaboration and innovation, leading to truly exceptional design work.</p>
+								</div>
+							</div>
+						</li>
+
+						<li
+							class="slider__item overflow-hidden relative select-none"
+							tabindex="0">
+							<div class="slider__content w-full h-full overflow-hidden">
+								<picture>
+									<source
+										srcset="img/fourth-teammate.webp"
+										type="image/webp" />
+
+									<img
+										class="slider__image w-full h-full object-cover pointer-events-none"
+										src="img/fourth-teammate.jpg"
+										loading="lazy"
+										alt="Photo of teammate" />
+								</picture>
+								<div class="slider_description absolute inset-0 w-full h-full overflow-hidden py-10 lg:py-14 px-8 flex flex-col justify-between gap-2.5 pointer-events-none">
+									<h3 class="slider_name title">
+										Olivia Rodriguez,
+										<br />
+										<span class="title_opacity5">AI artist</span>
+									</h3>
+									<p class="slider_text text overflow-hidden">I love working at Minders. It&#39;s an incredibly dynamic and supportive creative community that fosters collaboration and innovation, leading to truly exceptional design work.</p>
+								</div>
+							</div>
+						</li>
+
+						<li
+							class="slider__item overflow-hidden relative select-none"
+							tabindex="0">
+							<div class="slider__content w-full h-full overflow-hidden">
+								<picture>
+									<source
+										srcset="img/fifth-teammate.webp"
+										type="image/webp" />
+
+									<img
+										class="slider__image w-full h-full object-cover pointer-events-none"
+										src="img/fifth-teammate.jpg"
+										loading="lazy"
+										alt="Photo of teammate" />
+								</picture>
+								<div class="slider_description absolute inset-0 w-full h-full overflow-hidden py-10 lg:py-14 px-8 flex flex-col justify-between gap-2.5 pointer-events-none">
+									<h3 class="slider_name title">
+										Sophia Patel,
+										<br />
+										<span class="title_opacity5">art produser</span>
+									</h3>
+									<p class="slider_text text overflow-hidden">I love working at Minders. It&#39;s an incredibly dynamic and supportive creative community that fosters collaboration and innovation, leading to truly exceptional design work.</p>
+								</div>
+							</div>
+						</li>
+
+						<li
+							class="slider__item overflow-hidden relative select-none"
+							tabindex="0">
+							<div class="slider__content w-full h-full overflow-hidden">
+								<picture>
+									<source
+										srcset="img/sixth-teammate.webp"
+										type="image/webp" />
+
+									<img
+										class="slider__image w-full h-full object-cover pointer-events-none"
+										src="img/sixth-teammate.jpg"
+										loading="lazy"
+										alt="Photo of teammate" />
+								</picture>
+								<div class="slider_description absolute inset-0 w-full h-full overflow-hidden py-10 lg:py-14 px-8 flex flex-col justify-between gap-2.5 pointer-events-none">
+									<h3 class="slider_name title">
+										Ethan Reynolds,
+										<br />
+										<span class="title_opacity5">musician</span>
+									</h3>
+									<p class="slider_text text overflow-hidden">I love working at Minders. It&#39;s an incredibly dynamic and supportive creative community that fosters collaboration and innovation, leading to truly exceptional design work.</p>
+								</div>
+							</div>
+						</li>
+
+						<li
+							class="slider__item overflow-hidden relative select-none"
+							tabindex="0">
+							<div class="slider__content w-full h-full overflow-hidden">
+								<picture>
+									<source
+										srcset="img/seventh-teammate.webp"
+										type="image/webp" />
+
+									<img
+										class="slider__image w-full h-full object-cover pointer-events-none"
+										src="img/seventh-teammate.jpg"
+										loading="lazy"
+										alt="Photo of teammate" />
+								</picture>
+								<div class="slider_description absolute inset-0 w-full h-full overflow-hidden py-10 lg:py-14 px-8 flex flex-col justify-between gap-2.5 pointer-events-none">
+									<h3 class="slider_name title">
+										Liam Kanett,
+										<br />
+										<span class="title_opacity5">lead designer</span>
+									</h3>
+									<p class="slider_text text overflow-hidden">I love working at Minders. It&#39;s an incredibly dynamic and supportive creative community that fosters collaboration and innovation, leading to truly exceptional design work.</p>
+								</div>
+							</div>
+						</li>
+
+						<li
+							class="slider__item overflow-hidden relative select-none"
+							tabindex="0">
+							<div class="slider__content w-full h-full overflow-hidden">
+								<picture>
+									<source
+										srcset="img/last-teammate.webp"
+										type="image/webp" />
+
+									<img
+										class="slider__image w-full h-full object-cover pointer-events-none"
+										src="img/last-teammate.jpg"
+										loading="lazy"
+										alt="Photo of teammate" />
+								</picture>
+								<div class="slider_description absolute inset-0 w-full h-full overflow-hidden py-10 lg:py-14 px-8 flex flex-col justify-between gap-2.5 pointer-events-none">
+									<h3 class="slider_name title">
+										Elena Carter,
+										<br />
+										<span class="title_opacity5">AI artist</span>
+									</h3>
+									<p class="slider_text text overflow-hidden">I love working at Minders. It&#39;s an incredibly dynamic and supportive creative community that fosters collaboration and innovation, leading to truly exceptional design work.</p>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</section>
+
+			<section
+				id="events"
+				class="events">
+				<div class="md:container mx-auto px-4 lg:px-5">
+					<h2 class="events__title title mb-9 lg:mb-10 sm:text-center lg:text-left">
+						<span class="title_opacity">Keep up to date</span>
+						<br />
+						with our latest events
+					</h2>
+
+					<div class="events__list accordion mb-9 lg:mb-8 flex flex-col gap-2.5">
+						<div class="accordion-item">
+							<div class="accordion-item__trigger p-5 grid items-center lg:gap-x-8">
+								<input
+									aria-label="BrushBash"
+									class="accordion__checkbox"
+									type="checkbox" />
+								<h3 class="accordion-item__title">BrushBash</h3>
+								<div class="accordion-item__info flex gap-8 max-w-fit">
+									<p class="accordion-item__date relative">June 22</p>
+									<p class="accordion-item__place relative">Paris</p>
+								</div>
+								<button
+									tabindex="-1"
+									class="accordion-item__button inline-block relative"
+									aria-controls="brush-bash">
+									More
+								</button>
+								<div
+									class="accordion-item__content collapsible collapsible_collapsed"
+									id="brush-bash">
+									<p class="accordion-item__description mb-5">
+										Are you an art lover? Ready to explore the depths of creativity and philosophy? Then Art Morning is the perfect event for you! Join us at a secret rooftop lounge bar in New York City and mingle with like-minded people who share your passion for art. Enjoy a DJ set, discuss
+										philosophical questions about art and its creator, and discover the beauty of creativity! Sign up on the waiting list now and get ready for an unforgettable experience.
+									</p>
+									<a
+										class="accordion-item__link inline-block relative"
+										href="">
+										Sign up on the waiting list
+									</a>
+								</div>
+							</div>
+						</div>
+
+						<div class="accordion-item">
+							<div class="accordion-item__trigger p-5 grid items-center gap-y-5 lg:gap-x-8">
+								<input
+									aria-label="Art Morning"
+									class="accordion__checkbox"
+									type="checkbox" />
+								<h3 class="accordion-item__title">Art Morning</h3>
+								<div class="accordion-item__info flex gap-8 max-w-fit">
+									<p class="accordion-item__date relative">May 21</p>
+									<p class="accordion-item__place relative">Burgas</p>
+								</div>
+								<button
+									tabindex="-1"
+									class="accordion-item__button inline-block relative"
+									aria-controls="art-morning">
+									More
+								</button>
+								<div
+									class="accordion-item__content collapsible collapsible_collapsed"
+									id="art-morning">
+									<p class="accordion-item__description mb-5">
+										Are you an art lover? Ready to explore the depths of creativity and philosophy? Then Art Morning is the perfect event for you! Join us at a secret rooftop lounge bar in New York City and mingle with like-minded people who share your passion for art. Enjoy a DJ set, discuss
+										philosophical questions about art and its creator, and discover the beauty of creativity! Sign up on the waiting list now and get ready for an unforgettable experience.
+									</p>
+									<a
+										class="accordion-item__link inline-block relative"
+										href="">
+										Sign up on the waiting list
+									</a>
+								</div>
+							</div>
+						</div>
+
+						<div class="accordion-item">
+							<div class="accordion-item__trigger p-5 grid items-center gap-y-5 lg:gap-x-8">
+								<input
+									aria-label="Palette Party"
+									class="accordion__checkbox"
+									type="checkbox" />
+								<h3 class="accordion-item__title">Palette Party</h3>
+								<div class="accordion-item__info flex gap-8 max-w-fit">
+									<p class="accordion-item__date relative">July 2</p>
+									<p class="accordion-item__place relative">New York</p>
+								</div>
+								<button
+									tabindex="-1"
+									class="accordion-item__button inline-block relative"
+									aria-controls="palette-party">
+									More
+								</button>
+								<div
+									class="accordion-item__content collapsible collapsible_collapsed"
+									id="palette-party">
+									<p class="accordion-item__description mb-5">
+										Are you an art lover? Ready to explore the depths of creativity and philosophy? Then Art Morning is the perfect event for you! Join us at a secret rooftop lounge bar in New York City and mingle with like-minded people who share your passion for art. Enjoy a DJ set, discuss
+										philosophical questions about art and its creator, and discover the beauty of creativity! Sign up on the waiting list now and get ready for an unforgettable experience.
+									</p>
+									<a
+										class="accordion-item__link inline-block relative"
+										href="">
+										Sign up on the waiting list
+									</a>
+								</div>
+							</div>
+						</div>
+
+						<div class="accordion-item">
+							<div class="accordion-item__trigger p-5 grid items-center gap-y-5 lg:gap-x-8">
+								<input
+									aria-label="Vibe & Vibrant"
+									class="accordion__checkbox"
+									type="checkbox" />
+								<h3 class="accordion-item__title">Vibe & Vibrant</h3>
+								<div class="accordion-item__info flex gap-8 max-w-fit">
+									<p class="accordion-item__date relative">August 8</p>
+									<p class="accordion-item__place relative">Tokio</p>
+								</div>
+								<button
+									tabindex="-1"
+									class="accordion-item__button inline-block relative"
+									aria-controls="vibe-vibrant">
+									More
+								</button>
+								<div
+									class="accordion-item__content collapsible collapsible_collapsed"
+									id="vibe-vibrant">
+									<p class="accordion-item__description mb-5">
+										Are you an art lover? Ready to explore the depths of creativity and philosophy? Then Art Morning is the perfect event for you! Join us at a secret rooftop lounge bar in New York City and mingle with like-minded people who share your passion for art. Enjoy a DJ set, discuss
+										philosophical questions about art and its creator, and discover the beauty of creativity! Sign up on the waiting list now and get ready for an unforgettable experience.
+									</p>
+									<a
+										class="accordion-item__link inline-block relative"
+										href="">
+										Sign up on the waiting list
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<a
+						class="events__link button button_purple block w-full text-center sm:sm:w-fit sm:mx-auto lg:m-0"
+						href="">
+						<span class="button__text inline-block">View&nbsp;calendar</span>
+					</a>
+				</div>
+			</section>
+
+			@@include('html/sections/application.html')
+		</main>
+
+		@@include('html/footer.html')
+
+		<div class="bottom">
+			<div class="md:container mx-auto py-6 px-4 lg:px-5 text-center">
+				<p class="mx-auto">Landing page example. Created using the BEM methodology. I used the tailwind library to add a basic style. The project was built with Gulp.js.</p>
+				<a
+					class="text-black"
+					href="https://yllaciarbegla.github.io/portfolio/">
+					Back to portfolio
+				</a>
+			</div>
+		</div>
+	</body>
+</html>

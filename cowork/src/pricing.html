@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+	@@include('html/head.html', { 'title': 'Pricing | Cowork - Coworking Space Company', 'styles': '<link rel="stylesheet" href="css/pricing.min.css" />', 'scripts': '' })
+<body class="page">
+	<div class="page__container">
+		@@include('html/components/header.html')
+
+		<main class="page__content">
+
+			<section class="hero">
+				<div class="hero__wrapper">
+					<h1 class="h1 hero__title">Member<br class="hero__title-wrap">ship<br>Pricing</h1>
+					<p class="hero__description text">Invest in spaces that drives your business. Clear, straightforward and tailored to your needs.</p>
+
+					<div class="hero__cards">
+						<div class="hero__plan hero__plan_yellow plan">
+							<div class="plan__group">
+								<h3 class="plan__name h3">
+									Hot Desk
+								</h3>
+								<p class="plan__description text">For the ultimate in flexibility, go with a hot desk.</p>
+							</div>
+
+							<div class="plan__group">
+								<span class="plan__price">$29<span class="plan__price-word">/month</span></span>
+								<span class="plan__reminder text_sm">Pause or cancel anytime</span>
+							</div>
+
+							<div class="plan__group">
+								<ul class="plan__benefits">
+									<li class="text">Access to any available hot desk</li>
+									<li class="text">Fast Wi-Fi and utilities included</li>
+									<li class="text">24/7 entry with keycard access</li>
+									<li class="text">Use of common areas and amenities</li>
+								</ul>
+							</div>
+
+							<div class="plan__bonus plan-bonus">
+								<span class="plan-bonus__title subtitle">Bonus</span>
+								<div class="plan-bonus__wrapper">
+									<span class="plan-bonus__tag text_sm">Coffee</span>
+									<span class="plan-bonus__tag text_sm">Tea</span>
+									<span class="plan-bonus__tag text_sm">Water</span>
+								</div>
+							</div>
+
+							@@include('html/components/button.html', {
+								'classes': 'plan__button btn btn_regular btn_blue',
+								'text': 'Subscribe Now'
+							})
+						</div>
+
+						<div class="hero__plan hero__plan_white plan ">
+							<div class="plan__group">
+								<h3 class="plan__name h3">
+									Dedicated Desk
+								</h3>
+								<span class="plan__badge subtitle">Popular</span>
+								<p class="plan__description text">Claim your own dedicated workspace with this plan.</p>
+							</div>
+
+							<div class="plan__group">
+								<span class="plan__price">$199<span class="plan__price-word">/month</span></span>
+								<span class="plan__reminder text_sm">Pause or cancel anytime</span>
+							</div>
+
+							<div class="plan__group">
+								<ul class="plan__benefits">
+									<li class="text">Your own reserved desk</li>
+									<li class="text">Lockable file cabinet</li>
+									<li class="text">2 Day Office credits per month</li>
+									<li class="text">All Hot Desk plan benefits and freebies</li>
+								</ul>
+							</div>
+
+							<div class="plan__bonus plan-bonus">
+								<span class="plan-bonus__title subtitle">Bonus</span>
+								<div class="plan-bonus__wrapper">
+									<span class="plan-bonus__tag text_sm">Printing</span>
+									<span class="plan-bonus__tag text_sm">Copying</span>
+									<span class="plan-bonus__tag text_sm">Weekly Cleaning</span>
+								</div>
+							</div>
+
+							@@include('html/components/button.html', {
+								'classes': 'plan__button btn btn_regular btn_blue',
+								'text': 'Subscribe Now'
+							})
+						</div>
+
+						<div class="hero__plan hero__plan_yellow plan">
+							<div class="plan__group">
+								<h3 class="plan__name h3">
+									Private Office
+								</h3>
+								<p class="plan__description text">Professional private offices for maximum privacy and quiet.</p>
+							</div>
+
+							<div class="plan__group">
+								<span class="plan__price-start text">Starting at</span>
+								<span class="plan__price">$499<span class="plan__price-word">/month</span></span>
+								<span class="plan__reminder text_sm">Pause or cancel anytime</span>
+							</div>
+
+							<div class="plan__group">
+								<ul class="plan__benefits">
+									<li class="text">Private furnished office with standing desk</li>
+									<li class="text">24/7 access</li>
+									<li class="text">4 Day Office credits per month</li>
+									<li class="text">Mail and package service</li>
+									<li class="text">All Dedicated Desk plan benefits and freebies</li>
+								</ul>
+							</div>
+
+							<div class="plan__bonus plan-bonus">
+								<span class="plan-bonus__title subtitle">Bonus</span>
+								<div class="plan-bonus__wrapper">
+									<span class="plan-bonus__tag text_sm">Monthly Parking Pass</span>
+								</div>
+							</div>
+
+							@@include('html/components/button.html', {
+								'classes': 'plan__button btn btn_regular btn_blue',
+								'text': 'Subscribe Now'
+							})
+						</div>
+					</div>
+					<p class="hero__require text">All plans require a 12-month agreement. Prices are per person.</p>
+				</div>
+			</section>
+
+			<section class="services">
+				<h2 class="services__title h2">
+					Add-ons
+					<span class="services__title-image"></span>
+					Services
+				</h2>
+
+				<div class="secvices__cards">
+					@@include('html/components/adds-on-card.html', {
+						'title': 'Day Office',
+						'description': 'Rent a private office for just the day',
+						'price': '$25',
+						'time': 'maximum 15 days/month',
+						'require': 'Require minimum Hot Desk subscription',
+					})
+					@@include('html/components/adds-on-card.html', {
+						'title': 'Conference Room',
+						'description': 'Book rooms for meetings or presentations',
+						'price': '$35/hr',
+						'time': '24-hour cancellation required',
+						'require': 'Require minimum Hot Desk subscription',
+					})
+					@@include('html/components/adds-on-card.html', {
+						'title': 'Dedicated Desk Assistant',
+						'description': 'Get support from a dedicated assistant',
+						'price': '$99/mo',
+						'time': 'Pause or cancel anytime',
+						'require': 'Require minimum Dedicated Desk subscription',
+					})
+				</div>
+			</section>
+
+		</main>
+
+		@@include('html/components/footer.html')
+	</div>
+</body>
+</html>

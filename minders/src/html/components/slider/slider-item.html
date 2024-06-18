@@ -1,0 +1,25 @@
+<li
+	class="slider__item overflow-hidden relative select-none"
+	tabindex="0">
+	<div class="slider__content w-full h-full overflow-hidden">
+		<picture>
+			<source
+			srcset="@@img-webp"
+			type="image/webp" />
+
+			<img
+				class="slider__image w-full h-full object-cover pointer-events-none"
+				src="@@img"
+				loading="lazy"
+				alt="Photo of teammate" />
+		</picture>
+		<div class="slider_description absolute inset-0 w-full h-full overflow-hidden py-10 lg:py-14 px-8 flex flex-col justify-between gap-2.5 pointer-events-none">
+			<h3 class="slider_name title">
+				@@name,
+				<br />
+				<span class="title_opacity5">@@position</span>
+			</h3>
+			<p class="slider_text text overflow-hidden">@@about</p>
+		</div>
+	</div>
+</li>

@@ -1,0 +1,456 @@
+@import 'reset';
+@import 'fonts';
+
+:root {
+	--neutral-black: rgba(6, 5, 15, 1);
+	--neutral-black-op4: rgba(6, 5, 15, 0.6);
+	--neutral-black-op3: rgba(6, 5, 15, 0.3);
+	--simple-white: rgba(255, 255, 255, 1);
+	--simple-white-op5: rgba(255, 255, 255, 0.5);
+	--simple-white-op3: rgba(255, 255, 255, 0.3);
+	--yellow: rgba(232, 254, 116, 1);
+	--purple: rgba(205, 165, 213, 1);
+
+	--gradient: linear-gradient(304deg, #cda5d5 0%, #fbe4ff 47.4%, #e8fe74 100%);
+
+	--conveyor-index: 0.125rem;
+
+	@media screen and (min-width: 1024px) {
+		--conveyor-index: 0.375rem;
+	}
+}
+
+@mixin gradientBackAnimation {
+	background-image: var(--gradient);
+	background-size: 300% 300%;
+	animation: animatedgradient 3s infinite linear;
+}
+
+@mixin text-gradient-animation {
+	background-clip: text;
+	-webkit-text-fill-color: transparent;
+	@include gradientBackAnimation;
+}
+
+@mixin underlineAnimation {
+	text-decoration: none;
+	background-image: linear-gradient(currentColor, currentColor);
+	background-position: 0% 100%;
+	background-repeat: no-repeat;
+	background-size: 0% 1px;
+	transition: background-size 0.4s;
+
+	&:focus-visible {
+		background-size: 100% 1px;
+	}
+
+	@media (hover: hover) {
+		&:hover {
+			background-size: 100% 1px;
+		}
+	}
+
+	@media (hover: none) {
+		&:active {
+			background-size: 100% 1px;
+		}
+	}
+}
+
+html._lock {
+	overflow: hidden;
+}
+
+html {
+	scrollbar-color: var(--purple) var(--neutral-black);
+	scrollbar-width: thin;
+}
+
+.page {
+	background-color: var(--neutral-black);
+	font-family: 'Schibsted Grotesk', sans-serif;
+}
+
+.title {
+	color: var(--simple-white);
+	font-size: 2.5rem;
+	font-weight: 400;
+	line-height: 1.25;
+
+	@media screen and (min-width: 1440px) {
+		font-size: 3.125rem;
+	}
+
+	&_black {
+		color: var(--neutral-black);
+	}
+
+	&_opacity {
+		color: var(--simple-white-op5);
+	}
+
+	&_opacity5 {
+		color: var(--simple-white-op5);
+	}
+
+	&_opacity-black-4 {
+		color: var(--neutral-black-op4);
+	}
+}
+
+.text {
+	color: var(--simple-white);
+	font-weight: 500;
+	line-height: 1.625;
+}
+
+.button {
+	padding: 1.2813rem 3.75rem;
+	border-radius: 1.25rem;
+	border: 2px solid transparent;
+	transition: all 0.4s;
+
+	font-weight: 500;
+	font-size: 1rem;
+	line-height: 1.625;
+
+	&__text {
+		pointer-events: none;
+		position: relative;
+		margin-inline-start: 2.1875rem;
+
+		&::before {
+			content: url(../img/icons/corner-down-right.svg);
+			position: absolute;
+			width: 1.5625rem;
+			height: 1.5625rem;
+			left: -2.1875rem;
+			top: 0;
+		}
+	}
+
+	&_purple {
+		background-color: var(--purple);
+	}
+	&_yellow,
+	&_yellow[type='submit'] {
+		background-color: var(--yellow);
+	}
+
+	&:focus-visible {
+		background: linear-gradient(var(--neutral-black), var(--neutral-black)) padding-box, var(--gradient) border-box;
+		background-size: 200% 200%;
+		animation: animatedgradient 3s infinite linear;
+
+		.button__text {
+			background-clip: text;
+			-webkit-text-fill-color: transparent;
+			@include gradientBackAnimation;
+
+			&::before {
+				content: url(../img/icons/corner-down-right_color.svg);
+			}
+		}
+	}
+
+	@media (hover: hover) {
+		&:hover {
+			background: linear-gradient(var(--neutral-black), var(--neutral-black)) padding-box, var(--gradient) border-box;
+			background-size: 200% 200%;
+			animation: animatedgradient 3s infinite linear;
+
+			.button__text {
+				background-clip: text;
+				-webkit-text-fill-color: transparent;
+				@include gradientBackAnimation;
+
+				&::before {
+					content: url(../img/icons/corner-down-right_color.svg);
+				}
+			}
+		}
+	}
+
+	@media (hover: none) {
+		&:active {
+			background: linear-gradient(var(--neutral-black), var(--neutral-black)) padding-box, var(--gradient) border-box;
+
+			.button__text {
+				background-clip: text;
+				-webkit-text-fill-color: transparent;
+				background-image: var(--gradient);
+
+				&::before {
+					content: url(../img/icons/corner-down-right_color.svg);
+				}
+			}
+		}
+	}
+}
+
+/* drag cursor */
+
+.drag-cursor {
+	z-index: 10;
+	position: fixed;
+	left: 0;
+	top: 0;
+	opacity: 1;
+	visibility: visible;
+	transform: translate(-50%, -75%);
+
+	border-radius: 12.5rem;
+	width: 11.25rem;
+	height: 11.25rem;
+	pointer-events: none;
+	user-select: none;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	transition: opacity 0.4s, transform 0.4s, visibility 0.4s;
+	background: var(--simple-white);
+
+	@media (hover: none) {
+		opacity: 0;
+		visibility: hidden;
+	}
+
+	&_active {
+		transform: scale(0.95) translate(-53%, -80%);
+	}
+
+	&_hidden {
+		opacity: 0;
+		visibility: hidden;
+	}
+
+	&__text {
+		position: relative;
+		display: inline-block;
+
+		color: var(--neutral-black);
+		font-weight: 500;
+		line-height: 1.625;
+
+		&::before,
+		&::after {
+			content: url(../img/icons/angle.svg);
+			position: absolute;
+		}
+		&::before {
+			left: calc(-20px - 9px);
+			top: 2px;
+		}
+		&::after {
+			right: -29px;
+			bottom: 3px;
+			transform: rotate(180deg);
+		}
+	}
+}
+
+/* toTop Button */
+
+.to-top {
+	box-sizing: content-box;
+	width: 1.25rem;
+	height: 1.25rem;
+	position: fixed;
+	bottom: 17px;
+	right: 17px;
+	z-index: 2;
+	background-color: var(--neutral-black-op4);
+	border-radius: 50%;
+	border: 2px solid;
+	padding: 15px;
+	transition: all 0.4s;
+	color: var(--simple-white);
+
+	&::after {
+		content: '';
+		position: absolute;
+		width: 2px;
+		height: 18px;
+		left: calc(50% - 1px);
+		top: calc(50% - 9px);
+		background-color: var(--simple-white);
+		transition: all 0.4s;
+	}
+
+	&::before {
+		content: '';
+		position: absolute;
+		width: 14px;
+		height: 14px;
+		left: calc(36%);
+		top: calc(50% - 9px);
+		border-top: 2px solid;
+		border-left: 2px solid;
+		transform: rotate(45deg);
+		color: var(--simple-white);
+		transition: all 0.4s;
+	}
+
+	&:focus-visible {
+		color: var(--neutral-black);
+		@include gradientBackAnimation;
+
+		&::before {
+			color: var(--neutral-black);
+		}
+		&::after {
+			background-color: var(--neutral-black);
+		}
+	}
+
+	@media (hover: hover) {
+		&:hover {
+			color: var(--neutral-black);
+			@include gradientBackAnimation;
+
+			&::before {
+				color: var(--neutral-black);
+			}
+			&::after {
+				background-color: var(--neutral-black);
+			}
+		}
+	}
+
+	@media (hover: none) {
+		&:active {
+			color: var(--neutral-black);
+			background-image: var(--gradient);
+
+			&::before {
+				color: var(--neutral-black);
+			}
+			&::after {
+				background-color: var(--neutral-black);
+			}
+		}
+	}
+
+	&:active {
+		color: var(--neutral-black);
+		background-image: var(--gradient);
+
+		&::before {
+			color: var(--neutral-black);
+		}
+		&::after {
+			background-color: var(--neutral-black);
+		}
+	}
+
+	&.hidden {
+		display: none;
+	}
+}
+
+@keyframes animatedgradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+// Offset
+
+.page__content,
+.footer {
+	background-color: var(--neutral-black);
+}
+
+.offset {
+	z-index: -10;
+	position: relative;
+}
+
+.bottom {
+	z-index: -5;
+	position: fixed;
+	width: 100%;
+	bottom: 0;
+	@include gradientBackAnimation;
+
+	font-size: 20px;
+	font-weight: 500;
+	line-height: 1.25;
+	color: var(--neutral-black);
+
+	p {
+		margin-block-end: 1rem;
+		@media screen and (min-width: 1024px) {
+			max-width: 70%;
+		}
+		@media screen and (min-width: 1440px) {
+			max-width: 60%;
+		}
+	}
+
+	a {
+		position: relative;
+		display: inline-block;
+		padding: 1rem 2rem 1rem calc(2rem + 32px);
+		border-radius: 1.25rem;
+		border: 2px solid var(--neutral-black);
+		transition: all 0.4s;
+
+		&::before {
+			position: absolute;
+			content: url(../img/icons/corner-down-right.svg);
+			left: 2rem;
+			top: 50%;
+			transform: translateY(-50%);
+		}
+
+		&:focus-visible {
+			background-color: var(--neutral-black);
+			color: var(--purple);
+
+			&::before {
+				content: url(../img/icons/corner-down-right_purple.svg);
+			}
+		}
+
+		@media (hover: hover) {
+			&:hover {
+				background-color: var(--neutral-black);
+				color: var(--purple);
+
+				&::before {
+					content: url(../img/icons/corner-down-right_purple.svg);
+				}
+			}
+		}
+
+		@media (hover: none) {
+			&:active {
+				background-color: var(--neutral-black);
+				color: var(--purple);
+
+				&::before {
+					content: url(../img/icons/corner-down-right_purple.svg);
+				}
+			}
+		}
+	}
+}
+
+// Sections
+
+@import './sections/hero';
+@import './sections/about';
+@import './sections/team';
+@import './components/slider';
+@import './sections/events';
+@import './sections/application';
+@import './footer';

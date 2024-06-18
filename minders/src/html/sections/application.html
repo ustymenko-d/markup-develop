@@ -1,0 +1,88 @@
+<section
+	id="application"
+	class="application">
+	<div class="md:container mx-auto px-4 lg:px-5">
+		<div class="application__wrapper lg:p-20 lg:flex lg:items-center lg:gap-x-20">
+			<div class="application__text-content">
+				<h2 class="application__title title">
+					<span class="title_opacity-black-4">Join our community</span>
+					<br />
+					of talented artists
+				</h2>
+				<p class="application__text text">Are you an artist looking to showcase your work and connect with other creatives? Fill out our application form and join our community of talented artists. We can't wait to see what you have to offer.</p>
+			</div>
+
+			<form class="application__form form">
+				<div class="form__input-wrapper relative">
+					<input
+						class="form__input block w-full px-5 pt-8 pb-2.5 outline-0"
+						id="full-name"
+						maxlength="50"
+						required
+						type="text" />
+					<label
+						class="form__label title_opacity-black-4 absolute pointer-events-none select-none"
+						for="full-name">
+						Full-name
+					</label>
+				</div>
+
+				<div class="form__input-wrapper relative">
+					<input
+						class="form__input block w-full px-5 pt-8 pb-2.5 outline-0"
+						id="occupation"
+						type="text" />
+					<label
+						class="form__label title_opacity-black-4 absolute pointer-events-none select-none"
+						for="occupation">
+						Occupation
+					</label>
+				</div>
+
+				<div class="form__input-wrapper relative form__input-wrapper-tel">
+					<input
+						class="form__input block w-full px-5 pt-8 pb-2.5 outline-0"
+						id="phone"
+						required
+						pattern="[0-9]{10}"
+						type="tel" />
+					<label
+						class="form__label title_opacity-black-4 absolute pointer-events-none select-none"
+						for="phone">
+						Phone
+					</label>
+				</div>
+
+				<div class="form__input-wrapper relative form__input-wrapper-mail">
+					<input
+						class="form__input block w-full px-5 pt-8 pb-2.5 outline-0"
+						id="email"
+						required
+						type="email" />
+					<label
+						class="form__label title_opacity-black-4 absolute pointer-events-none select-none"
+						for="email">
+						E-mail
+					</label>
+				</div>
+
+				<button
+					class="button button_yellow form__button w-full text-center outline-0"
+					type="submit">
+					<span class="button__text inline-block">Apply</span>
+				</button>
+
+				<p class="title_opacity-black-4">
+					By clicking the button, you agree to our
+					<a
+						class="application__terms-link"
+						href="#"
+						target="_blank">
+						terms and conditions
+					</a>
+					.
+				</p>
+			</form>
+		</div>
+	</div>
+</section>

@@ -1,0 +1,28 @@
+.feature-card {
+	border: 1px solid var(--black);
+	border-radius: 1.5rem;
+	padding: 1.5rem;
+	width: min(100%, 458.67px);
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 1rem;
+
+	text-align: center;
+
+	@media screen and (min-width: 768px) {
+		border-radius: 2rem;
+		padding: 2rem;
+		gap: 28.8px;
+	}
+
+	&__iamge {
+	}
+
+	&__title {
+	}
+
+	&__text {
+	}
+}

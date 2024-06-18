@@ -1,0 +1,136 @@
+.btn {
+	line-height: 1.5;
+	border-radius: 100px;
+	font-family: var(--first-family);
+	text-align: center;
+
+	transition: padding 0.3s, background-color 0.3s, background-color 0.3s;
+
+	&_regular {
+		font-weight: 600;
+		font-size: 1rem;
+
+		&.btn_red,
+		&.btn_blue {
+			padding: 9.5px 21.5px;
+		}
+		&.btn_red {
+			border: 2.5px solid var(--red);
+		}
+		&.btn_blue {
+			border: 2.5px solid var(--blue);
+		}
+		&.btn_white {
+			padding: 11px 23px;
+		}
+	}
+
+	&_big {
+		font-weight: 700;
+		font-size: 1.25rem;
+
+		&.btn_red,
+		&.btn_blue {
+			padding: 27px 43px;
+		}
+		&.btn_red {
+			border: 5px solid var(--red);
+		}
+		&.btn_blue {
+			border: 5px solid var(--blue);
+		}
+		&.btn_white {
+			padding: 31px 47px;
+		}
+	}
+
+	&_red {
+		color: var(--white);
+		background-color: var(--red);
+
+		&:active {
+			border-style: solid;
+		}
+
+		&:focus-visible {
+			background-color: var(--yellow);
+			color: var(--red);
+			border-style: dashed;
+		}
+
+		@media (hover: hover) {
+			&:hover {
+				background-color: var(--yellow);
+				color: var(--red);
+				border-style: dashed;
+			}
+		}
+
+		@media (hover: none) {
+			&:active {
+				background-color: var(--yellow);
+				color: var(--red);
+				border-style: dashed;
+			}
+		}
+	}
+
+	&_blue {
+		color: var(--white);
+		background-color: var(--blue);
+
+		&:active {
+			border-style: solid;
+		}
+
+		&:focus-visible {
+			background-color: var(--yellow);
+			color: var(--blue);
+			border-style: dashed;
+		}
+
+		@media (hover: hover) {
+			&:hover {
+				background-color: var(--yellow);
+				color: var(--blue);
+				border-style: dashed;
+			}
+		}
+
+		@media (hover: none) {
+			&:active {
+				background-color: var(--yellow);
+				color: var(--blue);
+				border-style: dashed;
+			}
+		}
+	}
+
+	&_white {
+		color: var(--black);
+		border: 1px solid var(--black);
+		background-color: var(--white);
+
+		&:focus-visible {
+			border-color: var(--white);
+			background-color: var(--black);
+			color: var(--white);
+		}
+
+		@media (hover: hover) {
+			&:hover {
+				border-color: var(--white);
+				background-color: var(--black);
+				color: var(--white);
+			}
+		}
+
+		@media (hover: none) {
+			&:active {
+				border-color: var(--white);
+				background-color: var(--black);
+				color: var(--white);
+			}
+		}
+	}
+}

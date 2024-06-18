@@ -1,0 +1,18 @@
+.events {
+	padding-block: 2.5rem 3.75rem;
+
+	@media screen and (min-width: 1024px) {
+		padding-block: 5.625rem 6.25rem;
+	}
+
+	&__title {
+	}
+
+	&__list {
+	}
+
+	&__link {
+	}
+}
+
+@import './components/acordion-item';

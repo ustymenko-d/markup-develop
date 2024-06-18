@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			http-equiv="X-UA-Compatible"
+			content="IE=edge" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0" />
+		<title>ARK House - Our history</title>
+
+		<noscript>
+			<meta
+				http-equiv="refresh"
+				content="0; url=history-no-js.html" />
+		</noscript>
+
+		<meta
+			name="author"
+			content="yllaciarbegla@gmail.com" />
+		<meta
+			name="description"
+			content="This is an example of a multi-page website. All interaction functions are implemented with JS without using libraries. Created using the BEM methodology. The project was built with Gulp.js." />
+
+		<link
+			rel="icon"
+			href="img/icons/favicon.svg"
+			type="image/x-icon" />
+		<link
+			rel="stylesheet"
+			href="css/style.min.css" />
+		<link
+			rel="stylesheet"
+			href="css/pages/history/history.min.css" />
+		<script
+			src="js/index.min.js"
+			defer></script>
+	</head>
+	<body class="page">
+		@@include('html/components/header.html')
+
+		<main class="page__content page__container">
+			<nav
+				aria-label="Breadcrumb"
+				class="breadcrumb page__wrapper">
+				<ol class="breadcrumb__list">
+					@@include('html/components/breadcrumbs/breadcrumbs__item.html', { 'name': 'Home', 'src': 'index.html' }) @@include('html/components/breadcrumbs/breadcrumbs__item_current.html', { 'name': 'Our History', 'src': '#our-history', 'aria-curent': 'aria-current="page"' })
+				</ol>
+			</nav>
+			<section class="about page__wrapper">
+				<h2 class="about__title title">Who we are</h2>
+				<picture>
+					<source
+						srcset="img/history-page/meet@mob.webp"
+						media="(max-width: 1440px)"
+						type="image/webp" />
+					<source
+						srcset="img/history-page/meet@mob.jpg"
+						media="(max-width: 1440px)" />
+					<source
+						srcset="img/history-page/meet@X1.webp 1x, img/history-page/meet@X2.webp 2x"
+						type="image/webp" />
+					<img
+						class="about__image"
+						src="img/history-page/meet.jpg"
+						srcset="img/history-page/meet@X2.jpg 2x"
+						alt="" />
+				</picture>
+				<div class="about__text">
+					<p class="text">We are dedicated individuals from a range of different countries. Based in Oslo, with offices in Copenhagen, London and Reykjavik, we are actively involved in projects in various countries across Europe, Africa, the Middle East and Asia.</p>
+					<p class="text">Together, we are a community with a culture for beautiful and outstanding architecture, a culture that is Powered by Commitment.</p>
+					<p class="about__question title">Do you want to work with us?</p>
+					<a
+						class="about__button button"
+						href="contact.html"
+						target="_blank">
+						Our&nbsp;Vacancies
+					</a>
+				</div>
+			</section>
+			<section
+				id="our-history"
+				class="history page__wrapper">
+				<h2 class="history__title title">Our history</h2>
+				<picture>
+					<source
+						srcset="img/history-page/builders.webp"
+						type="image/webp" />
+					<img
+						class="history__image"
+						src="img/history-page/builders.jpg"
+						alt="" />
+				</picture>
+				<p class="history__text text">
+					For over four decades, ARK House, founded by renowned architect John Smith in 1975, has been a leader in the industry known for its innovative designs and commitment to client satisfaction. The agency's early work, including the Smith Tower in Seattle, established Smith's reputation as a
+					leading architect. Over the years, ARK House has completed numerous high-profile projects, including the iconic Guggenheim Museum in Bilbao, Spain. The agency's success is due to its commitment to sustainability and community engagement, as well as its adaptation to new trends and
+					technologies. Today, ARK House continues to push boundaries in architecture while setting new standards for innovation and excellence.
+				</p>
+			</section>
+		</main>
+
+		@@include('html/components/footer.html') @@include('html/components/modal.html')
+	</body>
+</html>
