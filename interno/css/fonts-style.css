@@ -1,0 +1,39 @@
+@font-face {
+	font-family: 'icons';
+	src: url('fonts/icons.eot?ppvd6b');
+	src: url('fonts/icons.eot?ppvd6b#iefix') format('embedded-opentype'),
+		url('fonts/icons.ttf?ppvd6b') format('truetype'),
+		url('fonts/icons.woff?ppvd6b') format('woff'),
+		url('fonts/icons.svg?ppvd6b#icons') format('svg');
+	font-weight: normal;
+	font-style: normal;
+	font-display: block;
+}
+
+[class^="icon-"],
+[class*=" icon-"] {
+	font-family: 'icons' !important;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.icon-face:before {
+	content: "\e900";
+}
+
+.icon-twit:before {
+	content: "\e901";
+}
+
+.icon-linked:before {
+	content: "\e902";
+}
+
+.icon-int:before {
+	content: "\e903";
+}
