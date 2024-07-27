@@ -1,14 +1,14 @@
 .footer {
 	padding-block-end: 3.125rem;
 
-	@media screen and (min-width: 1024px) {
-		padding-block-end: 4.375rem;
-	}
-
 	font-size: 0.875rem;
 	line-height: 1.5;
 
 	--border: 1px solid rgba(255, 255, 255, 0.15);
+	
+	@media screen and (min-width: 1024px) {
+		padding-block-end: 4.375rem;
+	}
 
 	&__links {
 		color: var(--simple-white);
