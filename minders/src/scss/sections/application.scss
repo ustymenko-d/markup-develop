@@ -124,6 +124,10 @@
 			@media screen and (min-width: 450px) {
 				margin-block-end: 1.875rem;
 			}
+
+			@media screen and (min-width: 1024px) and (max-width: 1279px) {
+				margin-block-end: 2.8125rem;
+			}
 		}
 
 		&_invalid.form__input-wrapper {
