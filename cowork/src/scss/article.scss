@@ -56,7 +56,11 @@
 	}
 
 	&__title-break {
-		@media screen and (min-width: 500px) {
+		@media screen and (min-width: 500px) and (max-width: 767px) {
+			display: none;
+		}
+
+		@media screen and (min-width: 1024px) {
 			display: none;
 		}
 	}

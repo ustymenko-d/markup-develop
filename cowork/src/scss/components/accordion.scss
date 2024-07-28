@@ -5,7 +5,7 @@
 	max-height: 100rem;
 	overflow: hidden;
 	clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
-	transition: clip-path 0.5s, max-height 0.5s, visibility 0.5s;
+	transition: clip-path 0.8s, max-height 0.8s, visibility 0.8s;
 
 	&_collapsed {
 		visibility: hidden;
