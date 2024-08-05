@@ -55,16 +55,6 @@
 		padding-block-end: 1rem;
 	}
 
-	&__title-break {
-		@media screen and (min-width: 500px) and (max-width: 767px) {
-			display: none;
-		}
-
-		@media screen and (min-width: 1024px) {
-			display: none;
-		}
-	}
-
 	&__body {
 		display: grid;
 		gap: 2rem;
