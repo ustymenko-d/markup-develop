@@ -38,15 +38,15 @@
 
 	&__link {
 		&_inst {
-			background-image: url(../img/icons/instagram.svg);
+			background: url(../img/icons/instagram.svg) no-repeat center;
 		}
 
 		&_twitter {
-			background-image: url(../img/icons/twitter.svg);
+			background: url(../img/icons/twitter.svg) no-repeat center;
 		}
 
 		&_linkedin {
-			background-image: url(../img/icons/linkedin.svg);
+			background: url(../img/icons/linkedin.svg) no-repeat center;
 		}
 	}
 }

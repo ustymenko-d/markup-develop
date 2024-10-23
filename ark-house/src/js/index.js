@@ -5,6 +5,7 @@ import './modules/to-top-btn.js';
 import './modules/modal.js';
 import './modules/gallery-modal.js';
 import './modules/animation.js';
+import './modules/lenis.js';
 import * as webpSupp from './modules/webp.js';
 
 webpSupp.isWebp();

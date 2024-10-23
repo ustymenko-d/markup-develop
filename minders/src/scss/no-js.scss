@@ -19,6 +19,10 @@
 		}
 	}
 
+	.tags__gap_small {
+		gap: 0.6rem;
+	}
+
 	.team__grid {
 		@media screen and (min-width: 640px) {
 			grid-template-columns: repeat(2, 1fr);
@@ -41,6 +45,12 @@
 
 			@media screen and (min-width: 1024px) {
 				grid-template-rows: repeat(2, auto);
+			}
+
+			&:has(.accordion__checkbox:checked) {
+				.accordion-item__button::after {
+					transform: rotateX(180deg);
+				}
 			}
 		}
 		&-item__content {

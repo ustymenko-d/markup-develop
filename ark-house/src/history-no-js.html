@@ -22,11 +22,8 @@
     <main class="page__content page__container">
       <nav aria-label="Breadcrumb" class="breadcrumb page__wrapper">
         <ol class="breadcrumb__list">
-          @@include('html/components/breadcrumbs/breadcrumbs__item.html', {
-          'name': 'Home', 'src': 'index.html' })
-          @@include('html/components/breadcrumbs/breadcrumbs__item_current.html',
-          { 'name': 'Our History', 'src': '#our-history', 'aria-curent':
-          'aria-current="page"' })
+          @@include('html/components/breadcrumbs/breadcrumbs__item.html', { 'name': 'Home', 'src': 'index.html' })
+          @@include('html/components/breadcrumbs/breadcrumbs__item_current.html', { 'name': 'Our History', 'src': '#our-history', 'aria-curent': 'aria-current="page"' })
         </ol>
       </nav>
       <section class="about page__wrapper">
