@@ -18,7 +18,36 @@
   </head>
 
   <body class="page">
-    @@include('html/components/header.html')
+    <header class="header">
+      <div class="header__wrapper page__container page__wrapper">
+        <div class="header__logo">
+          <a aria-label="Home page" href="index.html">
+            @@include('./html/components/small/logo.html')
+          </a>
+        </div>
+        <div class="header__navigation">
+          <nav class="navigation">
+            <button
+              class="navigation__toggler nav-toggler"
+              aria-expanded="false"
+              aria-controls="header__navigation-list"
+              aria-label="Open/close page navigation">
+              <span class="nav-toggler__text"></span>
+            </button>
+            <ul
+              id="header__navigation-list"
+              aria-hidden="false"
+              class="navigation__links-list">
+              @@include('./html/components/navigation/nav__item.html', { 'href': 'no-js.html/#about', 'title': 'About', 'number': '1' })
+              @@include('./html/components/navigation/nav__item.html', { 'href': 'no-js.html/#services', 'title': 'Services', 'number': '2' })
+              @@include('./html/components/navigation/nav__item.html', { 'href': 'no-js.html/#projects', 'title': 'Projects', 'number': '3'})
+              @@include('./html/components/navigation/nav__item.html', { 'href': 'no-js.html/#team', 'title': 'Team', 'number': '4' })
+              @@include('./html/components/navigation/nav__item.html', { 'href': 'no-js.html/#blog', 'title': 'Blog', 'number': '5' })
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
 
     <main class="page__content contact-page">
       <div class="contact-page__wrapper">
