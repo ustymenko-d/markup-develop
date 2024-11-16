@@ -1,0 +1,259 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=Inter:wght@400;500;600;700&family=Roboto:wght@400;700&display=swap');
+
+*,
+a {
+	text-decoration: none;
+	font-style: normal;
+}
+
+.button,
+.header__link,
+.footer__text {
+	font-size: 16px;
+	line-height: 21px;
+}
+
+.header__link,
+.intro__text,
+.help__link,
+.footer__text,
+.choose-way__item>p,
+.time {
+	font-weight: 400;
+}
+
+.card-block__subtitle-text {
+	font-weight: 500;
+}
+
+.title,
+.intro__title,
+.intro__subtitle,
+.choose-way>h3,
+.footer__title,
+.button,
+.header__link_active,
+.help__form-description,
+.help__form input,
+.help__form textarea,
+.page__subtitle,
+.page__title,
+.card-block__button,
+.cadastre__title-description .choyse-block__text-link,
+.choyse-block__description {
+	font-weight: 700;
+}
+
+.title,
+.text,
+.intro__title,
+.intro__subtitle,
+.intro__text,
+.help__link {
+	font-family: "Inter", sans-serif;
+}
+
+.button,
+.header__link,
+.choose-way__item>h3,
+.choose-way__item>p,
+.help__form-description,
+.help__form input,
+.help__form textarea,
+.footer__title,
+.footer__text,
+.page__subtitle,
+.page__title,
+.card-block__title,
+.card-block__subtitle-text,
+.card-block__button,
+.cadastre__title-description,
+.choyse-block__text-link,
+.choyse-block__description {
+	font-family: "DM Sans", sans-serif;
+}
+
+.button,
+.footer__title,
+.page__subtitle,
+.card-block__button {
+	text-transform: uppercase;
+}
+
+.title {
+	font-size: 35px;
+	line-height: 42px;
+}
+
+.text {
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 150%;
+}
+
+.title,
+.text,
+.choose-way__item>h3,
+.choose-way__item>p,
+.different__mail,
+.help__link,
+.help__form-description,
+.help__form input,
+.help__form textarea,
+.card-block__title,
+.card-block__subtitle-text,
+.page__title,
+.cadastre__title-description,
+.choyse-block__text-link p {
+	color: #525760;
+}
+
+/* Header */
+
+.header__link {
+	color: #f7f9f9;
+}
+
+.header__button,
+.intro__title,
+.intro__text,
+.button_dark,
+.choose-way__item .button,
+.different__button,
+.ready__text .title,
+.ready__text .text,
+.help__form-block .button,
+.footer__title,
+.choyse-block__description {
+	color: #fff;
+}
+
+/* Intro  */
+
+.intro__title {
+	font-size: 52px;
+	line-height: 63px;
+}
+
+.button_light,
+.intro__subtitle,
+.card-block__title,
+.choyse-block__text-link a {
+	color: #323f8d;
+}
+
+.intro__subtitle {
+	font-size: 32px;
+	line-height: 39px;
+}
+
+.intro__text {
+	font-size: 18px;
+	line-height: 22px;
+}
+
+/* Choose-way */
+
+.choose-way__title {
+	font-size: 26px;
+	line-height: 31px;
+}
+
+.choose-way__item .button,
+.choose-way__item>p,
+.help__form-description,
+.card-block__subtitle-text,
+.card-block__item .text,
+.card-block__button,
+.choyse-block__text-link {
+	font-size: 12px;
+	line-height: 16px;
+}
+
+.choose-way__item>h3 {
+	font-size: 15px;
+	line-height: 20px;
+}
+
+/* Different */
+
+.different__item>.title {
+	font-size: 18px;
+	line-height: 150%;
+}
+
+/* Ready */
+
+.ready__content-block .button {
+	color: #a5cbe0;
+}
+
+/* Help */
+
+.help__link {
+	font-size: 14px;
+	line-height: 150%;
+}
+
+.help__form-description_red {
+	color: #ff0202;
+}
+
+.help__form input,
+.help__form textarea,
+.footer__button,
+.cadastre__title-description {
+	font-size: 14px;
+	line-height: 18px;
+}
+
+/* Footer */
+
+.footer__button {
+	color: #CFD9E0;
+}
+
+.footer__title,
+.page__subtitle {
+	font-size: 18px;
+	line-height: 23px;
+}
+
+.footer__text {
+	color: #869FB2;
+}
+
+/* ========================= */
+
+.page__title {
+	font-size: 24px;
+	line-height: 31px;
+	text-align: center;
+}
+
+.page__subtitle {
+	color: rgba(50, 63, 141, 0.7);
+}
+
+.card-block__item .text {
+	text-overflow: ellipsis;
+}
+
+.card-block__title,
+.card-block__button,
+.cadastre__title-description,
+.choyse-block__description {
+	text-align: center;
+}
+
+.choyse-block__description {
+	font-size: 20px;
+	line-height: 26px;
+}
+
+@media screen and (max-width: 666px) {
+	.intro__title {
+		font-size: 2.5rem;
+		line-height: 3.125rem;
+	}
+}

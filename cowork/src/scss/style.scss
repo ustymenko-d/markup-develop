@@ -1,0 +1,165 @@
+@import 'reset';
+@import 'fonts';
+
+:root {
+	--black: #06050f;
+	--blue: #3139fb;
+	--white: #fcfcfd;
+	--yellow: #fffadd;
+	--red: #ff3333;
+
+	--first-family: GeneralSans, sans-serif;
+	--second-family: Neue Regrade, sans-serif;
+}
+
+html._lock,
+html._lock .page {
+	overflow: hidden;
+	background-color: var(--black);
+}
+
+.page {
+	padding-block-start: 1rem;
+
+	@media screen and (min-width: 1024px) {
+		padding-block-start: 1.5rem;
+	}
+
+	&__container {
+		padding-inline: 1rem;
+
+		@media screen and (min-width: 768px) {
+			margin-inline: auto;
+			max-width: 768px;
+		}
+		@media screen and (min-width: 1024px) {
+			max-width: 1024px;
+		}
+		@media screen and (min-width: 1440px) {
+			max-width: 1440px;
+		}
+	}
+}
+
+img {
+	height: 100%;
+	max-width: 100%;
+	object-fit: cover;
+}
+
+.h1,
+.h2,
+.h3 {
+	font-weight: 700;
+}
+
+.h1 {
+	font-family: var(--second-family);
+	font-size: 3rem;
+	line-height: 1.2;
+	text-transform: uppercase;
+
+	@media screen and (min-width: 768px) {
+		font-size: 5.9rem;
+		line-height: 1;
+		letter-spacing: -0.01em;
+	}
+}
+
+.h2 {
+	font-family: var(--second-family);
+	font-size: 2rem;
+	line-height: 1.4;
+
+	@media screen and (min-width: 768px) {
+		font-size: 3rem;
+		line-height: 1.2;
+	}
+}
+
+.h3 {
+	font-family: var(--second-family);
+	line-height: 1.4;
+
+	@media screen and (min-width: 768px) {
+		font-size: 1.5rem;
+	}
+}
+
+.subheading {
+	font-family: var(--second-family);
+	font-weight: 600;
+	line-height: 1.4;
+	text-transform: uppercase;
+
+	@media screen and (min-width: 768px) {
+		font-size: 1.5rem;
+	}
+}
+
+.text,
+.blockquote {
+	font-weight: 500;
+	line-height: 1.5;
+}
+
+.text,
+.text-bold,
+.subtitle,
+.text_sm {
+	font-family: var(--first-family);
+}
+
+.text-bold {
+	font-weight: 500;
+	line-height: 2;
+}
+
+.blockquote {
+	font-family: var(--second-family);
+	@media screen and (min-width: 768px) {
+		font-size: 1.5rem;
+	}
+}
+
+.text_sm {
+	font-size: 0.875rem;
+	line-height: 1.8;
+}
+
+.subtitle {
+	font-weight: 600;
+	font-size: 0.75rem;
+	line-height: 1.5;
+	text-transform: uppercase;
+	color: var(--blue);
+}
+
+.animated-underline {
+	text-decoration: none;
+	background-image: linear-gradient(currentColor, currentColor);
+	background-position: 0% 100%;
+	background-repeat: no-repeat;
+	background-size: 0% 1px;
+	transition: background-size 0.4s;
+
+	&:focus-visible {
+		background-size: 100% 1px;
+	}
+
+	@media (hover: hover) {
+		&:hover {
+			background-size: 100% 1px;
+		}
+	}
+
+	@media (hover: none) {
+		&:active {
+			background-size: 100% 1px;
+		}
+	}
+}
+
+@import 'components/button';
+@import 'components/header';
+@import 'components/footer';

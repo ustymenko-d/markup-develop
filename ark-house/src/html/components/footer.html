@@ -1,0 +1,81 @@
+<footer class="footer">
+  <div class="page__container">
+    <div class="footer__top topline">
+      <h2 class="footer__title">Start a Project?</h2>
+      <a class="footer__button button" href="contact.html" target="_blank">
+        Contact&nbsp;us
+      </a>
+    </div>
+
+    <div class="footer__center page__wrapper">
+      <div class="footer__support">
+        <p class="footer__support-title">Support is available 24 hours</p>
+        <a class="footer__button button" href="contact.html" target="_blank">
+          Contact&nbsp;us
+        </a>
+      </div>
+
+      <div class="footer__addresses addresses">
+        <div class="addresses__item">
+          <address>
+            <p>
+              North
+              <br />
+              AFL&nbsp;Architects
+              <br />
+              St&nbsp;George's&nbsp;House&nbsp;56
+              <br />
+              Peter&nbsp;Street
+              <br />
+              Manchester
+            </p>
+            <br />
+            <a
+              class="animated-underline"
+              href="tel:+4401612366263
+						">
+              +44&nbsp;(0)161&nbsp;236&nbsp;6263
+            </a>
+          </address>
+        </div>
+        <div class="addresses__item">
+          <address>
+            <p>
+              Midlands
+              <br />
+              AFL&nbsp;Architects
+              <br />
+              Unit&nbsp;12&nbsp;133
+              <br />
+              Newhall&nbsp;Street
+              <br />
+              Birmingham
+            </p>
+            <br />
+            <a
+              class="animated-underline"
+              href="tel:+4401212894363
+						">
+              +44&nbsp;(0)121&nbsp;289&nbsp;4363
+            </a>
+          </address>
+        </div>
+      </div>
+
+      <div class="footer__navigation">
+        @@include('navigation/nav.html', {'id': 'footer__navigation-list'})
+      </div>
+
+      @@include('small/social.html', { 'classes': 'footer__social', })
+    </div>
+
+    <div class="footer__bottom page__wrapper">
+      <p>
+        This is an example of a multi-page website. All interaction functions
+        are implemented with JS without using libraries. Created using the BEM
+        methodology. The project was built with Gulp.js.
+      </p>
+      <a class="button" href="https://ustymenko.vercel.app" target="_blank"> Back to portfolio </a>
+    </div>
+  </div>
+</footer>

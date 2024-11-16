@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+@@include('html/head.html', {
+'title': 'Who We Are - FoodZero'
+})
+
+<body class="page about-page">
+
+	<div class="loader-wrapper">
+		<div class="loader">
+			<div class="spinner-rolling">
+				<div></div>
+			</div>
+		</div>
+		<p class="loader-wrapper__text">Loading</p>
+	</div>
+
+	<button class="arrow-to-top hidden">
+		<img src="img/icon/arrow-left.svg" alt="arrow">
+	</button>
+
+	<main class="hidden">
+		<div class="hero">
+			<div class="container hero__wrapper">
+				@@include('html/header.html')
+
+				<div class="hero__content">
+					<h1 class="hero__title title">Who We Are </h1>
+					<p class="hero__description">The most important thing for us is to give you the comfortable dining experience
+					</p>
+				</div>
+
+			</div>
+		</div>
+
+		<div class="about">
+			<div class="about__first-block first-block">
+				<div class="container">
+
+					<div class="first-block__top">
+						<div class="first-block__text-content">
+							<h2 class="about__title title">Our Story</h2>
+							<p class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Purus lorem id penatibus
+								imperdiet. Turpis egestas ultricies purus auctor tincidunt lacus nunc.</p>
+						</div>
+						<div class="first-block__image">
+							<img src="img/about/about-1.jpg" width="792" height="567" alt="Chef preparing foods">
+						</div>
+					</div>
+
+					<div class="first-block__bottom">
+						<div class="first-block__grid">
+							<div class="first-block__manager">
+								<figure>
+									<figcaption class="first-block__name title">Restuarant Manager <p class="text">Carson Hugn</p>
+									</figcaption>
+									<img src="img/about/manager.jpg" width="726" height="861" alt="Carson Hugn">
+								</figure>
+							</div>
+							<p class="text first-block__manager-about">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et in
+								sed in pellentesque ornare
+								nunc nisl.</p>
+							<p class="text first-block__chef-about">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et in sed
+								in pellentesque ornare
+								nunc nisl. Augue habitant accumsan, ut parturient orci ac etiam congue mi.</p>
+							<div class="first-block__chef">
+								<figure>
+									<figcaption class="first-block__name title">Executive Chef <p class="text">Jane Cooper</p>
+									</figcaption>
+									<img src="img/about/chef.jpg" width="726" height="861" alt="Jane Cooper">
+								</figure>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+
+			<div class="about__video-block">
+				<div class="text-content">
+					<h2 class="about__title title">It looks delicious</h2>
+					<p class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+				</div>
+				<video src="files/salmon-starters.mp4" muted autoplay loop preload="auto"></video>
+			</div>
+
+			<div class="about__second-block second-block">
+				<div class="container">
+					<h2 class="about__title second-block__title  title">Sophisticated Process</h2>
+					<div class="second-block__grid">
+
+						<div class="second-block__item">
+							<img src="img/about/slice.jpg" alt="Slicing red meat">
+
+							<div class="second-block__text-content">
+								<h3 class="title">01.Slice</h3>
+								<p class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Purus lorem id penatibus
+									imperdiet. Turpis egestas ultricies purus auctor tincidunt lacus nunc. Convallis pellentesque quis
+									fringilla sagittis. Egestas in risus sit nunc nunc, arcu donec nam etiam. </p>
+							</div>
+						</div>
+
+						<div class="second-block__item">
+							<div class="second-block__text-content">
+								<h3 class="title">02.Pickled</h3>
+								<p class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Purus lorem id penatibus
+									imperdiet.</p>
+							</div>
+
+							<img src="img/about/pickled.jpg" width="650" height="533" alt="Raw meat on brown wooden table">
+						</div>
+
+						<div class="second-block__item">
+							<div class="second-block__text-content">
+								<h3 class="title">03.Bake</h3>
+								<p class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Purus lorem id penatibus
+									imperdiet.</p>
+							</div>
+
+							<img src="img/about/bake.jpg" width="649" height="509" alt="Raw meat on brown wooden table">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		@@include('html/reservation.html')
+	</main>
+
+	@@include('html/footer.html')
+
+</body>
+
+</html>

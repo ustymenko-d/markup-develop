@@ -1,0 +1,79 @@
+<section class="hero mb-24">
+	<header class="hero__header header py-4 lg:py-8 fixed z-10 w-full lock-padding">
+		<div class="md:container mx-auto px-4 lg:px-5 flex flex-nowrap items-center justify-between">
+			<a
+				href=""
+				class="header__logo uppercase">
+				Minders
+			</a>
+			<nav class="header__navigation navigation flex items-center">
+				<button
+					class="navigation__burger relative md:hidden w-7 h-7 p-2.5"
+					aria-expanded="false"
+					aria-controls="navigation__links-list"
+					aria-label="Open/close page navigation"></button>
+				<ul
+					aria-hidden="true"
+					id="navigation__links-list"
+					class="navigation__links-list w-full fixed md:relative p-4 md:p-0 text-right md:text-left flex flex-col md:flex-row gap-y-6 gap-x-14 md:flex-nowrap md:h-auto md:bg-inherit">
+					<li class="lock-padding">
+						<a
+							class="navigation__link smooth-scroll-link"
+							href="#about">
+							About us
+						</a>
+					</li>
+					<li class="lock-padding">
+						<a
+							class="navigation__link smooth-scroll-link"
+							href="#team">
+							Our team
+						</a>
+					</li>
+					<li class="lock-padding">
+						<a
+							class="navigation__link smooth-scroll-link"
+							href="#events">
+							Events
+						</a>
+					</li>
+					<li class="lock-padding">
+						<a
+							class="navigation__link smooth-scroll-link"
+							href="#application">
+							Join us
+						</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+	<div class="hero__content pt-28">
+		<div class="md:container mx-auto px-4 lg:px-5">
+			<h1 class="hero__title title text-center mb-10 lg:mb-12 text-5xl lg:text-8xl">
+				<span class="title_opacity">Discover the endless</span>
+				<br />
+				possibilitis of creativity
+			</h1>
+
+			<picture>
+				<source
+					media="(max-width: 1024px)"
+					srcset="../img/hero-bg@mob.webp"
+					type="image/webp" />
+				<source
+					media="(max-width: 1024px)"
+					srcset="../img/hero-bg@mob.jpg" />
+				<source
+					srcset="../img/hero-bg.webp 1x, ../img/hero-bg@X2.webp 2x"
+					type="image/webp" />
+
+				<img
+					class="hero__image max-w-full object-cover overflow-hidden"
+					src="../img/hero-bg.jpeg"
+					alt="Fractal abstract bagel"
+					srcset="../img/hero-bg@X2.jpg 2x" />
+			</picture>
+		</div>
+	</div>
+</section>

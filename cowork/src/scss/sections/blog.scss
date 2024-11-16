@@ -1,0 +1,18 @@
+.blog {
+	&__articles {
+		display: grid;
+		gap: 1rem;
+		justify-items: center;
+
+		@media screen and (min-width: 1024px) {
+			grid-template-columns: repeat(3, 1fr);
+			grid-template-rows: repeat(2, auto);
+		}
+	}
+
+	&__link {
+		@media screen and (min-width: 1024px) {
+			grid-column: 2/3;
+		}
+	}
+}

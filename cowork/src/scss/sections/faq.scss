@@ -1,0 +1,21 @@
+.faq {
+
+	display: grid;
+	gap: 2rem;
+
+	@media screen and (min-width: 1024px) {
+		grid-template-columns: 32.5284% 1fr;
+		gap: 1rem;
+	}
+
+	.subtitle {
+		display: inline-block;
+		margin-block-end: 1rem;
+	}
+
+	&__content {
+	}
+
+	&__title {
+	}
+}

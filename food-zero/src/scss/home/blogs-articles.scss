@@ -1,0 +1,35 @@
+.blogs-articles {
+	background-color: var(--main-light-color);
+
+	// .blogs-articles__wrapper
+
+	&__wrapper {
+		padding: 100px 0;
+		display: grid;
+		grid-template-columns: auto;
+		gap: 25px;
+
+		@media screen and (min-width: 768px) {
+			grid-template-columns: repeat(2, 1fr);
+			gap: 15px
+		}
+
+		@media screen and (min-width: 1024px) {
+			padding: calc(var(--size-index) * 4.3) 0 calc(var(--size-index) * 4);
+		}
+
+		@media screen and (min-width: 1440px) {
+			gap: 60px
+		}
+
+		@media screen and (min-width: 1920px) {
+			line-height: calc(var(--size-index) * 1.1);
+		}
+
+		.article__item	{
+			box-shadow: 5px 5px 5px var(--main-media-color);
+		}
+	}
+}
+
+@import '../components/article-item.scss';

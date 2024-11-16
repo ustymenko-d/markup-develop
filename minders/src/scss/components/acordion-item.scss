@@ -1,0 +1,224 @@
+.accordion-item {
+	border-radius: 1.25rem;
+	border: 2px solid;
+
+	font-weight: 500;
+	line-height: 1.625;
+	color: var(--simple-white);
+
+	@media (hover: hover) {
+		&:hover {
+			border-color: transparent;
+			background: linear-gradient(var(--neutral-black), var(--neutral-black)) padding-box, var(--gradient) border-box;
+			background-size: 300% 300%;
+			animation: animatedgradient 3s infinite linear;
+
+			.accordion-item__title {
+				@include text-gradient-animation;
+			}
+		}
+	}
+
+	@media (hover: none) {
+		&:active {
+			border-color: transparent;
+			background: linear-gradient(var(--neutral-black), var(--neutral-black)) padding-box, var(--gradient) border-box;
+
+			.accordion-item__title {
+				@include text-gradient-animation;
+			}
+		}
+	}
+
+	&_active {
+		border-color: transparent;
+		background: linear-gradient(var(--neutral-black), var(--neutral-black)) padding-box, var(--gradient) border-box;
+		background-size: 300% 300%;
+		animation: animatedgradient 3s infinite linear;
+
+		.accordion-item__title {
+			@include text-gradient-animation;
+		}
+	}
+
+	&__trigger {
+		grid-template-columns: 1fr auto;
+		grid-template-rows: repeat(2, auto);
+
+		cursor: pointer;
+
+		@media screen and (min-width: 1024px) {
+			grid-template-columns: 1fr 320px auto;
+			grid-template-rows: auto;
+		}
+	}
+
+	&__title {
+		font-weight: 400;
+		font-size: 1.5625rem;
+		line-height: 1.4;
+
+		@media screen and (min-width: 1024px) {
+			font-size: 2.1875rem;
+			line-height: 1.28571;
+		}
+	}
+
+	&__info {
+		grid-column: 1 / span 2;
+
+		@media screen and (min-width: 1024px) {
+			grid-column: 2 / 3;
+		}
+	}
+
+	&__date {
+		padding-inline-start: 2.1875rem;
+
+		@media screen and (min-width: 1024px) {
+			flex: 1 0 145px;
+			max-width: 145px;
+		}
+		&::before {
+			content: url(../img/icons/calendar.svg);
+			position: absolute;
+			left: 0;
+			top: 0;
+		}
+	}
+
+	&__place {
+		padding-inline-start: 2.1875rem;
+
+		@media screen and (min-width: 1024px) {
+			flex: 1 0 145px;
+			max-width: 145px;
+		}
+		&::before {
+			content: url(../img/icons/tgm.svg);
+			position: absolute;
+			left: 0;
+			top: 0;
+		}
+	}
+
+	&__button {
+		grid-column: 2 / 3;
+		grid-row: 1 / 2;
+		padding-inline-end: 1.875rem;
+
+		color: var(--purple);
+
+		@media screen and (min-width: 1024px) {
+			grid-column: 3 / 4;
+		}
+
+		&::after {
+			content: url(../img/icons/angle_purple.svg);
+			position: absolute;
+			right: 0;
+			top: 0;
+			display: flex;
+			height: 100%;
+			align-items: center;
+			transition: transform 0.4s;
+		}
+
+		&[aria-expanded='true'] {
+			&::after {
+				transform: rotateX(180deg);
+			}
+		}
+
+		&:focus-visible {
+			outline: auto;
+			outline-offset: 10px;
+			outline-color: var(--purple);
+			border-radius: 6px;
+			@include text-gradient-animation;
+		}
+
+		@media (hover: hover) {
+			&:hover {
+				@include text-gradient-animation;
+			}
+		}
+
+		@media (hover: none) {
+			&:active {
+				background-clip: text;
+				-webkit-text-fill-color: transparent;
+				background-image: var(--gradient);
+			}
+		}
+	}
+
+	&__content {
+	}
+
+	&__description {
+	}
+
+	&__link {
+		padding-inline-start: 2.125rem;
+
+		font-weight: 500;
+		line-height: 1.625;
+		color: var(--purple);
+
+		&::before {
+			content: url(../img/icons/corner-down-right_purple.svg);
+			position: absolute;
+			left: 0;
+			top: 0;
+		}
+
+		&:focus-visible {
+			@include text-gradient-animation;
+			&::before {
+				content: url(../img/icons/corner-down-right_color.svg);
+			}
+		}
+
+		@media (hover: hover) {
+			&:hover {
+				@include text-gradient-animation;
+
+				&::before {
+					content: url(../img/icons/corner-down-right_color.svg);
+				}
+			}
+		}
+
+		@media (hover: none) {
+			&:active {
+				background-clip: text;
+				-webkit-text-fill-color: transparent;
+				background-image: var(--gradient);
+
+				&::before {
+					content: url(../img/icons/corner-down-right_color.svg);
+				}
+			}
+		}
+	}
+}
+
+.collapsible {
+	visibility: visible;
+	pointer-events: all;
+	max-height: 100rem;
+	padding-block: 1.25rem;
+	padding-inline: 1.25rem;
+	overflow: hidden;
+	clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+	transition: all 0.6s ease;
+}
+
+.collapsible_collapsed {
+	visibility: hidden;
+	pointer-events: none;
+	padding-block: 0;
+	max-height: 0;
+	clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+}

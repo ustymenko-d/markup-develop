@@ -1,0 +1,75 @@
+.button {
+	position: relative;
+	overflow: hidden;
+	padding-block: 14px;
+	padding-inline-start: 32px;
+	padding-inline-end: 56px;
+	display: inline-block;
+
+	transition: all 0.4s, outline 0.1s;
+	background-color: var(--dark-color);
+	color: var(--light-color);
+
+	font-weight: 600;
+	font-size: 1rem;
+	line-height: 1.25;
+	letter-spacing: 0.01em;
+	text-align: center;
+
+	&::before {
+		content: url(../img/icons/arrow-up-right.svg);
+		position: absolute;
+		top: 0.375rem;
+		right: 0.5rem;
+		width: 2rem;
+		aspect-ratio: 1;
+		transform: rotate(45deg);
+		z-index: 2;
+	}
+
+	&::after {
+		transition: all 0.4s;
+		content: '';
+		position: absolute;
+		top: 4px;
+		right: 4px;
+		height: calc(100% - 8px);
+		aspect-ratio: 1;
+		z-index: 1;
+
+		background-color: var(--light-color);
+	}
+
+	&:focus-visible {
+		outline: 0.125rem solid var(--dark-color);
+		outline-offset: 0.125rem;
+		&::before {
+			animation: goTopRight 0.4s forwards;
+		}
+	}
+
+	@media (hover: hover) {
+		&:hover {
+			outline: 0.125rem solid var(--dark-color);
+			outline-offset: 0.125rem;
+
+			&::before {
+				animation: goTopRight 0.4s forwards;
+			}
+		}
+	}
+
+	@media (hover: none) {
+		&:active {
+			&::before {
+				animation: goTopRight 0.4s forwards;
+			}
+		}
+	}
+}
+
+@keyframes goTopRight {
+	100% {
+		transform: translate(0.25rem, -0.25rem) rotate(45deg) scale(1.2);
+	}
+}

@@ -1,0 +1,112 @@
+.choyse-block {
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 110px;
+}
+
+.choyse-block__items {
+	margin-bottom: 35px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 25px;
+}
+
+.choyse-block__item {
+	width: 320px;
+	height: 320px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	-ms-border-radius: 10px;
+	-o-border-radius: 10px;
+	border-radius: 10px;
+	box-shadow: 0px 7px 12px rgba(0, 0, 0, 0.5);
+}
+
+.choyse-block__link {
+	-webkit-transition: 0.5s;
+	-moz-transition: 0.5s;
+	-ms-transition: 0.5s;
+	-o-transition: 0.5s;
+	transition: 0.5s;
+	border-radius: 10px;
+}
+
+.choyse-block__link:focus-visible {
+	-webkit-transform: scale(1.05);
+	-moz-transform: scale(1.05);
+	-ms-transform: scale(1.05);
+	-o-transform: scale(1.05);
+	transform: scale(1.05);
+}
+
+@media (hover: hover) {
+	.choyse-block__link:hover {
+		-webkit-transform: scale(1.05);
+		-moz-transform: scale(1.05);
+		-ms-transform: scale(1.05);
+		-o-transform: scale(1.05);
+		transform: scale(1.05);
+	}
+}
+
+@media (hover: none) {
+	.choyse-block__link:active {
+		-webkit-transform: scale(1.05);
+		-moz-transform: scale(1.05);
+		-ms-transform: scale(1.05);
+		-o-transform: scale(1.05);
+		transform: scale(1.05);
+	}
+}
+
+.choyse-block__first-item {
+	background-image: url("../images/cute-dog-playing-with-woman-shelter-adoption.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.choyse-block__second-item {
+	background-image: url("../images/rescue-dog-enjoying-being-pet-by-woman-shelter.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.choyse-block__description {
+	max-width: 65.625%;
+}
+
+.choyse-block__text-link {
+	display: flex;
+	justify-content: center;
+	gap: 10px;
+}
+
+.time {
+	display: block;
+}
+
+@media screen and (max-width: 700px) {
+	.choyse-block__items {
+		flex-direction: column;
+		align-items: center;
+	}
+}
+
+@media screen and (max-width: 576px) {
+	.cadastre__title-description {
+		padding: 0 25px;
+	}
+
+	.choyse-block__link {
+		max-width: 95%;
+	}
+
+	.choyse-block__item {
+		max-width: 95%;
+		margin: 0 auto;
+	}
+}

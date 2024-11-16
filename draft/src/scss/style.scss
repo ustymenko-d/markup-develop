@@ -1,0 +1,174 @@
+@import 'reset';
+@import 'fonts';
+
+html {
+	scroll-behavior: smooth;
+	font-size: 16px;
+
+	@media screen and (min-width: 1920px) {
+		font-size: 20px;
+	}
+}
+
+:root {
+	--primary: #554DDE;
+	--accent: #F44E77;
+	--neutral: #F2F6FF;
+	--light-color: #6A6D9E;
+	--dark-color: #16194F;
+}
+
+@keyframes bounce {
+	0% {}
+
+	50% {
+		transform: translateY(3%);
+	}
+
+	100% {}
+}
+
+img {
+	display: inline-block;
+	max-width: 100%;
+	height: auto;
+}
+
+.title {
+	font-weight: 700;
+	font-style: normal;
+}
+
+.text {
+	font-style: normal;
+	font-weight: 400;
+	line-height: 150%;
+}
+
+.button {
+	padding: 15px 20px;
+	border-radius: 20px;
+
+	transition: all 0.3s;
+}
+
+.page {
+	font-family: Roboto, sans-serif;
+	background-color: var(--neutral);
+	overflow-y: hidden;
+}
+
+.container {
+	max-width: 96%;
+	margin: 0 auto;
+
+	@media screen and (min-width: 768px) {
+		max-width: 80%;
+	}
+
+	@media screen and (min-width: 1440px) {
+		max-width: 66%;
+	}
+}
+
+.page-content {
+	background-color: var(--neutral);
+}
+
+.offset {
+	z-index: -10;
+	position: relative;
+}
+
+/* toUp Button */
+
+.to-top {
+	box-sizing: content-box;
+	width: 20px;
+	height: 20px;
+	position: fixed;
+	bottom: 17px;
+	right: 17px;
+	z-index: 2;
+	background-color: var(--primary);
+	border-radius: 50%;
+	border: 2px solid;
+	padding: 15px;
+	transition: all .4s;
+	color: white;
+}
+
+.to-top::after {
+	content: '';
+	position: absolute;
+	width: 2px;
+	height: 18px;
+	left: calc(50% - 1px);
+	top: calc(50% - 9px);
+	background-color: white;
+}
+
+.to-top::before {
+	content: '';
+	position: absolute;
+	width: 14px;
+	height: 14px;
+	left: calc(36%);
+	top: calc(50% - 9px);
+	border-top: 2px solid;
+	border-left: 2px solid;
+	transform: rotate(45deg);
+	color: white;
+}
+
+
+.to-top:focus-visible {
+	background-color: var(--accent);
+}
+
+@media (hover: hover) {
+	.to-top:hover {
+		background-color: var(--accent);
+	}
+}
+
+@media (hover: none) {
+	.to-top:active {
+		background-color: var(--accent);
+	}
+}
+
+.to-top.hidden {
+	display: none;
+}
+
+@import 'loader';
+
+@import 'sections/hero';
+@import 'sections/main';
+@import 'sections/footer';
+
+.portfolio-link {
+	background-image: linear-gradient(currentColor, currentColor);
+	background-position: 0 100%;
+	background-repeat: no-repeat;
+	background-size: 0% 1px;
+	transition: background-size .3s;
+	color: var(--primary);
+}
+
+.portfolio-link:focus-visible {
+	background-size: 100% 1px;
+}
+
+@media (hover: hover) {
+	.portfolio-link:hover {
+		background-size: 100% 1px;
+	}
+}
+
+@media (hover: none) {
+	.portfolio-link:active {
+		background-size: 100% 1px;
+	}
+}

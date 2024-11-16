@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+	@@include('html/head.html', { 'title': 'Blog | Cowork - Coworking Space Company', 'styles': '<link rel="stylesheet" href="css/blog.min.css" />', 'scripts': '' })
+<body class="page">
+	<div class="page__container">
+		@@include('html/components/header.html')
+
+		<main class="page__content">
+			<div class="hero">
+				<div class="hero__wrapper">
+					<div class="hero__head">
+						<span class="hero__badge subtitle">Recent Post</span>
+						<h1 class="hero__title h1">Navigating the Future: Trends in Modern Coworking Spaces</h1>
+					</div>
+
+					<div class="hero__info">
+						<span class="hero__tag">Trending</span>
+						<span class="hero__time-to-read subheading">7 Min Read</span>
+					</div>
+
+					<a href="article.html" class="btn hero__button btn_red btn_big">Read The Article</a>
+				</div>
+			</div>
+
+				<div class="articles-grid p-block">
+					@@include('html/components/article-card.html', {
+						'imgSrc': 'img/blog/article-navigation.jpg',
+						'imgAlt': 'Desktop with laptops',
+						'artCategory': 'Trending',
+						'readTime': '7 min read',
+						'artTitle': 'Navigating the Future: Trends in Modern Coworking Spaces',
+					})
+
+					@@include('html/components/article-card.html', {
+						'imgSrc': 'img/blog/article-mastering.jpg',
+						'imgAlt': 'Пadgets and a plant on the desktop',
+						'artCategory': 'Productivity',
+						'readTime': '5 min read',
+						'artTitle': 'Mastering Productivity: Tips from Cowork\'s High Achievers',
+					})
+
+					@@include('html/components/article-card.html', {
+						'imgSrc': 'img/blog/article-tech-talk.jpg',
+						'imgAlt': 'Retro devices',
+						'artCategory': 'Talk',
+						'readTime': '10 min read',
+						'artTitle': 'Tech Talk: The Backbone of Cowork\'s Seamless Experience',
+					})
+
+					@@include('html/components/article-card.html', {
+						'imgSrc': 'img/blog/4.jpg',
+						'imgAlt': 'Desktop with laptops',
+						'artCategory': 'Career',
+						'readTime': '5 min read',
+						'artTitle': 'The Rise of Freelancing and the Gig Economy',
+					})
+
+					@@include('html/components/article-card.html', {
+						'imgSrc': 'img/blog/5.jpg',
+						'imgAlt': 'Пadgets and a plant on the desktop',
+						'artCategory': 'Talk',
+						'readTime': '11 min read',
+						'artTitle': 'Networking Success Stories from Our Community',
+					})
+
+					@@include('html/components/article-card.html', {
+						'imgSrc': 'img/blog/6.jpg',
+						'imgAlt': 'Retro devices',
+						'artCategory': 'Trending',
+						'readTime': '8 min read',
+						'artTitle': 'Hot New Startups to Watch from Our Space',
+					})
+
+					@@include('html/components/article-card.html', {
+						'imgSrc': 'img/blog/7.jpg',
+						'imgAlt': 'Desktop with cups',
+						'artCategory': 'Lifestyle',
+						'readTime': '7 min read',
+						'artTitle': 'Enhancing Wellness for Remote Workers',
+					})
+
+					@@include('html/components/article-card.html', {
+						'imgSrc': 'img/blog/8.jpg',
+						'imgAlt': 'Пadgets and a plant on the desktop',
+						'artCategory': 'Productivity',
+						'readTime': '5 min read',
+						'artTitle': '7 Team Collaboration Tools for Remote Teams',
+					})
+
+					@@include('html/components/article-card.html', {
+						'imgSrc': 'img/blog/9.jpg',
+						'imgAlt': 'Retro devices',
+						'artCategory': 'Trending',
+						'readTime': '4 min read',
+						'artTitle': 'Coworking Space Design Trends for 2024',
+					})
+				</div>
+
+			@@include('html/sections/join.html')
+		</main>
+
+		@@include('html/components/footer.html')
+	</div>
+</body>
+</html>

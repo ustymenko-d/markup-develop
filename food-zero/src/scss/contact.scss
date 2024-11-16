@@ -1,0 +1,273 @@
+.contact-page .hero {
+	background: linear-gradient(0deg, rgba(0, 0, 0, 0.46), rgba(0, 0, 0, 0.46)), url("../img/contact/reservations-bg.jpg");
+
+	background-repeat: no-repeat;
+	background-size: cover, cover;
+
+	@media screen and (min-width: 1440px) {
+		background-attachment: fixed;
+	}
+
+	// .hero__content
+
+	&__content {
+		flex: 1 0 100%;
+		height: 100%;
+		display: grid;
+		gap: 80px;
+		grid-template-rows: repeat(2, auto);
+		grid-template-columns: 1fr;
+
+		@media screen and (min-width: 950px) {
+			padding: 100px 0 100px;
+		}
+
+		@media screen and (min-width: 1024px) {
+			gap: 0 25px;
+			grid-template-columns: repeat(2, 1fr);
+		}
+
+		@media screen and (min-width: 1250px) {
+			grid-template-columns: 55.65% 42.57%;
+		}
+	}
+
+	// .hero__title-wrapper
+
+	&__title-wrapper {
+		align-self: flex-end;
+		text-align: center;
+
+		@media screen and (min-width: 1024px) {
+			align-self: center;
+			grid-row: 1 / span 2;
+			text-align: left;
+		}
+	}
+}
+
+.open-time {
+	grid-row-start: 2;
+
+	@media screen and (min-width: 1024px) {
+		align-self: flex-end;
+		padding-bottom: 12.03%;
+	}
+
+	// .open-time__head
+
+	&__head {
+		border-bottom: 2px dashed var(--white-color);
+		display: flex;
+		justify-content: space-evenly;
+		align-items: center;
+		padding-bottom: calc(var(--size-index) * 1.27);
+		margin-bottom: calc(var(--size-index) * 1.27);
+
+		@media screen and (max-width: 420px) {
+			flex-direction: column;
+		}
+
+		@media screen and (min-width: 1024px) {
+			justify-content: space-between;
+		}
+	}
+
+	// .open-time__title
+
+	&__title {
+		font-size: 32px;
+		line-height: 48px;
+		color: var(--white-color);
+
+		@media screen and (min-width: 1920px) {
+			font-size: calc(var(--size-index) * 1.06);
+			line-height: calc(var(--size-index) * 1.6);
+		}
+	}
+
+	// .open-time__days
+
+	&__days {
+		color: var(--white-color);
+	}
+
+	// .open-time__body
+
+	&__body {
+		display: grid;
+		gap: 25px;
+		text-align: center;
+
+		@media screen and (min-width: 768px) {
+			grid-template-columns: repeat(3, 1fr);
+			justify-content: space-between;
+		}
+
+		@media screen and (min-width: 1024px) {
+			text-align: left;
+		}
+	}
+
+	// .open-time__item
+
+	&__item {
+		color: var(--white-color);
+	}
+}
+
+.our-contact {
+	padding: calc(var(--size-index) * 9.06) 0 calc(var(--size-index) * 6.16);
+	font-family: 'Rufina';
+	font-style: normal;
+	font-weight: 700;
+	font-size: calc(var(--size-index) * 1.06);
+	line-height: calc(var(--size-index) * 1.6);
+	color: var(--main-dark-color);
+
+	@media screen and (min-width: 768px) {
+		background-image: url("../img/icon/orange.svg");
+		background-repeat: no-repeat;
+		background-position: 53% calc(var(--size-index) * 5.06);
+		background-size: calc(var(--size-index) * 14.9);
+	}
+
+	// .our-contact__wrapper
+
+	&__wrapper {
+		display: grid;
+		justify-content: center;
+		gap: calc(var(--size-index) * 4.83) calc(var(--size-index) * 2);
+
+		@media screen and (min-width: 768px) {
+			grid-template-columns: repeat(2, 1fr);
+		}
+	}
+
+	// .our-contact__info
+
+	&__info {
+		align-self: flex-end;
+
+		@media screen and (min-width: 1024px) {
+			padding-left: calc(var(--size-index) * 4.73);
+			margin-bottom: calc(var(--size-index) * 2.6);
+		}
+
+		a {
+			color: var(--main-light-color);
+		}
+	}
+
+	// .our-contact__address
+
+	&__address {
+		align-self: center;
+
+		@media screen and (min-width: 1024px) {
+			padding-left: calc(var(--size-index) * 1.4);
+		}
+
+		p {
+			margin-bottom: calc(var(--size-index) * 1.6);
+		}
+
+		a {
+			color: var(--main-dark-color);
+			border-color: var(--main-dark-color);
+			transition: background-color var(--transition);
+
+			&:focus-visible {
+				background-color: var(--main-light-color);
+			}
+
+			@media (hover: hover) {
+				&:hover {
+					background-color: var(--main-light-color);
+				}
+			}
+
+			@media (hover: none) {
+				&:hover {
+					background-color: var(--main-light-color);
+				}
+			}
+		}
+	}
+}
+
+.full-reservation {
+	padding: calc(var(--size-index) * 7.13) 0 calc(var(--size-index) * 5.8);
+	background-color: var(--crema-color);
+
+	&__wrapper {
+		position: relative;
+		margin: 0 auto;
+		max-width: fit-content;
+		margin-bottom: calc(var(--size-index) * 3.83);
+
+		@media screen and (min-width: 768px) {
+			&::before {
+				content: url("../img/icon/mint.svg");
+				position: absolute;
+				top: -135%;
+				left: -35%;
+				opacity: 0.3;
+				transform: scale(0.7);
+
+				@media screen and (min-width: 1440px) {
+					transform: scale(1);
+					top: -110%;
+				}
+			}
+		}
+	}
+
+	// .full-reservation__title
+
+	&__title {
+		margin-bottom: calc(var(--size-index) * 0.6);
+		font-size: calc(var(--size-index) * 3.6);
+		line-height: calc(var(--size-index) * 4);
+	}
+
+	&__form {
+		margin-bottom: calc(var(--size-index) * 2.73);
+		display: grid;
+		gap: 20px;
+
+		@media screen and (min-width: 1024px) {
+			grid-template-columns: repeat(2, 1fr);
+			grid-template-rows: repeat(5, 1fr);
+		}
+	}
+
+	&__button {
+		width: 100%;
+
+		@media screen and (min-width: 768px) {
+			width: fit-content;
+			justify-self: center;
+			grid-column: span 2;
+		}
+	}
+}
+
+.reservation {
+
+	// .reservation__input
+
+	&__input {
+		&::placeholder {
+			color: var(--black-color);
+		}
+	}
+
+	&__email,
+	&__phone,
+	&__number {
+		@media screen and (min-width: 768px) {
+			grid-column: span 2;
+		}
+	}
+}

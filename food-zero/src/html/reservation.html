@@ -1,0 +1,21 @@
+<section class="reservation">
+	<div class="container">
+		<div class="reservation__wrapper">
+			<h2 class="reservation__title title">Make a Reservation</h2>
+			<p class="reservation__description text">Get in touch with restaurant</p>
+			<form class="reservation__form">
+				<input name="first-name" class="reservation__input button text" type="date" required>
+				<input name="time" class="reservation__input button text" type="time" value="13:00" required aria-label="Time">
+				<select class="reservation__input button text" name="number-of-people" >
+					<option value="1">1 Person</option>
+					<option value="2" selected>2 Person</option>
+					<option value="3">3 Person</option>
+					<option value="4">4 Person</option>
+					<option value="5">5 Person</option>
+					<option value="6">6 Person</option>
+				</select>
+				<button class="reservation__button button" type="submit">Book Now</button>
+			</form>
+		</div>
+	</div>
+</section>

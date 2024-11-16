@@ -1,0 +1,17 @@
+@import 'components/accordion';
+
+@import 'sections/faq';
+@import 'sections/join';
+
+@import 'pages/about/hero';
+
+
+.p-block {
+	padding-block-start: 3rem;
+	margin-block-end: 3rem;
+
+	@media screen and (min-width: 768px) {
+		padding-block-start: 4.5rem;
+		margin-block-end: 4.5rem;
+	}
+}

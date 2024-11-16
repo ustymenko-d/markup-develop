@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+@@include('html/head.html', {
+'title': 'FoodZero - Coming Soon'
+})
+
+<body class="page">
+
+	<div class="loader-wrapper">
+		<div class="loader">
+			<div class="spinner-rolling">
+				<div></div>
+			</div>
+		</div>
+		<p class="loader-wrapper__text">Loading</p>
+	</div>
+
+	<main class="coming-soon hidden">
+		@@include('html/header.html')
+		<div class="coming-soon__wrapper">
+			<div class="coming-soon__content">
+				<h1 class="coming-soon__title title">Comming soon</h1>
+
+				<div class="coming-soon__timer timer">
+					<div class="timer__content">
+						<div class="timer__item timer__mounths">
+							<div class="timer__value title">00</div>
+							<span class="timer__text text">Month</span>
+						</div>
+
+						<div class="timer__item timer__days">
+							<div class="timer__value title">00</div>
+							<span class="timer__text text">Days</span>
+						</div>
+
+						<div class="timer__item timer__hours">
+							<div class="timer__value title">00</div>
+							<span class="timer__text text">Hours</span>
+						</div>
+
+						<div class="timer__item timer__minutes">
+							<div class="timer__value title">00</div>
+							<span class="timer__text text">Minutes</span>
+						</div>
+
+						<div class="timer__item timer__seconds">
+							<div class="timer__value title">00</div>
+							<span class="timer__text text">Second</span>
+						</div>
+
+					</div>
+				</div>
+
+				<a class="coming-soon__button button" href="menu.html">View Menu</a>
+
+			</div>
+		</div>
+	</main>
+
+</body>
+
+</html>

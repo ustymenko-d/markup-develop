@@ -1,0 +1,125 @@
+@font-face {
+	font-family: "Lato";
+	font-weight: 300;
+	src: local("Lato"),
+		url("../fonts/Lato-Light.woff2") format("woff2"),
+		url("../fonts/Lato-Light.woff") format("woff");
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Lato";
+	font-weight: 400;
+	src: local("Lato"),
+		url("../fonts/Lato-Regular.woff2") format("woff2"),
+		url("../fonts/Lato-Regular.woff") format("woff");
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Lato";
+	font-weight: 900;
+	src: local("Lato"),
+		url("../fonts/Lato-Black.woff2") format("woff2"),
+		url("../fonts/Lato-Black.woff") format("woff");
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Cardo";
+	font-weight: 700;
+	src: local("Cardo"),
+		url("../fonts/Cardo-Bold.woff2") format("woff2"),
+		url("../fonts/Cardo-Bold.woff") format("woff");
+	font-display: swap;
+}
+
+* {
+	letter-spacing: -0.025rem;
+	text-decoration: none;
+}
+
+.heading {
+	font-family: Cardo, serif;
+	font-weight: 700;
+}
+
+.text {
+	font-family: Lato, sans-serif;
+	font-weight: 400;
+	font-size: 1.0625rem;
+}
+
+.strong-text {
+	font-family: Lato, sans-serif;
+	font-weight: 900;
+	font-size: 1.5625rem;
+}
+
+.intro__heading,
+.faq__heading,
+.reviews__heading,
+.updated__heading {
+	font-size: 5.0625rem;
+	line-height: 5.0625rem;
+}
+
+.log-link-block__heading,
+.choose__heading {
+	font-size: 3.4375rem;
+}
+
+.articles__heading,
+.new-places__subheading {
+	font-size: 2.25rem;
+}
+
+.new-places__heading {
+	font-size: 6.1063rem;
+}
+
+.heading_underline {
+	text-decoration: underline;
+}
+
+.footer__logo {
+	font-size: 3.9375rem;
+}
+
+.intro__text-block>.strong-text,
+.log-link-block .strong-text,
+.header__link,
+.footer .text,
+.updated .text {
+	font-size: 1.3125rem;
+}
+
+.heading,
+.text,
+.strong-text {
+	color: var(--dark-color);
+}
+
+.text_reverse {
+	color: var(--body-color);
+}
+
+.header__link {
+	font-family: Lato, sans-serif;
+	font-weight: 300;
+	color: #515155;
+}
+
+.header__link:first-child,
+.header__link:last-child {
+	font-weight: 900;
+	color: var(--dark-color);
+}
+
+.log-link-block__wrapper,
+.new-places__heading,
+.new-places__link-wrapper,
+.reviews__wrapper,
+.footer__rights {
+	text-align: center;
+}

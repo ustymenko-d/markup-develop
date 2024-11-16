@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+	@@include('html/head.html', { 'title': 'Contact | Cowork - Coworking Space Company', 'styles': '<link rel="stylesheet" href="css/contact.min.css" />', 'scripts': '<script src="js/contact.min.js" defer></script>' })
+	<body class="page">
+		<div class="page__container">
+			@@include('html/components/header.html')
+
+			<main class="page__content">
+				<section class="contact">
+					<div class="contact__wrapper">
+						<div class="contact__head">
+							<h1 class="contact__title h1">
+								Contact<br class="contact__title-wrap" />
+								Us
+							</h1>
+							<p class="contact__description text">
+								Have questions about our coworking space and membership plans?
+								Drop us a line using the form below or give us a call.
+							</p>
+						</div>
+
+						<div class="contact__body">
+							<form id="form1" class="contact__form contact-form">
+								<div class="contact-form__input input input_required">
+									<input
+										id="contact-form__name"
+										class="input__item contact-form__name text"
+										type="text"
+										name="first-name"
+										required />
+										<label
+										class="input__placeholder text"
+										for="contact-form__name"
+										>First Name</label
+									>
+								</div>
+
+								<div class="contact-form__input input input_required">
+									<input
+										id="contact-form__last-name"
+										class="input__item contact-form__last-name text"
+										type="text"
+										name="last-name"
+										required />
+										<label
+										class="input__placeholder text"
+										for="contact-form__last-name"
+										>Last Name</label>
+								</div>
+
+								<div class="contact-form__input input input_required">
+									<input
+										id="contact-form__mail"
+										class="input__item contact-form__mail text"
+										type="email"
+										name="mail"
+										required />
+									<label
+										class="input__placeholder text"
+										for="contact-form__mail"
+										>Email Address</label>
+								</div>
+
+								<div class="contact-form__input input">
+									<input
+										id="contact-form__tel"
+										class="input__item contact-tel text"
+										type="tel"
+										name="tel"/>
+										<label
+										class="input__placeholder text"
+										for="contact-form__tel"
+										>Phone</label>
+								</div>
+
+								<div class="contact-form__input input input_required">
+									<textarea
+										id="contact-form__textarea"
+										class="contact-form__textarea text"
+										name="message"
+										cols="30"
+										required></textarea>
+									<label
+										class="input__placeholder text"
+										for="contact-form__textarea"
+										>Message</label>
+								</div>
+
+								<button class="contact-form__button btn btn_regular btn_white" form="form1">Submit</button>
+
+								<p class="contact-form__description text_sm">
+									We aim to respond to all inquiries within 24 business hours.
+									For the fastest response, please include your preferred
+									membership plan of interest and any specific questions you may
+									have. One of our workspace specialists will be happy to assist
+									you further.
+								</p>
+							</form>
+
+							<div class="contact__info contact-info">
+								<div class="contact-info__group">
+									<p class="h3 contact-info__subtitle">Call Us At</p>
+									<a
+										href="tel:5555555555"
+										class="contact-info__tel text animated-underline"
+										>(555) 555-5555</a
+									>
+								</div>
+								<div class="contact-info__group">
+									<p class="h3 contact-info__subtitle">Office Hours</p>
+									<p class="text">
+										Monday-Friday: 9am - 6pm<br />Saturday: 9am - 3pm<br />Closed
+										Sundays
+									</p>
+								</div>
+								<div class="contact-info__group">
+									<p class="h3 contact-info__subtitle">Location</p>
+									<address class="contact-info__addr text">
+										123 Coworking Street<br />Anycity, State 12345
+									</address>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+			</main>
+
+			@@include('html/components/footer.html')
+		</div>
+	</body>
+</html>

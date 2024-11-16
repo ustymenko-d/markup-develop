@@ -1,0 +1,138 @@
+.about {
+	&__wrapper {
+		row-gap: 2.1875rem;
+		grid-template-rows: repeat(3, auto);
+
+		@media screen and (min-width: 1024px) {
+			gap: 1.875rem 5rem;
+			grid-template-columns: repeat(2, 1fr);
+			grid-template-rows: repeat(2, auto);
+		}
+	}
+
+	&__text-content {
+	}
+
+	&__title {
+	}
+
+	&__text {
+	}
+
+	&__tags {
+		@media screen and (min-width: 1024px) {
+			grid-column: 2 / 3;
+			grid-row: 1 / span 2;
+		}
+	}
+
+	&__button {
+	}
+}
+
+.tags {
+	mask-image: linear-gradient(90deg, transparent, var(--neutral-black) 20%, var(--neutral-black) 80%, transparent);
+
+	&[data-animated='true'] {
+		.tags__row {
+			width: max-content;
+			flex-wrap: nowrap;
+			justify-content: start;
+
+			animation: conveyor var(--animation-duration, 45s) var(--animation-direction, forwards) infinite linear;
+
+			&[data-direction='right'] {
+				--animation-direction: reverse;
+			}
+
+			&[data-direction='left'] {
+				--animation-direction: forwards;
+			}
+
+			&[data-duration='fast'] {
+				--animation-duration: 16s;
+			}
+
+			&[data-duration='slow'] {
+				--animation-duration: 30s;
+			}
+		}
+	}
+
+	&__row {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-evenly;
+		gap: 0.5rem;
+
+		@media screen and (min-width: 1024px) {
+			gap: 1.5rem;
+		}
+
+		&:nth-child(1) {
+			.tag {
+				&:nth-child(3n-1) {
+					animation: tagblinks 6s infinite;
+				}
+			}
+		}
+		&:nth-child(2) {
+			.tag {
+				&:nth-child(3n) {
+					animation: tagblinks 8s infinite;
+				}
+			}
+		}
+		&:nth-child(3) {
+			.tag {
+				&:nth-child(odd) {
+					animation: tagblinks 4s infinite;
+				}
+			}
+		}
+	}
+}
+
+@keyframes conveyor {
+	to {
+		transform: translateX(calc(-25% - var(--conveyor-index)));
+	}
+}
+
+.tag {
+	display: inline-block;
+	padding: 0.9375rem 1.25rem;
+	border: 2px solid;
+	border-radius: 3.125rem;
+
+	flex-grow: 1;
+
+	text-align: center;
+	font-size: 1.25rem;
+	line-height: 1.5;
+	color: var(--simple-white);
+	cursor: default;
+
+	@media (hover: hover) {
+		&:hover {
+			border-color: transparent;
+			background: linear-gradient(var(--neutral-black), var(--neutral-black)) padding-box, var(--gradient) border-box;
+
+			.tag__text {
+				background-clip: text;
+				-webkit-text-fill-color: transparent;
+				background-image: var(--gradient);
+			}
+		}
+	}
+
+	@media (hover: none) {
+		pointer-events: none;
+	}
+}
+
+@keyframes tagblinks {
+	50% {
+		color: var(--simple-white-op3);
+	}
+}

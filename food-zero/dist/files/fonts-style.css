@@ -1,0 +1,86 @@
+@font-face {
+	font-family: 'icons';
+	src: url('fonts/icons.eot?ucix53');
+	src: url('fonts/icons.eot?ucix53#iefix') format('embedded-opentype'),
+		url('fonts/icons.ttf?ucix53') format('truetype'),
+		url('fonts/icons.woff?ucix53') format('woff'),
+		url('fonts/icons.svg?ucix53#icons') format('svg');
+	font-weight: normal;
+	font-style: normal;
+	font-display: block;
+}
+
+[class^="icon-"]::before,
+[class*=" icon-"]::before {
+	font-family: 'icons' !important;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.icon-nav-open::before {
+	content: "\e903";
+	color: #fff;
+	line-height: 1.2;
+}
+
+.icon-close-btn:before {
+	content: "\e90b";
+}
+
+.icon-angle:before {
+	content: "\e900";
+}
+
+.icon-fish:before {
+	content: "\e907";
+	color: black;
+}
+
+.icon-carrot:before {
+	content: "\e90a";
+	color: black;
+}
+
+.icon-lemon:before {
+	content: "\e902";
+	color: black;
+}
+
+.icon-insta:before {
+	content: "\e901";
+	color: #fff;
+}
+
+.icon-twitter:before {
+	content: "\e905";
+	color: #fff;
+}
+
+.icon-facebook:before {
+	content: "\e90c";
+	color: #fff;
+}
+
+.icon-youtube:before {
+	content: "\e906";
+	color: #fff;
+}
+
+.icon-search:before {
+	content: "\e904";
+	color: #fff;
+}
+
+.icon-arrow-left:before {
+	content: "\e908";
+}
+
+.icon-arrow-right::before {
+	content: "\e909";
+}

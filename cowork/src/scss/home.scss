@@ -1,0 +1,42 @@
+@import 'components/accordion';
+@import 'components/article-card';
+
+@import 'sections/faq';
+@import 'sections/join';
+@import 'sections/blog';
+
+@import 'pages/home/hero';
+@import 'pages/home/features';
+@import 'pages/home/virtual-tour';
+@import 'pages/home/trusted';
+@import 'pages/home/statistics';
+@import 'pages/home/testimonial';
+@import 'pages/home/blog';
+
+.p-block {
+	padding-block-start: 3rem;
+	margin-block-end: 3rem;
+
+	@media screen and (min-width: 768px) {
+		padding-block-start: 4.5rem;
+		margin-block-end: 4.5rem;
+	}
+}
+
+.top-line {
+	position: relative;
+	display: inline-block;
+	padding-block-start: 8px;
+
+	&::before {
+		content: '';
+		position: absolute;
+		left: 0;
+		top: 0;
+
+		height: 1px;
+		width: 200px;
+
+		background-color: var(--white);
+	}
+}

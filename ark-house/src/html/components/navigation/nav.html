@@ -1,0 +1,19 @@
+<nav class="navigation">
+	<button
+		class="navigation__toggler nav-toggler"
+		aria-expanded="false"
+		aria-controls="@@id"
+		aria-label="Open/close page navigation">
+		<span class="nav-toggler__text"></span>
+	</button>
+	<ul
+		id="@@id"
+		aria-hidden="false"
+		class="navigation__links-list">
+		@@include('./nav__item.html', { 'href': 'index.html/#about', 'title': 'About', 'number': '1' })
+		@@include('./nav__item.html', { 'href': 'index.html/#services', 'title': 'Services', 'number': '2' })
+		@@include('./nav__item.html', { 'href': 'index.html/#projects', 'title': 'Projects', 'number': '3'})
+		@@include('./nav__item.html', { 'href': 'index.html/#team', 'title': 'Team', 'number': '4' })
+		@@include('./nav__item.html', { 'href': 'index.html/#blog', 'title': 'Blog', 'number': '5' })
+	</ul>
+</nav>
