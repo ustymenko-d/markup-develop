@@ -1,0 +1,26 @@
+.about {
+	.title {
+		color: var(--primary, #554dde);
+		font-size: 3.125rem;
+		line-height: 120%;
+		margin-bottom: 0.9375rem;
+
+		@media screen and (min-width: 1024px) {
+			margin-bottom: 2rem;
+			font-size: 3rem;
+		}
+	}
+
+	.text {
+		color: var(--light-color, #6a6d9e);
+		font-size: 1.25rem;
+
+		@media screen and (min-width: 1920px) {
+			font-size: 1.8rem;
+		}
+	}
+}
+
+@import './components/Card/Card.scss';
+@import './components/Management/Management.scss';
+@import './components/Support/Support.scss';

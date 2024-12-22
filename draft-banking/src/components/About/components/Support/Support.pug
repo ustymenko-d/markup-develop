@@ -1,0 +1,36 @@
+-
+	const messages = [
+		{ photo: 'img/woman_1.png',
+			alt: 'Photo of the assistant', 
+			text: 'Hi Mike, How can I help you?', 
+			time: 'Clair, 12:22 pm', 
+			reverse: false },
+		{ photo: 'img/user.png', 
+			alt: 'User photo', 
+			text: 'My credit card is stolen...', 
+			time: 'Mike, 12:24 pm', 
+			reverse: true },
+		{ photo: 'img/woman_1.png', 
+			alt: 'Photo of the assistant', 
+			text: 'Ok. No problem. We will take care of this.', 
+			time: 'Clair, 12:25 pm', 
+			reverse: false },
+	]
+
+article.support
+	.support__textContent
+		h2.title.element-animation We support you in 5 different languages
+		p.text.element-animation
+			| Our support team in here to help you in 5 languages - English, French, Spanish,Polish and German.
+		.support__team
+			each src in ['img/man_1.png', 'img/man_2.png', 'img/man_3.png', 'img/man_4.png', 'img/woman_1.png']
+				img.support__photo.element-animation(src=src, alt="Photo of the assistant")
+			span.text.element-animation +20
+
+	.support__message
+		each message in messages
+			div(class='message__item element-animation' + (message.reverse ? ' message__item_reverse' : ''))
+				div.message__userPhoto
+					img(src=message.photo, alt=message.alt)
+				div.message__text= message.text
+				span.message__time= message.time

@@ -1,0 +1,121 @@
+.prices {
+	text-align: center;
+
+	.title {
+		// margin-bottom: 1.25rem;
+		color: var(--primary, #554dde);
+		font-size: 2.5rem;
+
+		span {
+			color: var(--accent);
+		}
+	}
+
+	.text {
+		color: var(--secondary-dark, #16194f);
+		font-size: 1.5rem;
+	}
+
+	& > .text {
+		margin-bottom: 7.5rem;
+	}
+
+	&__description {
+		flex: 1 0 auto;
+	}
+
+	&__wrapper {
+		display: grid;
+		gap: 3.75rem;
+
+		@media screen and (min-width: 992px) {
+			grid-template-columns: repeat(2, 1fr);
+		}
+	}
+
+	&__item {
+		display: flex;
+		flex-direction: column;
+		gap: 1.5rem;
+		justify-content: space-between;
+
+		padding: 2.5rem;
+		border-radius: 50px;
+		border: 0.5px solid var(--stroke, #cad6f1);
+		background: #fff;
+		box-shadow: 0px 25px 50px 0px rgba(22, 25, 79, 0.05);
+
+		.title {
+			color: #000;
+			font-size: 2.5rem;
+		}
+
+		span {
+			color: #000;
+			font-size: 3.75rem;
+		}
+
+		.button {
+			align-self: center;
+			padding: 1rem 2.9375rem;
+			border: 1.5px solid var(--dark-color, #16194f);
+			color: var(--dark-color);
+			font-size: 0.9375rem;
+
+			&:focus-visible {
+				background-color: var(--accent);
+				color: white;
+				border-color: var(--accent);
+			}
+
+			@media (hover: hover) {
+				&:hover {
+					background-color: var(--accent);
+					color: white;
+					border-color: var(--accent);
+				}
+			}
+
+			@media (hover: none) {
+				&:active {
+					background-color: var(--accent);
+					color: white;
+					border-color: var(--accent);
+				}
+			}
+		}
+
+		img {
+			border-radius: 25px;
+			box-shadow: 0px 37.25701904296875px 74.5140380859375px 0px
+				rgba(22, 25, 79, 0.2);
+		}
+
+		ul {
+			color: var(--dark-color);
+			text-align: left;
+
+			li {
+				position: relative;
+				padding-left: 3.125rem;
+				margin-bottom: 0.9375rem;
+
+				font-size: 1.0625rem;
+
+				&::before {
+					content: url(../img/check-icon.svg);
+					position: absolute;
+					left: 3%;
+				}
+
+				&.disabled {
+					color: #b7b7b7;
+
+					&::before {
+						content: url(../img/check-icon-disabled.svg);
+					}
+				}
+			}
+		}
+	}
+}

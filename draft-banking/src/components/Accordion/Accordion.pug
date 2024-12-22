@@ -1,0 +1,29 @@
+-
+	const questions = [
+		{ 
+			question: 'What is the difference between Draft and a traditional bank account?', 
+			answer: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Distinctio placeat aliquid necessitatibus facilis quidem ea vel ipsam omnis tenetur cumque.'
+		},
+		{ 
+			question: 'Who can open a Draft account?', 
+			answer: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Distinctio placeat aliquid necessitatibus facilis quidem ea vel ipsam omnis tenetur cumque.'
+		},
+		{ 
+			question: 'What if I withdraw money abroad?', 
+			answer: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Distinctio placeat aliquid necessitatibus facilis quidem ea vel ipsam omnis tenetur cumque.'
+		},
+		{ 
+			question: 'What happens if I withdraw more than $250?', 
+			answer: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Distinctio placeat aliquid necessitatibus facilis quidem ea vel ipsam omnis tenetur cumque.'
+		},
+		{ 
+			question: 'Can I cancel my subscription or switch to another plan anytime?', 
+			answer: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Distinctio placeat aliquid necessitatibus facilis quidem ea vel ipsam omnis tenetur cumque.'
+		}
+	]
+
+.accordion
+	each question in questions
+		.accordionItem
+			button.accordionItem__trigger= question.question
+			.accordionItem__content= question.answer

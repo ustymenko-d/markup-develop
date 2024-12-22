@@ -1,0 +1,16 @@
+- 
+	const navLinks = [
+		{title: 'Home', href: '#'},
+		{title: 'Feature', href: '#feature'},
+		{title: 'Pricing', href: '#pricing'}
+	]
+
+header.header
+	a.header__logo(href="#")
+		img(src="img/logo.svg" alt="Page logo")
+	nav.header__navigation
+		ul
+			each link in navLinks
+				li
+					a.text(href=link.href)= link.title
+	button.button.text Sign Up

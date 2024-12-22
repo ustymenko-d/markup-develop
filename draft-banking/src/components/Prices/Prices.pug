@@ -1,0 +1,51 @@
+-
+	const plans = [
+		{
+			title: 'FREE',
+			price: '$0/m',
+			description: 'Manage your business with a simple and efficient account',
+			button: 'Get Started',
+			features: [
+				{ text: '10 free local transfer', disabled: false },
+				{ text: '10 free local transfer', disabled: false },
+				{ text: 'Multi-user access', disabled: false },
+				{ text: 'Prepaid debit cards', disabled: false },
+				{ text: 'Virtual cards', disabled: false },
+				{ text: 'Priority 24/7 support', disabled: true },
+				{ text: 'Exchange 24 currencies', disabled: true },
+				{ text: 'Free payment to other Draft accounts', disabled: true }
+			]
+		},
+		{
+			title: 'PREMIUM',
+			price: '$8/m',
+			description: 'Priority support and multi-user access to maximize your productivity.',
+			button: 'Get Started',
+			features: [
+				{ text: '10 free local transfer', disabled: false },
+				{ text: '10 free local transfer', disabled: false },
+				{ text: 'Multi-user access', disabled: false },
+				{ text: 'Prepaid debit cards', disabled: false },
+				{ text: 'Virtual cards', disabled: false },
+				{ text: 'Priority 24/7 support', disabled: false },
+				{ text: 'Exchange 24 currencies', disabled: false },
+				{ text: 'Free payment to other Draft accounts', disabled: false }
+			]
+		}
+	]
+
+section#prices.prices
+	h2.title
+		| An exceptional service, <span>at the right price.</span>
+	p.text Start with our free plan and switch to premium as you grow
+	.prices__wrapper
+		each plan in plans
+			div.prices__item
+				p.text.title= plan.title
+				span= plan.price
+				p.text.prices__description= plan.description
+				a.button(href='#')= plan.button
+				img(src='img/card.png' alt='Credit card')
+				ul
+					each feature in plan.features
+						li(class=(feature.disabled ? 'disabled' : ''))= feature.text

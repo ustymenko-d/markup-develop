@@ -1,0 +1,14 @@
+doctype html
+html(lang="en")
+	include components/Head/Head.pug
+	+Head({ title: "Draft Banking" })
+	body.page
+		button.toTop.toTop_hidden
+		include components/Hero/Hero.pug
+		main.page__content
+			.container
+				include components/About/About.pug
+				include components/Prices/Prices.pug
+				include components/FAQ/FAQ.pug
+		.offset
+		include components/Footer/Footer.pug

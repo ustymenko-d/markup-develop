@@ -1,0 +1,30 @@
+-
+	const statItems = [
+		{
+			name: 'Balance',
+			value: '$5,600',
+		},
+		{
+			name: 'Last Transaction',
+			value: '$230',
+		}
+	]
+
+article.management
+	.management__stats.stats.countSection
+		each statItem in statItems
+			.stats__item
+				span.text= statItem.name 
+				span.title= statItem.value 
+		.stats__item.element-animation
+			each day in ['SUN','MON','TUE','WED','THU','FRI','SAT']
+				.stats__day.day 
+					.day__lines
+						.line_blue
+						.line_red
+					span= day
+	.management__textContent
+		h2.title.element-animation Manage your finances like a pro in no time
+		p.text.element-animation
+			| With Draft, book keeping, banking, and invoices are all in one place. You will always know where you stand.
+		a.button.text.element-animation(href='#') Learn More
