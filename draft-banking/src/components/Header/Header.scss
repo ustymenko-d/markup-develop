@@ -6,16 +6,9 @@
 	margin-bottom: 2rem;
 	padding-top: 2rem;
 
-	@media screen and (min-width: 768px) {
-		margin-bottom: 2.5rem;
-		padding-top: 2.5rem;
-	}
-
 	.text {
-		font-size: 1.0625rem;
-
 		@media screen and (min-width: 1440px) {
-			font-size: 1.5625rem;
+			font-size: 1.125rem;
 		}
 	}
 
@@ -45,6 +38,7 @@
 
 		a {
 			padding: 4px 12px;
+			font-size: 1.25rem;
 			color: white;
 			background-image: linear-gradient(currentColor, currentColor);
 			background-position: 0% 100%;
@@ -71,9 +65,10 @@
 	}
 
 	.button {
-		background-color: var(--accent);
+		padding: 16px 48px;
+		font-size: 1.25rem;
 		color: white;
-		padding: 0.9375rem 3.4375rem;
+		background-color: var(--accent);
 
 		&:focus-visible {
 			background-color: var(--dark-color);
@@ -90,5 +85,10 @@
 				background-color: var(--dark-color);
 			}
 		}
+	}
+
+	@media screen and (min-width: 768px) {
+		margin-bottom: 2.5rem;
+		padding-top: 2.5rem;
 	}
 }

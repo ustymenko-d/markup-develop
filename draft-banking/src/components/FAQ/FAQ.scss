@@ -2,7 +2,7 @@
 .faq {
 	padding-bottom: 3.125rem;
 	
-	.title {
+	&__title {
 		margin-bottom: 1.25rem;
 		text-align: center;
 		color: var(--primary);
@@ -16,7 +16,7 @@
 		}
 	}
 
-	.text {
+	&__text {
 		color: var(--light-color);
 		font-size: 1.5rem;
 		font-style: normal;

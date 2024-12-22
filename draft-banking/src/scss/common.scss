@@ -37,8 +37,7 @@ img {
 
 .text {
 	font-style: normal;
-	font-weight: 400;
-	line-height: 150%;
+	line-height: 1.5;
 }
 
 .button {
@@ -147,30 +146,5 @@ img {
 @media (hover: none) {
 	.toTop:active {
 		background-color: var(--accent);
-	}
-}
-
-.portfolioLink {
-	background-image: linear-gradient(currentColor, currentColor);
-	background-position: 0 100%;
-	background-repeat: no-repeat;
-	background-size: 0% 1px;
-	transition: background-size 0.3s;
-	color: var(--primary);
-}
-
-.portfolioLink:focus-visible {
-	background-size: 100% 1px;
-}
-
-@media (hover: hover) {
-	.portfolioLink:hover {
-		background-size: 100% 1px;
-	}
-}
-
-@media (hover: none) {
-	.portfolioLink:active {
-		background-size: 100% 1px;
 	}
 }

@@ -48,10 +48,10 @@
 
 		.button {
 			position: relative;
-			padding: 15px 37px;
-			font-size: 0.9375rem;
-			background-color: var(--dark-color);
+			padding: 16px 48px;
+			font-size: 1.25rem;
 			color: white;
+			background-color: var(--dark-color);
 
 			opacity: 0;
 
@@ -76,7 +76,7 @@
 			}
 
 			@media screen and (min-width: 1440px) {
-				font-size: 1.5625rem;
+				font-size: 22px;
 			}
 		}
 
