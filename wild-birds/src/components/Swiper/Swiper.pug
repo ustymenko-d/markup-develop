@@ -1,0 +1,16 @@
+.swiper 
+	.swiper-wrapper
+		each bird in ["flamingo", "macaw", "colibri"]
+			.swiper-slide
+				div(class=`container container_${bird}`)
+					div(class=`content content_${bird}`)
+						span(class="logo") WildBirds
+						.wrapper
+							.title
+								span(class='title__backdrop')= bird
+								h1(class='title__content')= bird
+							p(class=`text text_${bird}`)
+								| A wealth of expert bird and wildlife knowledge, from bird guides and identifying tools, to wildlife articles and brilliant nature films
+	.swiper-pagination
+	//- .swiper-button-prev
+	//- .swiper-button-next
