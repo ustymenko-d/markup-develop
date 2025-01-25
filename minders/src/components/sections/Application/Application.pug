@@ -1,5 +1,5 @@
 mixin Application({ jsDisabled })
-	section#application.application
+	section#application.application(class=`${jsDisabled ? '-mt-16 pt-16 lg:-mt-24 lg:pt-24' : ''}`)
 		div(class='md:container mx-auto px-4 lg:px-5')
 			div(class='application__wrapper lg:p-20 lg:flex lg:items-center lg:gap-x-20')
 				.application__text-content

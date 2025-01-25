@@ -20,9 +20,9 @@ mixin TagsBlock({ jsDisabled })
 			["poetry", "AI art", "music", "fashion"]
 		]
 
-	div(class=`lg:col-start-2 lg:col-end-3 lg:row-start-1 lg:row-span-2 tags relative overflow-hidden p-4 flex flex-col gap-y-2 lg:gap-y-4 self-center${jsDisabled ? ' tags__gap_small' : ''}`)
+	div(class=`lg:col-start-2 lg:col-end-3 lg:row-start-1 lg:row-span-2 tags relative overflow-hidden p-4 flex flex-col self-center${jsDisabled ? ' gap-3' : ' gap-y-2 lg:gap-y-4'}`)
 		each row, idx in rows
-			div(class=`tags__row flex flex-wrap justify-evenly gap-2 lg:gap-6 tags__row_${row.direction}-animation${jsDisabled ? ' tags__gap_small' : ''}` data-direction=row.direction data-duration=row.speed)
+			div(class=`tags__row flex flex-wrap justify-evenly gap-3 tags__row_${row.direction}-animation${jsDisabled ? '' : ' lg:gap-6'}` data-direction=row.direction data-duration=row.speed)
 				each tag in tags[idx]
 					div.tag(class='inline-block rounded-full border-2 border-solid border-current py-3.5 px-5 grow text-xl text-center cursor-default')
 						span.tag__text= tag
