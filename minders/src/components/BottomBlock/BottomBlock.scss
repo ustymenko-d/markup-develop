@@ -1,0 +1,62 @@
+.bottomBlock {
+	@include gradientBackAnimation;
+	color: var(--neutral-black);
+
+	p {
+		@media screen and (min-width: 1024px) {
+			max-width: 70%;
+		}
+
+		@media screen and (min-width: 1440px) {
+			max-width: 60%;
+		}
+	}
+
+	a {
+		position: relative;
+		display: inline-block;
+		padding: 1rem 2rem 1rem calc(2rem + 32px);
+		border-radius: 1.25rem;
+		border: 2px solid var(--neutral-black);
+		transition: all 0.4s;
+
+		&::before {
+			position: absolute;
+			content: url(../img/icons/corner-down-right.svg);
+			left: 2rem;
+			top: 50%;
+			transform: translateY(-50%);
+		}
+
+		&:focus-visible {
+			background-color: var(--neutral-black);
+			color: var(--purple);
+
+			&::before {
+				content: url(../img/icons/corner-down-right_purple.svg);
+			}
+		}
+
+		@media (hover: hover) {
+			&:hover {
+				background-color: var(--neutral-black);
+				color: var(--purple);
+
+				&::before {
+					content: url(../img/icons/corner-down-right_purple.svg);
+				}
+			}
+		}
+
+		@media (hover: none) {
+			&:active {
+				background-color: var(--neutral-black);
+				color: var(--purple);
+
+				&::before {
+					content: url(../img/icons/corner-down-right_purple.svg);
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,8 @@
+mixin ToTopButton({ jsDisabled })
+	-
+		const baseClasses = 'box-content w-5 h-5 p-4 fixed bottom-4 right-4 rounded-full border-2 border-solid duration-300'
+
+	if jsDisabled
+		a.to-top(href="#" class=baseClasses aria-label="To top button")
+	else
+		button.to-top.hidden(class=baseClasses aria-label="To top button")

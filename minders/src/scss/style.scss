@@ -1,5 +1,5 @@
-@import 'reset';
-@import 'fonts';
+@use 'reset' as *;
+@use 'fonts' as *;
 
 :root {
 	--neutral-black: rgba(6, 5, 15, 1);
@@ -258,103 +258,8 @@ html {
 }
 
 /* toTop Button */
+@import '../components/ToTopButton/ToTopButton';
 
-.to-top {
-	box-sizing: content-box;
-	width: 1.25rem;
-	height: 1.25rem;
-	position: fixed;
-	bottom: 17px;
-	right: 17px;
-	z-index: 2;
-	background-color: var(--neutral-black-op4);
-	border-radius: 50%;
-	border: 2px solid;
-	padding: 15px;
-	transition: all 0.4s;
-	color: var(--simple-white);
-
-	&::after {
-		content: '';
-		position: absolute;
-		width: 2px;
-		height: 18px;
-		left: calc(50% - 1px);
-		top: calc(50% - 9px);
-		background-color: var(--simple-white);
-		transition: all 0.4s;
-	}
-
-	&::before {
-		content: '';
-		position: absolute;
-		width: 14px;
-		height: 14px;
-		left: calc(36%);
-		top: calc(50% - 9px);
-		border-top: 2px solid;
-		border-left: 2px solid;
-		transform: rotate(45deg);
-		color: var(--simple-white);
-		transition: all 0.4s;
-	}
-
-	&:focus-visible {
-		color: var(--neutral-black);
-		@include gradientBackAnimation;
-
-		&::before {
-			color: var(--neutral-black);
-		}
-		&::after {
-			background-color: var(--neutral-black);
-		}
-	}
-
-	@media (hover: hover) {
-		&:hover {
-			color: var(--neutral-black);
-			@include gradientBackAnimation;
-
-			&::before {
-				color: var(--neutral-black);
-			}
-			&::after {
-				background-color: var(--neutral-black);
-			}
-		}
-	}
-
-	@media (hover: none) {
-		&:active {
-			color: var(--neutral-black);
-			background-image: var(--gradient);
-
-			&::before {
-				color: var(--neutral-black);
-			}
-			&::after {
-				background-color: var(--neutral-black);
-			}
-		}
-	}
-
-	&:active {
-		color: var(--neutral-black);
-		background-image: var(--gradient);
-
-		&::before {
-			color: var(--neutral-black);
-		}
-		&::after {
-			background-color: var(--neutral-black);
-		}
-	}
-
-	&.hidden {
-		display: none;
-	}
-}
 
 @keyframes animatedgradient {
 	0% {
@@ -381,85 +286,16 @@ html {
 	position: relative;
 }
 
-.bottom {
-	z-index: 0;
-	position: fixed;
-	width: 100%;
-	bottom: 0;
-	@include gradientBackAnimation;
-
-	font-size: 20px;
-	font-weight: 500;
-	line-height: 1.25;
-	color: var(--neutral-black);
-
-	p {
-		margin-block-end: 1rem;
-		@media screen and (min-width: 1024px) {
-			max-width: 70%;
-		}
-		@media screen and (min-width: 1440px) {
-			max-width: 60%;
-		}
-	}
-
-	a {
-		position: relative;
-		display: inline-block;
-		padding: 1rem 2rem 1rem calc(2rem + 32px);
-		border-radius: 1.25rem;
-		border: 2px solid var(--neutral-black);
-		transition: all 0.4s;
-
-		&::before {
-			position: absolute;
-			content: url(../img/icons/corner-down-right.svg);
-			left: 2rem;
-			top: 50%;
-			transform: translateY(-50%);
-		}
-
-		&:focus-visible {
-			background-color: var(--neutral-black);
-			color: var(--purple);
-
-			&::before {
-				content: url(../img/icons/corner-down-right_purple.svg);
-			}
-		}
-
-		@media (hover: hover) {
-			&:hover {
-				background-color: var(--neutral-black);
-				color: var(--purple);
-
-				&::before {
-					content: url(../img/icons/corner-down-right_purple.svg);
-				}
-			}
-		}
-
-		@media (hover: none) {
-			&:active {
-				background-color: var(--neutral-black);
-				color: var(--purple);
-
-				&::before {
-					content: url(../img/icons/corner-down-right_purple.svg);
-				}
-			}
-		}
-	}
-}
+@import '../components/BottomBlock/BottomBlock';
 
 // Sections
-
-@import './sections/hero';
-@import './sections/about';
-@import './sections/team';
-@import './sections/events';
-@import './sections/application';
-@import './footer';
+@import '../components/Header/Header';
+@import '../components/Hero/Hero';
+@import '../components/About/About';
+// @import './sections/team';
+// @import './sections/events';
+// @import './sections/application';
+@import '../components/Footer/Footer';
 
 html.lenis,
 html.lenis body {

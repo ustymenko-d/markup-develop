@@ -1,22 +1,22 @@
 .no-js {
-	.header__logo {
-		text-align: center;
-		font-size: 3rem;
-	}
+	// .header__logo {
+	// 	text-align: center;
+	// 	font-size: 3rem;
+	// }
 	.navigation__links-list {
-		visibility: visible;
-		opacity: 1;
-		height: auto;
+		// visibility: visible;
+		// opacity: 1;
+		// height: auto;
 
-		flex-wrap: wrap;
-		justify-content: flex-start;
+		// flex-wrap: wrap;
+		// justify-content: flex-start;
 
-		background-color: transparent;
-		font-size: 2rem;
+		// background-color: transparent;
+		// font-size: 2rem;
 
-		@media screen and (min-width: 768px) {
-			justify-content: space-between;
-		}
+		// @media screen and (min-width: 768px) {
+		// 	justify-content: space-between;
+		// }
 	}
 
 	.tags__gap_small {

@@ -1,10 +1,9 @@
-let bottom = document.querySelector('.bottom');
-let offset = document.querySelector('.offset');
+const bottom = document.querySelector('.bottomBlock')
+const offset = document.querySelector('.offset')
 
-offsetSize();
-
-window.addEventListener('resize', offsetSize);
-
-function offsetSize() {
-	offset.style.paddingBottom = `${bottom.clientHeight}px`;
+const offsetSize = () => {
+	offset.style.paddingBottom = `${bottom.clientHeight}px`
 }
+
+offsetSize()
+window.addEventListener('resize', offsetSize)

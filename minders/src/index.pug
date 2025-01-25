@@ -1,0 +1,22 @@
+- const jsDisabled = false
+
+doctype html
+html.scroll-smooth(lang="en")
+	include components/Head.pug
+	+Head({ jsDisabled })
+
+	body.page.flex.flex-col
+		include components/Header/Header.pug
+		+Header({ jsDisabled })
+
+		main.page__content.grow
+			include components/sections/Hero/Hero.pug
+			include components/sections/About/About.pug
+			+About({ jsDisabled })
+		include components/Footer/Footer.pug
+
+		.offset
+		include components/BottomBlock/BottomBlock.pug
+		+BottomBlock({ jsDisabled })
+		include components/ToTopButton/ToTopButton.pug
+		+ToTopButton({ jsDisabled })

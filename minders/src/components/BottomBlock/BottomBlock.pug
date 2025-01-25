@@ -1,0 +1,12 @@
+mixin BottomBlock({jsDisabled})
+	-
+		const baseClasses = 'w-full text-xl font-medium'
+		const additionalClasses = jsDisabled ? '' : ' fixed z-0 bottom-0'
+		const blockClasses = baseClasses + additionalClasses
+
+	.bottomBlock(class=blockClasses)
+		div(class="md:container mx-auto py-6 px-4 lg:px-5 text-center")
+			p.mx-auto.mb-4
+				| Landing page example. Created using the BEM methodology. I used the tailwind library to add a basic style. The project was built with Gulp.js.
+			a(class="text-black" href="https://ustymenko.vercel.app")
+				| Back to portfolio

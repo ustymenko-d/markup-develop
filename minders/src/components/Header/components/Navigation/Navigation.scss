@@ -1,0 +1,168 @@
+@mixin focus-visible-animation {
+	&:focus-visible {
+		&::before,
+		&::after {
+			width: 94%;
+			@include gradientBackAnimation;
+		}
+	}
+}
+
+@mixin hover-animation {
+	@media (hover: hover) {
+		&:hover {
+			&::before,
+			&::after {
+				width: 94%;
+				@include gradientBackAnimation;
+			}
+		}
+	}
+}
+
+@mixin active-animation {
+	@media (hover: none) {
+		&:active {
+			&::before,
+			&::after {
+				width: 94%;
+				background-image: var(--gradient);
+			}
+		}
+	}
+}
+
+.navigation {
+	&__burger {
+		position: relative;
+
+		@include focus-visible-animation;
+		@include hover-animation;
+		@include active-animation;
+
+		&::before,
+		&::after {
+			content: '';
+			position: absolute;
+			width: 65%;
+			height: 0.1875rem;
+			background-color: var(--simple-white);
+			border-radius: 0.5rem;
+			transition: transform 0.4s, width 0.3s ease-in;
+		}
+
+		&::before {
+			left: 3%;
+			top: 20%;
+		}
+
+		&::after {
+			right: 3%;
+			bottom: 20%;
+		}
+
+		&_active {
+			&::before,
+			&::after {
+				width: 94%;
+				top: 50%;
+			}
+
+			&::before {
+				transform: rotate(225deg);
+			}
+
+			&::after {
+				transform: rotate(315deg);
+			}
+
+			@include focus-visible-animation;
+			@include hover-animation;
+			@include active-animation;
+		}
+	}
+
+	&__links-list {
+		visibility: hidden;
+		opacity: 0;
+		height: calc(100dvh - 63.5008px);
+		background-color: rgba(6, 5, 15, 0.9);
+		font-size: 2.5rem;
+		line-height: 1.5;
+
+		@media (max-height: 445px) {
+			&.navigation__links-list_active {
+				justify-content: start;
+				overflow: auto;
+			}
+		}
+
+		&_active {
+			z-index: 2;
+			opacity: 1;
+		}
+	}
+
+	&__link {
+		&:focus-visible {
+			@include text-gradient-animation;
+		}
+
+		@media (hover: hover) {
+			&:hover {
+				@include text-gradient-animation;
+			}
+		}
+
+		@media (hover: none) {
+			&:active {
+				background-clip: text;
+				-webkit-text-fill-color: transparent;
+				background-image: var(--gradient);
+			}
+		}
+	}
+}
+
+details {
+	&[open] {
+		.navigation__burger {
+			&::before,
+			&::after {
+				width: 94%;
+				top: 50%;
+			}
+
+			&::before {
+				transform: rotate(225deg);
+			}
+
+			&::after {
+				transform: rotate(315deg);
+			}
+
+			@include focus-visible-animation;
+			@include hover-animation;
+			@include active-animation;
+		}
+
+		& + #navigation__links-list {
+			visibility: visible;
+			z-index: 2;
+			opacity: 1;
+
+			@media (max-height: 445px) {
+				justify-content: start;
+				overflow: auto;
+			}
+
+			@media (min-width: 350px) {
+				flex-direction: row;
+			}
+		}
+	}
+
+	@media (min-width: 768px) {
+		display: none;
+	}
+}

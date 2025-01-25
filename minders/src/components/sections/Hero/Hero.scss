@@ -1,0 +1,16 @@
+.hero {
+	&__title {
+		font-size: 3.125rem;
+		line-height: 1.2;
+	}
+
+	&__image {
+		border-radius: 3.75rem;
+		min-height: 23.625rem;
+
+		@media (min-width: 1250px) {
+			border-radius: 6.25rem;
+			min-height: 31.5625rem;
+		}
+	}
+}

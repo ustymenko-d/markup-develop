@@ -1,0 +1,82 @@
+.to-top {
+	z-index: 2;
+	background-color: var(--neutral-black-op4);
+	color: var(--simple-white);
+
+	&::after {
+		content: '';
+		position: absolute;
+		width: 2px;
+		height: 18px;
+		left: calc(50% - 1px);
+		top: calc(50% - 9px);
+		background-color: var(--simple-white);
+		transition: all 0.4s;
+	}
+
+	&::before {
+		content: '';
+		position: absolute;
+		width: 14px;
+		height: 14px;
+		left: calc(36%);
+		top: calc(50% - 9px);
+		border-top: 2px solid;
+		border-left: 2px solid;
+		transform: rotate(45deg);
+		color: var(--simple-white);
+		transition: all 0.4s;
+	}
+
+	&:focus-visible {
+		color: var(--neutral-black);
+		@include gradientBackAnimation;
+
+		&::before {
+			color: var(--neutral-black);
+		}
+		&::after {
+			background-color: var(--neutral-black);
+		}
+	}
+
+	@media (hover: hover) {
+		&:hover {
+			color: var(--neutral-black);
+			@include gradientBackAnimation;
+
+			&::before {
+				color: var(--neutral-black);
+			}
+			&::after {
+				background-color: var(--neutral-black);
+			}
+		}
+	}
+
+	@media (hover: none) {
+		&:active {
+			color: var(--neutral-black);
+			background-image: var(--gradient);
+
+			&::before {
+				color: var(--neutral-black);
+			}
+			&::after {
+				background-color: var(--neutral-black);
+			}
+		}
+	}
+
+	&:active {
+		color: var(--neutral-black);
+		background-image: var(--gradient);
+
+		&::before {
+			color: var(--neutral-black);
+		}
+		&::after {
+			background-color: var(--neutral-black);
+		}
+	}
+}
