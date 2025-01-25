@@ -13,8 +13,10 @@ html.scroll-smooth(lang="en")
 			include components/sections/Hero/Hero.pug
 			include components/sections/About/About.pug
 			+About({ jsDisabled })
-		include components/Footer/Footer.pug
+			include components/sections/Application/Application.pug
+			+Application({ Application })
 
+		include components/Footer/Footer.pug
 		.offset
 		include components/BottomBlock/BottomBlock.pug
 		+BottomBlock({ jsDisabled })

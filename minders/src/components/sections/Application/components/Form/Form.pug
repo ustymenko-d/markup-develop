@@ -1,0 +1,35 @@
+mixin Form({ jsDisabled })
+	-
+		const formFields = [
+			{ id: 'full-name', type: 'text', label: 'Full-name', required: true, maxlength: 50 },
+			{ id: 'occupation', type: 'text', label: 'Occupation' },
+			{ id: 'phone', type: 'tel', label: 'Phone', required: true, pattern: '[0-9]{10}' },
+			{ id: 'email', type: 'email', label: 'E-mail', required: true }
+		]
+		const inputClasses = 'form__input block w-full px-5 pt-8 pb-2.5 outline-0'
+		const labelBaseClasses = 'form__label title_opacity-black-4 absolute pointer-events-none select-none'
+		const labelClasses = jsDisabled ? labelBaseClasses + ' form__label_not-empty' : labelBaseClasses
+
+	form.application__form.form
+		each field in formFields
+			.form__input-wrapper.relative(
+				class=(field.id === 'phone' ? 'form__input-wrapper-tel' : '') +
+					(field.id === 'email' ? 'form__input-wrapper-mail' : '')
+			)
+				input(
+					id=field.id
+					type=field.type
+					class=inputClasses
+					required=field.required
+					pattern=field.pattern
+					maxlength=field.maxlength
+				)
+				label(class=labelClasses for=field.id)= field.label
+
+		button.button.button_yellow.form__button.w-full.text-center.outline-0(type="submit")
+			span.button__text.inline-block Apply
+
+		p.title_opacity-black-4
+			| By clicking the button, you agree to our 
+			a.application__terms-link(href="#" target="_blank") terms and conditions
+			| .

@@ -1,0 +1,12 @@
+mixin Application({ jsDisabled })
+	section#application.application
+		div(class='md:container mx-auto px-4 lg:px-5')
+			div(class='application__wrapper lg:p-20 lg:flex lg:items-center lg:gap-x-20')
+				.application__text-content
+					h2.application__title.title
+						span.title_opacity-black-4 Join our community
+						br
+						| of talented artists
+					p.application__text.text Are you an artist looking to showcase your work and connect with other creatives? Fill out our application form and join our community of talented artists. We can't wait to see what you have to offer.
+				include ./components/Form/Form.pug
+				+Form({ jsDisabled })
