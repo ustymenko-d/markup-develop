@@ -260,7 +260,6 @@ html {
 /* toTop Button */
 @import '../components/ToTopButton/ToTopButton';
 
-
 @keyframes animatedgradient {
 	0% {
 		background-position: 0% 50%;
@@ -294,6 +293,7 @@ html {
 @import '../components/sections/About/About';
 // @import './sections/team';
 // @import './sections/events';
+@import '../components/sections/Events/Events';
 @import '../components/sections/Application/Application';
 @import '../components/Footer/Footer';
 

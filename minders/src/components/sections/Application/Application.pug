@@ -1,12 +1,13 @@
 mixin Application({ jsDisabled })
-	section#application.application(class=`${jsDisabled ? '-mt-16 pt-16 lg:-mt-24 lg:pt-24' : ''}`)
+	section#application.application.mb-24(class=`${jsDisabled ? '-mt-16 pt-16 lg:-mt-24 lg:pt-24' : 'py-12 lg:py-0'}`)
 		div(class='md:container mx-auto px-4 lg:px-5')
 			div(class='application__wrapper lg:p-20 lg:flex lg:items-center lg:gap-x-20')
-				.application__text-content
-					h2.application__title.title
+				.application__text-content(class='mb-9 lg:mb-0')
+					h2.application__title.title(class='mb-5 lg:mb-7')
 						span.title_opacity-black-4 Join our community
 						br
 						| of talented artists
-					p.application__text.text Are you an artist looking to showcase your work and connect with other creatives? Fill out our application form and join our community of talented artists. We can't wait to see what you have to offer.
+					p.application__text.text(class='lg:max-w-xl')
+						| Are you an artist looking to showcase your work and connect with other creatives? Fill out our application form and join our community of talented artists. We can't wait to see what you have to offer.
 				include ./components/Form/Form.pug
 				+Form({ jsDisabled })

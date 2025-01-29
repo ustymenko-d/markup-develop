@@ -1,58 +1,25 @@
 .application {
-	margin-block-end: 3.75rem;
-
-	@media screen and (min-width: 1024px) {
-		margin-block-end: 6.25rem;
-	}
-
 	@media screen and (max-width: 1023.9px) {
-		padding-block: 2.5rem 3.125rem;
-
 		background-color: var(--purple);
 	}
 
 	&__wrapper {
 		@media screen and (min-width: 1024px) {
 			border-radius: 5rem;
-
 			background-color: var(--purple);
 		}
 	}
 
 	&__text-content {
-		margin-block-end: 35px;
 		@media screen and (min-width: 1024px) {
-			margin-block-end: 0;
 			flex: 1 0 46.29%;
 		}
 	}
 
-	&__title {
-		color: var(--neutral-black);
-		margin-block-end: 25px;
-
-		@media screen and (min-width: 1024px) {
-			margin-block-end: 30px;
-		}
-	}
-
+	&__title,
 	&__text {
 		color: var(--neutral-black);
-		@media screen and (min-width: 1024px) {
-			max-width: 95%;
-		}
-	}
-
-	&__form {
-		@media screen and (min-width: 1024px) {
-			flex: 1 0 46.29%;
-		}
-	}
-
-	&__terms-link {
-		color: var(--neutral-black);
-		@include underlineAnimation;
 	}
 }
 
-@import './components/Form/Form'
+@import './components/Form/Form';

@@ -3,8 +3,6 @@
 		left: 1.25rem;
 		top: calc(50% - 0.75rem);
 
-		transition: all 0.4s;
-
 		&_not-empty {
 			font-size: 0.875rem;
 			line-height: 1.5;
@@ -14,8 +12,6 @@
 	}
 
 	&__input-wrapper {
-		transition: margin 0.4s;
-
 		&:not(:last-child) {
 			margin-bottom: 10px;
 		}
@@ -36,7 +32,7 @@
 			pointer-events: none;
 			opacity: 0;
 
-			transition: opacity 0.4s;
+			transition: opacity 0.3s;
 		}
 
 		&-tel {
@@ -91,7 +87,7 @@
 		background-color: transparent;
 		font-weight: 500;
 		color: var(--neutral-black);
-		transition: outline-color 0.4s;
+		transition: outline-color 0.3s;
 
 		&_invalid {
 			border-color: rgba(255, 0, 77, 0.3);
@@ -120,7 +116,8 @@
 		}
 	}
 
-	&__button {
-		margin-block: 1.875rem;
+	&__terms-link {
+		color: var(--neutral-black);
+		@include underlineAnimation;
 	}
 }
