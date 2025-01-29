@@ -1,4 +1,4 @@
-const toTop = document.querySelector('.to-top')
+const toTop = document.querySelector('#to-top')
 
 const checkHide = (arg) => {
 	arg.currentTarget.scrollY > document.documentElement.clientHeight

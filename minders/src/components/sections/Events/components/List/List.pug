@@ -1,0 +1,36 @@
+-
+	const events = [
+		{
+			id: 'brush-bash',
+			title: 'BrushBash',
+			date: 'June 22',
+			description: 'Are you an art lover? Ready to explore the depths of creativity and philosophy? Then Art Morning is the perfect event for you! Join us at a secret rooftop lounge bar in New York City and mingle with like-minded people who share your passion for art. Enjoy a DJ set, discuss philosophical questions about art and its creator, and discover the beauty of creativity! Sign up on the waiting list now and get ready for an unforgettable experience.',
+			place: 'Burgas'
+		},
+		{
+			id: 'art-morning',
+			title: 'Art Morning',
+			date: 'May 21',
+			description: 'Are you an art lover? Ready to explore the depths of creativity and philosophy? Then Art Morning is the perfect event for you! Join us at a secret rooftop lounge bar in New York City and mingle with like-minded people who share your passion for art. Enjoy a DJ set, discuss philosophical questions about art and its creator, and discover the beauty of creativity! Sign up on the waiting list now and get ready for an unforgettable experience.',
+			place: 'Paris'
+		},
+		{
+			id: 'palette-party',
+			title: 'Palette Party',
+			date: 'July 2',
+			description: 'Are you an art lover? Ready to explore the depths of creativity and philosophy? Then Art Morning is the perfect event for you! Join us at a secret rooftop lounge bar in New York City and mingle with like-minded people who share your passion for art. Enjoy a DJ set, discuss philosophical questions about art and its creator, and discover the beauty of creativity! Sign up on the waiting list now and get ready for an unforgettable experience.',
+			place: 'New York'
+		},
+		{
+			id: 'vibe-vibrant',
+			title: 'Vibe & Vibrant',
+			date: 'August 8',
+			description: 'Are you an art lover? Ready to explore the depths of creativity and philosophy? Then Art Morning is the perfect event for you! Join us at a secret rooftop lounge bar in New York City and mingle with like-minded people who share your passion for art. Enjoy a DJ set, discuss philosophical questions about art and its creator, and discover the beauty of creativity! Sign up on the waiting list now and get ready for an unforgettable experience.',
+			place: 'Tokio'
+		}
+	]
+
+div(class='mb-9 lg:mb-8 flex flex-col gap-2.5')
+	include ../Event/Event.pug
+	each event in events
+		+Event({...event})

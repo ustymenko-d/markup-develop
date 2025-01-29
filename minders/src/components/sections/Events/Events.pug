@@ -5,6 +5,9 @@ mixin Events({ jsDisabled })
 				span.title_opacity Keep up to date
 				br
 				| with our latest events
+
+			include ./components/List/List.pug
+
 			a(href='#' class='button button_purple block w-full text-center sm:sm:w-fit sm:mx-auto lg:m-0')
 				span.button__text.inline-block
 					| View&nbsp;calendar

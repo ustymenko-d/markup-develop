@@ -1,5 +1,5 @@
-const bottom = document.querySelector('.bottomBlock')
-const offset = document.querySelector('.offset')
+const bottom = document.querySelector('#bottomBlock')
+const offset = document.querySelector('#offset')
 
 const offsetSize = () => {
 	offset.style.paddingBottom = `${bottom.clientHeight}px`

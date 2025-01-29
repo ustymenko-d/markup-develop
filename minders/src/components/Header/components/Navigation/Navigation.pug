@@ -2,8 +2,8 @@ mixin Navigation({jsDisabled})
 	-
 		const navListBase = 'w-full p-4 flex gap-y-6 gap-x-14 md:p-0 fixed left-0 top-16 md:relative md:left-auto md:top-auto text-right md:text-left flex-col justify-end md:flex-row md:flex-nowrap md:text-xl md:bg-inherit transition-opacity duration-300 md:visible md:opacity-100'
 		const navListClasses = jsDisabled 
-			? navListBase + ' h-auto text-3xl flex-wrap' 
-			: navListBase + ' md:h-auto'
+			? navListBase + ' h-auto flex-wrap text-xl' 
+			: navListBase + ' md:h-auto text-4xl'
 		const attr = jsDisabled 
 			? {'role': 'menu'}
 			: {'aria-hidden': 'true'}
