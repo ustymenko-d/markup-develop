@@ -1,11 +1,10 @@
-const allSliderItems = document.querySelectorAll('.sliderItem')
+const allTeammates = document.querySelectorAll('.teammate')
 
 const toggleActive = (item) => {
-	// allSliderItems.forEach((sliderItem) => sliderItem.classList.remove('active'));
-	item.classList.toggle('sliderItem_active')
+	item.classList.toggle('teammate_active')
 }
 
-allSliderItems.forEach((item) => {
+allTeammates.forEach((item) => {
 	item.addEventListener('click', () => {
 		toggleActive(item)
 	})

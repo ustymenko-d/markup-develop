@@ -1,0 +1,66 @@
+mixin Team({ jsDisabled })
+	-
+		const team = [
+			{
+				img: 'img/first-teammate',
+				name: 'Emily Thompson',
+				position: 'dance producer',
+				about: "Minders is a place where movement meets creativity. Every day, I get to blend rhythm and vision to create something truly special."
+			},
+			{
+				img: 'img/second-teammate',
+				name: 'Alexander Mitchell',
+				position: 'musician',
+				about: "Music is my language, and at Minders, I’ve found the perfect space to express it. Collaborating with such a talented team pushes my sound to new heights."
+			},
+			{
+				img: 'img/third-teammate',
+				name: 'Cary Bennett',
+				position: 'lead designer',
+				about: "Great design is about telling stories, and Minders gives me the freedom to craft visual narratives that connect with people on a deeper level."
+			},
+			{
+				img: 'img/fourth-teammate',
+				name: 'Olivia Rodriguez',
+				position: 'AI artist',
+				about: "Exploring the possibilities of AI in art has been a thrilling journey. At Minders, I get to push the boundaries of creativity every single day."
+			},
+			{
+				img: 'img/fifth-teammate',
+				name: 'Sophia Patel',
+				position: 'art producer',
+				about: "Bringing creative visions to life is my passion. Minders is where ideas turn into reality through teamwork, innovation, and a shared love for the arts."
+			},
+			{
+				img: 'img/sixth-teammate',
+				name: 'Ethan Reynolds',
+				position: 'musician',
+				about: "At Minders, every project is an opportunity to experiment with sound and emotion. The creative energy here is simply unmatched."
+			},
+			{
+				img: 'img/seventh-teammate',
+				name: 'Liam Kanett',
+				position: 'lead designer',
+				about: "For me, design is about problem-solving and innovation. Working at Minders constantly challenges me to think outside the box and refine my craft."
+			},
+			{
+				img: 'img/last-teammate',
+				name: 'Elena Carter',
+				position: 'AI artist',
+				about: "Minders allows me to merge technology with artistry in exciting ways. Every day here is a chance to redefine the future of digital creativity."
+			}
+		];
+
+	section#team.team.overflow-hidden.mb-24
+		div(class='lg:container mx-auto px-4 lg:px-5 py-10 lg:py-24')
+			h2(class='title title_black mb-4 lg:mb-5 pt-5 sm:text-center lg:text-left')
+				span.title_opacity-black-4 The creative minds that
+				br
+				| power our projects
+
+			if (jsDisabled) 
+				include ./components/Slider/Slider.pug
+				+Slider({ team })
+			else
+				include ./components/Swiper/Swiper.pug
+				+Swiper({ team })

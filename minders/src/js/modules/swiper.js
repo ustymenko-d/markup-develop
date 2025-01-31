@@ -2,7 +2,7 @@ import Swiper from 'swiper'
 import { A11y, Keyboard } from 'swiper/modules'
 import 'swiper/css'
 
-const swiper = new Swiper('.swiper', {
+const swiper = new Swiper('#swiper', {
 	slidesPerView: 1.05,
 	spaceBetween: 10,
 	grabCursor: true,
@@ -31,7 +31,7 @@ const swiper = new Swiper('.swiper', {
 })
 
 // Drag cursor
-const teamSwiper = document.querySelector('.team__swiper')
+const teamSwiper = document.querySelector('#swiper')
 const cursorTemplate = document
 	.querySelector('#drag-cursor-template')
 	.content.cloneNode(true)
