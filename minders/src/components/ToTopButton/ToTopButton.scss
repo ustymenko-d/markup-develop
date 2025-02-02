@@ -30,6 +30,7 @@
 
 	&:focus-visible {
 		color: var(--neutral-black);
+		border-color: var(--neutral-black);
 		@include gradientBackAnimation;
 
 		&::before {
@@ -43,6 +44,7 @@
 	@media (hover: hover) {
 		&:hover {
 			color: var(--neutral-black);
+			border-color: transparent;
 			@include gradientBackAnimation;
 
 			&::before {
@@ -57,6 +59,7 @@
 	@media (hover: none) {
 		&:active {
 			color: var(--neutral-black);
+			border-color: var(--neutral-black);
 			background-image: var(--gradient);
 
 			&::before {
@@ -70,6 +73,7 @@
 
 	&:active {
 		color: var(--neutral-black);
+		border-color: var(--neutral-black);
 		background-image: var(--gradient);
 
 		&::before {

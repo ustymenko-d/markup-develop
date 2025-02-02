@@ -1,20 +1,20 @@
 mixin Form({ jsDisabled })
 	-
 		const formFields = [
-			{ id: 'full-name', type: 'text', label: 'Full-name', required: true, maxlength: 50 },
-			{ id: 'occupation', type: 'text', label: 'Occupation' },
-			{ id: 'phone', type: 'tel', label: 'Phone', required: true, pattern: '[0-9]{10}' },
-			{ id: 'email', type: 'email', label: 'E-mail', required: true }
+			{ id: "full-name", type: "text", label: "Full-name", required: true, maxlength: 50 },
+			{ id: "occupation", type: "text", label: "Occupation" },
+			{ id: "phone", type: "tel", label: "Phone", required: true, pattern: "[0-9]{10}" },
+			{ id: "email", type: "email", label: "E-mail", required: true }
 		]
-		const inputClasses = 'form__input block w-full px-5 pt-8 pb-2.5 outline-0'
-		const labelBaseClasses = 'form__label title_opacity-black-4 absolute pointer-events-none select-none duration-300'
-		const labelClasses = jsDisabled ? labelBaseClasses + ' form__label_not-empty' : labelBaseClasses
+		const inputClasses = "form__input block w-full px-5 pt-8 pb-2.5 outline-0"
+		const labelBaseClasses = "form__label title_opacity-black-4 absolute pointer-events-none select-none duration-300"
+		const labelClasses = jsDisabled ? labelBaseClasses + " form__label_not-empty" : labelBaseClasses
 
 	form.form
 		each field in formFields
 			.form__input-wrapper.relative.duration-300(
-				class=(field.id === 'phone' ? 'form__input-wrapper-tel' : '') +
-					(field.id === 'email' ? 'form__input-wrapper-mail' : '')
+				class=(field.id === "phone" ? "form__input-wrapper-tel" : "") +
+					(field.id === "email" ? "form__input-wrapper-mail" : "")
 			)
 				input(
 					id=field.id

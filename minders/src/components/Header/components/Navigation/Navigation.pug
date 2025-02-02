@@ -1,21 +1,21 @@
 mixin Navigation({jsDisabled})
 	-
-		const navListBase = 'w-full p-4 flex gap-y-6 gap-x-14 md:p-0 fixed left-0 top-16 md:relative md:left-auto md:top-auto text-right md:text-left flex-col justify-end md:flex-row md:flex-nowrap md:text-xl md:bg-inherit transition-opacity duration-300 md:visible md:opacity-100'
+		const navListBase = "w-full p-4 flex gap-y-6 gap-x-14 md:p-0 fixed left-0 top-16 md:relative md:left-auto md:top-auto text-right md:text-left flex-col justify-end md:flex-row md:flex-nowrap md:text-xl md:bg-inherit transition-opacity duration-300 md:visible md:opacity-100"
 		const navListClasses = jsDisabled 
-			? navListBase + ' h-auto flex-wrap text-xl' 
-			: navListBase + ' md:h-auto text-4xl'
+			? navListBase + " h-auto flex-wrap text-xl" 
+			: navListBase + " md:h-auto text-4xl"
 		const attr = jsDisabled 
-			? {'role': 'menu'}
-			: {'aria-hidden': 'true'}
+			? {role: "menu"}
+			: null
 
-	nav(class=`navigation${!jsDisabled ? ' flex items-center' : ''}`)
+	nav(class=`navigation${!jsDisabled ? " flex items-center" : ""}`)
 		if jsDisabled
 			details
 				summary(class="navigation__burger relative md:hidden w-7 h-7 p-2.5 cursor-pointer" aria-controls="navigation__links-list" aria-expanded="false")
 		else 
-			button(class="navigation__burger relative md:hidden w-7 h-7 p-2.5" aria-expanded="false" aria-controls="navigation__links-list" aria-label="Open/close page navigation")
+			button#navigation__burger(class="navigation__burger relative w-7 h-7 p-2.5 md:hidden" aria-expanded="false" aria-controls="navigation__links-list" aria-label="Open/close page navigation")
 
 		ul#navigation__links-list.navigation__links-list(class=navListClasses)&attributes(attr)
 			each link in navLinks
 				li
-					a.navigation__link.smooth-scroll-link(href=link.href)= link.name
+					a.navigation__link.smooth-scroll-link.lock-padding(href=link.href)= link.name

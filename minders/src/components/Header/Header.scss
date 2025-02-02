@@ -1,22 +1,9 @@
 .header {
 	background-color: rgba(6, 5, 15, 0.9);
 	color: var(--simple-white);
-	transition: transform 0.4s;
-
-	&.slide-up {
-		transform: translateY(-100%);
-	}
 
 	&__logo {
 		font-family: 'Schibsted Grotesk', sans-serif;
-		font-size: 1.375rem;
-		line-height: 1.45;
-		letter-spacing: 0.15em;
-
-		@media (min-width: 1250px) {
-			font-size: 1.875rem;
-			line-height: 1.33;
-		}
 
 		&:focus-visible {
 			@include text-gradient-animation;

@@ -34,8 +34,6 @@
 
 .navigation {
 	&__burger {
-		position: relative;
-
 		@include focus-visible-animation;
 		@include hover-animation;
 		@include active-animation;

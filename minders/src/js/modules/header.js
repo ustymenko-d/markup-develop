@@ -1,14 +1,13 @@
 // Header nav
-const header = document.querySelector('.header')
-const menuButton = document.querySelector('.navigation__burger')
-const menuBody = document.querySelector('.navigation__links-list')
-const lockPaddingValue =
-	window.innerWidth - document.querySelector('.page').offsetWidth + 'px'
-const lockPadding = document.querySelectorAll('.lock-padding')
+const header = document.querySelector('#header')
+const menuButton = document.querySelector('#navigation__burger')
+const menuBody = document.querySelector('#navigation__links-list')
+const lockPaddingValue = window.innerWidth - document.body.offsetWidth + 'px'
+const lockPaddingElements = document.querySelectorAll('.lock-padding')
 let menuIsOpen = false
 const media = window.matchMedia('(width < 768px)')
 
-function setupMenu(e) {
+const setupMenu = (e) => {
 	if (e.matches) {
 		menuBody.setAttribute('aria-hidden', 'true')
 		menuButton.setAttribute('aria-hidden', 'false')
@@ -19,19 +18,56 @@ function setupMenu(e) {
 }
 
 setupMenu(media)
+
 media.addEventListener('change', (e) => {
 	setupMenu(e)
 })
 
-document.querySelector('.header').addEventListener('keydown', (e) => {
+const updatePadding = (value) => {
+	if (lockPaddingElements.length > 0) {
+		lockPaddingElements.forEach((el) => (el.style.paddingRight = value))
+	}
+	document.body.style.paddingRight = value
+}
+
+const toggleClasses = () => {
+	document.documentElement.classList.toggle('overflow-hidden')
+	menuButton.classList.toggle('navigation__burger_active')
+}
+
+const setAriaAttributes = (isOpen) => {
+	menuButton.setAttribute('aria-expanded', isOpen)
+	menuBody.setAttribute('aria-hidden', !isOpen)
+}
+
+const toggleMenuVisibility = (isOpen) => {
+	setAriaAttributes(isOpen)
+	menuBody.classList.toggle('navigation__links-list_active', isOpen)
+
+	if (!isOpen) {
+		setTimeout(() => menuBody.classList.remove('visible'), 400)
+	} else {
+		menuBody.classList.toggle('visible', isOpen)
+	}
+}
+
+const toggleMenu = (isOpen) => {
+	toggleClasses()
+	toggleMenuVisibility(isOpen)
+	updatePadding(isOpen ? lockPaddingValue : 0)
+	menuIsOpen = isOpen
+}
+
+const openMenu = () => toggleMenu(true)
+const closeMenu = () => toggleMenu(false)
+
+header.addEventListener('keydown', (e) => {
 	if (menuIsOpen && e.code === 'Escape') closeMenu()
 })
 
 if (menuButton) {
 	menuButton.addEventListener('click', () => {
-		document.documentElement.classList.contains('_lock')
-			? closeMenu()
-			: openMenu()
+		menuIsOpen ? closeMenu() : openMenu()
 	})
 }
 
@@ -39,64 +75,32 @@ window.addEventListener('resize', (e) => {
 	if (e.currentTarget.innerWidth >= 768 && menuIsOpen) closeMenu()
 })
 
-function openMenu() {
-	if (header.classList.contains('hide')) header.classList.remove('hide')
-
-	document.documentElement.classList.add('_lock')
-	menuButton.classList.add('navigation__burger_active')
-	menuButton.setAttribute('aria-expanded', true)
-	menuBody.setAttribute('aria-hidden', false)
-	menuBody.classList.add('navigation__links-list_active')
-	menuBody.classList.toggle('visible')
-
-	if (lockPadding.length > 0) {
-		lockPadding.forEach((el) => (el.style.paddingRight = lockPaddingValue))
-	}
-	document.body.style.paddingRight = lockPaddingValue
-
-	menuIsOpen = true
-}
-
-function closeMenu() {
-	document.documentElement.classList.remove('_lock')
-	menuButton.setAttribute('aria-expanded', false)
-	menuButton.classList.remove('navigation__burger_active')
-	menuBody.setAttribute('aria-hidden', true)
-	menuBody.classList.remove('navigation__links-list_active')
-	setTimeout(() => menuBody.classList.toggle('visible'), 400)
-
-	if (lockPadding.length > 0) {
-		lockPadding.forEach((el) => (el.style.paddingRight = 0))
-	}
-	document.body.style.paddingRight = 0
-
-	menuIsOpen = false
-}
-
-// Header nav focus lock
 const focusableElements = header.querySelectorAll(
 	'a[href]:not([disabled]), button:not([disabled])'
 )
-const firstFocusableElement = focusableElements[0]
-const lastFocusableElement = focusableElements[focusableElements.length - 1]
+
+const [firstFocusableElement, lastFocusableElement] = [
+	focusableElements[0],
+	focusableElements[focusableElements.length - 1],
+]
 
 const KEYCODE_TAB = 9
 
 header.addEventListener('keydown', (e) => {
 	if (
-		document.documentElement.classList.contains('_lock') &&
+		document.documentElement.classList.contains('overflow-hidden') &&
 		(e.key === 'Tab' || e.keyCode === KEYCODE_TAB)
 	) {
-		if (e.shiftKey) {
-			if (document.activeElement === firstFocusableElement) {
-				lastFocusableElement.focus()
-				e.preventDefault()
-			}
-		} else {
-			if (document.activeElement === lastFocusableElement) {
-				firstFocusableElement.focus()
-				e.preventDefault()
-			}
+		const isShiftPressed = e.shiftKey
+		const isAtFirstElement = document.activeElement === firstFocusableElement
+		const isAtLastElement = document.activeElement === lastFocusableElement
+
+		if (
+			(isShiftPressed && isAtFirstElement) ||
+			(!isShiftPressed && isAtLastElement)
+		) {
+			;(isShiftPressed ? lastFocusableElement : firstFocusableElement).focus()
+			e.preventDefault()
 		}
 	}
 })
@@ -107,25 +111,29 @@ const defaultOffset = 100
 
 const scrollPosition = () =>
 	window.scrollY || document.documentElement.scrollTop
-const containSlideUp = () => header.classList.contains('slide-up')
+const isSlideUp = () => header.classList.contains('-translate-y-full')
 
 window.addEventListener('scroll', () => {
+	const currentScroll = scrollPosition()
+	const isScrollingDown = currentScroll > lastScroll
+
 	if (
-		scrollPosition() > lastScroll &&
-		!containSlideUp() &&
-		scrollPosition() > defaultOffset
+		!menuIsOpen &&
+		isScrollingDown &&
+		!isSlideUp() &&
+		currentScroll > defaultOffset
 	) {
-		header.classList.add('slide-up')
+		header.classList.add('-translate-y-full')
 		focusableElements.forEach((el) => {
 			if (el === document.activeElement) el.blur()
 			el.tabIndex = -1
 		})
-	} else if (scrollPosition() < lastScroll && containSlideUp()) {
-		header.classList.remove('slide-up')
+	} else if (!isScrollingDown && isSlideUp()) {
+		header.classList.remove('-translate-y-full')
 		focusableElements.forEach((el) => (el.tabIndex = 0))
 	}
 
-	lastScroll = scrollPosition()
+	lastScroll = currentScroll
 })
 
 // Link page scroll

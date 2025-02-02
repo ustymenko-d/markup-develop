@@ -1,7 +1,7 @@
 
 mixin Head({jsDisabled})
 	- title= "MINDERS - Discover the endless possibilitis of creativity"
-	- description= "The project was created using the BEM methodology for structured and maintainable CSS, enhancing readability and scalability. It adapts fluidly to different devices and screen sizes, ensuring accessibility for all users. The page works even without JS and optimized for quick load times and smooth rendering, providing an efficient user experience."
+	- description= "This landing page was developed using JavaScript, Pug(Jade), SCSS, TailwindCSS, Lenis, Gulp.js, and the BEM methodology to ensure a clean, maintainable, and efficient code structure. It adapts fluidly to different devices and screen sizes, ensuring accessibility for all users. The page works even without JS and optimized for quick load times and smooth rendering, providing an efficient user experience."
 
 	head
 		meta(charset="UTF-8")
@@ -25,5 +25,4 @@ mixin Head({jsDisabled})
 		if !jsDisabled 
 			noscript
 				meta(http-equiv="refresh" content="0; url=no-js.html") 
-			//- link( rel="stylesheet" href="css/no-js.min.css")
 			script(src="js/index.min.js", defer)
