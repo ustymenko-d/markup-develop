@@ -1,3 +1,5 @@
+import lenis from "./lenis.js"
+
 // Header nav
 const header = document.querySelector('#header')
 const menuButton = document.querySelector('#navigation__burger')
@@ -56,6 +58,12 @@ const toggleMenu = (isOpen) => {
 	toggleMenuVisibility(isOpen)
 	updatePadding(isOpen ? lockPaddingValue : 0)
 	menuIsOpen = isOpen
+
+	if (menuIsOpen) {
+		lenis.stop()
+	} else {
+		lenis.start()
+	}
 }
 
 const openMenu = () => toggleMenu(true)
@@ -75,6 +83,7 @@ window.addEventListener('resize', (e) => {
 	if (e.currentTarget.innerWidth >= 768 && menuIsOpen) closeMenu()
 })
 
+// Focus lock
 const focusableElements = header.querySelectorAll(
 	'a[href]:not([disabled]), button:not([disabled])'
 )
