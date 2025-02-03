@@ -1,5 +1,9 @@
-@use 'reset' as *;
-@use 'fonts' as *;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import './reset';
+@import './fonts';
 
 :root {
 	--neutral-black: rgba(6, 5, 15, 1);
