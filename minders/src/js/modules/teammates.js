@@ -5,7 +5,5 @@ const toggleActive = (item) => {
 }
 
 allTeammates.forEach((item) => {
-	item.addEventListener('click', () => {
-		toggleActive(item)
-	})
+	item.addEventListener('click', () => toggleActive(item))
 })

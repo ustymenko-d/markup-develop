@@ -18,15 +18,6 @@
 		}
 	}
 
-	@media (hover: none) {
-		&:active {
-			.teammate__description {
-				visibility: visible;
-				opacity: 1;
-			}
-		}
-	}
-
 	&_active {
 		.teammate__description {
 			visibility: visible;
@@ -46,7 +37,7 @@
 
 		visibility: hidden;
 		opacity: 0;
-		transition: opacity 0.4s, visibility 0.4s;
+		transition: opacity 0.3s, visibility 0.3s;
 	}
 
 	&__name {

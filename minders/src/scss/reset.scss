@@ -93,3 +93,7 @@ h6 {
 details > summary {
 	list-style: none;
 }
+
+summary::-webkit-details-marker {
+	display: none;
+}
