@@ -1,6 +1,6 @@
 .hero {
 	&__title {
-		font-size: 3.125rem;
+		font-size: clamp(1.7rem, 0.3959rem + 6.5204vw, 3rem);
 		line-height: 1.2;
 	}
 

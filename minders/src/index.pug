@@ -11,6 +11,7 @@ html.scroll-smooth(lang="en")
 
 		main.page__content.grow
 			include components/sections/Hero/Hero.pug
+			+Hero({ jsDisabled })
 			include components/sections/About/About.pug
 			+About({ jsDisabled })
 			include components/sections/Team/Team.pug

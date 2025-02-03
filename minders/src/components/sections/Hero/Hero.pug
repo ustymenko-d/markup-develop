@@ -1,13 +1,14 @@
-section.hero.mb-16
-	div(class="pt-24 lg:pt-28")
-		div(class="md:container mx-auto px-4 lg:px-5")
-			h1(class="hero__title title text-center mb-10 lg:mb-12 text-5xl lg:text-7xl xl:text-8xl")
-				span.title_opacity Discover the endless
-				br
-				| possibilitis of creativity
+mixin Hero({ jsDisabled })
+	section.hero.mb-16
+		div(class=`${jsDisabled ? "pt-16 md:pt-10" : "pt-24 lg:pt-28"}`)
+			div(class="md:container mx-auto px-4 lg:px-5")
+				h1(class="hero__title title mb-10 text-center sm:text-5xl lg:mb-12 lg:text-7xl xl:text-8xl")
+					span.title_opacity Discover the endless
+					br
+					| possibilitis of creativity
 
-			picture
-				source(media="(max-width: 1024px)" srcset="../img/hero-bg@mob.webp" type="image/webp")
-				source(media="(max-width: 1024px)" srcset="../img/hero-bg@mob.jpg")
-				source(srcset="../img/hero-bg.webp 1x, ../img/hero-bg@X2.webp 2x" type="image/webp")
-				img.hero__image.max-w-full.object-cover.overflow-hidden(src="../img/hero-bg.jpeg" alt="Fractal abstract bagel" srcset="../img/hero-bg@X2.jpg 2x")
+				picture
+					source(media="(max-width: 1024px)" srcset="../img/hero-bg@mob.webp" type="image/webp")
+					source(media="(max-width: 1024px)" srcset="../img/hero-bg@mob.jpg")
+					source(srcset="../img/hero-bg.webp 1x, ../img/hero-bg@X2.webp 2x" type="image/webp")
+					img.hero__image.max-w-full.object-cover.overflow-hidden(src="../img/hero-bg.jpeg" alt="Fractal abstract bagel" srcset="../img/hero-bg@X2.jpg 2x")
