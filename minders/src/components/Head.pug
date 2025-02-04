@@ -25,3 +25,5 @@ mixin Head({jsDisabled})
 			noscript
 				meta(http-equiv="refresh" content="0; url=no-js.html") 
 			script(src="js/index.min.js", defer)
+		else
+			script window.location.replace("/")
