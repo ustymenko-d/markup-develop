@@ -222,23 +222,23 @@ html {
 @import '../components/BottomBlock/BottomBlock';
 @import '../components/ToTopButton/ToTopButton';
 
-// html.lenis,
-// html.lenis body {
-// 	height: auto;
-// }
+html.lenis,
+html.lenis body {
+	height: auto;
+}
 
-// .lenis.lenis-smooth {
-// 	scroll-behavior: auto !important;
-// }
+.lenis.lenis-smooth {
+	scroll-behavior: auto !important;
+}
 
-// .lenis.lenis-smooth [data-lenis-prevent] {
-// 	overscroll-behavior: contain;
-// }
+.lenis.lenis-smooth [data-lenis-prevent] {
+	overscroll-behavior: contain;
+}
 
-// .lenis.lenis-stopped {
-// 	overflow: hidden;
-// }
+.lenis.lenis-stopped {
+	overflow: hidden;
+}
 
-// .lenis.lenis-smooth iframe {
-// 	pointer-events: none;
-// }
+.lenis.lenis-smooth iframe {
+	pointer-events: none;
+}
