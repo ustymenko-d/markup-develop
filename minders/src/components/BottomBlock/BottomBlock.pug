@@ -5,8 +5,8 @@ mixin BottomBlock({jsDisabled})
 		const blockClasses = baseClasses + additionalClasses
 
 	#bottomBlock.bottomBlock(class=blockClasses)
-		div(class="md:container mx-auto py-12 px-4 lg:px-5 text-center")
-			p.mx-auto.mb-4
+		div(class="px-4 py-12 mx-auto text-center md:container lg:px-5")
+			p.mx-auto.mb-4.font-normal
 				| This landing page was developed using JavaScript, Pug(Jade), SCSS, TailwindCSS, Lenis, Gulp.js, and the BEM methodology to ensure a clean, maintainable, and efficient code structure.
 			a(class="text-black" href="https://ustymenko.vercel.app")
 				| Back to portfolio

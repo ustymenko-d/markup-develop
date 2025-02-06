@@ -1,6 +1,6 @@
 mixin About({ jsDisabled })
 	section#about.mb-24.pt-8
-		div(class="md:container mx-auto px-4 lg:px-5 grid gap-y-8 lg:grid-cols-2 lg:gap-y-7 lg:gap-x-20")
+		div(class="grid px-4 mx-auto md:container lg:px-5 gap-y-8 lg:grid-cols-2 lg:gap-y-7 lg:gap-x-20")
 			div(class="sm:text-center lg:text-left")
 				h2(class="title mb-7 lg:mb-8")
 					span.title_opacity Showcasing diversity
@@ -12,5 +12,5 @@ mixin About({ jsDisabled })
 			include ./components/Tags/Tags.pug
 			+Tags({ jsDisabled })
 
-			a(class="button button_purple smooth-scroll-link block w-full sm:w-fit sm:justify-self-center self-center lg:justify-self-start text-center" href="#application" aria-label="Scroll to join us section")
+			a(class="self-center block w-full text-center button button_purple smooth-scroll-link sm:w-fit sm:justify-self-center lg:justify-self-start" href="#application" aria-label="Scroll to join us section")
 				span.button__text.inline-block Join&nbsp;us
