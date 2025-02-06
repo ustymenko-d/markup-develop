@@ -1,30 +1,15 @@
 import Swiper from 'swiper'
-import {
-	Pagination,
-	A11y,
-	Keyboard,
-	//  Navigation,
-} from 'swiper/modules'
+import { Pagination, A11y, Keyboard } from 'swiper/modules'
 
 import 'swiper/css'
-// import 'swiper/css/navigation'
 import 'swiper/css/pagination'
 
 new Swiper('.swiper', {
-	modules: [
-		Keyboard,
-		A11y,
-		Pagination,
-		// Navigation,
-	],
+	modules: [Keyboard, A11y, Pagination],
 	keyboard: {
 		enabled: true,
 		onlyInViewport: true,
 	},
-	// navigation: {
-	// 	nextEl: '.swiper-button-next',
-	// 	prevEl: '.swiper-button-prev',
-	// },
 	pagination: {
 		el: '.swiper-pagination',
 		clickable: true,
