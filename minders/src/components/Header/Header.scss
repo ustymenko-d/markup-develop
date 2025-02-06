@@ -3,7 +3,7 @@
 	color: var(--simple-white);
 
 	&__logo {
-		font-family: 'Schibsted Grotesk', sans-serif;
+		font-family: var(--font-medium);
 
 		&:focus-visible {
 			@include text-gradient-animation;

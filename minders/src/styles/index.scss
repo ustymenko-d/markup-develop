@@ -13,6 +13,9 @@
 
 	--gradient: linear-gradient(304deg, #cda5d5 0%, #fbe4ff 47.4%, #e8fe74 100%);
 
+	--font-regular: 'SchibstedGrotesk-Regular', sans-serif;
+	--font-medium: 'SchibstedGrotesk-Medium', sans-serif;
+
 	--conveyor-index: 0.125rem;
 
 	@media screen and (min-width: 1024px) {
@@ -64,7 +67,7 @@ html {
 
 .page {
 	background-color: var(--neutral-black);
-	font-family: 'Schibsted Grotesk', sans-serif;
+	font-family: var(--font-regular);
 }
 
 .title {
