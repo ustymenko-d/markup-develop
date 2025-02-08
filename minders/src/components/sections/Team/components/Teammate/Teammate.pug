@@ -2,7 +2,7 @@ mixin Teammate({ img, name, position, about, inSlider = false })
 	.teammate.w-full.overflow-hidden.shadow.relative&attributes(inSlider ? {tabindex: 0} : null)
 		picture
 			source(srcset=`${img}.webp` type='image/webp')
-			img.teammate__image.w-full.h-full.object-cover.pointer-events-none(
+			img.teammate__image.w-full.h-full.object-cover.pointer-events-none.duration-300.shadow(
 				src=img
 				loading='lazy'
 				alt=name
