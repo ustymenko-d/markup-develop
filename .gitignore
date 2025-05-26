@@ -1,5 +1,6 @@
-node_modules
-gulp
-dist
-
 gulpfile.js
+gulp
+
+node_modules
+
+dist
