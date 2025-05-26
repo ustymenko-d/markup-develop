@@ -1,0 +1,10 @@
+.swiper-pagination.swiper-pagination-bullets {
+	.swiper-pagination-bullet {
+		width: 28px;
+		height: 28px;
+
+		&-active {
+			background: whitesmoke;
+		}
+	}
+}
