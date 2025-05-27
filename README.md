@@ -2,7 +2,7 @@
 
 To compile the project, follow these steps:
 
-1. Copy the files from the `gulp` repository (excluding the `src` folder) into the project's directory.
+1. Copy the files from the `gulp` repository (excluding the `src` folder and `package.json` file) into the project's directory.
 2. Install the required dependencies by running the following command:
    ```sh
    npm i
