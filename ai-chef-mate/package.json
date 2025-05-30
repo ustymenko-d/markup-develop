@@ -41,6 +41,8 @@
     "webpack-stream": "^7.0.0"
   },
   "dependencies": {
-    "swiper": "^11.2.8"
+    "@tailwindcss/cli": "^4.1.8",
+    "swiper": "^11.2.8",
+    "tailwindcss": "^4.1.8"
   }
 }

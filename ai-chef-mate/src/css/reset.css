@@ -1,17 +1,17 @@
-*,
+/* *,
 *::before,
 *::after {
 	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
 	border: 0;
-}
+} */
 
 :focus,
 :active {
 	outline: none;
 }
-
+/* 
 html,
 body {
 	height: 100%;
@@ -98,7 +98,7 @@ h6 {
 	font-size: inherit;
 	font-weight: 400;
 	text-wrap: balance;
-}
+} */
 
 details > summary {
 	list-style: none;

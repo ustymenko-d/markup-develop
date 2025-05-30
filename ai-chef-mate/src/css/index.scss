@@ -1,2 +1,47 @@
 @use 'reset';
-// @use 'fonts';
+@use 'fonts';
+
+
+:root {
+	--green: #213d34;
+	--accent: #d9ef78;
+	--light: #f1f2ed;
+	--beige: #f8f5ef;
+	--gray: #828282;
+
+	--first-font: 'WorkSans-VariableFont_wght', sans-serif;
+	--second-font: 'Syne-VariableFont_wght', sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4 {
+	font-family: var(--second-font);
+}
+
+h1,
+h2 {
+	font-weight: 500;
+}
+
+h1 {
+	font-size: 61px;
+}
+
+h2 {
+	font-size: 55px;
+}
+
+h3 {
+	font-size: 40px;
+}
+
+h4 {
+	font-size: 34px;
+}
+
+p {
+	font-family: var(--first-font);
+	font-size: 22px;
+}
