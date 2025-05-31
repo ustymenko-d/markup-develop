@@ -11,7 +11,7 @@ mixin Button({text, outline = false, icon = false, color = 'white'})
 			'not-disabled:cursor-pointer',
 			'active:scale-95',
 			'active:brightness-80',
-			'font-[var(--first-font)]'
+			'font-(family-name:var(--first-font))'
 		]
 
 		const outlineClass = outline ? 'border-[var(--green)]' : 'border-transparent'

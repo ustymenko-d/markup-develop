@@ -1,0 +1,13 @@
+mixin Collapsible({title, text, id})
+	div(class='collapsible rounded-3xl p-6 sm:p-12 text-[var(--green)] has-open:bg-[var(--light)] duration-300')
+		details
+			summary(class='flex items-start gap-4 duration-300 cursor-pointer sm:gap-10 sm:items-center')
+				include Button.pug
+
+				span(id=`question-${id}` class='block text-[22px] font-semibold leading-tight font-(family-name:var(--first-font)) duration-300' role="term" aria-describedby=`answer-${id}`)
+					= title
+
+		.collapsible__content.grid.duration-300(id=`answer-${id}` role='definition' aria-labelledby=`question-${id}`)
+			.overflow-hidden
+				p(class='pt-2 sm:pl-24')
+					= text

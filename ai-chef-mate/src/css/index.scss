@@ -75,3 +75,32 @@ p {
 		}
 	}
 }
+
+.collapsible {
+	&__content {
+		grid-template-rows: 0fr;
+	}
+
+	details[open] {
+		.collapsible__button {
+			padding-block: 24px;
+			background: var(--accent);
+
+			svg {
+				transform: rotateX(180deg);
+			}
+		}
+
+		& + div {
+			grid-template-rows: 1fr;
+		}
+	}
+
+	summary:hover,
+	summary:focus-visible {
+		.collapsible__button {
+			background: var(--green);
+			color: white;
+		}
+	}
+}
