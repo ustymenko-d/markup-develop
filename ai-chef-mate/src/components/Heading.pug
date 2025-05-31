@@ -1,0 +1,9 @@
+mixin Heading({title, subtitle, bgColor = false})
+	- const bgClass = bgColor	? 'after:bg-[var(--light)]' : 'after:bg-white'
+
+	div(class='flex flex-wrap gap-x-4 lg:gap-x-7 gap-y-1 text-[var(--green)]')
+		h2
+			= title
+		div(class=`flex items-center overflow-hidden separator gap-x-4 lg:gap-x-7 ${bgClass}`)
+			p.max-w-96
+				= subtitle
