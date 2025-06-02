@@ -1,0 +1,25 @@
+@mixin webp-bg($img-path, $ext: 'jpg') {
+	background-image: url(#{$img-path}.#{$ext});
+	background-repeat: no-repeat;
+	background-size: cover;
+
+	@supports (
+		background-image:
+			url('data:image/webp;base64,UklGRhYAAABXRUJQVlA4TBEAAAAAAABAAEAAQAAAABAAEAAQAAABAAEAAQAAAAA=')
+	) {
+		background-image: url(#{$img-path}.webp);
+	}
+}
+
+@mixin spin-ring($offset, $color, $duration, $direction: normal) {
+	content: '';
+	position: absolute;
+	top: $offset;
+	left: $offset;
+	right: $offset;
+	bottom: $offset;
+	border-radius: 50%;
+	border: 3px solid transparent;
+	border-top-color: $color;
+	animation: spin $duration linear infinite $direction;
+}

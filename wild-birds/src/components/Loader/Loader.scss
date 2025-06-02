@@ -1,4 +1,6 @@
-.loaderContainer {
+@use './base' as base;
+
+.loader {
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -6,89 +8,95 @@
 	width: 100%;
 	height: 100%;
 	overflow: hidden;
-}
 
-.loader {
-	display: block;
-	position: relative;
-	left: 50%;
-	top: 50%;
-	z-index: 11;
-	width: 150px;
-	height: 150px;
-	margin: -75px 0 0 -75px;
-	border-radius: 50%;
-	border: 3px solid transparent;
-	border-top-color: #76d7eb;
-	animation: spin 1.7s linear infinite;
-
-	&::before {
-		content: '';
-		position: absolute;
-		top: 5px;
-		left: 5px;
-		right: 5px;
-		bottom: 5px;
+	&__spinner {
+		position: relative;
+		left: 50%;
+		top: 50%;
+		z-index: 11;
+		width: 150px;
+		height: 150px;
+		margin: -75px 0 0 -75px;
 		border-radius: 50%;
 		border: 3px solid transparent;
-		border-top-color: #f7c51a;
-		animation: spin 0.6s linear infinite reverse;
+		border-top-color: #76d7eb;
+		animation: spin 1.7s linear infinite;
+
+		&::before {
+			@include base.spin-ring(5px, #f7c51a, 0.6s, reverse);
+		}
+
+		&::after {
+			@include base.spin-ring(15px, #e10f34, 1s);
+		}
+		&::before {
+			content: '';
+			position: absolute;
+			top: 5px;
+			left: 5px;
+			right: 5px;
+			bottom: 5px;
+			border-radius: 50%;
+			border: 3px solid transparent;
+			border-top-color: #f7c51a;
+			animation: spin 0.6s linear infinite reverse;
+		}
+
+		&::after {
+			content: '';
+			position: absolute;
+			top: 15px;
+			left: 15px;
+			right: 15px;
+			bottom: 15px;
+			border-radius: 50%;
+			border: 3px solid transparent;
+			border-top-color: #e10f34;
+			animation: spin 1s linear infinite;
+		}
 	}
 
-	&::after {
-		content: '';
-		position: absolute;
-		top: 15px;
-		left: 15px;
-		right: 15px;
-		bottom: 15px;
-		border-radius: 50%;
-		border: 3px solid transparent;
-		border-top-color: #e10f34;
-		animation: spin 1s linear infinite;
-	}
-}
+	&__section {
+		position: fixed;
+		top: 0;
+		z-index: 10;
+		width: 51%;
+		height: 100%;
+		background: whitesmoke;
 
-.loaderSection {
-	position: fixed;
-	top: 0;
-	z-index: 10;
-	width: 51%;
-	height: 100%;
-	background: whitesmoke;
+		&_left {
+			left: 0;
+		}
 
-	&_left {
-		left: 0;
-	}
-
-	&_right {
-		right: 0;
+		&_right {
+			right: 0;
+		}
 	}
 }
 
 .page {
 	&_loaded {
-		.loaderContainer {
+		.loader {
 			visibility: hidden;
 			transform: translateY(-100%);
 			transition: all 0.3s 1s ease-out;
-		}
 
-		.loader {
-			opacity: 0;
-			transition: all 0.3s ease-out;
-		}
+			&__spinner {
+				opacity: 0;
+				transition: all 0.3s ease-out;
+			}
 
-		.loaderSection {
-			transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
-		}
+			&__section {
+				transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
 
-		.loaderSection_left {
-			transform: translateX(-100%);
-		}
+				&_left {
+					transform: translateX(-100%);
+				}
 
-		.loaderSection_right {
-			transform: translateX(100%);
+				&_right {
+					transform: translateX(100%);
+				}
+			}
 		}
 	}
 }

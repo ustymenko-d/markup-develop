@@ -1,3 +1,6 @@
+@use 'sass:map';
+@use './base' as base;
+
 .page::-webkit-scrollbar {
 	width: 5px;
 }
@@ -13,6 +16,7 @@
 }
 
 .page {
+	overflow: hidden;
 	scrollbar-width: thin;
 	scrollbar-color: black whitesmoke;
 }
@@ -27,38 +31,18 @@
 	color: whitesmoke;
 
 	&_flamingo {
-		background: url('../img/flamingo-bg.jpg') no-repeat;
-		background-size: cover;
-
-		@supports (
-			background-image:
-				url('data:image/webp;base64,UklGRhYAAABXRUJQVlA4TBEAAAAAAABAAEAAQAAAABAAEAAQAAABAAEAAQAAAAA=')
-		) {
-			background-image: url('../img/flamingo-bg.webp');
-		}
+		@include base.webp-bg('../img/flamingo-bg');
 	}
 
 	&_macaw {
-		background: url('../img/macaw-bg.jpg') no-repeat;
-		background-size: cover;
-
-		@supports (
-			background-image:
-				url('data:image/webp;base64,UklGRhYAAABXRUJQVlA4TBEAAAAAAABAAEAAQAAAABAAEAAQAAABAAEAAQAAAAA=')
-		) {
-			background-image: url('../img/macaw-bg.webp');
-		}
+		@include base.webp-bg('../img/macaw-bg');
 	}
 
 	&_colibri {
-		background: url('../img/colibri-bg.jpg') no-repeat right;
-		background-size: cover;
+		@include base.webp-bg('../img/colibri-bg');
 
-		@supports (
-			background-image:
-				url('data:image/webp;base64,UklGRhYAAABXRUJQVlA4TBEAAAAAAABAAEAAQAAAABAAEAAQAAABAAEAAQAAAAA=')
-		) {
-			background-image: url('../img/colibri-bg.webp');
+		& {
+			background-position: right;
 		}
 	}
 }
@@ -89,18 +73,13 @@
 	}
 
 	&_flamingo {
-		background-color: #76d7eb;
+		background-color: map.get(base.$themes, flamingo);
 
 		&:before {
-			background-image: url('../img/flamingo.png');
-			background-size: cover;
-			background-position: bottom right -295px;
+			@include base.webp-bg('../img/flamingo', 'png');
 
-			@supports (
-				background-image:
-					url('data:image/webp;base64,UklGRhYAAABXRUJQVlA4TBEAAAAAAABAAEAAQAAAABAAEAAQAAABAAEAAQAAAAA=')
-			) {
-				background-image: url('../img/flamingo.webp');
+			& {
+				background-position: bottom right -295px;
 			}
 
 			@media screen and (min-width: 1024px) {
@@ -110,18 +89,13 @@
 	}
 
 	&_macaw {
-		background-color: #e10f34;
+		background-color: map.get(base.$themes, macaw);
 
 		&:before {
-			background: url('../img/macaw.png');
-			background-size: cover;
-			background-position: center;
+			@include base.webp-bg('../img/macaw', 'png');
 
-			@supports (
-				background-image:
-					url('data:image/webp;base64,UklGRhYAAABXRUJQVlA4TBEAAAAAAABAAEAAQAAAABAAEAAQAAABAAEAAQAAAAA=')
-			) {
-				background-image: url('../img/macaw.webp');
+			& {
+				background-position: center;
 			}
 
 			@media screen and (min-width: 1024px) {
@@ -132,18 +106,13 @@
 	}
 
 	&_colibri {
-		background-color: #f7c51a;
+		background-color: map.get(base.$themes, colibri);
 
 		&:before {
-			background-image: url('../img/colibri.png');
-			background-size: cover;
-			background-position: center right;
+			@include base.webp-bg('../img/colibri', 'png');
 
-			@supports (
-				background-image:
-					url('data:image/webp;base64,UklGRhYAAABXRUJQVlA4TBEAAAAAAABAAEAAQAAAABAAEAAQAAABAAEAAQAAAAA=')
-			) {
-				background-image: url('../img/colibri.webp');
+			& {
+				background-position: center right;
 			}
 		}
 	}
@@ -231,15 +200,9 @@
 		max-width: 55%;
 	}
 
-	&_flamingo {
-		text-shadow: 1px 1px 1.5px #76d7eb;
-	}
-
-	&_macaw {
-		text-shadow: 1px 1px 1.5px #e10f34;
-	}
-
-	&_colibri {
-		text-shadow: 1px 1px 1.5px #f7c51a;
+	@each $name, $color in base.$themes {
+		.text_#{$name} {
+			text-shadow: 1px 1px 1.5px $color;
+		}
 	}
 }
