@@ -1,29 +1,32 @@
+include components/Head.pug
+include components/Header/Header.pug
+
+include components/sections/Hero/Hero.pug
+include components/sections/About/About.pug
+include components/sections/Team/Team.pug
+include components/sections/Events/Events.pug
+include components/sections/Application/Application.pug
+
+include components/BottomBlock/BottomBlock.pug
+include components/ToTopButton/ToTopButton.pug
+
 - const jsDisabled = false
 
 doctype html
 html.scroll-smooth(lang="en")
-	include components/Head.pug
 	+Head({ jsDisabled })
 
-	body.page.flex.flex-col
-		include components/Header/Header.pug
+	body.page.flex.flex-col.font-regular
 		+Header({ jsDisabled })
 
 		main.page__content.grow
-			include components/sections/Hero/Hero.pug
 			+Hero({ jsDisabled })
-			include components/sections/About/About.pug
 			+About({ jsDisabled })
-			include components/sections/Team/Team.pug
 			+Team({ jsDisabled })
-			include components/sections/Events/Events.pug
 			+Events({ jsDisabled })
-			include components/sections/Application/Application.pug
 			+Application({ jsDisabled })
 
 		include components/Footer/Footer.pug
 		#offset.relative.-z-10
-		include components/BottomBlock/BottomBlock.pug
 		+BottomBlock({ jsDisabled })
-		include components/ToTopButton/ToTopButton.pug
 		+ToTopButton({ jsDisabled })

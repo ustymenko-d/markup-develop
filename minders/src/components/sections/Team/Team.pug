@@ -1,4 +1,7 @@
 mixin Team({ jsDisabled })
+	include ./components/Slider/Slider.pug
+	include ./components/Swiper/Swiper.pug
+
 	-
 		const team = [
 			{
@@ -51,16 +54,18 @@ mixin Team({ jsDisabled })
 			}
 		];
 
-	section#team.team.overflow-hidden.mb-16
+
+	section#team.overflow-hidden.mb-16.bg-yellow
+
 		div(class="px-4 py-10 mx-auto lg:container lg:px-5 lg:py-24")
-			h2(class="mb-6 title title_black lg:mb-10 sm:text-center lg:text-left")
-				span.title_opacity-black-4 The creative minds that
+
+			h2(class="mb-6 title text-neutral-black lg:mb-10 sm:text-center lg:text-left")
+
+				span.text-neutral-black-op4 The creative minds that
 				br
 				| power our projects
 
 			if (jsDisabled) 
-				include ./components/Slider/Slider.pug
 				+Slider({ team })
 			else
-				include ./components/Swiper/Swiper.pug
 				+Swiper({ team })

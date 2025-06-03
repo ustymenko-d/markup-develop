@@ -1,8 +1,8 @@
 mixin ToTopButton({ jsDisabled })
-	-
-		const baseClasses = "box-content w-5 h-5 p-4 fixed bottom-4 right-4 rounded-full border-2 border-solid duration-300"
+	-	const baseClass = 'z-[2] drop-shadow box-content text-white bg-neutral-black-op4 w-5 h-5 p-4 fixed bottom-4 right-4 rounded-full border-2 border-solid border-current duration-300 transition-transform active:scale-95'
+
 
 	if jsDisabled
-		a.to-top(href="#" class=baseClasses aria-label="To top button")
+		a.to-top(href="#" class=baseClass aria-label="To top button")
 	else
-		button#to-top.to-top.hidden(class=baseClasses aria-label="To top button")
+		button#to-top.to-top.hidden(class=baseClass aria-label="To top button")

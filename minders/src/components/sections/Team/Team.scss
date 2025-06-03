@@ -1,7 +1,3 @@
-.team {
-	background-color: var(--yellow);
-}
-
-@import './components/Swiper/Swiper';
-@import './components/Slider/Slider';
-@import './components/Teammate/Teammate';
+@use './components/Swiper/Swiper';
+@use './components/Slider/Slider';
+@use './components/Teammate/Teammate';

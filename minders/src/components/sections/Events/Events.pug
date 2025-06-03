@@ -1,13 +1,17 @@
 mixin Events({ jsDisabled })
+
 	section#events.mb-24.pt-8
-		div(class="md:container mx-auto px-4 lg:px-5")
-			h2(class="title mb-9 lg:mb-10 sm:text-center lg:text-left")
-				span.title_opacity Keep up to date
+
+		div(class="px-4 mx-auto md:container lg:px-5")
+
+			h2(class="text-white title mb-9 lg:mb-10 sm:text-center lg:text-left")
+				span.text-white-op5 Keep up to date
 				br
 				| with our latest events
 
-			include ./components/List/List.pug
+			include ./components/List.pug
 
-			a(href="#" class="button button_purple block w-full text-center sm:sm:w-fit sm:mx-auto lg:m-0")
+			a(href="#" class="block w-full text-center button bg-purple sm:sm:w-fit sm:mx-auto lg:m-0 active:scale-95")
+
 				span.button__text.inline-block
 					| View&nbsp;calendar

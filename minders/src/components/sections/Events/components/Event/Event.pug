@@ -1,14 +1,23 @@
 mixin Event({ id, title, date, description, place })
-	.event.border-2.border-solid
+
+	.event.border-2.border-solid.rounded-5p.text-white
+
 		details
-			summary(class="p-5 grid gap-2 cursor-pointer outline-none list-none font-medium md:gap-4")
-				h3.event__title(id=`${id}-event` aria-describedby=`${id}-description` class="text-2xl lg:text-3xl")= title
+
+			summary(class="grid gap-2 p-5 font-medium list-none outline-none cursor-pointer md:gap-4")
+
+				h3.event__title(id=`${id}-event` aria-describedby=`${id}-description` class="text-2xl font-regular lg:text-3xl")= title
 				span.event__group
+
 					span.event__date(class="relative pl-9")= date
 					span.event__place(class="relative pl-9")= place
-				span.event__button(class="relative pr-8 flex items-center") More
+
+				span.event__button(class="relative flex items-center pr-8 text-purple focus-visible:outline-purple") More
+
 		div.event__content.duration-300.grid
+
 			.event__body.overflow-hidden.px-5
+
 				p.accordion-item__description(id=`${id}-description` class="mb-5" aria-labelledby=`${id}-event`)= description
-				a.event__link.relative.mb-5.pl-9.font-medium(href="#")
+				a.event__link.relative.hidden.mb-5.pl-9.font-regular.text-purple(href="#")
 					| Sign up on the waiting list

@@ -1,7 +1,6 @@
-.event {
-	border-radius: 1.25rem;
-	color: var(--simple-white);
+@use 'mixins' as mixins;
 
+.event {
 	details {
 		summary {
 			@media screen and (min-width: 350px) {
@@ -23,7 +22,7 @@
 			&:focus-visible {
 				.event__title,
 				.event__button {
-					@include text-gradient-animation;
+					@include mixins.text-gradient-animation;
 				}
 			}
 
@@ -54,7 +53,7 @@
 			}
 
 			.event__title {
-				@include text-gradient-animation;
+				@include mixins.text-gradient-animation;
 			}
 
 			.event__button {
@@ -79,7 +78,7 @@
 			animation: animatedgradient 3s infinite linear;
 
 			.accordion-item__title {
-				@include text-gradient-animation;
+				@include mixins.text-gradient-animation;
 			}
 		}
 	}
@@ -92,7 +91,7 @@
 				var(--gradient) border-box;
 
 			.accordion-item__title {
-				@include text-gradient-animation;
+				@include mixins.text-gradient-animation;
 			}
 		}
 	}
@@ -151,8 +150,6 @@
 	}
 
 	&__button {
-		color: var(--purple);
-
 		@media screen and (min-width: 350px) {
 			grid-column: 2 / -1;
 			grid-row: 1 / 2;
@@ -177,14 +174,13 @@
 		&:focus-visible {
 			outline: auto;
 			outline-offset: 10px;
-			outline-color: var(--purple);
 			border-radius: 6px;
-			@include text-gradient-animation;
+			@include mixins.text-gradient-animation;
 		}
 
 		@media (hover: hover) {
 			&:hover {
-				@include text-gradient-animation;
+				@include mixins.text-gradient-animation;
 			}
 		}
 
@@ -202,9 +198,6 @@
 	}
 
 	&__link {
-		display: none;
-		color: var(--purple);
-
 		&::before {
 			content: url(../img/icons/corner-down-right_purple.svg);
 			position: absolute;
@@ -213,7 +206,7 @@
 		}
 
 		&:focus-visible {
-			@include text-gradient-animation;
+			@include mixins.text-gradient-animation;
 			&::before {
 				content: url(../img/icons/corner-down-right_color.svg);
 			}
@@ -221,7 +214,7 @@
 
 		@media (hover: hover) {
 			&:hover {
-				@include text-gradient-animation;
+				@include mixins.text-gradient-animation;
 
 				&::before {
 					content: url(../img/icons/corner-down-right_color.svg);

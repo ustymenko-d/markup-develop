@@ -1,42 +1,10 @@
-@mixin focus-visible-animation {
-	&:focus-visible {
-		&::before,
-		&::after {
-			width: 94%;
-			@include gradientBackAnimation;
-		}
-	}
-}
-
-@mixin hover-animation {
-	@media (hover: hover) {
-		&:hover {
-			&::before,
-			&::after {
-				width: 94%;
-				@include gradientBackAnimation;
-			}
-		}
-	}
-}
-
-@mixin active-animation {
-	@media (hover: none) {
-		&:active {
-			&::before,
-			&::after {
-				width: 94%;
-				background-image: var(--gradient);
-			}
-		}
-	}
-}
+@use 'mixins' as mixins;
 
 .navigation {
 	&__burger {
-		@include focus-visible-animation;
-		@include hover-animation;
-		@include active-animation;
+		@include mixins.focus-visible-animation;
+		@include mixins.hover-animation;
+		@include mixins.active-animation;
 
 		&::before,
 		&::after {
@@ -44,7 +12,7 @@
 			position: absolute;
 			width: 65%;
 			height: 0.1875rem;
-			background-color: var(--simple-white);
+			background-color: white;
 			border-radius: 0.5rem;
 			transition: transform 0.4s, width 0.3s ease-in;
 		}
@@ -74,9 +42,9 @@
 				transform: rotate(315deg);
 			}
 
-			@include focus-visible-animation;
-			@include hover-animation;
-			@include active-animation;
+			@include mixins.focus-visible-animation;
+			@include mixins.hover-animation;
+			@include mixins.active-animation;
 		}
 	}
 
@@ -101,12 +69,12 @@
 
 	&__link {
 		&:focus-visible {
-			@include text-gradient-animation;
+			@include mixins.text-gradient-animation;
 		}
 
 		@media (hover: hover) {
 			&:hover {
-				@include text-gradient-animation;
+				@include mixins.text-gradient-animation;
 			}
 		}
 
@@ -136,9 +104,9 @@
 					transform: rotate(315deg);
 				}
 
-				@include focus-visible-animation;
-				@include hover-animation;
-				@include active-animation;
+				@include mixins.focus-visible-animation;
+				@include mixins.hover-animation;
+				@include mixins.active-animation;
 			}
 
 			& + #navigation__links-list {

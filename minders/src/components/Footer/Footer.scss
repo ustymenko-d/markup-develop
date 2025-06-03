@@ -1,37 +1,7 @@
+@use 'mixins' as mixins;
+
 .footer {
-	--border: 1px solid rgba(255, 255, 255, 0.15);
-
-	&__links {
-		color: var(--simple-white);
-
-		ul:before {
-			content: attr(aria-label);
-			display: inline-block;
-			margin-bottom: 1.5rem;
-		}
-
-		a {
-			@include underlineAnimation;
-		}
-	}
-
-	&__join,
-	&__contact {
-		border-inline-start: var(--border);
-	}
-
-	&__description {
-		border-block-start: var(--border);
-		color: var(--simple-white-op5);
-
-		@media screen and (min-width: 1024px) {
-			border-block-start: none;
-			border-inline-start: var(--border);
-		}
-
-		a {
-			color: var(--simple-white);
-			@include underlineAnimation;
-		}
+	a {
+		@include mixins.underline-animation;
 	}
 }

@@ -1,3 +1,5 @@
+@use 'mixins' as mixin;
+
 .form {
 	&__label {
 		left: 1.25rem;
@@ -81,12 +83,9 @@
 	}
 
 	&__input {
-		border-radius: 1.25rem;
 		border: 1px solid var(--neutral-black-op3);
-
-		background-color: transparent;
-		font-weight: 500;
 		color: var(--neutral-black);
+		font-weight: 500;
 		transition: outline-color 0.3s;
 
 		&_invalid {
@@ -117,7 +116,6 @@
 	}
 
 	&__terms-link {
-		color: var(--neutral-black);
-		@include underlineAnimation;
+		@include mixin.underline-animation;
 	}
 }

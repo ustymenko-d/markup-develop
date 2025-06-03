@@ -1,35 +1,46 @@
 mixin Form({ jsDisabled })
 	-
 		const formFields = [
-			{ id: "full-name", type: "text", label: "Full-name", required: true, maxlength: 50 },
-			{ id: "occupation", type: "text", label: "Occupation" },
-			{ id: "phone", type: "tel", label: "Phone", required: true, pattern: "[0-9]{10}" },
-			{ id: "email", type: "email", label: "E-mail", required: true }
+			{ id: 'full-name', type: 'text', label: 'Full-name', required: true, maxlength: 50 },
+			{ id: 'occupation', type: 'text', label: 'Occupation' },
+			{ id: 'phone', type: 'tel', label: 'Phone', required: true, pattern: '[0-9]{10}' },
+			{ id: 'email', type: 'email', label: 'E-mail', required: true }
 		]
-		const inputClasses = "form__input block w-full px-5 pt-8 pb-2.5 outline-0"
-		const labelBaseClasses = "form__label title_opacity-black-4 absolute pointer-events-none select-none duration-300"
-		const labelClasses = jsDisabled ? labelBaseClasses + " form__label_not-empty" : labelBaseClasses
+
+		const inputClass = 'form__input block w-full border border-neutral-black-op3 rounded-5p bg-transparent px-5 pt-8 pb-2.5 outline-0'
+
+		const baseLabel = 'form__label text-neutral-black-op4 absolute pointer-events-none select-none duration-300'
+
+		const labelClass = jsDisabled ? `${baseLabel} form__label_not-empty` : baseLabel
+
 
 	form.form
+
 		each field in formFields
-			.form__input-wrapper.relative.duration-300(
-				class=(field.id === "phone" ? "form__input-wrapper-tel" : "") +
-					(field.id === "email" ? "form__input-wrapper-mail" : "")
-			)
+			-
+				const wrapperClass = [
+					'form__input-wrapper relative duration-300',
+					field.id === 'phone' ? 'form__input-wrapper-tel' : '',
+					field.id === 'email' ? 'form__input-wrapper-mail' : ''
+				].filter(Boolean).join(' ')
+
+			div(class=wrapperClass)
+
 				input(
 					id=field.id
 					type=field.type
-					class=inputClasses
+					class=inputClass
 					required=field.required
 					pattern=field.pattern
 					maxlength=field.maxlength
 				)
-				label(class=labelClasses for=field.id)= field.label
+				label(class=labelClass for=field.id)= field.label
 
-		button.button.button_yellow.form__button.w-full.my-7.text-center.outline-none(type="submit")
+		button.button.bg-yellow.form__button.w-full.my-7.text-center.outline-none(type="submit" class="active:scale-[0.98]")
+
 			span.button__text.inline-block Apply
 
-		p.title_opacity-black-4
+		p.text-neutral-black-op4
 			| By clicking the button, you agree to our 
-			a.form__terms-link(href="#") terms and conditions
+			a.form__terms-link.text-neutral-black(href="#") terms and conditions
 			| .

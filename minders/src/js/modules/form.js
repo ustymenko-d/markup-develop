@@ -2,44 +2,63 @@ const form = document.forms[0]
 const inputs = form.querySelectorAll('input')
 const submitBtn = form.querySelector('.form__button')
 
-const checkEmptyInput = (target) => {
-	if (target.value !== '') {
-		target.nextElementSibling.classList.add('form__label_not-empty')
+const toggleLabelState = (input) => {
+	const label = input.nextElementSibling
+	if (!label) return
+
+	label.classList.toggle('form__label_not-empty', input.value !== '')
+}
+
+const setHintState = (input, show) => {
+	input.parentElement.classList.toggle('form__input-wrapper_hint', show)
+}
+
+const setInvalidState = (input, invalid) => {
+	const wrapper = input.parentElement
+	wrapper.classList.toggle('form__input-wrapper_invalid', invalid)
+	input.classList.toggle('form__input_invalid', invalid)
+}
+
+const handleBlur = (e) => {
+	const input = e.target
+	if (input.required && !input.value.trim()) {
+		setHintState(input, true)
 	} else {
-		target.nextElementSibling.classList.remove('form__label_not-empty')
+		setHintState(input, false)
 	}
 }
 
-const removeError = (target) => {
-	target.parentElement.classList.remove('form__input-wrapper_invalid')
-	target.classList.remove('form__input_invalid')
+const handleChange = (e) => toggleLabelState(e.target)
+
+const handleInput = (e) => {
+	if (e.target.value.trim()) {
+		setInvalidState(e.target, false)
+	}
 }
 
-inputs.forEach((el) => {
-	el.addEventListener('blur', (e) => {
-		if (e.target.required && !e.target.value) {
-			e.target.parentElement.classList.add('form__input-wrapper_hint')
-		} else {
-			e.target.parentElement.classList.remove('form__input-wrapper_hint')
+const validateInputs = () => {
+	let isValid = true
+	inputs.forEach((input) => {
+		if (!input.checkValidity()) {
+			setInvalidState(input, true)
+			setHintState(input, true)
+			isValid = false
 		}
 	})
-	el.addEventListener('change', (e) => {
-		checkEmptyInput(e.target)
-	})
-	el.addEventListener('input', (e) => {
-		if (!!e.target.value) removeError(e.target)
-	})
-})
+	return isValid
+}
 
-submitBtn.addEventListener('click', (e) => {
+const handleSubmit = (e) => {
 	e.preventDefault()
+	if (validateInputs()) {
+		form.submit()
+	}
+}
 
-	inputs.forEach((el) => {
-		if (!el.checkValidity()) {
-			el.parentElement.classList.add('form__input-wrapper_invalid')
-			el.parentElement.classList.add('form__input-wrapper_hint')
-			el.classList.add('form__input_invalid')
-		}
-	})
-	if (form.checkValidity()) form.submit()
+inputs.forEach((input) => {
+	input.addEventListener('blur', handleBlur)
+	input.addEventListener('change', handleChange)
+	input.addEventListener('input', handleInput)
 })
+
+submitBtn.addEventListener('click', handleSubmit)

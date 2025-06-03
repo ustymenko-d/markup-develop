@@ -1,25 +1,15 @@
-.application {
-	@media screen and (max-width: 1023.9px) {
-		background-color: var(--purple);
-	}
+@use './components/Form/Form';
 
+.application {
 	&__wrapper {
 		@media screen and (min-width: 1024px) {
 			border-radius: 5rem;
-			background-color: var(--purple);
 		}
 	}
 
-	&__text-content {
+	&__content {
 		@media screen and (min-width: 1024px) {
 			flex: 1 0 46.29%;
 		}
 	}
-
-	&__title,
-	&__text {
-		color: var(--neutral-black);
-	}
 }
-
-@import './components/Form/Form';

@@ -1,8 +1,9 @@
 mixin Slider({ team })
+	include ../Teammate/Teammate.pug
+
 	- const inSlider = true
 
 	.py-8.overflow-x-scroll.flex.flex-nowrap
 		each teammate in team
-			div.slide(class='shrink-0 mr-4')
-				include ../Teammate/Teammate.pug
+			div.slide(class='mr-4 shrink-0')
 				+Teammate({ ...teammate, inSlider })

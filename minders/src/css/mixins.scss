@@ -1,0 +1,75 @@
+@mixin gradient-background(
+	$duration: 3s,
+	$timing: linear,
+	$iteration: infinite
+) {
+	background-image: var(--gradient);
+	background-size: 300% 300%;
+	animation: animatedgradient $duration $iteration $timing;
+}
+
+@mixin text-gradient-animation {
+	background-clip: text;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	@include gradient-background();
+}
+
+@mixin underline-animation($size: 1px, $transition: 0.3s) {
+	text-decoration: none;
+	background-image: linear-gradient(currentColor, currentColor);
+	background-position: 0% 100%;
+	background-repeat: no-repeat;
+	background-size: 0% $size;
+	transition: background-size $transition;
+
+	&:focus-visible {
+		background-size: 100% $size;
+	}
+
+	@media (hover: hover) {
+		&:hover {
+			background-size: 100% $size;
+		}
+	}
+
+	@media (hover: none) {
+		&:active {
+			background-size: 100% $size;
+		}
+	}
+}
+
+@mixin focus-visible-animation {
+	&:focus-visible {
+		&::before,
+		&::after {
+			width: 94%;
+			@include gradient-background
+		}
+	}
+}
+
+@mixin hover-animation {
+	@media (hover: hover) {
+		&:hover {
+			&::before,
+			&::after {
+				width: 94%;
+				@include gradient-background
+			}
+		}
+	}
+}
+
+@mixin active-animation {
+	@media (hover: none) {
+		&:active {
+			&::before,
+			&::after {
+				width: 94%;
+				background-image: var(--gradient);
+			}
+		}
+	}
+}

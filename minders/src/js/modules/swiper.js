@@ -35,6 +35,7 @@ const teamSwiper = document.querySelector('#swiper')
 const cursorTemplate = document
 	.querySelector('#drag-cursor-template')
 	.content.cloneNode(true)
+
 let cursor = null
 
 const ensureCursor = () => {
@@ -45,9 +46,7 @@ const ensureCursor = () => {
 }
 
 const toggleCursorVisibility = (isVisible) => {
-	if (cursor) {
-		cursor.classList.toggle('drag-cursor_hidden', !isVisible)
-	}
+	if (cursor) cursor.classList.toggle('drag-cursor_hidden', !isVisible)
 }
 
 const updateCursorPosition = (e) => {
@@ -73,9 +72,8 @@ const handleTouchStart = () => {
 }
 
 const handleTouchMove = (_, e) => {
-	if (cursor && !cursor.classList.contains('drag-cursor_hidden')) {
+	if (cursor && !cursor.classList.contains('drag-cursor_hidden'))
 		updateCursorPosition(e)
-	}
 }
 
 const handleTouchEnd = () => {

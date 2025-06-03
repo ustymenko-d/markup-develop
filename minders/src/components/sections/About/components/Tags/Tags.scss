@@ -66,8 +66,6 @@
 }
 
 .tag {
-	color: var(--simple-white);
-
 	@media (hover: hover) {
 		&:hover {
 			border-color: transparent;
@@ -90,6 +88,6 @@
 
 @keyframes tagblinks {
 	50% {
-		color: var(--simple-white-op3);
+		color: rgba(255, 255, 255, 0.3);
 	}
 }

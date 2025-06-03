@@ -1,28 +1,41 @@
 mixin Tags({ jsDisabled })
 	-
 		const rows = [
-			{
-				direction: "left",
-				speed: "fast"
-			},
-			{
-				direction: "right",
-				speed: "normal"
-			},
-			{
-				direction: "left",
-				speed: "slow"
-			}
-		]
-		const tags = [
-			["performance", "design", "photography"],
-			["dance", "architecture", "handmade"],
-			["poetry", "AI art", "music", "fashion"]
+			{ direction: 'left', speed: 'fast' },
+			{ direction: 'right', speed: 'normal' },
+			{ direction: 'left', speed: 'slow' }
 		]
 
-	div(class=`lg:col-start-2 lg:col-end-3 lg:row-start-1 lg:row-span-2 tags relative overflow-hidden p-4 flex flex-col self-center${jsDisabled ? " gap-3" : " gap-y-2 lg:gap-y-4"}`)
+		const tags = [
+			['performance', 'design', 'photography'],
+			['dance', 'architecture', 'handmade'],
+			['poetry', 'AI art', 'music', 'fashion']
+		]
+
+		const containerClasses = [
+			'relative flex flex-col self-center p-4 overflow-hidden lg:col-start-2 lg:col-end-3 lg:row-start-1 lg:row-span-2 tags',
+
+			jsDisabled ? 'gap-3' : 'gap-y-2 lg:gap-y-4'
+		].join(' ')
+
+
+	div(class=containerClasses)
+
 		each row, idx in rows
-			div(class=`tags__row flex flex-wrap justify-evenly gap-3 tags__row_${row.direction}-animation${jsDisabled ? "" : " lg:gap-6"}` data-direction=row.direction data-duration=row.speed)
+			-
+				const rowClasses = [
+					'tags__row',
+					'flex',
+					'flex-wrap',
+					'justify-evenly',
+					'gap-3',
+					`tags__row_${row.direction}-animation`,
+					jsDisabled ? 'lg:gap-6' : ''
+				].join(' ')
+
+			div(class=rowClasses data-direction=row.direction data-duration=row.speed)
+
 				each tag in tags[idx]
-					div.tag(class="inline-block rounded-full border-2 border-solid border-current py-3.5 px-5 grow text-xl text-center cursor-default")
+					div.tag(class="inline-block text-white rounded-full border-2 border-solid border-current py-3.5 px-5 grow text-xl text-center cursor-default")
+
 						span.tag__text= tag

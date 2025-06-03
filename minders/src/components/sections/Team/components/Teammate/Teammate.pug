@@ -1,15 +1,20 @@
 mixin Teammate({ img, name, position, about, inSlider = false })
+
 	.teammate.w-full.overflow-hidden.shadow.relative&attributes(inSlider ? {tabindex: 0} : null)
+
 		picture
+
 			source(srcset=`${img}.webp` type='image/webp')
-			img.teammate__image.w-full.h-full.object-cover.pointer-events-none.duration-300.shadow.text-center(
+			img.teammate__image.w-full.h-full.object-cover.pointer-events-none.duration-300.shadow.text-center.bg-neutral-black-op3(
 				src=img
 				loading='lazy'
 				alt=name
 			)
-		div(class='teammate__description absolute inset-0 w-full h-full overflow-hidden py-10 lg:py-14 px-8 flex flex-col justify-between gap-2.5 pointer-events-none')
-			h3.teammate__name.title
+
+		div(class='teammate__description bg-neutral-black-op3 absolute inset-0 w-full h-full overflow-hidden py-10 lg:py-14 px-8 flex flex-col justify-between gap-2.5 pointer-events-none')
+
+			h3.teammate__name.title.text-white
 				| #{name},
 				br
-				span.title_opacity5= position
-			p.text.overflow-hidden= about
+				span.text-white-op5= position
+			p.text.text-white.overflow-hidden= about

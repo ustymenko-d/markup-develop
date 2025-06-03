@@ -1,26 +1,35 @@
-footer.footer(class="pb-16 text-sm")
-	div(class="md:container mx-auto px-4 lg:px-5 flex flex-col lg:flex-row gap-y-7 lg:gap-x-28")
-		div(class="footer__links flex flex-wrap gap-y-8 gap-x-28 lg:flex-nowrap")
-			.footer__join(class="pl-4 sm:pl-8 lg:pl-12")
-				ul(aria-label="Join us:")
+-
+	const ulBlockClass = "pl-4 border-s border-white-op15 sm:pl-8 lg:pl-12"
+
+	const ulHeadingClass = "before:content-[attr(aria-label)] before:block before:mb-6"
+
+// Component
+footer.footer(class="z-[1] bg-neutral-black pb-16 text-sm")
+	div(class="flex flex-col px-4 mx-auto md:container lg:px-5 lg:flex-row gap-y-7 lg:gap-x-28")
+		div(class="flex flex-wrap text-white gap-y-8 gap-x-28 lg:flex-nowrap")
+			// Join us
+			div(class=ulBlockClass)
+				ul(class=ulHeadingClass aria-label="Join us:")
 					li(class="mb-2.5")
 						a(href="#") Instagram
 					li(class="mb-2.5")
 						a(href="#") Facebook
 					li
 						a(href="#") Youtube
-			.footer__contact(class="pl-4 sm:pl-8 lg:pl-12")
-				ul(aria-label="Contact us:")
+			// Contact us
+			div(class=ulBlockClass)
+				ul(class=ulHeadingClass aria-label="Contact us:")
 					li(class="mb-2.5")
 						a(href="mailto:support@minders.com") support@minders.com
 					li
 						a(href="tel:+12345678910") +123 4567 89 10
-		div(class="footer__description pt-7 lg:pt-0 lg:pl-12")
+		// Legal
+		div(class="border-t border-white-op15 lg:border-t-0 lg:border-s text-white-op5 pt-7 lg:pt-0 lg:pl-12")
 			p.mb-6
 				| The information on this website is provided for general informational purposes only and does not constitute legal or professional advice. The information is accurate to the best of our knowledge for USA law. Use of this website constitutes acceptance of our 
-				a(href="#") Terms of Use
+				a(class="text-white" href="#") Terms of Use
 				|  and 
-				a(href="#") Privacy Policy
+				a(class="text-white" href="#") Privacy Policy
 				| .
 			p
 				| All rights reserved. &copy; 2021-2023 Minders.

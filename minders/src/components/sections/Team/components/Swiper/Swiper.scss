@@ -3,26 +3,14 @@ div.swiper {
 }
 
 .drag-cursor {
-	z-index: 10;
-	position: fixed;
-	left: 0;
-	top: 0;
 	opacity: 1;
-	visibility: visible;
 	transform: translate(-50%, -75%);
 
 	border-radius: 12.5rem;
 	width: 11.25rem;
 	height: 11.25rem;
-	pointer-events: none;
-	user-select: none;
-
-	display: flex;
-	align-items: center;
-	justify-content: center;
 
 	transition: opacity 0.4s, transform 0.4s, visibility 0.4s;
-	background: var(--simple-white);
 
 	@media (hover: none) {
 		opacity: 0;
@@ -39,8 +27,6 @@ div.swiper {
 	}
 
 	&__text {
-		color: var(--neutral-black);
-
 		&::before,
 		&::after {
 			content: url(../img/icons/angle.svg);

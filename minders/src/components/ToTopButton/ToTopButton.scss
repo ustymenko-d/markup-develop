@@ -1,86 +1,68 @@
-.to-top {
-	z-index: 2;
-	background-color: var(--neutral-black-op4);
-	color: var(--simple-white);
+@use 'mixins' as mixins;
 
-	&::after {
-		content: '';
-		position: absolute;
-		width: 2px;
-		height: 18px;
-		left: calc(50% - 1px);
-		top: calc(50% - 9px);
-		background-color: var(--simple-white);
-		transition: all 0.4s;
+@mixin apply-active-styles($color) {
+	color: $color;
+	border-color: transparent;
+	filter: drop-shadow(0 10px 8px rgb(0 0 0 / 0.04))
+		drop-shadow(0 4px 3px rgb(0 0 0 / 0.1));
+
+	&::before {
+		color: $color;
 	}
+	&::after {
+		background-color: $color;
+	}
+}
 
+.to-top {
+	&::after,
 	&::before {
 		content: '';
 		position: absolute;
-		width: 14px;
-		height: 14px;
-		left: calc(36%);
-		top: calc(50% - 9px);
-		border-top: 2px solid;
-		border-left: 2px solid;
-		transform: rotate(45deg);
-		color: var(--simple-white);
 		transition: all 0.4s;
 	}
 
-	&:focus-visible {
-		color: var(--neutral-black);
-		border-color: var(--neutral-black);
-		@include gradientBackAnimation;
+	&::after {
+		width: 2px;
+		height: 18px;
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%, -50%);
+		background-color: white;
+	}
 
-		&::before {
-			color: var(--neutral-black);
-		}
-		&::after {
-			background-color: var(--neutral-black);
-		}
+	&::before {
+		border-top: 2px solid;
+		border-left: 2px solid;
+		width: 14px;
+		height: 14px;
+		left: 36%;
+		top: 50%;
+		transform: translateY(-50%) rotate(45deg);
+		color: white;
+	}
+
+	&:focus-visible {
+		@include apply-active-styles(var(--neutral-black));
+		@include mixins.gradient-background;
 	}
 
 	@media (hover: hover) {
 		&:hover {
-			color: var(--neutral-black);
-			border-color: transparent;
-			@include gradientBackAnimation;
-
-			&::before {
-				color: var(--neutral-black);
-			}
-			&::after {
-				background-color: var(--neutral-black);
-			}
+			@include apply-active-styles(var(--neutral-black));
+			@include mixins.gradient-background;
 		}
 	}
 
 	@media (hover: none) {
 		&:active {
-			color: var(--neutral-black);
-			border-color: var(--neutral-black);
+			@include apply-active-styles(var(--neutral-black));
 			background-image: var(--gradient);
-
-			&::before {
-				color: var(--neutral-black);
-			}
-			&::after {
-				background-color: var(--neutral-black);
-			}
 		}
 	}
 
 	&:active {
-		color: var(--neutral-black);
-		border-color: var(--neutral-black);
+		@include apply-active-styles(var(--neutral-black));
 		background-image: var(--gradient);
-
-		&::before {
-			color: var(--neutral-black);
-		}
-		&::after {
-			background-color: var(--neutral-black);
-		}
 	}
 }

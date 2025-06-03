@@ -1,17 +1,17 @@
+@use 'mixins' as mixins;
+@use './components/Navigation/Navigation';
+
 .header {
 	background-color: rgba(6, 5, 15, 0.9);
-	color: var(--simple-white);
 
 	&__logo {
-		font-family: var(--font-medium);
-
 		&:focus-visible {
-			@include text-gradient-animation;
+			@include mixins.text-gradient-animation;
 		}
 
 		@media (hover: hover) {
 			&:hover {
-				@include text-gradient-animation;
+				@include mixins.text-gradient-animation;
 			}
 		}
 
@@ -24,5 +24,3 @@
 		}
 	}
 }
-
-@import './components/Navigation/Navigation';
