@@ -53,6 +53,12 @@ img {
 	object-fit: cover;
 }
 
+header {
+	@media screen and (max-width: 639px) {
+		display: none;
+	}
+}
+
 .wrapper {
 	position: relative;
 

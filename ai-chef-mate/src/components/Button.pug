@@ -1,7 +1,7 @@
 mixin Button({text, outline = false, icon = false, color = 'white'})
 	-
 		const baseClasses = [
-			'py-[18px] px-10 rounded-[50px] border-2 font-(family-name:var--first-font) font-medium text-xl/7 duration-150',
+			'py-[18px] px-10 rounded-[50px] border-2 font-(family-name:var--first-font) text-xl/7 duration-150',
 			'not-disabled:cursor-pointer',
 			'active:scale-95 active:brightness-80'
 		]
@@ -19,11 +19,13 @@ mixin Button({text, outline = false, icon = false, color = 'white'})
 			accent: [
 				'bg-[var(--accent)]',
 				'hover:bg-[var(--green)] hover:text-white',
-				'focus-visible:bg-[var(--green)] focus-visible:text-white'
+				'focus-visible:bg-[var(--green)] focus-visible:text-white',
+				'active:bg-[var(--green)] active:text-white'
 			],
 			white: [
 				'hover:bg-[var(--green)] hover:text-white',
-				'focus-visible:bg-[var(--green)] focus-visible:text-white'
+				'focus-visible:bg-[var(--green)] focus-visible:text-white',
+				'active:bg-[var(--green)] active:text-white'
 			]
 		}
 

@@ -2,11 +2,13 @@ include components/Card.pug
 include components/Actions.pug
 include components/Image.pug
 
-section(class="px-2 sm:px-4 pb-16 sm:pb-28 wrapper wrapper_right wrapper_bottom bg-[var(--light)]")
+section(class="px-2 sm:px-4 pt-20 sm:pt-10 pb-16 sm:pb-28 wrapper wrapper_right wrapper_bottom bg-[var(--light)]")
 
 	div(class="container flex flex-col gap-20 mx-auto md:gap-24")
 
-		include ../../Header.pug
+		header.container.mx-auto
+
+			include ../../Navigation/Navigation.desktop.pug
 
 		div.flex.flex-col.gap-11
 
