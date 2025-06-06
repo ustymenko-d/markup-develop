@@ -1,0 +1,9 @@
+mixin Image({ img, classes = '' })
+	-
+		const wrapper = [
+			'overflow-hidden shadow-md aspect-9/16 rounded-4xl lg:aspect-auto lg:h-full',
+			classes
+		].join(' ')
+
+	div(class=wrapper)
+		img(class="block w-full h-full bg-white" src=img.src alt=img.alt)

@@ -1,0 +1,24 @@
+.collapsible {
+	&__content {
+		grid-template-rows: 0fr;
+	}
+
+	details[open] &__button {
+		padding-block: 24px;
+		background: var(--accent);
+	}
+
+	details[open] &__button svg {
+		transform: rotateX(180deg);
+	}
+
+	details[open] + div {
+		grid-template-rows: 1fr;
+	}
+
+	summary:hover &__button,
+	summary:focus-visible &__button {
+		color: white;
+		background: var(--green);
+	}
+}

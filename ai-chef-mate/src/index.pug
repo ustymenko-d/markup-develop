@@ -1,9 +1,10 @@
 include components/Head.pug
-include components/Collapsible/Collapsible.pug
 
 doctype html
 html(lang="en")
+
 	+Head()
-	body.flex.flex-col.gap-4.p-4
-		+Collapsible({title: 'How does the AI create personalized meal plans?', text: 'Our AI system analyzes your dietary preferences, health goals, and budget to curate meal plans that are unique to you. It continually learns from your feedback and choices to improve its suggestions over time.', id: 1})
-		+Collapsible({title: 'What makes your AI-driven meal planning different from other meal planning services?', text: 'Our AI system analyzes your dietary preferences, health goals, and budget to curate meal plans that are unique to you. It continually learns from your feedback and choices to improve its suggestions over time.', id: 1})
+
+	body.overflow-x-hidden
+
+		include components/sections/Hero/Hero.pug

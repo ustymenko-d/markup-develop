@@ -1,0 +1,9 @@
+@import 'tailwindcss';
+@import './reset.css';
+@import './fonts.css';
+
+@import './base.css';
+
+/* Components */
+@import '../components/Heading/Heading.css';
+@import '../components/Collapsible/Collapsible.css';
