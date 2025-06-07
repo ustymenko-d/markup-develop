@@ -5,5 +5,4 @@
 @import './base.css';
 
 /* Components */
-@import '../components/Heading/Heading.css';
 @import '../components/Collapsible/Collapsible.css';
