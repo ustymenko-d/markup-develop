@@ -1,0 +1,53 @@
+include ../Heading/Heading.pug
+include ../Collapsible/Collapsible.pug
+
+-
+	const questions = [
+		{
+			id: '1',
+			title: 'How does the AI create personalized meal plans?',
+			text: 'Our AI system analyzes your dietary preferences, health goals, and budget to curate meal plans that are unique to you. It continually learns from your feedback and choices to improve its suggestions over time.'
+		},
+		{
+			id: '2',
+			title: 'How does the platform accommodate allergies and food sensitivities?',
+			text: 'You can easily input any allergies or food sensitivities in your profile settings. Our AI will automatically exclude any ingredients that could trigger a reaction and suggest safe and nutritious alternatives.'
+		},
+		{
+			id: '3',
+			title: 'How does the grocery delivery service work?',
+			text: 'Once your meal plan is finalized, our system generates a smart grocery list based on your selected recipes. You can then choose to have the items delivered through our partnered grocery providers, or sync the list with your preferred delivery service.'
+		},
+		{
+			id: '4',
+			title: 'Can I integrate special dietary requirements into my meal plan?',
+			text: 'Absolutely! Our platform is designed to accommodate a range of dietary needs, including vegetarian, vegan, gluten-free, and keto options. Just specify your requirements in your profile, and your meal plans will be adjusted accordingly.'
+		},
+		{ id: '5',
+			title: 'Are there options for budget-conscious users?',
+			text: 'Yes! You can set a budget range in your preferences, and the AI will prioritize affordable ingredients and recipes while still maintaining nutritional balance. We also offer meal prep and bulk-cooking suggestions to help reduce costs.'
+		},
+			{ id: '6',
+			title: 'What makes your AI-driven meal planning different from other meal planning services?',
+			text: 'Unlike static meal planners, our AI adapts in real time to your evolving needs, preferences, and feedback. It combines data-driven insights with nutritional science to offer more accurate, personalized, and sustainable meal solutions.'
+		},
+		{ id: '7',
+			title: 'How can I access nutrition education and healthy eating tips?',
+			text: 'Our platform includes a dedicated section with articles, videos, and expert advice on nutrition and healthy eating. You’ll also receive personalized tips alongside your meal plans to support your wellness journey.'
+		},
+		{ id: '8',
+			title: 'Can I adjust my meal plans after they’ve been created?',
+			text: 'Of course! Flexibility is key. You can swap out meals, change serving sizes, or regenerate your entire plan based on updated preferences at any time. The system will automatically adjust your grocery list to reflect the changes.'
+		}
+	]
+
+section
+
+	div.container.wrapper.mx-auto
+
+		+Heading({title: 'Frequently Asked Questions', subtitle: 'Meal planning made easy: your questions, answered'})
+
+		div(class="grid gap-5 xl:grid-cols-2 lg:gap-10")
+
+			each q in questions
+				+Collapsible({ id: q.id, title: q.title, text: q.text })

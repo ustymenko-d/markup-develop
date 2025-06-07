@@ -1,5 +1,5 @@
 .collapsible {
-	&__content {
+	& &__content {
 		grid-template-rows: 0fr;
 	}
 
@@ -20,5 +20,9 @@
 	summary:focus-visible &__button {
 		color: white;
 		background: var(--green);
+	}
+
+	summary:active &__button{
+		color: var(--beige);
 	}
 }
