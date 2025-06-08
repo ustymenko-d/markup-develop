@@ -3,7 +3,7 @@
 		'inline-block py-2 px-6 duration-150',
 		'hover:bg-[var(--accent)]',
 		'focus-visible:bg-[var(--accent)]',
-		'active:bg-[var(--green)] active:text-[var(--accent)]' 
+		'active:bg-[var(--green)] active:text-[var(--accent)]'
 	]
 
 	const navLinks = [
@@ -18,5 +18,7 @@ nav(class="px-10 py-1 mx-auto bg-white rounded-full shadow-xs w-fit")
 	ul(class="flex items-center justify-between gap-6 lg:gap-12")
 
 		each link in navLinks
+
 			li.rounded-full.overflow-hidden
-				a(class=linkClass, href=link.href)= link.label
+
+				a(href=link.href class=linkClass)= link.label

@@ -1,7 +1,7 @@
 mixin Button({text, outline = false, icon = false, color = 'white'})
 
 	-
-		const baseClasses = [
+		const baseButton = [
 			'py-[18px] px-10 rounded-[50px] border-2 font-(family-name:var--first-font) font-medium text-xl/7 duration-150',
 			'not-disabled:cursor-pointer',
 			'active:scale-95 active:brightness-80'
@@ -9,7 +9,7 @@ mixin Button({text, outline = false, icon = false, color = 'white'})
 
 		const outlineClass = outline ? 'border-[var(--green)]' : 'border-transparent'
 
-		const iconClass = (text && icon) ? 'flex items-center gap-4' : ''
+		const iconClasses = (text && icon) ? 'flex items-center gap-4' : ''
 
 		const colorMap = {
 			green: [
@@ -30,16 +30,17 @@ mixin Button({text, outline = false, icon = false, color = 'white'})
 			]
 		}
 
-		const classes = [
-			...baseClasses,
+		const buttonClasses = [
+			...baseButton,
 			outlineClass,
-			iconClass,
+			iconClasses,
 			...colorMap[color]
 		].join(' ')
 
-	button(class=classes)= text
+	button(class=buttonClasses)= text
 
 		if icon
+
 			svg(width="20" height="17" viewBox="0 0 20 17" fill="none" xmlns="http://www.w3.org/2000/svg")
 
 				path(

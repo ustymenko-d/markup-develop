@@ -45,9 +45,17 @@ section
 
 	div.container.wrapper.mx-auto
 
-		+Heading({title: 'Frequently Asked Questions', subtitle: 'Meal planning made easy: your questions, answered'})
+		+Heading({
+			title: 'Frequently Asked Questions',
+			subtitle: 'Meal planning made easy: your questions, answered'
+		})
 
 		div(class="grid gap-5 xl:grid-cols-2 lg:gap-10")
 
 			each q in questions
-				+Collapsible({ id: q.id, title: q.title, text: q.text })
+
+				+Collapsible({
+					id: q.id,
+					title: q.title,
+					text: q.text
+				})
