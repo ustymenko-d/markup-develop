@@ -1,0 +1,29 @@
+include ../../Heading/Heading.pug
+include components/Card.pug
+
+-
+	const articles = [
+		{
+			img: { src: 'img/cabbage.jpg', alt: 'Cabbage' },
+			title: 'Mastering Meal Prep: Time-Saving Tips for Busy Weekdays'
+		},
+		{
+			img: { src: 'img/salad-with-orange-juice.jpg', alt: 'Salad and a glass of orange juice' },
+			title: 'The Power of Plant-Based: Benefits Beyond the Plate'
+		},
+		{
+			img: { src: 'img/roots.jpg', alt: 'The hand that holds the plant with the roots' },
+			title: 'Balancing Nutrients: A Guide to a Well-Rounded Diet'
+		}
+	]
+
+section(class="mb-16 xl:mb-28 pt-20 pb-16 sm:pb-28 custom-bg custom-bg_left custom-bg_top bg-[var(--light)]")
+
+	div(class="container mx-auto wrapper")
+
+		+Heading({title: 'Healthy Insights', subtitle: 'Latest News, Expert Blogs, and Nutritional Learning', bgColor: true})
+
+		div(class="grid gap-4 md:gap-8 lg:grid-cols-2 xl:grid-cols-3")
+
+			each article in articles
+				+Card({ img: article.img, title: article.title })

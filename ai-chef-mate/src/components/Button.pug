@@ -1,14 +1,15 @@
 mixin Button({text, outline = false, icon = false, color = 'white'})
+
 	-
 		const baseClasses = [
-			'py-[18px] px-10 rounded-[50px] border-2 font-(family-name:var--first-font) text-xl/7 duration-150',
+			'py-[18px] px-10 rounded-[50px] border-2 font-(family-name:var--first-font) font-medium text-xl/7 duration-150',
 			'not-disabled:cursor-pointer',
 			'active:scale-95 active:brightness-80'
 		]
 
 		const outlineClass = outline ? 'border-[var(--green)]' : 'border-transparent'
 
-		const iconClass = (text && icon) ? 'flex items-center gap-2' : ''
+		const iconClass = (text && icon) ? 'flex items-center gap-4' : ''
 
 		const colorMap = {
 			green: [
