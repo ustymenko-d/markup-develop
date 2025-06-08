@@ -1,8 +1,9 @@
 include ../Heading/Heading.pug
+include ../Button.pug
 
 -
-	const content = [
-		'lg:flex lg:gap-4 p-4 lg:items-center lg:p-8 relative rounded-s-full border-2 border-[var(--green)] border-e-0',
+	const demoBlock = [
+		'lg:flex lg:gap-10 xl:gap-0 2xl:gap-8 p-4 lg:items-center lg:p-8 relative rounded-s-full border-2 border-[var(--green)] border-e-0',
 
 		'before:content-[""] before:absolute before:block before:top-full before:start-full before:w-screen before:border-t-2 before:border-[var(--green) before:bg-[var(--green)]' ,
 
@@ -16,17 +17,25 @@ section
 
 		+Heading({title: 'Demo', subtitle: 'See how it works: your personalized meal planning journey'})
 
-		h3(class="mx-auto text-center max-w-11/12 lg:hidden text-balance") Every meal is a&nbsp;chance to&nbsp;nourish your body, inspire your mind, and feed your soul
+		div(class="flex flex-col items-center justify-between gap-4 lg:hidden")
 
-		div(class=content)
+			h4(class="mx-auto text-center max-w-11/12 text-balance") Every meal is a&nbsp;chance to&nbsp;nourish your body, inspire your mind, and feed your soul
+
+			+Button({text: 'Try Our Demo', color: 'accent'})
+
+		div(class=demoBlock)
 
 			div(class="p-4 lg:p-6 rounded-full border-2 border-[var(--green)]")
 
 				div.rounded-full.overflow-hidden
 
-					video(class="" autoplay playsinline muted loop preload="auto")
+					video(autoplay playsinline muted loop preload="auto")
 						source(src="files/video.webm" type="video/webm")
 						source(src="files/video.mp4" type="video/mp4")
 						| Your browser does not support the video tag.
 
-			h3(class="max-lg:hidden lg:inline-block lg:text-right lg:text-balance") Every meal is a&nbsp;chance to&nbsp;nourish your body, inspire your mind, and feed your soul
+			div(class="flex flex-col items-end justify-between gap-4 w-fit xl:gap-8 max-lg:hidden 2xl:items-center")
+
+				h4(class="text-right text-balance xl:max-w-3/4 2xl:text-center") Every meal is a&nbsp;chance to&nbsp;nourish your body, inspire your mind, and feed your soul
+
+				+Button({text: 'Try Our Demo', color: 'accent'})

@@ -1,0 +1,36 @@
+include ../Heading/Heading.pug
+include ../Button.pug
+
+-
+	const assistanceBlock = [
+		'lg:flex lg:gap-10 2xl:gap-8 p-4 lg:items-center lg:p-8 relative rounded-s-full border-2 border-[var(--green)] border-e-0',
+
+		'before:content-[""] before:absolute before:block before:top-full before:start-full before:w-screen before:border-t-2 before:border-[var(--green) before:bg-[var(--green)]' ,
+
+		'after:content-[""] after:absolute after:block after:bottom-full after:start-full after:w-screen after:border-t-2 after:border-[var(--green) after:bg-[var(--green)]' 
+
+	].join(' ')
+
+section
+
+	div.container.wrapper.mx-auto
+
+		+Heading({title: 'Need Assistance?', subtitle: 'We’re here to help!'})
+
+		div(class="flex flex-col items-center justify-between gap-4 lg:hidden")
+
+			p(class="mx-auto text-center max-w-11/12 text-balance") Have questions or need help with AIChefMate? Our dedicated support team is ready to assist you. Get the answers and assistance you need to make the most of your meal planning experience.
+
+			+Button({text: 'Get Support', color: 'accent'})
+
+		div(class=assistanceBlock)
+
+			div(class="overflow-hidden p-4 lg:p-6 rounded-full border-2 border-[var(--green)]")
+
+				img(class="object-cover overflow-hidden rounded-full" src="img/assistance.jpg")
+
+			div(class="flex flex-col items-start justify-between gap-4 w-fit xl:gap-8 max-lg:hidden 2xl:items-center")
+
+				p(class="text-balance 2xl:text-center") Have questions or need help with AIChefMate? Our dedicated support team is ready to assist you. Get the answers and assistance you need to make the most of your meal planning experience.
+
+				+Button({text: 'Get Support', color: 'accent'})
