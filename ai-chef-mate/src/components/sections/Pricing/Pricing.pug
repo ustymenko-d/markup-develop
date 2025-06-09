@@ -1,12 +1,65 @@
 include ../../Heading.pug
+include components/Item.pug
 
-section
+-
+	const plans = [
+		{
+			plan: 'Free',
+			price: '0',
+			benefits: [
+				'Basic AI meal planning',
+				'Limited recipe access',
+				'Manual grocery list creation'
+			],
+			bestFor: 'Those who want to explore thae platform\'s basic functionalities.',
+			buttonText: 'Get Started For Free'
+		},
+		{
+			plan: 'Standart',
+			price: '9.99',
+			benefits: [
+				'Comprehensive AI meal planning',
+				'Full recipe library access',
+				'Automated grocery lists',
+				'Grocery delivery integration'
+			],
+			bestFor: 'Individuals or families looking for full meal planning support and convenience.',
+			buttonText: 'Subscribe Now'
+		},
+		{
+			plan: 'Premium',
+			price: '19.99',
+			benefits: [
+				'All Standard features',
+				'Exclusive gourmet recipes',
+				'Nutritional consultations',
+				'Advanced customization options'
+			],
+			bestFor: 'Users seeking a premium culinary experience with added personalization and expert guidance.',
+			buttonText: 'Go Premium'
+		}
+	]
 
-	div.container.wrapper.mx-auto
+
+section#pricing.py-20
+
+	.container.wrapper.mx-auto
 
 		+Heading({
 			title: 'Pricing',
 			subtitle: 'Find your perfect plan: tailored pricing for every need'
 		})
 
-		div
+		div.pricing(class="relative grid gap-12 lg:grid-cols-3 lg:grid-rows-[50px_auto_50px] lg:gap-0 xl:w-10/12 xl:mx-auto")
+
+			each p, index in plans
+				- const { plan, price, benefits, bestFor, buttonText } = p
+
+				+Item({
+					plan,
+					price,
+					benefits,
+					bestFor,
+					buttonText,
+					index
+				})

@@ -10,13 +10,12 @@ mixin SectionWithMedia({ title, subtitle, textType = 'h', text, buttonText, medi
 			'after:content-[""] after:absolute after:block after:bottom-full after:start-full after:w-screen after:border-t-2 after:border-[var(--green)] after:bg-[var(--green)]',
 
 			textType === 'h' ? 'xl:gap-0' : ''
-		].filter(Boolean).join(' ')
+		]
 
 		const desktopText = [
-			'flex flex-col items-start justify-between gap-4 w-fit xl:gap-8 max-lg:hidden 2xl:items-center',
-
+			'flex flex-col justify-between gap-4 w-fit xl:gap-8 max-lg:hidden 2xl:items-center',
 			textType === 'h' ? 'items-end' : 'items-start'
-		].join(' ')
+		]
 
 
 	section

@@ -1,0 +1,38 @@
+.pricing {
+	@media screen and (min-width: 1024px) {
+		&:before,
+		&:after {
+			content: '';
+			position: absolute;
+			z-index: -1;
+			top: 50%;
+			transform: translateY(-50%);
+
+			display: block;
+			border-radius: 2rem;
+			aspect-ratio: 9/16;
+			width: 400px;
+
+			background: url(../img/green-fruits.jpg) no-repeat;
+			background-size: cover;
+		}
+
+		&:before {
+			left: -103px;
+		}
+
+		&:after {
+			right: -103px;
+		}
+	}
+
+	@media screen and (min-width: 1536px) {
+		&:before {
+			left: -122px;
+		}
+
+		&:after {
+			right: -122px;
+		}
+	}
+}

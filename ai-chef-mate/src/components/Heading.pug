@@ -4,10 +4,13 @@ mixin Heading({title, subtitle, bgColor = false})
 
 		const separatorClass = [
 			'flex items-center max-sm:justify-center overflow-hidden gap-x-4 lg:gap-x-7 sm:relative',
+
 			'sm:before:content-[""] sm:before:z-[2] sm:before:mx-6 sm:before:w-0.5 sm:before:h-full sm:before:rotate-[25deg] sm:before:bg-[var(--green)] sm:before:block',
+
 			'sm:after:content-[""] sm:after:z-[1] sm:after:absolute sm:after:left-0 sm:after:top-0 sm:after:bottom-0 sm:after:w-10 sm:after:h-full sm:after:[clip-path:polygon(0_0,100%_0,30%_100%,0_100%)] sm:after:block',
+
 			afterBg
-		].join(' ')
+		]
 
 
 	div(class='flex max-sm:flex-col max-sm:text-center flex-wrap gap-x-4 lg:gap-x-7 gap-y-2 text-[var(--green)]')
