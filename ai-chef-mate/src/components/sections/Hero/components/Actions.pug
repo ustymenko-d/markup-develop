@@ -1,12 +1,12 @@
-mixin Actions({ classes = '' })
-
+mixin Actions({ classes })
 	include ../../../Button.pug
 
 	-
 		const wrapper = [
 			'flex flex-col justify-between gap-4 sm:flex-row lg:flex-col',
 			classes
-		].join(' ')
+		].filter(Boolean).join(' ')
+
 
 	div(class=wrapper)
 

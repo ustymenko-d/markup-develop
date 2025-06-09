@@ -1,5 +1,5 @@
 -
-	const linkClass = [
+	const linkClasses = [
 		'inline-block py-2 px-6 duration-150',
 		'hover:bg-[var(--accent)]',
 		'focus-visible:bg-[var(--accent)]',
@@ -13,6 +13,7 @@
 		{ label: 'Blog', href: '#blog' }
 	]
 
+
 nav(class="px-10 py-1 mx-auto bg-white rounded-full shadow-xs w-fit")
 
 	ul(class="flex items-center justify-between gap-6 lg:gap-12")
@@ -21,4 +22,4 @@ nav(class="px-10 py-1 mx-auto bg-white rounded-full shadow-xs w-fit")
 
 			li.rounded-full.overflow-hidden
 
-				a(href=link.href class=linkClass)= link.label
+				a(href=link.href class=linkClasses)= link.label

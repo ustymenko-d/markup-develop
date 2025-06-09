@@ -1,11 +1,11 @@
-mixin Card({percent, text, img, reverse = false, classes = ''})
-
+mixin Card({ percent, text, img, reverse = false, classes })
 	-
 		const card = [
 			'flex justify-between gap-4 p-4 overflow-hidden bg-white shadow-xs h-fit sm:gap-6 rounded-4xl lg:h-full',
 			reverse ? 'flex-col-reverse' : 'flex-col',
 			classes
-		].join(' ')
+		].filter(Boolean).join(' ')
+
 
 	div(class=card)
 

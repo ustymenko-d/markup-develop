@@ -2,11 +2,50 @@ include components/Card.pug
 include components/Actions.pug
 include components/Image.pug
 
+-
+	const blocks = [
+		{
+			type: 'card',
+			percent: 95,
+			text: 'Improved Nutrition',
+			img: { src: 'img/bag-green.jpg', alt: 'A hand holding a green bag of vegetables' },
+			classes: 'mb-8 sm:mb-16 lg:mb-0 pt-5 sm:pt-6 lg:pt-4 lg:row-span-2'
+		},
+		{
+			type: 'image',
+			img: { src: 'img/ramen.jpg', alt: 'Ramen' },
+			classes: 'mt-auto lg:row-start-2 lg:row-span-2 lg:col-start-2 lg:self-end'
+		},
+		{
+			type: 'span',
+			text: 'Effortless Planning, Healthier Eating',
+			classes: 'col-span-2 lg:col-span-3 lg:col-start-2 lg:row-start-1 text-center text-2xl md:text-3xl font-(family-name:--first-font) lg:mb-8 2xl:mb-10 text-[var(--green)]'
+		},
+		{
+			type: 'actions',
+			classes: 'col-span-2 lg:col-span-1 lg:row-start-2 lg:row-span-2 lg:col-start-3'
+		},
+		{
+			type: 'card',
+			percent: 25,
+			text: 'Saved on Groceries',
+			img: { src: 'img/bag-white.jpg', alt: 'White shopper with products' },
+			reverse: true,
+			classes: 'order-1 pb-5 sm:pb-6 lg:pb-4 mt-8 sm:mt-16 lg:mt-0 lg:row-start-2 lg:row-span-2 lg:col-start-4 lg:self-end'
+		},
+		{
+			type: 'image',
+			img: { src: 'img/roots.jpg', alt: 'The hand that holds the plant with the roots' },
+			classes: 'mb-auto lg:order-2 lg:row-start-1 lg:row-span-2 lg:col-start-5'
+		}
+	]
+
+
 section(class="mb-16 xl:mb-28 pt-20 sm:pt-10 pb-16 sm:pb-28 custom-bg custom-bg_right custom-bg_bottom bg-[var(--light)]")
 
 	div(class="container mx-auto wrapper")
 
-		header.container.mx-auto
+		header
 
 			include ../../Navigation/Navigation.desktop.pug
 
@@ -16,45 +55,28 @@ section(class="mb-16 xl:mb-28 pt-20 sm:pt-10 pb-16 sm:pb-28 custom-bg custom-bg_
 
 			div(class="grid grid-cols-2 lg:grid-cols-(--hero-grid-cols-lg) grid-rows-(--hero-grid-rows) lg:grid-rows-(--hero-grid-rows-lg) gap-x-4 sm:gap-x-8 gap-y-8 sm:gap-y-16 lg:gap-4 xl:gap-8")
 
-				+Card({
-					percent: 95,
-					text: 'Improved Nutrition',
-					img: {
-						src: 'img/bag-green.jpg',
-						alt: 'A hand holding a green bag of vegetables'
-					},
-					classes: 'mb-8 sm:mb-16 lg:mb-0 pt-5 sm:pt-6 lg:pt-4 lg:row-span-2'
-				})
+				each block in blocks
+					case block.type
 
-				+Image({
-					img: {
-						src: 'img/ramen.jpg',
-						alt: 'Ramen'
-						},
-					classes: 'mt-auto lg:row-start-2 lg:row-span-2 lg:col-start-2 lg:self-end'
-				})
+						when 'card'
+							+Card({
+								percent: block.percent,
+								text: block.text,
+								img: block.img,
+								reverse: block.reverse,
+								classes: block.classes
+							})
 
-				span(class="col-span-2 lg:col-span-3 lg:col-start-2 lg:row-start-1 text-center text-2xl md:text-3xl font-(family-name:--first-font) lg:mb-8 2xl:mb-10 text-[var(--green)]") Effortless&nbsp;Planning, Healthier&nbsp;Eating
+						when 'image'
+							+Image({
+								img: block.img,
+								classes: block.classes
+							})
 
-				+Actions({
-					classes: 'col-span-2 lg:col-span-1 lg:row-start-2 lg:row-span-2 lg:col-start-3'
-				})
+						when 'span'
+							span(class=block.classes)= block.text
 
-				+Card({
-					percent: 25,
-					text: 'Saved on Groceries',
-					img: {
-						src: 'img/bag-white.jpg',
-						alt: 'White shopper with products'
-					},
-					reverse: true,
-					classes: 'order-1 pb-5 sm:pb-6 lg:pb-4 mt-8 sm:mt-16 lg:mt-0 lg:row-start-2 lg:row-span-2 lg:col-start-4 lg:self-end'
-				})
-
-				+Image({
-					img: {
-						src: 'img/roots.jpg',
-						alt: 'The hand that holds the plant with the roots'
-					},
-					classes: 'mb-auto lg:order-2 lg:row-start-1 lg:row-span-2 lg:col-start-5'
-				})
+						when 'actions'
+							+Actions({
+								classes: block.classes
+							})

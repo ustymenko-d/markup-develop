@@ -1,4 +1,5 @@
 include components/Head.pug
+include components/SectionWithMedia.pug
 
 doctype html
 html.overflow-x-hidden.scroll-smooth(lang="en")
@@ -8,7 +9,29 @@ html.overflow-x-hidden.scroll-smooth(lang="en")
 	body.overflow-x-hidden.scroll-smooth
 
 		include components/sections/Hero/Hero.pug
-		include components/sections/Demo.pug
+
+		+SectionWithMedia({
+			title: 'Demo',
+			subtitle: 'See how it works: your personalized meal planning journey',
+			textType: 'h',
+			text: 'Every meal is a\u00A0chance to\u00A0nourish your body, inspire your mind, and feed your soul',
+			buttonText: 'Try Our Demo',
+			mediaType: 'video',
+			mediaSrc: 'files/video'
+		})
+
+
+		include components/sections/Pricing/Pricing.pug
 		include components/sections/Blog/Blog.pug
 		include components/sections/Faq.pug
-		include components/sections/Assistance.pug
+
+		+SectionWithMedia({
+			title: 'Need Assistance?',
+			subtitle: 'We’re here to help!',
+			textType: 'p',
+			text: 'Have questions or need help with AIChefMate? Our dedicated support team is ready to assist you. Get the answers and assistance you need to make the most of your meal planning experience.',
+			buttonText: 'Get Support',
+			mediaType: 'image',
+			mediaSrc: 'img/assistance.jpg',
+			mediaAlt: 'A woman gives a box of food to another woman'
+		})
