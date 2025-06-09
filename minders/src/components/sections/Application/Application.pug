@@ -1,29 +1,25 @@
-mixin Application({ jsDisabled })
-	include ./components/Form/Form.pug
-
-	-
-		const sectionClass = [
-			'application mb-24 bg-purple lg:bg-transparent',
-
-			jsDisabled ? 'lg:-mt-24 lg:pt-24' : ''
-		].join(' ')
+-
+	const sectionClass = [
+		'application mb-24 bg-purple lg:bg-transparent',
+		jsDisabled ? 'lg:-mt-24 lg:pt-24' : ''
+	]
 
 
-	section#application(class=sectionClass)
+section#application(class=sectionClass)
 
-		div(class="px-4 py-12 mx-auto md:container lg:px-5 lg:py-0")
+	div(class="px-4 py-12 mx-auto md:container lg:px-5 lg:py-0")
 
-			div(class="application__wrapper lg:p-20 lg:bg-purple lg:flex lg:items-center lg:gap-x-20")
+		div(class="application__wrapper lg:p-20 lg:bg-purple lg:flex lg:items-center lg:gap-x-20")
 
-				.application__content(class="mb-9 lg:mb-0")
+			.application__content(class="mb-9 lg:mb-0")
 
-					h2.title(class="mb-5 lg:mb-7 text-neutral-black")
+				h2.title(class="mb-5 lg:mb-7 text-neutral-black")
 
-						span.text-neutral-black-op4 Join our community
-						br
-						| of talented artists
+					span.text-neutral-black-op4 Join our community
+					br
+					| of talented artists
 
-					p.text(class="lg:max-w-xl text-neutral-black")
-						| Are you an artist looking to showcase your work and connect with other creatives? Fill out our application form and join our community of talented artists. We can"t wait to see what you have to offer.
+				p.text(class="lg:max-w-xl text-neutral-black")
+					| Are you an artist looking to showcase your work and connect with other creatives? Fill out our application form and join our community of talented artists. We can"t wait to see what you have to offer.
 
-				+Form({ jsDisabled })
+			include ./components/Form/Form.pug

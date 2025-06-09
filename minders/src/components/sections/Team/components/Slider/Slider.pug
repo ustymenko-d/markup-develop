@@ -3,7 +3,11 @@ mixin Slider({ team })
 
 	- const inSlider = true
 
+
 	.py-8.overflow-x-scroll.flex.flex-nowrap
+
 		each teammate in team
+
 			div.slide(class='mr-4 shrink-0')
+
 				+Teammate({ ...teammate, inSlider })

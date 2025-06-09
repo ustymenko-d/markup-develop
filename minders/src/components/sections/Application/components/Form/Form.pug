@@ -1,46 +1,49 @@
-mixin Form({ jsDisabled })
-	-
-		const formFields = [
-			{ id: 'full-name', type: 'text', label: 'Full-name', required: true, maxlength: 50 },
-			{ id: 'occupation', type: 'text', label: 'Occupation' },
-			{ id: 'phone', type: 'tel', label: 'Phone', required: true, pattern: '[0-9]{10}' },
-			{ id: 'email', type: 'email', label: 'E-mail', required: true }
-		]
+-
+	const formFields = [
+		{ id: 'full-name', type: 'text', label: 'Full-name', required: true, maxlength: 50 },
+		{ id: 'occupation', type: 'text', label: 'Occupation' },
+		{ id: 'phone', type: 'tel', label: 'Phone', required: true, pattern: '[0-9]{10}' },
+		{ id: 'email', type: 'email', label: 'E-mail', required: true }
+	]
 
-		const inputClass = 'form__input block w-full border border-neutral-black-op3 rounded-5p bg-transparent px-5 pt-8 pb-2.5 outline-0'
+	const inputClasses = 'form__input block w-full border border-neutral-black-op3 rounded-5p bg-transparent px-5 pt-8 pb-2.5 outline-0'
 
-		const baseLabel = 'form__label text-neutral-black-op4 absolute pointer-events-none select-none duration-300'
+	const labelClasses = [
+		'form__label text-neutral-black-op4 absolute pointer-events-none select-none duration-300',
+		jsDisabled ? 'form__label_not-empty' : ''
+	]
 
-		const labelClass = jsDisabled ? `${baseLabel} form__label_not-empty` : baseLabel
 
+form.form
 
-	form.form
+	each field in formFields
+		-
+			const { id, type, required, pattern, maxlength, label } = field
+			const inputWrapper = [
+				'form__input-wrapper relative duration-300',
+				id === 'phone' ? 'form__input-wrapper-tel' : '',
+				id === 'email' ? 'form__input-wrapper-mail' : ''
+			]
 
-		each field in formFields
-			-
-				const wrapperClass = [
-					'form__input-wrapper relative duration-300',
-					field.id === 'phone' ? 'form__input-wrapper-tel' : '',
-					field.id === 'email' ? 'form__input-wrapper-mail' : ''
-				].filter(Boolean).join(' ')
+		div(class=inputWrapper)
 
-			div(class=wrapperClass)
+			input(
+				id=id
+				type=type
+				class=inputClasses
+				required=required
+				pattern=pattern
+				maxlength=maxlength
+			)
 
-				input(
-					id=field.id
-					type=field.type
-					class=inputClass
-					required=field.required
-					pattern=field.pattern
-					maxlength=field.maxlength
-				)
-				label(class=labelClass for=field.id)= field.label
+			label(class=labelClasses for=id)= label
 
-		button.button.bg-yellow.form__button.w-full.my-7.text-center.outline-none(type="submit" class="active:scale-[0.98]")
+	button.button.bg-yellow.form__button.w-full.my-7.text-center.outline-none(type="submit" class="active:scale-[0.98]")
 
-			span.button__text.inline-block Apply
+		span.button__text.inline-block Apply
 
-		p.text-neutral-black-op4
-			| By clicking the button, you agree to our 
-			a.form__terms-link.text-neutral-black(href="#") terms and conditions
-			| .
+	p.text-neutral-black-op4
+
+		| By clicking the button, you agree to our 
+		a.form__terms-link.text-neutral-black(href="#") terms and conditions
+		| .

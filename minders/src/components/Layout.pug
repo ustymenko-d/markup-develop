@@ -1,0 +1,22 @@
+doctype html
+html.scroll-smooth(lang="en")
+
+	include Head.pug
+
+	body.page.flex.flex-col.font-regular
+		include Header/Header.pug
+
+		main.page__content.grow
+			include sections/Hero/Hero.pug
+			include sections/About/About.pug
+			include sections/Team/Team.pug
+			include sections/Events/Events.pug
+			include sections/Application/Application.pug
+
+		include Footer/Footer.pug
+
+		if !jsDisabled
+			#offset.relative.-z-10
+		
+		include BottomBlock/BottomBlock.pug
+		include ToTopButton/ToTopButton.pug

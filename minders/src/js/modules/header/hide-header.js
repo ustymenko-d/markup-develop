@@ -1,5 +1,5 @@
 import { menuIsOpen } from './menu.js'
-import { header } from './constants.js'
+import { focusableElements, header } from './constants.js'
 
 let lastScroll = 0
 

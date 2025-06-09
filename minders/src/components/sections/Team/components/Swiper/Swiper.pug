@@ -1,6 +1,7 @@
 mixin Swiper({ team })
 	include ../Teammate/Teammate.pug
 
+
 	div#swiper(class='relative py-10 swiper' tabindex='0')
 
 		template#drag-cursor-template
@@ -10,6 +11,9 @@ mixin Swiper({ team })
 				span.drag-cursor__text(class="relative inline-block font-medium leading-6 text-neutral-black") Drag
 
 		.swiper-wrapper
+
 			each teammate in team
+
 				.swiper-slide
+
 					+Teammate({ ...teammate })

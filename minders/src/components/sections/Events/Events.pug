@@ -1,17 +1,16 @@
-mixin Events({ jsDisabled })
+section#events.mb-24.pt-8
 
-	section#events.mb-24.pt-8
+	div(class="px-4 mx-auto md:container lg:px-5")
 
-		div(class="px-4 mx-auto md:container lg:px-5")
+		h2(class="text-white title mb-9 lg:mb-10 sm:text-center lg:text-left")
 
-			h2(class="text-white title mb-9 lg:mb-10 sm:text-center lg:text-left")
-				span.text-white-op5 Keep up to date
-				br
-				| with our latest events
+			span.text-white-op5 Keep up to date
+			br
+			| with our latest events
 
-			include ./components/List.pug
+		include ./components/List.pug
 
-			a(href="#" class="block w-full text-center button bg-purple sm:sm:w-fit sm:mx-auto lg:m-0 active:scale-95")
+		a(href="#" class="block w-full text-center button bg-purple sm:sm:w-fit sm:mx-auto lg:m-0 active:scale-95")
 
-				span.button__text.inline-block
-					| View&nbsp;calendar
+			span.button__text.inline-block
+				| View&nbsp;calendar

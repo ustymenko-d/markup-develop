@@ -1,4 +1,4 @@
-import './modules/header/index.js'
+import './modules/header/header.js'
 import './modules/to-top.js'
 import './modules/tags-animation.js'
 import './modules/swiper.js'

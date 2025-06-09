@@ -1,35 +1,41 @@
-mixin Navigation({ jsDisabled })
-	-
-		const navLinks = [
-			{	name: "About us", href: "#about"	},
-			{	name: "Our team", href: "#team"	},
-			{	name: "Events", href: "#events"	},
-			{	name: "Join us", href: "#application"	}
-		]
+-
+	const navLinks = [
+		{	name: "About us", href: "#about"	},
+		{	name: "Our team", href: "#team"	},
+		{	name: "Events", href: "#events"	},
+		{	name: "Join us", href: "#application"	}
+	]
 
-		const base = [
-			'w-full p-4 flex gap-y-6 gap-x-14',
-			'md:p-0 md:relative md:left-auto md:top-auto',
-			'text-right md:text-left flex-col justify-end',
-			'md:flex-row md:flex-nowrap md:bg-inherit',
-			'transition-opacity duration-300 md:visible md:opacity-100'
-		]
+	const base = [
+		'w-full p-4 flex gap-y-6 gap-x-14',
+		'md:p-0 md:relative md:left-auto md:top-auto',
+		'text-right md:text-left flex-col justify-end',
+		'md:flex-row md:flex-nowrap md:bg-inherit',
+		'transition-opacity duration-300 md:visible md:opacity-100'
+	]
 
-		const jsClass = 'fixed left-0 text-4xl top-16 md:h-auto md:text-xl'
+	const navListClass = [
+		...base,
+		jsDisabled ? 'absolute left-0 flex-wrap h-auto text-xl' : 'fixed left-0 text-4xl top-16 md:h-auto md:text-xl'
+	]	
 
-		const noJsClass = 'absolute left-0 flex-wrap h-auto text-xl'
 
-		const navListClass = base.concat(jsDisabled ? noJsClass : jsClass).join(' ')		
+nav(class=`navigation${!jsDisabled ? " flex items-center" : ""}`)
 
-	nav(class=`navigation${!jsDisabled ? " flex items-center" : ""}`)
+	if jsDisabled
 
-		if jsDisabled
-			details
-				summary(class="navigation__burger relative md:hidden w-7 h-7 p-2.5 cursor-pointer" aria-controls="navigation__links-list")
-		else 
-			button#navigation__burger(class="navigation__burger relative w-7 h-7 p-2.5 md:hidden" aria-expanded="false" aria-controls="navigation__links-list" aria-label="Open/close page navigation")
+		details
 
-		ul#navigation__links-list.navigation__links-list(class=navListClass role="menu" aria-label="Navigation")
-			each link in navLinks
-				li(role="menuitem")
-					a.navigation__link.smooth-scroll-link.lock-padding(href=link.href)= link.name
+			summary(class="navigation__burger relative md:hidden w-7 h-7 p-2.5 cursor-pointer" aria-controls="navigation__links-list")
+
+	else 
+
+		button#navigation__burger(class="navigation__burger relative w-7 h-7 p-2.5 md:hidden" aria-expanded="false" aria-controls="navigation__links-list" aria-label="Open/close page navigation")
+
+	ul#navigation__links-list.navigation__links-list(class=navListClass role="menu" aria-label="Navigation")
+
+		each link in navLinks
+
+			li(role="menuitem")
+
+				a.navigation__link.smooth-scroll-link.lock-padding(href=link.href)= link.name

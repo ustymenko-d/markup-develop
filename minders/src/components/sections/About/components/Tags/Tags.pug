@@ -1,41 +1,40 @@
-mixin Tags({ jsDisabled })
-	-
-		const rows = [
-			{ direction: 'left', speed: 'fast' },
-			{ direction: 'right', speed: 'normal' },
-			{ direction: 'left', speed: 'slow' }
-		]
+-
+	const rows = [
+		{ direction: 'left', speed: 'fast' },
+		{ direction: 'right', speed: 'normal' },
+		{ direction: 'left', speed: 'slow' }
+	]
 
-		const tags = [
-			['performance', 'design', 'photography'],
-			['dance', 'architecture', 'handmade'],
-			['poetry', 'AI art', 'music', 'fashion']
-		]
+	const tags = [
+		['performance', 'design', 'photography'],
+		['dance', 'architecture', 'handmade'],
+		['poetry', 'AI art', 'music', 'fashion']
+	]
 
-		const containerClasses = [
-			'relative flex flex-col self-center p-4 overflow-hidden lg:col-start-2 lg:col-end-3 lg:row-start-1 lg:row-span-2 tags',
-
-			jsDisabled ? 'gap-3' : 'gap-y-2 lg:gap-y-4'
-		].join(' ')
+	const containerClasses = [
+		'relative flex flex-col self-center p-4 overflow-hidden lg:col-start-2 lg:col-end-3 lg:row-start-1 lg:row-span-2 tags',
+		jsDisabled ? 'gap-3' : 'gap-y-2 lg:gap-y-4'
+	]
 
 
-	div(class=containerClasses)
+div(class=containerClasses)
 
-		each row, idx in rows
-			-
-				const rowClasses = [
-					'tags__row',
-					'flex',
-					'flex-wrap',
-					'justify-evenly',
-					'gap-3',
-					`tags__row_${row.direction}-animation`,
-					jsDisabled ? 'lg:gap-6' : ''
-				].join(' ')
+	each row, idx in rows
+		-
+			const rowClasses = [
+				'tags__row',
+				'flex',
+				'flex-wrap',
+				'justify-evenly',
+				'gap-3',
+				`tags__row_${row.direction}-animation`,
+				jsDisabled ? 'lg:gap-6' : ''
+			]
 
-			div(class=rowClasses data-direction=row.direction data-duration=row.speed)
+		div(class=rowClasses data-direction=row.direction data-duration=row.speed)
 
-				each tag in tags[idx]
-					div.tag(class="inline-block text-white rounded-full border-2 border-solid border-current py-3.5 px-5 grow text-xl text-center cursor-default")
+			each tag in tags[idx]
 
-						span.tag__text= tag
+				div.tag(class="inline-block text-white rounded-full border-2 border-solid border-current py-3.5 px-5 grow text-xl text-center cursor-default")
+
+					span.tag__text= tag

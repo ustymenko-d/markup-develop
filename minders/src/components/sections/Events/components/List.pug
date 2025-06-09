@@ -34,5 +34,7 @@ include ./Event/Event.pug
 
 
 div(class="mb-9 lg:mb-8 flex flex-col gap-2.5")
+
 	each event in events
-		+Event({...event})
+
+		+Event({ ...event })

@@ -1,29 +1,29 @@
-mixin Head({jsDisabled})
-	-
-		const title = "MINDERS - Discover the endless possibilitis of creativity"
-		const description = "Optimized for fast loading and smooth rendering, the page consistently scores 95+ on PageSpeed Insights and functions correctly even with JavaScript disabled — ensuring an efficient and inclusive user experience."
+-
+	const title = "MINDERS - Discover the endless possibilitis of creativity"
+	const description = "Optimized for fast loading and smooth rendering, the page consistently scores 95+ on PageSpeed Insights and functions correctly even with JavaScript disabled — ensuring an efficient and inclusive user experience."
 
-	head
-		meta(charset="UTF-8")
-		meta(http-equiv="X-UA-Compatible" content="IE=edge")
-		meta(name="viewport" content="width=device-width, initial-scale=1.0")
-		meta(name="author" content="ustymenko.denys@gmail.com")
-		meta(name="description" content=description)
-		meta(property="og:url" content="https://minders-page.netlify.app")
-		meta(property="og:type" content="website")
-		meta(property="og:title" content=title)
-		meta(property="og:description" content=description)
-		meta(property="og:image" content="img/icons/favicon.svg")
 
-		title= title
+head
+	meta(charset="UTF-8")
+	meta(http-equiv="X-UA-Compatible" content="IE=edge")
+	meta(name="viewport" content="width=device-width, initial-scale=1.0")
+	meta(name="author" content="ustymenko.denys@gmail.com")
+	meta(name="description" content=description)
+	meta(property="og:url" content="https://minders-page.netlify.app")
+	meta(property="og:type" content="website")
+	meta(property="og:title" content=title)
+	meta(property="og:description" content=description)
+	meta(property="og:image" content="img/icons/favicon.svg")
 
-		link(rel="icon" href="img/icons/favicon.svg" type="image/x-icon")
-		link(rel="stylesheet" href="css/index.min.css")
-		link(rel="stylesheet" href="files/tailwind/output.css")
+	title= title
 
-		if !jsDisabled 
-			noscript
-				meta(http-equiv="refresh" content="0; url=no-js.html") 
-			script(src="js/index.min.js", defer)
-		else
-			script window.location.replace("/")
+	link(rel="icon" href="img/icons/favicon.svg" type="image/x-icon")
+	link(rel="stylesheet" href="css/index.min.css")
+	link(rel="stylesheet" href="files/tailwind/output.css")
+
+	if !jsDisabled 
+		noscript
+			meta(http-equiv="refresh" content="0; url=no-js.html") 
+		script(src="js/index.min.js", defer)
+	else
+		script window.location.replace("/")

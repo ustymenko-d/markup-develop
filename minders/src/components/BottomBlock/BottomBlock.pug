@@ -1,27 +1,22 @@
-mixin BottomBlock({jsDisabled})
-	-
-		const blockClass = [
-			'bottomBlock w-full text-xl text-neutral-black font-medium',
+-
+	const blockClass = [
+		'bottomBlock w-full text-xl text-neutral-black font-medium',
+		!jsDisabled ? 'fixed z-0 bottom-0' : ''
+	]
 
-			!jsDisabled ? 'fixed z-0 bottom-0' : ''
-		].filter(Boolean).join(' ')
-
-		const linkClass = [
-			'shadow relative border-2 border-neutral-black duration-300 inline-block py-4 pr-8 pl-[calc(2rem+32px)] text-black rounded-5p',
-
-			'focus-visible:bg-neutral-black focus-visible:text-purple',
-
-			'hover:bg-neutral-black hover:text-purple',
-
-			'active:bg-neutral-black active:text-purple active:scale-95 active:brightness-80',
-		].filter(Boolean).join(' ')
+	const linkClass = [
+		'shadow relative border-2 border-neutral-black duration-300 inline-block py-4 pr-8 pl-[calc(2rem+32px)] text-black rounded-5p',
+		'focus-visible:bg-neutral-black focus-visible:text-purple',
+		'hover:bg-neutral-black hover:text-purple',
+		'active:bg-neutral-black active:text-purple active:scale-95 active:brightness-80',
+	]
 
 
-	#bottomBlock(class=blockClass)
+#bottomBlock(class=blockClass)
 
-		div(class="px-4 py-12 mx-auto text-center md:container lg:px-5")
+	div(class="px-4 py-12 mx-auto text-center md:container lg:px-5")
 
-			p(class="mx-auto mb-4 font-normal lg:max-w-3xl")
-				| Optimized for fast loading and smooth rendering, the page consistently scores&nbsp;95+ on PageSpeed Insights and functions correctly even with JavaScript disabled — ensuring an efficient and inclusive user experience.
-			a(class=linkClass href="https://ustymenko.vercel.app")
-				| Back to portfolio
+		p(class="mx-auto mb-4 font-normal lg:max-w-3xl")
+			| Optimized for fast loading and smooth rendering, the page consistently scores&nbsp;95+ on PageSpeed Insights and functions correctly even with JavaScript disabled — ensuring an efficient and inclusive user experience.
+		a(class=linkClass href="https://ustymenko.vercel.app")
+			| Back to portfolio

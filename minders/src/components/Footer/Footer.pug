@@ -1,7 +1,6 @@
 -
-	const ulBlockClass = "pl-4 border-s border-white-op15 sm:pl-8 lg:pl-12"
-
-	const ulHeadingClass = "before:content-[attr(aria-label)] before:block before:mb-6"
+	const ulBlock = "pl-4 border-s border-white-op15 sm:pl-8 lg:pl-12"
+	const ulHeading = "before:content-[attr(aria-label)] before:block before:mb-6"
 
 
 footer.footer(class="z-[1] bg-neutral-black pb-16 text-sm")
@@ -10,9 +9,9 @@ footer.footer(class="z-[1] bg-neutral-black pb-16 text-sm")
 
 		div(class="flex flex-wrap text-white gap-y-8 gap-x-28 lg:flex-nowrap")
 
-			div(class=ulBlockClass)
+			div(class=ulBlock)
 
-				ul(class=ulHeadingClass aria-label="Join us:")
+				ul(class=ulHeading aria-label="Join us:")
 
 					li(class="mb-2.5")
 						a(href="#") Instagram
@@ -21,9 +20,9 @@ footer.footer(class="z-[1] bg-neutral-black pb-16 text-sm")
 					li
 						a(href="#") Youtube
 
-			div(class=ulBlockClass)
+			div(class=ulBlock)
 
-				ul(class=ulHeadingClass aria-label="Contact us:")
+				ul(class=ulHeading aria-label="Contact us:")
 
 					li(class="mb-2.5")
 						a(href="mailto:support@minders.com") support@minders.com
