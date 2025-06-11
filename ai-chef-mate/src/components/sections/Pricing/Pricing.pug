@@ -53,13 +53,5 @@ section#pricing.py-20
 		div.pricing(class="relative grid gap-12 lg:grid-cols-3 lg:grid-rows-[50px_auto_50px] lg:gap-0 xl:w-10/12 xl:mx-auto")
 
 			each p, index in plans
-				- const { plan, price, benefits, bestFor, buttonText } = p
 
-				+Item({
-					plan,
-					price,
-					benefits,
-					bestFor,
-					buttonText,
-					index
-				})
+				+Item({ ...p, index })

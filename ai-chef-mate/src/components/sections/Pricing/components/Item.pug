@@ -20,11 +20,15 @@ mixin Item({ plan, price, benefits, bestFor, buttonText, index })
 		div(class= "flex flex-col sm:row-span-2 sm:self-center sm:border-e-2 sm:border-[var(--green)] sm:h-full sm:pe-4 sm:justify-center lg:pe-0 lg:row-span-1 lg:border-e-0")
 
 			h3(class="mb-6 text-center")= plan + ' Plan'
+
 			span(class="text-center font-(family-name:var--first-font) leading-none font-semibold text-[clamp(1.875rem,1.4865rem+1.6575vw,2.8125rem)]")= '$ ' + price
+
 			span(class="mb-12 text-center font-(family-name:var--first-font) text-[clamp(1rem,0.8446rem+0.663vw,1.375rem)] sm:mb-0 lg:mb-8") per month
 
 		ul(class="pb-8 border-b-2 border-[var(--green)] sm:pb-0 sm:border-b-0 lg:border-b-2")
+
 			each b in benefits
+
 				li(class="ms-6 font-(family-name:var--first-font) list-disc text-[clamp(1rem,0.8446rem+0.663vw,1.375rem)]")= b
 
 		div(class="flex flex-col gap-12 lg:justify-between lg:gap-6")

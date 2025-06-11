@@ -41,7 +41,4 @@ section#blog(class="mb-16 xl:mb-28 pt-20 pb-16 sm:pb-28 custom-bg custom-bg_left
 
 			each article in articles
 
-				+Card({
-					img: article.img,
-					title: article.title
-				})
+				+Card({ ...article })

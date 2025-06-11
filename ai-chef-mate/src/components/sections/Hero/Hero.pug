@@ -59,24 +59,13 @@ section(class="mb-16 xl:mb-28 pt-20 sm:pt-10 pb-16 sm:pb-28 custom-bg custom-bg_
 					case block.type
 
 						when 'card'
-							+Card({
-								percent: block.percent,
-								text: block.text,
-								img: block.img,
-								reverse: block.reverse,
-								classes: block.classes
-							})
+							+Card({	...block })
 
 						when 'image'
-							+Image({
-								img: block.img,
-								classes: block.classes
-							})
+							+Image({ ...block })
 
 						when 'span'
 							span(class=block.classes)= block.text
 
 						when 'actions'
-							+Actions({
-								classes: block.classes
-							})
+							+Actions({ ...block })

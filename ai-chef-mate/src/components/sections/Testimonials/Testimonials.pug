@@ -1,0 +1,82 @@
+include ../../Heading.pug
+include components/Item.pug
+
+-
+	const testimonials = [
+		{
+			text: 'Since using AIChefMate, I\'ve rediscovered my love for cooking! The meal plans are easy and delicious. It\'s been a game-changer for my busy lifestyle.',
+			author: {
+				img: 'testimonials1',
+				alt: 'Emily R.'
+			}
+		},
+		{
+			text: 'I never knew healthy eating could be this simple and satisfying. Thanks to AIChefMate, my family enjoys diverse, nutritious meals every day.',
+			author: {
+				img: 'testimonials2',
+				alt: 'Mark T.'
+			}
+		},
+		{
+			text: 'The grocery savings have been incredible! Plus, every meal feels tailored just for me. I\'m eating better and feeling great. A big thumbs up!',
+			author: {
+				img: 'testimonials3',
+				alt: 'Sarah J.'
+			}
+		},
+		{
+			text: 'Switching to AIChefMate has been a revelation for my meal prep routine. The AI-generated plans are spot-on with my tastes and nutritional needs, making healthy eating effortless and enjoyable.',
+			author: {
+				img: 'testimonials4',
+				alt: 'Rebecca S.'
+			}
+		},
+			{
+			text: 'Since using AIChefMate, I\'ve rediscovered my love for cooking! The meal plans are easy and delicious. It\'s been a game-changer for my busy lifestyle.',
+			author: {
+				img: 'testimonials1',
+				alt: 'Emily R.'
+			}
+		},
+		{
+			text: 'I never knew healthy eating could be this simple and satisfying. Thanks to AIChefMate, my family enjoys diverse, nutritious meals every day.',
+			author: {
+				img: 'testimonials2',
+				alt: 'Mark T.'
+			}
+		},
+		{
+			text: 'The grocery savings have been incredible! Plus, every meal feels tailored just for me. I\'m eating better and feeling great. A big thumbs up!',
+			author: {
+				img: 'testimonials3',
+				alt: 'Sarah J.'
+			}
+		},
+		{
+			text: 'Switching to AIChefMate has been a revelation for my meal prep routine. The AI-generated plans are spot-on with my tastes and nutritional needs, making healthy eating effortless and enjoyable.',
+			author: {
+				img: 'testimonials4',
+				alt: 'Rebecca S.'
+			}
+		}
+	]
+
+section
+
+	div.container.wrapper.mx-auto
+
+		+Heading({
+			title: 'Testimonials',
+			subtitle: 'Real stories from satisfied users: see how our platform changes lives'
+		})
+
+		div
+			#testimonials-swiper.swiper
+
+				.swiper-wrapper
+
+					each r in testimonials
+
+						.swiper-slide
+
+							+Item({ ...r })

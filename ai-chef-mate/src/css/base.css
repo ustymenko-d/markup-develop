@@ -117,3 +117,9 @@ section {
 		right: 60%;
 	}
 }
+
+.swiper-wrapper {
+	.swiper-slide {
+		height: auto;
+	}
+}

@@ -55,8 +55,4 @@ section
 
 			each q in questions
 
-				+Collapsible({
-					id: q.id,
-					title: q.title,
-					text: q.text
-				})
+				+Collapsible({ ...q })

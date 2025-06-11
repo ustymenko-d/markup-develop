@@ -13,8 +13,16 @@
 			aspect-ratio: 9/16;
 			width: 400px;
 
-			background: url(../img/green-fruits.jpg) no-repeat;
+			background-image: url(../img/green-fruits.jpg);
+			background-repeat: no-repeat;
 			background-size: cover;
+
+			@supports (
+				background-image:
+					url('data:image/webp;base64,UklGRhYAAABXRUJQVlA4TBEAAAAAAABAAEAAQAAAABAAEAAQAAABAAEAAQAAAAA=')
+			) {
+				background-image: url(../img/green-fruits.webp);
+			}
 		}
 
 		&:before {
