@@ -7,7 +7,7 @@
 		transparent
 	);
 
-	&[data-animated='true'] {
+	&[data-animated-tags='true'] {
 		.tags__row {
 			width: max-content;
 			flex-wrap: nowrap;

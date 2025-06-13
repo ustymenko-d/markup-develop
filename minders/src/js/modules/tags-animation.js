@@ -21,7 +21,7 @@ const createCopy = (target) => {
 
 const addAnimation = () => {
 	tags.forEach((tagsBlock) => {
-		tagsBlock.setAttribute('data-animated', true)
+		tagsBlock.setAttribute('data-animated-tags', true)
 		createCopy(tagsBlock)
 	})
 }

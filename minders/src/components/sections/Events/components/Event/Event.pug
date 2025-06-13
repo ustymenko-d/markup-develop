@@ -1,6 +1,6 @@
-mixin Event({ id, title, date, description, place })
+mixin Event({ id, title, date, description, place, index })
 
-	.event.border-2.border-solid.rounded-5p.text-white
+	.event.border-2.border-solid.rounded-5p.text-white(data-animated data-effect-slideRight data-delay=`${++index}00`)
 
 		details
 
