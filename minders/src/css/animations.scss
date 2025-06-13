@@ -1,3 +1,11 @@
+[data-animated] {
+	visibility: hidden;
+
+	&[data-animated-visible] {
+		visibility: visible;
+	}
+}
+
 [data-animated-visible] {
 	&[data-effect-vanishIn] {
 		animation: vanishIn 0.6s both;
