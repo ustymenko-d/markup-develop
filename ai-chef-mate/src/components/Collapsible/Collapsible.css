@@ -22,7 +22,7 @@
 		background: var(--green);
 	}
 
-	summary:active &__button{
-		color: var(--beige);
+	summary:active &__button {
+		filter: brightness(80%);
 	}
 }

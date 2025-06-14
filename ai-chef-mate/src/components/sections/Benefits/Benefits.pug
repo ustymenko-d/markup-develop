@@ -1,0 +1,72 @@
+include components/Item.pug
+include components/Image.pug
+
+-
+	const benefits = [
+		{
+			type: 'article',
+			title: 'Personalized Nutrition',
+			text: 'Get meal plans tailored to your unique dietary needs, preferences, and goals, ensuring a balanced and enjoyable diet.',
+			color: 'accent',
+			classes: 'xl:row-span-2'
+		},
+		{
+			type: 'image',
+			img: { src: 'img/bag-white.jpg', alt: 'White shopper with products' },
+			classes: 'aspect-square sm:aspect-auto sm:max-xl:max-h-[500px] xl:row-span-2'
+		},
+		{
+			type: 'article',
+			title: 'Time-Saving Convenience',
+			text: 'Say goodbye to meal planning stress. Our AI-driven platform simplifies your weekly meal preparation, saving you valuable time.'
+		},
+		{
+			type: 'article',
+			title: 'Healthier Eating Habits',
+			text: 'Easily adopt a healthier lifestyle with nutrient-rich meal plans and educational content on nutrition and wellness.',
+			color: 'light',
+			classes: 'sm:max-xl:order-1 xl:row-span-2'
+		},
+		{
+			type: 'article',
+			title: 'Cost-Effective Shopping',
+			text: 'Reduce food waste and save money with efficient grocery shopping lists that align perfectly with your meal plans.',
+			classes: 'xl:row-start-3 xl:col-start-1'
+		},
+		{
+			type: 'article',
+			title: 'Seamless Grocery Delivery',
+			text: 'Enjoy the convenience of having all your meal ingredients delivered right to your doorstep through our local grocery store partnerships.',
+			classes: 'sm:justify-center xl:row-start-3 xl:col-start-2'
+		},
+		{
+			type: 'article',
+			title: 'Community Support',
+			text: 'Join a community of like-minded individuals, share experiences, recipes, and tips, and get motivated on your journey to healthier eating.',
+			color: 'green',
+			classes: 'sm:max-xl:order-1 xl:row-span-2 xl:row-start-2 xl:col-start-3'
+		},
+		{
+			type: 'image',
+			img: { src: 'img/bag-green.jpg', alt: 'A hand holding a green bag of vegetables' },
+			classes: 'aspect-square xl:self-end'
+		}
+	]
+
+section.pt-20
+
+	div.container.wrapper.mx-auto
+
+		+Heading({
+			title: 'Benefits',
+			subtitle: 'Get meal plans tailored to your unique dietary needs, preferences, and goals, ensuring a balanced and enjoyable diet.'
+		})
+
+		div(class="grid sm:grid-cols-2 gap-4 lg:max-xl:grid-rows-[1fr_auto_1fr_1fr] xl:grid-cols-4 2xl:grid-rows-[auto_100px_auto] lg:gap-x-5 lg:gap-y-12")
+
+			each b in benefits
+
+				if b.type === 'article'
+					+Item({ ...b })
+				else
+					+Image({ ...b })

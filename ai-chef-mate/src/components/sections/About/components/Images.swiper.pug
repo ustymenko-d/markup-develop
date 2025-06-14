@@ -1,0 +1,33 @@
+mixin ImagesSwiper()
+	-
+		const images = [
+			{
+				src: 'img/women.jpg',
+				alt: 'Woman'
+			},
+			{
+				src: 'img/greek-salad.jpg',
+				alt: 'Greek salad'
+			},
+			{
+				src: 'img/ramen.jpg',
+				alt: 'Ramen'
+			},
+		]
+
+
+	#images-swiper.swiper.-scale-x-100
+
+		.swiper-wrapper
+
+			each img in images
+
+				.swiper-slide
+
+					.swiper-image(class="relative overflow-hidden -scale-x-100 aspect-5/6 rounded-4xl")
+
+							img(
+								class="block w-full h-full"
+								src=img.src
+								alt=img.alt
+							)

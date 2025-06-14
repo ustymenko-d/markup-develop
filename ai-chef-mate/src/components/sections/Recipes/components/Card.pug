@@ -1,0 +1,49 @@
+mixin Card({ src, alt, variant = 'outline' })
+	include ../../../Button.pug
+
+	-
+		const layout =
+			variant === 'accent'
+				? 'sm:grid-cols-[1fr_68%] sm:rounded-full'
+				: 'sm:grid-cols-[68%_1fr]'
+
+		const background =
+			variant === 'accent'
+				? 'bg-[var(--accent)]'
+				: variant === 'gray'
+					? 'bg-[var(--light)]'
+					: 'border-2 border-[var(--green)]'
+
+		const card = [
+			'overflow-hidden rounded-4xl grid gap-4 max-sm:gap-8 items-center p-4 sm:p-8 sm:gap-8 duration-300',
+			layout,
+			background,
+			variant === 'outline' && 'border-2 border-[var(--green)]',
+			'hover:bg-[var(--green)] focus-visible:bg-[var(--green)]'
+		]
+
+		const textBlock = [
+			'flex flex-col gap-4 items-start',
+			variant === 'accent' ? 'order-1' : 'max-sm:order-1'
+		]
+
+
+	a.block.group(class=card href="#")
+
+		div(class=textBlock)
+			h4(class="leading-tight duration-300 max-w-3/4 group-hover:text-white group-focus-visible:text-white")= alt
+
+			+Button({
+				type: 'decor',
+				text: 'Learn more',
+				outline: true,
+				icon: true,
+				color: variant === 'accent' ? 'white' : 'accent',
+				classes: ''
+			})
+
+		img(
+			class="block max-sm:w-4/5 max-sm:mx-auto aspect-square"
+			src=src
+			alt=alt
+		)

@@ -16,7 +16,7 @@ include ../Collapsible/Collapsible.pug
 		{
 			id: '3',
 			title: 'How does the grocery delivery service work?',
-			text: 'Once your meal plan is finalized, our system generates a smart grocery list based on your selected recipes. You can then choose to have the items delivered through our partnered grocery providers, or sync the list with your preferred delivery service.'
+			text: 'Once your meal plan is finalized, our system generates a smart grocery list based on your selected recipes. You can then choose to have the items delivered through our partnered grocery providers.'
 		},
 		{
 			id: '4',
@@ -42,7 +42,7 @@ include ../Collapsible/Collapsible.pug
 	]
 
 
-section
+section.pt-20
 
 	div.container.wrapper.mx-auto
 
@@ -51,7 +51,7 @@ section
 			subtitle: 'Meal planning made easy: your questions, answered'
 		})
 
-		div(class="grid gap-5 xl:grid-cols-2 lg:gap-10")
+		div(class="grid items-baseline gap-5 xl:grid-cols-2 xl:gap-10")
 
 			each q in questions
 

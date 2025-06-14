@@ -1,0 +1,22 @@
+include components/Info.swiper.pug
+include components/Images.swiper.pug
+
+section#about(class="mb-16 xl:mb-28 pt-20 pb-16 sm:pb-28 custom-bg custom-bg_left custom-bg_bottom bg-[var(--light)]")
+
+	div(class="container mx-auto wrapper")
+
+		+Heading({
+			title: 'How it works',
+			subtitle: 'Step into the world of hassle-free meal planning with our easy 3-step process',
+			bgColor: true
+		})
+
+		div(class="lg:grid lg:grid-cols-2 lg:gap-x-10 lg:items-center")
+
+			div(class="max-lg:mb-20 max-lg:text-center")
+
+				+InfoSwiper()
+
+			div(class="mx-auto max-w-4/6")
+
+				+ImagesSwiper()

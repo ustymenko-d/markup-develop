@@ -1,0 +1,9 @@
+mixin Image({ img, classes })
+
+	.overflow-hidden.shadow-md.rounded-full(class=classes)
+
+		img(
+			class="block w-full h-full bg-white lg:max-xl:aspect-square"
+			src=img.src
+			alt=img.alt
+		)

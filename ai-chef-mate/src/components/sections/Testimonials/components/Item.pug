@@ -1,6 +1,6 @@
 mixin Item({ text, author })
 
-	div(class="h-full group p-6 shadow-xs flex flex-col gap-4 justify-between md:px-10 md:py-12 rounded-3xl bg-[var(--light)] text-[var(--green)] hover:bg-[var(--green)] hover:text-[var(--beige)] duration-150")
+	div(class="h-full group p-6 shadow-xs flex flex-col gap-4 justify-between md:px-10 md:py-12 rounded-3xl bg-[var(--light)] text-[var(--green)] hover:bg-[var(--green)] hover:text-[var(--light)] duration-150")
 
 		div
 			p.mb-4= text
@@ -8,8 +8,12 @@ mixin Item({ text, author })
 			svg(class="ms-auto me-4 group-hover:text-[var(--accent)]" width="29" height="22" viewBox="0 0 29 22" fill="none" xmlns="http://www.w3.org/2000/svg")
 				path(d="M5.31366 0.602539H14.4099L5.76398 21.6025H0L5.31366 0.602539ZM19.9037 0.602539H29L20.354 21.6025H14.5L19.9037 0.602539Z" fill="currentColor")
 
-		.flex.gap-4.items-center
+		.flex.gap-4.items-center(data-swiper-parallax-x="-48")
 
-			img(src=`img/${author.img}.jpg` alt=author.alt class="w-16 h-16 rounded-full aspect-square")
+			img(
+				class="w-16 h-16 rounded-full aspect-square"
+				src=`img/${author.img}.jpg`
+				alt=author.alt
+			)
 
 			p= author.alt

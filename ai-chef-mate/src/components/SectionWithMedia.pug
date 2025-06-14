@@ -1,6 +1,6 @@
 mixin SectionWithMedia({ title, subtitle, textType = 'h', text, buttonText, mediaType = 'video', mediaSrc, mediaAlt = '' })
 	include Heading.pug
-	
+
 	-
 		const wrapper = [
 			'lg:flex lg:gap-10 2xl:gap-8 p-4 lg:items-center lg:p-8 relative rounded-s-full border-2 border-[var(--green)] border-e-0',
@@ -9,7 +9,7 @@ mixin SectionWithMedia({ title, subtitle, textType = 'h', text, buttonText, medi
 
 			'after:content-[""] after:absolute after:block after:bottom-full after:start-full after:w-screen after:border-t-2 after:border-[var(--green)] after:bg-[var(--green)]',
 
-			textType === 'h' ? 'xl:gap-0' : ''
+			textType === 'h' && 'xl:gap-0'
 		]
 
 		const desktopText = [
@@ -18,7 +18,7 @@ mixin SectionWithMedia({ title, subtitle, textType = 'h', text, buttonText, medi
 		]
 
 
-	section
+	section.pt-20
 
 		div.container.wrapper.mx-auto
 
@@ -27,11 +27,17 @@ mixin SectionWithMedia({ title, subtitle, textType = 'h', text, buttonText, medi
 			div(class="flex flex-col items-center justify-between gap-4 lg:hidden")
 
 				if textType === 'h'
+
 					h4(class="mx-auto text-center max-w-11/12 text-balance")= text
+
 				else if textType === 'p'
+
 					p(class="mx-auto text-center max-w-11/12 text-balance")= text
 
-				+Button({ text: buttonText, color: 'accent' })
+				+Button({
+					text: buttonText,
+					color: 'accent'
+				})
 
 			div(class=wrapper)
 
@@ -49,13 +55,23 @@ mixin SectionWithMedia({ title, subtitle, textType = 'h', text, buttonText, medi
 
 					else if mediaType === 'image'
 
-						img(src=mediaSrc alt=mediaAlt class="object-cover overflow-hidden rounded-full")
+						img(
+							class="overflow-hidden rounded-full"
+							src=mediaSrc
+							alt=mediaAlt
+						)
 
 				div(class=desktopText)
 
 					if textType === 'h'
+
 						h4(class="text-right text-balance xl:max-w-3/4 2xl:text-center")= text
+
 					else if textType === 'p'
+
 						p(class="text-balance 2xl:text-center")= text
 
-					+Button({ text: buttonText, color: 'accent' })
+					+Button({
+						text: buttonText,
+						color: 'accent'
+					})

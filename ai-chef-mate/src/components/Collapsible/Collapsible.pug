@@ -1,16 +1,25 @@
 mixin Collapsible({ id, title, text })
 
-	div(class='collapsible rounded-3xl px-6 py-2 sm:px-12 sm:py-6  text-[var(--green)] has-open:bg-[var(--light)] duration-300')
+	div(class='collapsible rounded-3xl p-4 sm:px-12 sm:py-6 text-[var(--green)] has-open:bg-[var(--light)] duration-300')
 
-		details
+		details.flex
 
-			summary(class='flex items-start gap-4 duration-300 cursor-pointer sm:gap-10 sm:items-center')
+			summary(class='flex items-center gap-4 duration-300 cursor-pointer sm:gap-10')
 
 				include components/Button.pug
 
-				span(id=`question-${id}` class='block text-[22px] font-semibold leading-tight font-(family-name:var--first-font) duration-300' role="term" aria-describedby=`answer-${id}`)= title
+				span(
+					id=`question-${id}`
+					class='block text-[22px] font-medium lg:font-semibold leading-tight font-(family-name:--first-font) duration-300'
+					role="term"
+					aria-describedby=`answer-${id}`
+				)= title
 
-		.collapsible__content.grid.duration-300(id=`answer-${id}` role='definition' aria-labelledby=`question-${id}`)
+		.collapsible__content.grid.duration-300(
+			id=`answer-${id}`
+			role='definition'
+			aria-labelledby=`question-${id}`
+		)
 
 			.overflow-hidden
 

@@ -11,8 +11,12 @@ mixin Card({ percent, text, img, reverse = false, classes })
 
 		div(class="flex flex-col gap-2 text-[var(--green)]")
 
-			span(class="font-(family-name:var--second-font) leading-none text-[clamp(2rem,0.9969rem+5.0157vw,3rem)] sm:text-6xl lg:text-4xl xl:text-6xl")= percent + "%"
+			span(class="font-(family-name:--second-font) leading-none text-[clamp(2rem,0.9969rem+5.0157vw,3rem)] sm:text-6xl lg:text-4xl xl:text-6xl")= percent + "%"
 
-			span(class="font-(family-name:var--first-font) text-[clamp(0.75rem,0.4992rem+1.2539vw,1rem)] sm:text-2xl")= text
+			span(class="font-(family-name:--first-font) text-[clamp(0.75rem,0.4992rem+1.2539vw,1rem)] sm:text-2xl")= text
 
-		img(class="block w-full grow rounded-2xl lg:aspect-8/9" src=img.src alt=img.alt)
+		img(
+			class="block w-full grow rounded-2xl lg:aspect-8/9"
+			src=img.src
+			alt=img.alt
+		)

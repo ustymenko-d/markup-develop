@@ -1,0 +1,37 @@
+include components/Card.pug
+
+-
+	const cards = [
+		{
+			src: 'img/plate1.png',
+			alt: 'Savory Quinoa and Roasted Vegetable Bowl'
+		},
+		{
+			src: 'img/plate2.png',
+			alt: 'Herb-Infused Grilled Chicken with Seasonal Greens',variant: 'accent'
+			},
+		{
+			src: 'img/plate3.png',
+			alt: 'Mediterranean Lentil and Kale Salad',
+			variant: 'gray'
+		}
+	]
+
+
+section#recipes.pt-20
+
+	div.container.wrapper.mx-auto
+
+		+Heading({
+			title: 'Recipes',
+			subtitle: 'Recipes crafted by AI, personalized to perfectly align with your unique dietary needs and flavor preferences'
+		})
+
+		div(class="grid gap-12 xl:grid-rows-1 xl:grid-cols-[55%_1fr]")
+
+			.grid.grid-rows-3.gap-8
+
+				each card in cards
+					+Card({ ...card })
+
+			include components/Image.pug

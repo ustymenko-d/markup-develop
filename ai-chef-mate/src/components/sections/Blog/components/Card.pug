@@ -1,14 +1,27 @@
-mixin Card({img, title})
+mixin Card({ img, title })
 	include ../../../Button.pug
 
-	div(class="flex flex-col items-start gap-4 p-4 pb-6 overflow-hidden bg-white shadow-xs md:gap-8 md:p-8 md:pb-14 rounded-4xl")
 
-		img(src=img.src alt=img.alt class="w-full rounded-2xl aspect-square")
+	a(
+		class="block overflow-hidden group rounded-4xl"
+		href="#"
+	)
+		div(class="h-full flex flex-col items-start gap-4 p-6 overflow-hidden bg-white group-hover:bg-[var(--green)] group-focus-visible:bg-[var(--green)] shadow-xs md:gap-8 md:p-8 lg:max-xl:p-6 rounded-4xl duration-200")
 
-		h3.leading-tight= title
+			div(class="overflow-hidden rounded-2xl aspect-square")
 
-		+Button({
-			text: 'Read Article',
-			color: 'accent',
-			icon: true
-		})
+				img(
+					class="w-full h-full duration-300 group-hover:scale-105 group-focus-visible:scale-105 group-active:scale-100"
+					src=img.src
+					alt=img.alt
+				)
+
+			h4(class="grow leading-tight text-[var(--green)] group-hover:text-[var(--light)] group-focus-visible:text-[var(--light)] duration-200")= title
+
+			+Button({
+				type: 'decor',
+				text: 'Read Article',
+				icon: true,
+				color: 'accent',
+				classes: 'group-active::scale-95 group-active:brightness-80'
+			})

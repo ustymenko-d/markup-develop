@@ -21,15 +21,15 @@ mixin Item({ plan, price, benefits, bestFor, buttonText, index })
 
 			h3(class="mb-6 text-center")= plan + ' Plan'
 
-			span(class="text-center font-(family-name:var--first-font) leading-none font-semibold text-[clamp(1.875rem,1.4865rem+1.6575vw,2.8125rem)]")= '$ ' + price
+			span(class="text-center font-(family-name:--first-font) leading-none font-semibold text-[clamp(1.875rem,1.4865rem+1.6575vw,2.8125rem)]")= '$ ' + price
 
-			span(class="mb-12 text-center font-(family-name:var--first-font) text-[clamp(1rem,0.8446rem+0.663vw,1.375rem)] sm:mb-0 lg:mb-8") per month
+			span(class="mb-12 text-center font-(family-name:--first-font) text-[clamp(1rem,0.8446rem+0.663vw,1.375rem)] sm:mb-0 lg:mb-8") per month
 
 		ul(class="pb-8 border-b-2 border-[var(--green)] sm:pb-0 sm:border-b-0 lg:border-b-2")
 
 			each b in benefits
 
-				li(class="ms-6 font-(family-name:var--first-font) list-disc text-[clamp(1rem,0.8446rem+0.663vw,1.375rem)]")= b
+				li(class="ms-6 font-(family-name:--first-font) list-disc text-[clamp(1rem,0.8446rem+0.663vw,1.375rem)]")= b
 
 		div(class="flex flex-col gap-12 lg:justify-between lg:gap-6")
 
@@ -40,5 +40,5 @@ mixin Item({ plan, price, benefits, bestFor, buttonText, index })
 			+Button({
 				text: buttonText,
 				outline: true,
-				color: plan === 'Standart' ? 'accent' : 'white'
+				color: plan === 'Standart' ? 'white' : 'accent'
 			})
