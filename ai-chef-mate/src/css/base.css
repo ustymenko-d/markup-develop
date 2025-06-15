@@ -138,8 +138,8 @@ section {
 	}
 
 	&:before {
-		left: -0.3px;
-		bottom: 0.3px;
+		left: -0.5px;
+		bottom: 0.5px;
 
 		height: 50%;
 
@@ -147,8 +147,8 @@ section {
 	}
 
 	&:after {
-		top: -0.3px;
-		right: 0.3px;
+		top: -0.5px;
+		right: 0.5px;
 
 		height: 50%;
 
