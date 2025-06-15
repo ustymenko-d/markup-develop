@@ -1,4 +1,4 @@
-mixin Card({ percent, text, img, reverse = false, classes })
+mixin Card({ percent, text, img, reverse = false, classes, attr })
 	-
 		const card = [
 			'flex justify-between gap-4 p-4 overflow-hidden bg-white shadow-xs h-fit sm:gap-6 rounded-4xl lg:h-full',
@@ -7,7 +7,7 @@ mixin Card({ percent, text, img, reverse = false, classes })
 		]
 
 
-	div(class=card)
+	div(class=card)&attributes(attr)
 
 		div(class="flex flex-col gap-2 text-[var(--green)]")
 

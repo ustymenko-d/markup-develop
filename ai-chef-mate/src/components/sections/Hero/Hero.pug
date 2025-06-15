@@ -9,12 +9,22 @@ include components/Image.pug
 			percent: 95,
 			text: 'Improved Nutrition',
 			img: { src: 'img/bag-green.jpg', alt: 'A hand holding a green bag of vegetables' },
-			classes: 'mb-8 sm:mb-16 lg:mb-0 pt-5 sm:pt-6 lg:pt-4 lg:row-span-2'
+			classes: 'mb-8 sm:mb-16 lg:mb-0 pt-5 sm:pt-6 lg:pt-4 lg:row-span-2',
+			attr: {
+				'data-animated': true,
+				'data-effect-slide-up': true,
+				'data-delay': 50
+			}
 		},
 		{
 			type: 'image',
 			img: { src: 'img/ramen.jpg', alt: 'Ramen' },
-			classes: 'mt-auto lg:row-start-2 lg:row-span-2 lg:col-start-2 lg:self-end'
+			classes: 'mt-auto lg:row-start-2 lg:row-span-2 lg:col-start-2 lg:self-end',
+			attr: {
+				'data-animated': true,
+				'data-effect-slide-up': true,
+				'data-delay': 450
+			}
 		},
 		{
 			type: 'span',
@@ -31,17 +41,27 @@ include components/Image.pug
 			text: 'Saved on Groceries',
 			img: { src: 'img/bag-white.jpg', alt: 'White shopper with products' },
 			reverse: true,
-			classes: 'order-1 pb-5 sm:pb-6 lg:pb-4 mt-8 sm:mt-16 lg:mt-0 lg:row-start-2 lg:row-span-2 lg:col-start-4 lg:self-end'
+			classes: 'order-1 pb-5 sm:pb-6 lg:pb-4 mt-8 sm:mt-16 lg:mt-0 lg:row-start-2 lg:row-span-2 lg:col-start-4 lg:self-end',
+			attr: {
+				'data-animated': true,
+				'data-effect-slide-up': true,
+				'data-delay': 150
+			}
 		},
 		{
 			type: 'image',
 			img: { src: 'img/roots.jpg', alt: 'The hand that holds the plant with the roots' },
-			classes: 'mb-auto lg:order-2 lg:row-start-1 lg:row-span-2 lg:col-start-5'
+			classes: 'mb-auto lg:order-2 lg:row-start-1 lg:row-span-2 lg:col-start-5',
+			attr: {
+				'data-animated': true,
+				'data-effect-slide-up': true,
+				'data-delay': 350
+			}
 		}
 	]
 
 
-section(class="mb-16 xl:mb-28 pt-20 sm:pt-10 pb-16 sm:pb-28 custom-bg custom-bg_right custom-bg_bottom bg-[var(--light)]")
+section(class="overflow-x-clip mb-16 xl:mb-28 pt-20 sm:pt-10 pb-16 sm:pb-28 custom-bg custom-bg_right custom-bg_bottom bg-[var(--light)]")
 
 	div(class="container mx-auto wrapper")
 

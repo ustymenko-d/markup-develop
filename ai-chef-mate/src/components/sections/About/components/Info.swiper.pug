@@ -33,7 +33,12 @@ mixin InfoSwiper()
 
 						h3.mb-10= title
 
-						p(class="leading-tight max-lg:max-w-4/5 lg:max-w-10/12 max-lg:mx-auto text-balance")= text
+						p(
+							class="leading-tight max-lg:max-w-4/5 lg:max-w-10/12 max-lg:mx-auto text-balance"
+							data-animated
+							data-effect-slide-right
+							data-delay="100"
+						)= text
 
 		.pt-10.mb-10.flex.items-center.gap-4(class="max-lg:justify-center lg:pt-20 lg:mb-20")
 

@@ -1,4 +1,4 @@
-mixin Image({ img, classes })
+mixin Image({ img, classes, attr })
 	-
 		const wrapper = [
 			'overflow-hidden shadow-md aspect-9/16 rounded-4xl lg:aspect-auto lg:h-full',
@@ -6,7 +6,7 @@ mixin Image({ img, classes })
 		]
 
 
-	div(class=wrapper)
+	div(class=wrapper)&attributes(attr)
 
 		img(
 			class="block w-full h-full bg-white"

@@ -7,3 +7,5 @@
 /* Components */
 @import '../components/Collapsible/Collapsible.css';
 @import '../components/sections/Pricing/Pricing.css';
+
+@import './animations/index.css';

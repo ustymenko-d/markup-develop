@@ -18,7 +18,7 @@ mixin SectionWithMedia({ title, subtitle, textType = 'h', text, buttonText, medi
 		]
 
 
-	section.pt-20
+	section.pt-20.overflow-x-clip
 
 		div.container.wrapper.mx-auto
 
@@ -41,7 +41,12 @@ mixin SectionWithMedia({ title, subtitle, textType = 'h', text, buttonText, medi
 
 			div(class=wrapper)
 
-				div(class="overflow-hidden p-4 lg:p-6 rounded-full border-2 border-[var(--green)]")
+				div(
+					class="overflow-hidden p-4 lg:p-6 rounded-full border-2 border-[var(--green)]"
+					data-animated
+					data-effect-vanish-in
+					data-delay="100"
+				)
 
 					if mediaType === 'video'
 

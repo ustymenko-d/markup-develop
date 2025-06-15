@@ -19,4 +19,9 @@ mixin Heading({title, subtitle, bgColor = false})
 
 		div(class=separatorClass)
 
-			p.max-w-md.self-center.leading-tight(class="max-sm:mx-auto")= subtitle
+			p.max-w-md.self-center.leading-tight(
+				class="max-sm:mx-auto"
+				data-animated
+				data-effect-slide-right
+				data-delay="100"
+			)= subtitle

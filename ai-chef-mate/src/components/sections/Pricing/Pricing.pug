@@ -12,7 +12,12 @@ include components/Item.pug
 				'Manual grocery list creation'
 			],
 			bestFor: 'Those who want to explore thae platform\'s basic functionalities.',
-			buttonText: 'Get Started For Free'
+			buttonText: 'Get Started For Free',
+			attr: {
+				'data-animated': true,
+				'data-no-fade': true,
+				'data-effect-transition-left': true,
+			}
 		},
 		{
 			plan: 'Standart',
@@ -36,12 +41,17 @@ include components/Item.pug
 				'Advanced customization options'
 			],
 			bestFor: 'Users seeking a premium culinary experience with added personalization and expert guidance.',
-			buttonText: 'Go Premium'
+			buttonText: 'Go Premium',
+			attr: {
+				'data-animated': true,
+				'data-no-fade': true,
+				'data-effect-transition-right': true,
+			}
 		}
 	]
 
 
-section#pricing.py-20
+section#pricing.py-20.overflow-x-clip
 
 	.container.wrapper.mx-auto
 
@@ -50,7 +60,11 @@ section#pricing.py-20
 			subtitle: 'Find your perfect plan: tailored pricing for every need'
 		})
 
-		div.pricing(class="relative grid gap-12 lg:grid-cols-3 lg:grid-rows-[50px_auto_50px] lg:gap-0 xl:w-10/12 xl:mx-auto")
+		div.pricing(
+			class="relative grid gap-12 lg:grid-cols-3 lg:grid-rows-[50px_auto_50px] lg:gap-0 xl:w-10/12 xl:mx-auto"
+			data-animated
+			data-no-fade
+		)
 
 			each p, index in plans
 

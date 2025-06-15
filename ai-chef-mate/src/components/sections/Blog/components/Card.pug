@@ -1,10 +1,13 @@
-mixin Card({ img, title })
+mixin Card({ img, title, idx })
 	include ../../../Button.pug
 
 
 	a(
 		class="block overflow-hidden shadow-xs group rounded-4xl"
 		href="#"
+		data-animated
+		data-effect-slide-up
+		data-delay=`${++idx * 100 + 100}`
 	)
 		div(class="h-full flex flex-col items-start gap-4 p-6 overflow-hidden bg-white group-hover:bg-[var(--green)] group-focus-visible:bg-[var(--green)] md:gap-8 md:p-8 lg:max-xl:p-6 rounded-4xl duration-200")
 
