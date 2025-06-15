@@ -1,3 +1,5 @@
+import lenis from './lenis.js'
+
 const toTop = document.querySelector('#to-top')
 
 const toggleToTopVisibility = () => {
@@ -6,7 +8,7 @@ const toggleToTopVisibility = () => {
 }
 
 const scrollToTop = () => {
-	window.scrollTo({ top: 0, behavior: 'smooth' })
+	lenis.scrollTo(0)
 	toTop.classList.remove('to-top_visible')
 }
 
