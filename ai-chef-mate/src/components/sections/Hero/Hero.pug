@@ -69,11 +69,11 @@ section(class="overflow-x-clip mb-16 xl:mb-28 pt-20 sm:pt-10 pb-16 sm:pb-28 cust
 
 			include ../../Navigation/Navigation.desktop.pug
 
-		div.flex.flex-col.gap-11
+		div.relative.flex.flex-col.gap-11(data-parallax)
 
 			h1.text-center Elevate Your Mealtime with AI&#8209;Powered Personalization
 
-			div(class="grid grid-cols-2 lg:grid-cols-(--hero-grid-cols-lg) grid-rows-(--hero-grid-rows) lg:grid-rows-(--hero-grid-rows-lg) gap-x-4 sm:gap-x-8 gap-y-8 sm:gap-y-16 lg:gap-4 xl:gap-8")
+			div(class="z-[2] grid grid-cols-2 lg:grid-cols-(--hero-grid-cols-lg) grid-rows-(--hero-grid-rows) lg:grid-rows-(--hero-grid-rows-lg) gap-x-4 sm:gap-x-8 gap-y-8 sm:gap-y-16 lg:gap-4 xl:gap-8")
 
 				each block in blocks
 					case block.type
@@ -89,3 +89,5 @@ section(class="overflow-x-clip mb-16 xl:mb-28 pt-20 sm:pt-10 pb-16 sm:pb-28 cust
 
 						when 'actions'
 							+Actions({ ...block })
+
+			include components/Decor.pug
