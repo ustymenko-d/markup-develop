@@ -7,7 +7,7 @@
 	--first-font: 'WorkSans-VariableFont_wght', sans-serif;
 	--second-font: 'Syne-VariableFont_wght', sans-serif;
 
-	--hero-grid-rows: 1fr repeat(2, auto) 1fr;
+	--hero-grid-rows: repeat(2, auto) 1fr auto 1fr;
 	--hero-grid-rows-lg: repeat(2, auto) 1fr;
 	--hero-grid-cols-lg: repeat(2, 1fr) auto repeat(2, 1fr);
 }
