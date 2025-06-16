@@ -15,6 +15,15 @@
 }
 
 .to-top {
+	opacity: 0;
+	visibility: hidden;
+	transition: opacity 0.2 ease, visibility 0.2 ease;
+
+	&.to-top_visible {
+		opacity: 1;
+		visibility: visible;
+	}
+
 	&::after,
 	&::before {
 		content: '';

@@ -1,16 +1,16 @@
+import lenis from './lenis.js'
+
 const toTop = document.querySelector('#to-top')
 
-const checkHide = (arg) => {
-	arg.currentTarget.scrollY > document.documentElement.clientHeight
-		? toTop.classList.remove('hidden')
-		: toTop.classList.add('hidden')
+const toggleToTopVisibility = () => {
+	const shouldShow = window.scrollY > document.documentElement.clientHeight
+	toTop.classList.toggle('to-top_visible', shouldShow)
 }
 
-toTop.addEventListener('click', () => {
-	window.scrollTo(0, 0)
-	toTop.classList.add('hidden')
-})
+const scrollToTop = () => {
+	lenis.scrollTo(0)
+	toTop.classList.remove('to-top_visible')
+}
 
-window.addEventListener('scroll', (e) => {
-	checkHide(e)
-})
+toTop.addEventListener('click', scrollToTop)
+window.addEventListener('scroll', toggleToTopVisibility)
