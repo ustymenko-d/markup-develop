@@ -28,7 +28,7 @@ mixin SectionWithMedia({ title, subtitle, textType = 'h', text, buttonText, medi
 
 				if textType === 'h'
 
-					h4(class="mx-auto text-center max-w-11/12 text-balance")= text
+					p(class="text-[clamp(1.5rem,1.241rem+1.105vw,2.125rem)] mx-auto text-center max-w-11/12 text-balance" data-custom-font-size)= text
 
 				else if textType === 'p'
 
@@ -42,7 +42,7 @@ mixin SectionWithMedia({ title, subtitle, textType = 'h', text, buttonText, medi
 			div(class=wrapper)
 
 				div(
-					class="overflow-hidden p-4 lg:p-6 rounded-full border-2 border-[var(--green)]"
+					class="overflow-hidden lg:min-w-1/2 p-4 lg:p-6 rounded-full border-2 border-[var(--green)]"
 					data-animated
 					data-effect-vanish-in
 					data-delay="100"
@@ -62,6 +62,8 @@ mixin SectionWithMedia({ title, subtitle, textType = 'h', text, buttonText, medi
 
 						img(
 							class="overflow-hidden rounded-full"
+							width="725"
+							height="484"
 							src=mediaSrc
 							alt=mediaAlt
 						)
@@ -70,11 +72,11 @@ mixin SectionWithMedia({ title, subtitle, textType = 'h', text, buttonText, medi
 
 					if textType === 'h'
 
-						h4(class="text-right text-balance xl:max-w-3/4 2xl:text-center")= text
+						p(class="text-[clamp(1.5rem,1.241rem+1.105vw,2.125rem)] text-right text-balance xl:max-w-3/4 2xl:text-center" data-custom-font-size)= text
 
 					else if textType === 'p'
 
-						p(class="text-balance 2xl:text-center")= text
+						p(class="max-w-4/5 text-balance 2xl:text-center")= text
 
 					+Button({
 						text: buttonText,

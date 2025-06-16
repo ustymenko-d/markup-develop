@@ -30,7 +30,7 @@ mixin Card({ src, alt, variant = 'outline' })
 	a.group(class=card href="#")
 
 		div(class=textBlock)
-			h4(class="leading-tight duration-300 max-w-3/4 group-hover:text-white group-focus-visible:text-white")= alt
+			p(class="text-[clamp(1.5rem,1.241rem+1.105vw,2.125rem)] leading-tight duration-300 max-w-3/4 group-hover:text-white group-focus-visible:text-white" data-custom-font-size)= alt
 
 			+Button({
 				type: 'decor',

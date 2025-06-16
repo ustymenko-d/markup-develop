@@ -43,7 +43,7 @@ h4 {
 	font-size: clamp(1.5rem, 1.241rem + 1.105vw, 2.125rem);
 }
 
-p {
+p:not([data-custom-font-size]) {
 	font-family: var(--first-font);
 	font-size: clamp(1rem, 0.8446rem + 0.663vw, 1.375rem);
 }
