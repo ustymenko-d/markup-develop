@@ -18,7 +18,6 @@ mixin Card({ src, alt, variant = 'outline' })
 			'overflow-hidden rounded-4xl grid gap-4 max-sm:gap-8 items-center p-4 sm:p-8 sm:gap-8 duration-300',
 			layout,
 			background,
-			variant === 'outline' && 'border-2 border-[var(--green)]',
 			'hover:bg-[var(--green)] focus-visible:bg-[var(--green)]'
 		]
 
@@ -28,7 +27,7 @@ mixin Card({ src, alt, variant = 'outline' })
 		]
 
 
-	a.block.group(class=card href="#")
+	a.group(class=card href="#")
 
 		div(class=textBlock)
 			h4(class="leading-tight duration-300 max-w-3/4 group-hover:text-white group-focus-visible:text-white")= alt
