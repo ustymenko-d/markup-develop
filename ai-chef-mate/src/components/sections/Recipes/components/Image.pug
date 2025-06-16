@@ -5,11 +5,18 @@ a.overflow-hidden.relative.min-h-80.w-full.block.group.rounded-e-4xl.rounded-bl-
 	data-no-fade
 )
 
-	img(
-		class="absolute inset-0 w-full h-full duration-300 group-hover:scale-105 group-focus-visible:scale-105"
-		src="img/explore-more.jpg"
-		alt="A table filled with various Caucasian or Middle Eastern dishes: khachapuri with egg, vegetable and meat stew, appetizers with vegetables and hummus, meat with apples, flatbread, sauces, and herbs"
-	)
+	picture
+
+		source(media="(max-width: 1024px)" srcset="img/explore-more@mob.webp" type="image/webp")
+		source(media="(max-width: 1024px)" srcset="img/explore-more@mob.jpg" type="image/jpg")
+		source(srcset="img/explore-more.webp" type="image/webp")
+		img(
+			class="absolute inset-0 w-full h-full duration-300 group-hover:scale-105 group-focus-visible:scale-105"
+			src="img/explore-more.jpg"
+			width="643"
+			height="916"
+			alt="A table filled with various Caucasian or Middle Eastern dishes: khachapuri with egg, vegetable and meat stew, appetizers with vegetables and hummus, meat with apples, flatbread, sauces, and herbs"
+		)
 
 	.custom-corner(
 		class="relative p-3 rounded-br-4xl w-fit bg-white flex items-center gap-4 font-medium text-2xl text-[var(--green)]"

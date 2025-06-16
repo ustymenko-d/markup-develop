@@ -8,10 +8,15 @@ mixin Image({ img, classes, attr })
 
 	div(class=wrapper)&attributes(attr)
 
-		img(
-			class="block w-full h-full bg-white"
-			width="262"
-			height="415"
-			src=img.src
-			alt=img.alt
-		)
+		picture
+
+			source(media="(max-width: 1024px)" srcset=`${img.src}@mob.webp` type="image/webp")
+			source(media="(max-width: 1024px)" srcset=`${img.src}@mob.jpg` type="image/jpg")
+			source(srcset=`${img.src}.webp` type="image/webp")
+			img(
+				class="block w-full h-full bg-white"
+				src=`${img.src}.jpg`
+				width="262"
+				height="415"
+				alt=img.alt
+			)

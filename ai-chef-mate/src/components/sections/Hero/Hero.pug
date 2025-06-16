@@ -8,7 +8,7 @@ include components/Image.pug
 			type: 'card',
 			percent: 95,
 			text: 'Improved Nutrition',
-			img: { src: 'img/bag-green.jpg', alt: 'A hand holding a green bag of vegetables' },
+			img: { src: 'img/bag-green', alt: 'A hand holding a green bag of vegetables' },
 			classes: 'pt-5 sm:pt-6 lg:pt-4 lg:row-span-2',
 			attr: {
 				'data-animated': true,
@@ -18,7 +18,7 @@ include components/Image.pug
 		},
 		{
 			type: 'image',
-			img: { src: 'img/ramen.jpg', alt: 'Ramen' },
+			img: { src: 'img/ramen', alt: 'Ramen' },
 			classes: 'row-span-2 mt-auto lg:row-start-2 lg:col-start-2 lg:self-end',
 			attr: {
 				'data-animated': true,
@@ -39,7 +39,7 @@ include components/Image.pug
 			type: 'card',
 			percent: 25,
 			text: 'Saved on Groceries',
-			img: { src: 'img/bag-white.jpg', alt: 'White shopper with products' },
+			img: { src: 'img/bag-white', alt: 'White shopper with products' },
 			reverse: true,
 			classes: 'order-1 pb-5 sm:pb-6 lg:pb-4 lg:row-start-2 lg:row-span-2 lg:col-start-4 lg:self-end',
 			attr: {
@@ -50,7 +50,7 @@ include components/Image.pug
 		},
 		{
 			type: 'image',
-			img: { src: 'img/roots.jpg', alt: 'The hand that holds the plant with the roots' },
+			img: { src: 'img/roots', alt: 'The hand that holds the plant with the roots' },
 			classes: 'row-span-2 mb-auto lg:order-2 lg:row-start-1 lg:col-start-5',
 			attr: {
 				'data-animated': true,
@@ -71,7 +71,11 @@ section(class="overflow-x-clip mb-16 xl:mb-28 pt-20 sm:pt-10 pb-16 sm:pb-28 cust
 
 		div.relative.flex.flex-col.gap-11(data-parallax)
 
-			h1(class="text-center max-sm:max-w-11/12 max-sm:mx-auto") Elevate Your Mealtime with AI&#8209;Powered Personalization
+			h1(class="text-center max-sm:max-w-11/12 max-sm:mx-auto") 
+				
+				| Elevate Your Mealtime with
+				br
+				| AI&#8209;Powered Personalization
 
 			div(class="z-[2] grid grid-cols-2 lg:grid-cols-(--hero-grid-cols-lg) grid-rows-(--hero-grid-rows) lg:grid-rows-(--hero-grid-rows-lg) gap-x-4 sm:gap-x-8 gap-y-8 sm:gap-y-16 lg:gap-4 xl:gap-8")
 

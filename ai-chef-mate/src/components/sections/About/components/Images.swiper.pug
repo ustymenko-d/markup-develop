@@ -2,15 +2,15 @@ mixin ImagesSwiper()
 	-
 		const images = [
 			{
-				src: 'img/women.jpg',
+				src: 'img/women',
 				alt: 'Woman'
 			},
 			{
-				src: 'img/greek-salad.jpg',
+				src: 'img/greek-salad',
 				alt: 'Greek salad'
 			},
 			{
-				src: 'img/ramen.jpg',
+				src: 'img/ramen',
 				alt: 'Ramen'
 			},
 		]
@@ -26,8 +26,15 @@ mixin ImagesSwiper()
 
 					.swiper-image(class="relative overflow-hidden shadow-md -scale-x-100 aspect-5/6 rounded-4xl")
 
+						picture
+
+							source(media="(max-width: 1024px)" srcset=`${img.src}@mob.webp` type="image/webp")
+							source(media="(max-width: 1024px)" srcset=`${img.src}@mob.jpg` type="image/jpg")
+							source(srcset=`${img.src}.webp` type="image/webp")
 							img(
 								class="block w-full h-full"
-								src=img.src
+								src=`${img.src}.jpg`
+								width="499"
+								height="598"
 								alt=img.alt
 							)

@@ -13,11 +13,18 @@ mixin Card({ img, title, idx })
 
 			div(class="overflow-hidden rounded-2xl aspect-square")
 
-				img(
-					class="w-full h-full duration-300 group-hover:scale-105 group-focus-visible:scale-105 group-active:scale-100"
-					src=img.src
-					alt=img.alt
-				)
+				picture
+
+					source(media="(max-width: 1024px)" srcset=`${img.src}@mob.webp` type="image/webp")
+					source(media="(max-width: 1024px)" srcset=`${img.src}@mob.jpg` type="image/jpg")
+					source(srcset=`${img.src}.webp` type="image/webp")
+					img(
+						class="w-full h-full duration-300 group-hover:scale-105 group-focus-visible:scale-105 group-active:scale-100"
+						src=`${img.src}.jpg`
+						alt=img.alt
+						width="448"
+						height="448"
+					)
 
 			h4(class="grow leading-tight text-[var(--green)] group-hover:text-[var(--light)] group-focus-visible:text-[var(--light)] duration-200")= title
 
