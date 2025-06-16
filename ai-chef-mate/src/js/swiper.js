@@ -1,5 +1,6 @@
 import Swiper from 'swiper'
 import {
+	A11y,
 	Autoplay,
 	Controller,
 	EffectCards,
@@ -15,7 +16,7 @@ import 'swiper/css/effect-cards'
 import 'swiper/css/effect-creative'
 
 const aboutSwiper = new Swiper('#info-swiper', {
-	modules: [Navigation, Pagination, Controller, EffectFade],
+	modules: [Navigation, Pagination, Controller, EffectFade, A11y],
 	allowTouchMove: false,
 	effect: 'fade',
 	fadeEffect: {
@@ -57,7 +58,7 @@ aboutSwiper.controller.control = imagesSlider
 imagesSlider.controller.control = aboutSwiper
 
 new Swiper('#testimonials-swiper', {
-	modules: [Autoplay, Keyboard],
+	modules: [Autoplay, Keyboard, A11y],
 	loop: true,
 	grabCursor: true,
 	autoplay: {
