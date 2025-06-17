@@ -2,8 +2,6 @@
 @use './components/Navigation/Navigation';
 
 .header {
-	background-color: rgba(6, 5, 15, 0.9);
-
 	&__logo {
 		&:focus-visible {
 			@include mixins.text-gradient-animation;

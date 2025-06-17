@@ -52,7 +52,6 @@
 		visibility: hidden;
 		opacity: 0;
 		height: calc(100dvh - 63px);
-		background-color: rgba(6, 5, 15, 0.9);
 
 		@media (max-height: 445px) {
 			&.navigation__links-list_active {

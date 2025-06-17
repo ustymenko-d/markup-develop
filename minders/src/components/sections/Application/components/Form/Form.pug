@@ -6,10 +6,10 @@
 		{ id: 'email', type: 'email', label: 'E-mail', required: true }
 	]
 
-	const inputClasses = 'form__input block w-full border border-neutral-black-op3 rounded-5p bg-transparent px-5 pt-8 pb-2.5 outline-0'
+	const inputClasses = 'form__input block w-full border border-neutral-black-op6 shadow rounded-5p bg-transparent px-5 pt-8 pb-2.5 outline-0'
 
 	const labelClasses = [
-		'form__label text-neutral-black-op4 absolute pointer-events-none select-none duration-300',
+		'form__label text-neutral-black-op8 absolute pointer-events-none select-none duration-300',
 		jsDisabled && 'form__label_not-empty'
 	]
 
@@ -38,12 +38,15 @@ form.form
 
 			label(class=labelClasses for=id)= label
 
-	button(type="submit" class="button bg-yellow form__button w-full my-7 text-center outline-none active:scale-[0.98]")
+	button(
+		type="submit"
+		class="button shadow bg-yellow form__button w-full my-7 text-center outline-none active:scale-[0.98]"
+	)
 
-		span.button__text.inline-block Apply
+		span.button__text.inline-block Submit
 
-	p.text-neutral-black-op4
+	p.text-neutral-black-op8
 
 		| By clicking the button, you agree to our 
-		a.form__terms-link.text-neutral-black(href="#") terms and conditions
+		a.form__terms-link.text-neutral-black.font-medium(href="#") terms and conditions
 		| .

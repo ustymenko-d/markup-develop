@@ -14,18 +14,13 @@
 		'transition-opacity duration-300 md:visible md:opacity-100'
 	]
 
-	const navClasses = [
-		'navigation',
-		!jsDisabled && 'flex items-center'
-	]
-
 	const navListClass = [
 		...base,
-		jsDisabled ? 'absolute left-0 flex-wrap h-auto text-xl' : 'fixed left-0 text-4xl top-16 md:h-auto md:text-xl'
+		jsDisabled ? 'absolute left-0 flex-wrap h-auto text-xl' : 'fixed left-0 text-4xl top-16 bg-neutral-black-op9 md:h-auto md:text-xl'
 	]	
 
 
-nav(class=navClasses)
+nav.navigation(class=[!jsDisabled && 'flex items-center'])
 
 	if jsDisabled
 
