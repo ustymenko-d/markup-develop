@@ -1,13 +1,13 @@
 -
 	const blockClass = [
 		'bottomBlock w-full text-xl text-neutral-black font-medium',
-		!jsDisabled ? 'fixed z-0 bottom-0' : ''
+		!jsDisabled && 'fixed z-0 bottom-0'
 	]
 
 	const linkClass = [
 		'shadow relative border-2 border-neutral-black duration-300 inline-block py-4 pr-8 pl-[calc(2rem+32px)] text-black rounded-5p',
-		'focus-visible:bg-neutral-black focus-visible:text-purple',
 		'hover:bg-neutral-black hover:text-purple',
+		'focus-visible:bg-neutral-black focus-visible:text-purple',
 		'active:bg-neutral-black active:text-purple active:scale-95 active:brightness-80',
 	]
 

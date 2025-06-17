@@ -28,7 +28,7 @@ div(class=containerClasses)
 				'justify-evenly',
 				'gap-3',
 				`tags__row_${row.direction}-animation`,
-				jsDisabled ? 'lg:gap-6' : ''
+				jsDisabled && 'lg:gap-6' 
 			]
 
 		div(class=rowClasses data-direction=row.direction data-duration=row.speed)

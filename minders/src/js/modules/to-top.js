@@ -1,15 +1,25 @@
 import lenis from './lenis.js'
 
+const CLASSES = {
+	visible: ['visible', 'opacity-100', 'scale-100'],
+	invisible: ['invisible', 'opacity-0', 'scale-75'],
+}
+
 const toTop = document.querySelector('#to-top')
+
+const updateToTopVisibility = (isVisible) => {
+	toTop.classList.remove(...CLASSES[isVisible ? 'invisible' : 'visible'])
+	toTop.classList.add(...CLASSES[isVisible ? 'visible' : 'invisible'])
+}
 
 const toggleToTopVisibility = () => {
 	const shouldShow = window.scrollY > document.documentElement.clientHeight
-	toTop.classList.toggle('to-top_visible', shouldShow)
+	updateToTopVisibility(shouldShow)
 }
 
 const scrollToTop = () => {
 	lenis.scrollTo(0)
-	toTop.classList.remove('to-top_visible')
+	updateToTopVisibility(false)
 }
 
 toTop.addEventListener('click', scrollToTop)

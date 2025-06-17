@@ -10,7 +10,7 @@
 
 	const labelClasses = [
 		'form__label text-neutral-black-op4 absolute pointer-events-none select-none duration-300',
-		jsDisabled ? 'form__label_not-empty' : ''
+		jsDisabled && 'form__label_not-empty'
 	]
 
 
@@ -21,8 +21,8 @@ form.form
 			const { id, type, required, pattern, maxlength, label } = field
 			const inputWrapper = [
 				'form__input-wrapper relative duration-300',
-				id === 'phone' ? 'form__input-wrapper-tel' : '',
-				id === 'email' ? 'form__input-wrapper-mail' : ''
+				id === 'phone' && 'form__input-wrapper-tel',
+				id === 'email' && 'form__input-wrapper-mail'
 			]
 
 		div(class=inputWrapper)
@@ -38,7 +38,7 @@ form.form
 
 			label(class=labelClasses for=id)= label
 
-	button.button.bg-yellow.form__button.w-full.my-7.text-center.outline-none(type="submit" class="active:scale-[0.98]")
+	button(type="submit" class="button bg-yellow form__button w-full my-7 text-center outline-none active:scale-[0.98]")
 
 		span.button__text.inline-block Apply
 
