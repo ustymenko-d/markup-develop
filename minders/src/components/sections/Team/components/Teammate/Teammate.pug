@@ -1,6 +1,6 @@
 mixin Teammate({ img, name, position, about, inSlider = false })
 
-	.teammate.w-full.overflow-hidden.shadow.relative&attributes(inSlider ? {tabindex: 0} : null)
+	.teammate.w-full.overflow-hidden.rounded-extra.shadow.relative&attributes(inSlider ? {tabindex: 0} : null)
 
 		picture
 
@@ -11,7 +11,7 @@ mixin Teammate({ img, name, position, about, inSlider = false })
 				alt=name
 			)
 
-		div(class='teammate__description bg-neutral-black-op3 absolute inset-0 w-full h-full overflow-hidden py-10 lg:py-14 px-8 flex flex-col justify-between gap-2.5 pointer-events-none')
+		div(class='teammate__description bg-neutral-black-op3 absolute inset-0 w-full h-full rounded-extra overflow-hidden py-10 lg:py-14 px-8 flex flex-col justify-between gap-2.5 pointer-events-none')
 
 			h3.teammate__name.title.text-white
 				| #{name},

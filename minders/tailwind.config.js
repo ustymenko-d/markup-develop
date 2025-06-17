@@ -21,6 +21,8 @@ export default {
 			},
 			borderRadius: {
 				'5p': '1.25rem',
+				'extra': '3.75rem',
+				'full-xl': '6.25rem',
 			},
 		},
 	},

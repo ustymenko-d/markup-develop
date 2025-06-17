@@ -9,9 +9,81 @@ section.hero.mb-16
 				span.text-white-op5(data-animated data-effect-vanishIn) Discover the endless
 				span.block(data-animated data-effect-slideUp data-delay="600") possibilities of creativity
 
-			picture
+			div.hero__image(
+				class="relative flex w-full overflow-hidden min-h-96 sm:aspect-video rounded-extra xl:rounded-full-xl"
+				data-animated
+				data-effect-slideUp-small
+				data-delay="800"
+			)
 
-				source(media="(max-width: 1024px)" srcset="../img/hero-bg@mob.webp" type="image/webp")
-				source(media="(max-width: 1024px)" srcset="../img/hero-bg@mob.jpg")
-				source(srcset="../img/hero-bg.webp 1x, ../img/hero-bg@X2.webp 2x" type="image/webp")
-				img.hero__image.max-w-full.object-cover.overflow-hidden(src="../img/hero-bg.jpeg" alt="Fractal abstract bagel" srcset="../img/hero-bg@X2.jpg 2x")
+				picture(
+					data-animated
+					data-effect-slideUp-small
+					data-delay="900"
+				)
+
+					source(
+						media="(max-width: 639px)"
+						srcset="../img/hero/symmetry-abstract.webp 1x, ../img/hero/symmetry-abstract@X2.webp 2x" type="image/webp"
+					)
+					source(
+						media="(max-width: 639px)"
+						srcset="../img/hero/symmetry-abstract.png 1x, ../img/hero/symmetry-abstract@X2.png 2x"
+						type="image/png"
+					)
+
+					source(
+						media="(max-width: 767px)"
+						srcset="../img/hero/symmetry-abstract@sm.webp 1x, ../img/hero/symmetry-abstract@sm@X2.webp 2x"
+						type="image/webp"
+					)
+					source(
+						media="(max-width: 767px)"
+						srcset="../img/hero/symmetry-abstract@sm.png 1x, ../img/hero/symmetry-abstract@sm@X2.png 2x"
+						type="image/png"
+					)
+
+					source(
+						media="(max-width: 1023px)"
+						srcset="../img/hero/symmetry-abstract@md.webp 1x, ../img/hero/symmetry-abstract@md@X2.webp 2x"
+						type="image/webp"
+					)
+					source(
+						media="(max-width: 1023px)"
+						srcset="../img/hero/symmetry-abstract@md.png 1x, ../img/hero/symmetry-abstract@md@X2.png 2x"
+						type="image/png"
+					)
+
+					source(
+						media="(max-width: 1279px)"
+						srcset="../img/hero/symmetry-abstract@lg.webp 1x, ../img/hero/symmetry-abstract@lg@X2.webp 2x"
+						type="image/webp"
+					)
+					source(
+						media="(max-width: 1279px)"
+						srcset="../img/hero/symmetry-abstract@lg.png 1x, ../img/hero/symmetry-abstract@lg@X2.png 2x"
+						type="image/png"
+					)
+
+					source(
+						media="(max-width: 1535px)"
+						srcset="../img/hero/symmetry-abstract@xl.webp 1x, ../img/hero/symmetry-abstract@xl@X2.webp 2x"
+						type="image/webp"
+					)
+					source(
+						media="(max-width: 1535px)"
+						srcset="../img/hero/symmetry-abstract@xl.png 1x, ../img/hero/symmetry-abstract@xl@X2.png 2x"
+						type="image/png"
+					)
+
+					source(
+						srcset="../img/hero/symmetry-abstract@2xl.webp 1x, ../img/hero/symmetry-abstract@xl@X2.webp 2x"
+						type="image/webp"
+					)
+					img(
+						class="object-cover h-full"
+						src="../img/hero/symmetry-abstract@2xl.png"
+						srcset="../img/hero/symmetry-abstract@2xl@X2.png 2x"
+						type="image/png"
+						alt="Fractal abstract bagel"
+					)
