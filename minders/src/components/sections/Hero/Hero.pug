@@ -14,12 +14,16 @@ section.hero.mb-16
 				data-animated
 				data-effect-slideUp-small
 				data-delay="800"
+				data-parallax
 			)
 
-				picture(
+				picture.w-full(
 					data-animated
 					data-effect-slideUp-small
 					data-delay="900"
+					data-parallax-layer
+					data-parallax-coef="80"
+					data-parallax-inverted="true"
 				)
 
 					source(
@@ -81,9 +85,10 @@ section.hero.mb-16
 						type="image/webp"
 					)
 					img(
-						class="object-cover h-full"
+						class="object-cover w-full h-full"
 						src="../img/hero/symmetry-abstract@2xl.png"
 						srcset="../img/hero/symmetry-abstract@2xl@X2.png 2x"
-						type="image/png"
+						width="1436"
+						height="841"
 						alt="Fractal abstract bagel"
 					)

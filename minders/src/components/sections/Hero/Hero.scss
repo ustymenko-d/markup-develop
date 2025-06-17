@@ -4,6 +4,11 @@
 		line-height: 1.2;
 	}
 
+	picture,
+	&__image {
+		transition: transform 0.9s cubic-bezier(0.25, 1, 0.35, 1);
+	}
+
 	&__image {
 		background: linear-gradient(135deg, #e7d1ea, #d9c1e6);
 	}
