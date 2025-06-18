@@ -1,0 +1,28 @@
+@import 'tailwindcss';
+@import './reset.css';
+@import './fonts.css';
+
+@import './base.css';
+
+@import '../components/Collapsible/Collapsible.css';
+@import '../components/sections/Pricing/Pricing.css';
+
+.slide {
+	flex-basis: 100%;
+
+	@media screen and (min-width: 460px) {
+		flex-basis: 350px;
+	}
+
+	@media screen and (min-width: 640px) {
+		flex-basis: calc(50% - 8px);
+	}
+
+	@media screen and (min-width: 768px) {
+		flex-basis: 400px;
+	}
+
+	@media screen and (min-width: 460px) {
+		flex-basis: 350px;
+	}
+}

@@ -1,15 +1,19 @@
+include ../../../AnimatedTag.pug
+
 -	const decorItem = 'max-lg:hidden shadow-xs absolute aspect-square rounded-full p-1 flex items-center justify-center pointer-events-none'
 
 
-div(
-	class=`${decorItem} w-20 h-20 bg-[var(--accent)] text-[var(--green)] lg:-left-4 lg:-top-8 xl:top-10 xl:left-14 2xl:top-10 2xl:left-34 2xl:w-24 2xl:h-24`
-	data-animated
-	data-effect-slide-down
-	data-delay='750'
-	data-parallax-layer
-	data-parallax-coef="6"
-	data-parallax-inverted="true"
-)
++AnimatedTag('div', {
+	class: `${decorItem} w-20 h-20 bg-[var(--accent)] text-[var(--green)] lg:-left-4 lg:-top-8 xl:top-10 xl:left-14 2xl:top-10 2xl:left-34 2xl:w-24 2xl:h-24`,
+	data: {
+		'data-animated': true,
+		'data-effect-slide-down': true,
+		'data-delay': 750,
+		'data-parallax-layer': true,
+		'data-parallax-coef': 6,
+		'data-parallax-inverted': true
+	}
+})
 
 	svg(
 		xmlns="http://www.w3.org/2000/svg"
@@ -28,14 +32,16 @@ div(
 		path(d="m13 12 4-4")
 		path(d="M10.9 7.25A3.99 3.99 0 0 0 4 10c0 .73.2 1.41.54 2")
 
-div(
-	class=`${decorItem} w-15 h-15 border-2 border-[var(--green)] text-[var(--green)] lg:top-22 lg:left-4 xl:top-48 xl:left-64 2xl:left-82`
-	data-animated
-	data-effect-slide-down
-	data-delay='1000'
-	data-parallax-layer
-	data-parallax-coef="8"
-)
++AnimatedTag('div', {
+	class: `${decorItem} w-15 h-15 border-2 border-[var(--green)] text-[var(--green)] lg:top-22 lg:left-4 xl:top-48 xl:left-64 2xl:left-82`,
+	data: {
+		'data-animated': true,
+		'data-effect-slide-down': true,
+		'data-delay': 1000,
+		'data-parallax-layer': true,
+		'data-parallax-coef': 8
+	}
+})
 
 	svg(
 		xmlns="http://www.w3.org/2000/svg"
@@ -52,16 +58,17 @@ div(
 		path(d="M5 10h14")
 		path(d="M15 7v6")
 
-
-div(
-	class=`${decorItem} w-17 h-17 bg-[var(--green)] text-white lg:top-20 lg:right-4 xl:top-46 xl:right-64 2xl:right-76`
-	data-animated
-	data-effect-slide-down
-	data-delay='850'
-	data-parallax-layer
-	data-parallax-coef="6"
-	data-parallax-inverted="true"
-)
++AnimatedTag('div', {
+	class: `${decorItem} w-17 h-17 bg-[var(--green)] text-white lg:top-20 lg:right-4 xl:top-46 xl:right-64 2xl:right-76`,
+	data: {
+		'data-animated': true,
+		'data-effect-slide-down': true,
+		'data-delay': 850,
+		'data-parallax-layer': true,
+		'data-parallax-coef': 6,
+		'data-parallax-inverted': true
+	}
+})
 
 	svg(
 		xmlns="http://www.w3.org/2000/svg"
@@ -78,14 +85,16 @@ div(
 		path(d="M22 9s-1.33-2-3.5-2C16.86 7 15 9 15 9s1.33 2 3.5 2S22 9 22 9z")
 		path(d="M15 2s-2 1.33-2 3.5S15 9 15 9s2-1.84 2-3.5C17 3.33 15 2 15 2z")
 
-div(
-	class=`${decorItem} w-22 h-22 bg-white text-[var(--green)] lg:-right-4 lg:-top-10 xl:top-8 xl:right-16 2xl:top-8 2xl:right-32  2xl:w-26 2xl:h-26`
-	data-animated
-	data-effect-slide-down
-	data-delay='950'
-	data-parallax-layer
-	data-parallax-coef="10"
-)
++AnimatedTag('div', {
+	class: `${decorItem} w-22 h-22 bg-white text-[var(--green)] lg:-right-4 lg:-top-10 xl:top-8 xl:right-16 2xl:top-8 2xl:right-32  2xl:w-26 2xl:h-26`,
+	data: {
+		'data-animated': true,
+		'data-effect-slide-down': true,
+		'data-delay': 950,
+		'data-parallax-layer': true,
+		'data-parallax-coef': 10
+	}
+})
 
 	svg(
 		xmlns="http://www.w3.org/2000/svg"

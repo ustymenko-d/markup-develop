@@ -1,5 +1,6 @@
 mixin SectionWithMedia({ title, subtitle, textType = 'h', text, buttonText, mediaType = 'video', mediaSrc, mediaAlt = '' })
 	include Heading.pug
+	include AnimatedTag.pug
 
 	-
 		const wrapper = [
@@ -28,7 +29,10 @@ mixin SectionWithMedia({ title, subtitle, textType = 'h', text, buttonText, medi
 
 				if textType === 'h'
 
-					p(class="text-[clamp(1.5rem,1.241rem+1.105vw,2.125rem)] mx-auto text-center max-w-11/12 text-balance" data-custom-font-size)= text
+					p(
+						class="text-[clamp(1.5rem,1.241rem+1.105vw,2.125rem)] mx-auto text-center max-w-11/12 text-balance"
+						data-custom-font-size
+					)= text
 
 				else if textType === 'p'
 
@@ -41,12 +45,14 @@ mixin SectionWithMedia({ title, subtitle, textType = 'h', text, buttonText, medi
 
 			div(class=wrapper)
 
-				div(
-					class="overflow-hidden lg:min-w-1/2 p-4 lg:p-6 rounded-full border-2 border-[var(--green)]"
-					data-animated
-					data-effect-vanish-in
-					data-delay="100"
-				)
+				+AnimatedTag('div', {
+					class: 'overflow-hidden lg:min-w-1/2 p-4 lg:p-6 rounded-full border-2 border-[var(--green)]',
+					data: {
+						'data-animated': true,
+						'data-effect-vanish-in': true,
+						'data-delay': 100
+					}
+				})
 
 					if mediaType === 'video'
 
@@ -62,9 +68,9 @@ mixin SectionWithMedia({ title, subtitle, textType = 'h', text, buttonText, medi
 
 						img(
 							class="overflow-hidden rounded-full"
+							src=mediaSrc
 							width="725"
 							height="484"
-							src=mediaSrc
 							alt=mediaAlt
 						)
 
@@ -72,7 +78,10 @@ mixin SectionWithMedia({ title, subtitle, textType = 'h', text, buttonText, medi
 
 					if textType === 'h'
 
-						p(class="text-[clamp(1.5rem,1.241rem+1.105vw,2.125rem)] text-right text-balance xl:max-w-3/4 2xl:text-center" data-custom-font-size)= text
+						p(
+							class="text-[clamp(1.5rem,1.241rem+1.105vw,2.125rem)] text-right text-balance xl:max-w-3/4 2xl:text-center"
+							data-custom-font-size
+						)= text
 
 					else if textType === 'p'
 

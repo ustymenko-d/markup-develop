@@ -1,6 +1,7 @@
 include components/Card.pug
 include components/Actions.pug
 include components/Image.pug
+include ../../AnimatedTag.pug
 
 -
 	const blocks = [
@@ -11,9 +12,9 @@ include components/Image.pug
 			img: { src: 'img/bag-green', alt: 'A hand holding a green bag of vegetables' },
 			classes: 'pt-5 sm:pt-6 lg:pt-4 lg:row-span-2',
 			attr: {
-				'data-animated': true,
-				'data-effect-slide-up': true,
-				'data-delay': 50
+				'data-animated': !jsDisabled && true,
+				'data-effect-slide-up': !jsDisabled && true,
+				'data-delay': !jsDisabled && 50
 			}
 		},
 		{
@@ -21,9 +22,9 @@ include components/Image.pug
 			img: { src: 'img/ramen', alt: 'Ramen' },
 			classes: 'row-span-2 mt-auto lg:row-start-2 lg:col-start-2 lg:self-end',
 			attr: {
-				'data-animated': true,
-				'data-effect-slide-up': true,
-				'data-delay': 450
+				'data-animated': !jsDisabled && true,
+				'data-effect-slide-up': !jsDisabled && true,
+				'data-delay': !jsDisabled && 450
 			}
 		},
 		{
@@ -43,9 +44,9 @@ include components/Image.pug
 			reverse: true,
 			classes: 'order-1 pb-5 sm:pb-6 lg:pb-4 lg:row-start-2 lg:row-span-2 lg:col-start-4 lg:self-end',
 			attr: {
-				'data-animated': true,
-				'data-effect-slide-up': true,
-				'data-delay': 150
+				'data-animated': !jsDisabled && true,
+				'data-effect-slide-up': !jsDisabled && true,
+				'data-delay': !jsDisabled && 150
 			}
 		},
 		{
@@ -53,9 +54,9 @@ include components/Image.pug
 			img: { src: 'img/roots', alt: 'The hand that holds the plant with the roots' },
 			classes: 'row-span-2 mb-auto lg:order-2 lg:row-start-1 lg:col-start-5',
 			attr: {
-				'data-animated': true,
-				'data-effect-slide-up': true,
-				'data-delay': 350
+				'data-animated': !jsDisabled && true,
+				'data-effect-slide-up': !jsDisabled && true,
+				'data-delay': !jsDisabled && 350
 			}
 		}
 	]
@@ -71,13 +72,15 @@ section(class="overflow-x-clip mb-16 xl:mb-28 pt-20 sm:pt-10 pb-16 sm:pb-28 cust
 
 		div.relative.flex.flex-col.gap-11(data-parallax)
 
-			h1(
-				class="text-center max-sm:max-w-11/12 max-sm:mx-auto"
-				data-animated
-				data-effect-vanish-in
-				data-delay="50"
-			) 
-				
+			+AnimatedTag('h1', {
+				class: 'text-center max-sm:max-w-11/12 max-sm:mx-auto',
+				data: {
+					'data-animated': true,
+					'data-effect-vanish-in': true,
+					'data-delay': 50
+				}
+			})
+
 				| Elevate Your Mealtime with
 				br
 				| AI&#8209;Powered Personalization
@@ -94,12 +97,14 @@ section(class="overflow-x-clip mb-16 xl:mb-28 pt-20 sm:pt-10 pb-16 sm:pb-28 cust
 							+Image({ ...block })
 
 						when 'span'
-							span(
-								class=block.classes
-								data-animated
-								data-effect-vanish-in
-								data-delay="150"
-							)= block.text
+							+AnimatedTag('span', {
+								class: block.classes,
+								data: {
+									'data-animated': true,
+									'data-effect-vanish-in': true,
+									'data-delay': 150
+								}
+							})= block.text
 
 						when 'actions'
 							+Actions({ ...block })

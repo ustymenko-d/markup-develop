@@ -1,14 +1,20 @@
 mixin Card({ img, title, idx })
 	include ../../../Button.pug
+	include ../../../AnimatedTag.pug
 
 
-	a(
-		class="block overflow-hidden shadow-xs group rounded-4xl"
-		href="#"
-		data-animated
-		data-effect-slide-up
-		data-delay=`${++idx * 100 + 100}`
-	)
+	+AnimatedTag('a', {
+		class: 'block overflow-hidden shadow-xs group rounded-4xl',
+		static: {
+			href: '#'
+		},
+		data: {
+			'data-animated': true,
+			'data-effect-slide-up': true,
+			'data-delay': `${++idx * 100 + 100}`
+		}
+	})
+	
 		div(class="h-full flex flex-col items-start gap-4 p-6 overflow-hidden bg-white group-hover:bg-[var(--green)] group-focus-visible:bg-[var(--green)] md:gap-8 md:p-8 lg:max-xl:p-6 rounded-4xl duration-200")
 
 			div(class="overflow-hidden rounded-2xl aspect-square")
@@ -21,9 +27,9 @@ mixin Card({ img, title, idx })
 					img(
 						class="w-full h-full duration-300 group-hover:scale-105 group-focus-visible:scale-105 group-active:scale-100"
 						src=`${img.src}.jpg`
-						alt=img.alt
 						width="448"
 						height="448"
+						alt=img.alt
 					)
 
 			h4(class="grow leading-tight text-[var(--green)] group-hover:text-[var(--light)] group-focus-visible:text-[var(--light)] duration-200")= title

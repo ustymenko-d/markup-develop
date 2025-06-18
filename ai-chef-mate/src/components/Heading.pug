@@ -1,4 +1,6 @@
-mixin Heading({title, subtitle, bgColor = false})
+mixin Heading({ title, subtitle, bgColor = false })
+	include AnimatedTag.pug
+
 	-
 		const afterBg = bgColor	? 'after:bg-[var(--light)]' : 'after:bg-white'
 
@@ -19,9 +21,11 @@ mixin Heading({title, subtitle, bgColor = false})
 
 		div(class=separatorClass)
 
-			p.max-w-md.self-center.leading-tight(
-				class="max-sm:mx-auto"
-				data-animated
-				data-effect-slide-right
-				data-delay="100"
-			)= subtitle
+			+AnimatedTag('p', {
+				class: 'max-w-md self-center leading-tight max-sm:mx-auto',
+				data: {
+					'data-animated': true,
+					'data-effect-slide-right': true,
+					'data-delay': 100
+				}
+			})= subtitle

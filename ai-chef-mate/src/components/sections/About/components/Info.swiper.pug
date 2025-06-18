@@ -1,21 +1,5 @@
-mixin InfoSwiper()
+mixin InfoSwiper(infoSlides)
 	include ../../../Button.pug
-
-	-
-		const infoSlides = [
-			{
-				title: 'Personalize Your Profile',
-				text: 'Begin by creating your profile. Tell us about your dietary preferences, nutritional goals, and budget. Our AI technology tailors every meal plan to fit your unique needs.'
-			},
-			{
-				title: 'Choose Your Meals',
-				text: 'Browse a curated selection of delicious, AI-recommended meals tailored to your preferences. Filter by ingredients, cuisine, cooking time, or dietary needs — and select what suits your taste and lifestyle.'
-			},
-			{
-				title: 'Get Your Plan & Groceries',
-				text: 'Receive your personalized weekly meal plan and an auto-generated grocery list. Sync with your calendar or grocery delivery service to stay organized without lifting a finger.'
-			}
-		]
 
 
 	#info-swiper.swiper
@@ -33,12 +17,14 @@ mixin InfoSwiper()
 
 						h3.mb-10= title
 
-						p(
-							class="leading-tight max-lg:max-w-4/5 lg:max-w-10/12 max-lg:mx-auto text-balance"
-							data-animated
-							data-effect-slide-right
-							data-delay="100"
-						)= text
+						+AnimatedTag('p', {
+							class: 'leading-tight max-lg:max-w-4/5 lg:max-w-10/12 max-lg:mx-auto text-balance',
+							data: {
+								'data-animated': true,
+								'data-effect-slide-right': true,
+								'data-delay': 100
+							}
+						})= text
 
 		.pt-10.mb-10.flex.items-center.gap-4(class="max-lg:justify-center lg:pt-20 lg:mb-20")
 

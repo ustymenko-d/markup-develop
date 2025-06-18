@@ -31,7 +31,7 @@ include components/Item.pug
 				alt: 'Rebecca S.'
 			}
 		},
-			{
+		{
 			text: 'Since using AIChefMate, I\'ve rediscovered my love for cooking! The meal plans are easy and delicious. It\'s been a game-changer for my busy lifestyle.',
 			author: {
 				img: 'testimonials1',
@@ -71,13 +71,26 @@ section.pt-20
 			subtitle: 'Real stories from satisfied users: see how our platform changes lives'
 		})
 
-		div
-			#testimonials-swiper.swiper
+		if !jsDisabled
 
-				.swiper-wrapper
+			div
 
-					each r in testimonials
+				#testimonials-swiper.swiper
 
-						.swiper-slide
+					.swiper-wrapper
 
-							+Item({ ...r })
+						each r in testimonials
+
+							.swiper-slide
+
+								+Item({ ...r })
+
+		else
+
+			.py-8.overflow-x-scroll.flex.flex-nowrap
+
+				each r in testimonials
+
+					div.slide(class='mr-4 shrink-0')
+
+						+Item({ ...r })

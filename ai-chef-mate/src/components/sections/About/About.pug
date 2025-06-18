@@ -1,5 +1,37 @@
 include components/Info.swiper.pug
 include components/Images.swiper.pug
+include components/InfoBlock.pug
+
+-
+	const info = [
+		{
+			title: 'Personalize Your Profile',
+			text: 'Begin by creating your profile. Tell us about your dietary preferences, nutritional goals, and budget. Our AI technology tailors every meal plan to fit your unique needs.'
+		},
+		{
+			title: 'Choose Your Meals',
+			text: 'Browse a curated selection of delicious, AI-recommended meals tailored to your preferences. Filter by ingredients, cuisine, cooking time, or dietary needs — and select what suits your taste and lifestyle.'
+		},
+		{
+			title: 'Get Your Plan & Groceries',
+			text: 'Receive your personalized weekly meal plan and an auto-generated grocery list. Sync with your calendar or grocery delivery service to stay organized without lifting a finger.'
+		}
+	]
+
+	const images = [
+		{
+			src: 'img/women',
+			alt: 'Woman'
+		},
+		{
+			src: 'img/greek-salad',
+			alt: 'Greek salad'
+		},
+		{
+			src: 'img/ramen',
+			alt: 'Ramen'
+		},
+	]
 
 section#about(class="overflow-x-clip mb-16 xl:mb-28 pt-20 pb-16 sm:pb-28 custom-bg custom-bg_left custom-bg_bottom bg-[var(--light)]")
 
@@ -11,12 +43,18 @@ section#about(class="overflow-x-clip mb-16 xl:mb-28 pt-20 pb-16 sm:pb-28 custom-
 			bgColor: true
 		})
 
-		div(class="lg:grid lg:grid-cols-2 lg:gap-x-10 lg:items-center")
+		if !jsDisabled
 
-			div(class="max-lg:mb-20 max-lg:text-center")
+			div(class="lg:grid lg:grid-cols-2 lg:gap-x-10 lg:items-center")
 
-				+InfoSwiper()
+				div(class="max-lg:mb-20 max-lg:text-center")
 
-			div(class="mx-auto max-w-4/6")
+					+InfoSwiper(info)
 
-				+ImagesSwiper()
+				div(class="mx-auto max-w-4/6")
+
+					+ImagesSwiper(images)
+
+		else
+
+			+InfoBlock(info, images)

@@ -1,9 +1,17 @@
-a.overflow-hidden.relative.min-h-80.w-full.block.group.rounded-e-4xl.rounded-bl-4xl(
-	href="#"
-	aria-label="Explore more recipes"
-	data-animated
-	data-no-fade
-)
+include ../../../AnimatedTag.pug
+
+
++AnimatedTag('a', {
+	class: 'overflow-hidden relative min-h-80 w-full block group rounded-e-4xl rounded-bl-4xl',
+	static: {
+		href: '#',
+		'aria-label': 'Explore more recipes'
+	},
+	data: {
+		'data-animated': true,
+		'data-no-fade': true
+	}
+})
 
 	picture
 

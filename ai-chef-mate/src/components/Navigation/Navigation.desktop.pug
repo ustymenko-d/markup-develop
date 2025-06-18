@@ -1,3 +1,5 @@
+include ../AnimatedTag.pug
+
 -
 	const linkClasses = [
 		'inline-block py-2 px-6 duration-150',
@@ -13,13 +15,14 @@
 		{ label: 'Blog', href: '#blog' }
 	]
 
-
-nav(
-	class="px-10 py-1 mx-auto bg-white rounded-full shadow-xs w-fit"
-	data-animated
-	data-effect-slide-down
-	data-delay="100"
-)
++AnimatedTag('nav', {
+	class: 'px-10 py-1 mx-auto bg-white rounded-full shadow-xs w-fit',
+	data: {
+		'data-animated': true,
+		'data-effect-slide-down': true,
+		'data-delay': 100
+	}
+})
 
 	ul(class="flex items-center justify-between gap-6 lg:gap-8")
 

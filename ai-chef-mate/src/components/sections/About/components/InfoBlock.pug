@@ -1,0 +1,33 @@
+mixin InfoBlock(info, images)
+
+	div(class="grid grid-rows-3 gap-14")
+
+		each item, idx in info
+			-
+				const { title, text } = item
+				const img = images[idx]
+
+			div(class=`flex gap-10 text-[var(--green)] flex-col xl:max-w-11/12 2xl:max-w-4/5 ${idx === 1 ? 'sm:flex-row-reverse xl:ml-auto' : 'sm:flex-row'}`)
+
+				div(class="max-sm:text-center sm:basis-11/12 lg:basis-2/3 sm:flex sm:flex-col sm:justify-center lg:text-center lg:items-center lg:gap-4")
+
+					span(class="font-(family-name:--second-font) text-6xl")= `0${idx + 1}`
+
+					h3(class="mb-10 lg:mb-6")= title
+
+					p(
+						class="leading-tight max-lg:max-w-4/5 lg:max-w-10/12 max-sm:mx-auto text-balance sm:max-w-full"
+					)= text
+
+				picture
+
+					source(media="(max-width: 1024px)" srcset=`${img.src}@mob.webp` type="image/webp")
+					source(media="(max-width: 1024px)" srcset=`${img.src}@mob.jpg` type="image/jpg")
+					source(srcset=`${img.src}.webp` type="image/webp")
+					img(
+						class="block overflow-hidden shadow-md max-sm:aspect-square rounded-4xl max-sm:w-full sm:h-full"
+						src=`${img.src}.jpg`
+						width="499"
+						height="598"
+						alt=img.alt
+					)

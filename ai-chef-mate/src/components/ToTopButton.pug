@@ -1,12 +1,21 @@
 -
 	const toTopButton = [
-		'fixed z-10 p-4 duration-150 border-2 rounded-full cursor-pointer right-4 bottom-4 bg-white',
+		'fixed z-10 p-4 duration-200 border-2 rounded-full cursor-pointer right-4 bottom-4 bg-white',
 		'hover:bg-[var(--green)] hover:text-white hover:border-[var(--green)]',
 		'focus-visible:bg-[var(--green)] focus-visible:text-white focus-visible:border-[var(--green)]',
-		'active:scale-95 active:brightness-80'
+		'active:scale-95 active:brightness-80',
+		!jsDisabled && 'opacity-0 scale-75 invisible'
 	]
 
-button#to-top.to-top(class=toTopButton aria-label="To top button")
+	const tag = jsDisabled ? 'a' : 'button'
+
+	const attr = {
+		href: jsDisabled && '#',
+		id: !jsDisabled && 'to-top',
+		'aria-label': 'To top button'
+	}
+
+#{tag}(class=toTopButton)&attributes(attr)
 
 	svg(
 		width="21"

@@ -4,12 +4,14 @@
 	"type": "module",
 	"scripts": {
 		"tailwind": "npx @tailwindcss/cli -i ./src/css/input.css -o ./src/css/index.css --minify --watch",
+		"tailwind-no-js": "npx @tailwindcss/cli -i ./src/css/input_no-js.css -o ./src/css/index_no-js.css --minify --watch",
 		"zip": "gulp zip"
 	},
 	"devDependencies": {
 		"@babel/core": "^7.27.1",
 		"@babel/plugin-transform-runtime": "^7.27.1",
 		"@babel/preset-env": "^7.27.2",
+		"@babel/runtime": "^7.27.6",
 		"@tailwindcss/cli": "^4.1.8",
 		"babel-loader": "^10.0.0",
 		"browser-sync": "^2.27.10",

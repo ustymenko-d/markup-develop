@@ -30,21 +30,23 @@ mixin Card({ src, alt, variant = 'outline' })
 	a.group(class=card href="#")
 
 		div(class=textBlock)
-			p(class="text-[clamp(1.5rem,1.241rem+1.105vw,2.125rem)] leading-tight duration-300 max-w-3/4 group-hover:text-white group-focus-visible:text-white" data-custom-font-size)= alt
+			p(
+				class="text-[clamp(1.5rem,1.241rem+1.105vw,2.125rem)] leading-tight duration-300 max-w-3/4 group-hover:text-white group-focus-visible:text-white"
+				data-custom-font-size
+			)= alt
 
 			+Button({
 				type: 'decor',
 				text: 'Learn more',
 				outline: true,
 				icon: true,
-				color: variant === 'accent' ? 'white' : 'accent',
-				classes: ''
+				color: variant === 'accent' ? 'white' : 'accent'
 			})
 
 		img(
 			class="block max-sm:w-4/5 max-sm:mx-auto aspect-square"
+			src=src
 			width="216"
 			height="216"
-			src=src
 			alt=alt
 		)

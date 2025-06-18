@@ -1,0 +1,10 @@
+mixin AnimatedTag(tag = 'div', attrs = {})
+	-
+		const dataAttrs = !jsDisabled && attrs.data ? attrs.data : {}
+		const staticAttrs = attrs.static || {}
+		const className = attrs.class || ''
+
+
+	#{tag}(class=className)&attributes(staticAttrs)&attributes(dataAttrs)
+
+		block

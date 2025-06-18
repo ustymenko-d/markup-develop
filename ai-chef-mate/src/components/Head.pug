@@ -1,20 +1,31 @@
 mixin Head()
 	-
-		const title= "AI Chef Mate - Effortless Planning, Healthier Eating"
-		const description = "This landing page is built with JavaScript, Pug, and Tailwind CSS, featuring smooth scrolling via Lenis, sliders powered by Swiper.js, and a streamlined build process with Gulp.js."
+		const title= 'AI Chef Mate - Effortless Planning, Healthier Eating'
+		const description = 'Optimized for fast loading and smooth rendering, this landing page ensures an inclusive experience even with JavaScript disabled. Built with Pug and Tailwind CSS, and enhanced by JavaScript, the page is compiled using Gulp for an efficient development workflow.'
 
 
 	head
 
+		title= title
+
 		meta(charset="UTF-8")
 		meta(http-equiv="X-UA-Compatible" content="IE=edge")
 		meta(name="viewport" content="width=device-width, initial-scale=1.0")
-		meta(name="author" content="ustymenko.denys@outlook.com")
+		meta(name="author" content="ustymenko.denys@gmail.com")
 		meta(name="description" content=description)
 
 		link(rel="icon" href="img/icons/favicon.svg" type="image/x-icon")
-		link(rel="stylesheet" href="css/index.css")
 
-		title= title
+		if !jsDisabled 
+			link(rel="stylesheet" href="css/index.css")
+		else
+			link(rel="stylesheet" href="css/index_no-js.css")
 
 		script(src="js/index.min.js", defer)
+
+		if !jsDisabled 
+			noscript
+				meta(http-equiv="refresh" content="0; url=no-js.html") 
+			script(src="js/index.min.js", defer)
+		else
+			script window.location.replace("/")

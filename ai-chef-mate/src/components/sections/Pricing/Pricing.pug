@@ -1,5 +1,6 @@
 include ../../Heading.pug
 include components/Item.pug
+include ../../AnimatedTag.pug
 
 -
 	const plans = [
@@ -14,9 +15,9 @@ include components/Item.pug
 			bestFor: 'Those who want to explore thae platform\'s basic functionalities.',
 			buttonText: 'Get Started For Free',
 			attr: {
-				'data-animated': true,
-				'data-no-fade': true,
-				'data-effect-transition-left': true,
+				'data-animated': !jsDisabled && true,
+				'data-no-fade': !jsDisabled && true,
+				'data-effect-transition-left': !jsDisabled && true,
 			}
 		},
 		{
@@ -43,9 +44,9 @@ include components/Item.pug
 			bestFor: 'Users seeking a premium culinary experience with added personalization and expert guidance.',
 			buttonText: 'Go Premium',
 			attr: {
-				'data-animated': true,
-				'data-no-fade': true,
-				'data-effect-transition-right': true,
+				'data-animated': !jsDisabled && true,
+				'data-no-fade': !jsDisabled && true,
+				'data-effect-transition-right': !jsDisabled && true,
 			}
 		}
 	]
@@ -60,11 +61,13 @@ section#pricing.py-20.overflow-x-clip
 			subtitle: 'Find your perfect plan: tailored pricing for every need'
 		})
 
-		div.pricing(
-			class="relative grid gap-12 lg:grid-cols-3 lg:grid-rows-[50px_auto_50px] lg:gap-0 xl:w-10/12 xl:mx-auto"
-			data-animated
-			data-no-fade
-		)
+		+AnimatedTag('div', {
+			class: 'pricing relative grid gap-12 lg:grid-cols-3 lg:grid-rows-[50px_auto_50px] lg:gap-0 xl:w-10/12 xl:mx-auto',
+			data: {
+				'data-animated': true,
+				'data-no-fade': true
+			}
+		})
 
 			each p, index in plans
 
