@@ -7,20 +7,37 @@ const CLASSES = {
 
 const toTop = document.querySelector('#to-top')
 
+let isManuallyScrolling = false
+let scrollEndTimeout = null
+
 const updateToTopVisibility = (isVisible) => {
 	toTop.classList.remove(...CLASSES[isVisible ? 'invisible' : 'visible'])
 	toTop.classList.add(...CLASSES[isVisible ? 'visible' : 'invisible'])
 }
 
 const toggleToTopVisibility = () => {
-	const shouldShow = window.scrollY > document.documentElement.clientHeight
+	if (isManuallyScrolling) return
+
+	const shouldShow = window.scrollY > window.innerHeight
 	updateToTopVisibility(shouldShow)
 }
 
 const scrollToTop = () => {
+	isManuallyScrolling = true
 	lenis.scrollTo(0)
 	updateToTopVisibility(false)
 }
 
+lenis.on('scroll', () => {
+	toggleToTopVisibility()
+
+	if (isManuallyScrolling) {
+		clearTimeout(scrollEndTimeout)
+		scrollEndTimeout = setTimeout(() => {
+			isManuallyScrolling = false
+			toggleToTopVisibility()
+		}, 150)
+	}
+})
+
 toTop.addEventListener('click', scrollToTop)
-window.addEventListener('scroll', toggleToTopVisibility)
