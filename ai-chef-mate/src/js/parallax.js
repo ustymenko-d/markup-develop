@@ -4,31 +4,30 @@ const layers = document.querySelectorAll('[data-parallax-layer]')
 const SPEED = 0.05
 
 let posX = 0,
-	posY = 0,
-	targetX = 0,
-	targetY = 0,
-	animationId = null,
-	isActive = false
+		posY = 0,
+		targetX = 0,
+		targetY = 0
+
+let animationId = null,
+		isActive = false,
+		hasInitialized = false,
+		resizeTimeoutId
+
+const getcoef = (layer) =>
+	Number(layer.dataset.parallaxCoef) * (layer.dataset.parallaxInverted ? -1 : 1)
 
 const applyLayerTransform = () => {
 	layers.forEach((layer) => {
-		const coef =
-			Number(layer.dataset.parallaxCoef) *
-			(layer.dataset.parallaxInverted ? -1 : 1)
-
-		const x = (posX / coef).toFixed(2)
-		const y = (posY / coef).toFixed(2)
+		const x = (posX / getcoef(layer)).toFixed(2)
+		const y = (posY / getcoef(layer)).toFixed(2)
 
 		layer.style.transform = `translate(${x}%, ${y}%)`
 	})
 }
 
 const updateParallax = () => {
-	const deltaX = targetX - posX
-	const deltaY = targetY - posY
-
-	posX += deltaX * SPEED
-	posY += deltaY * SPEED
+	posX += (targetX - posX) * SPEED
+	posY += (targetY - posY) * SPEED
 
 	applyLayerTransform()
 	animationId = requestAnimationFrame(updateParallax)
@@ -43,30 +42,51 @@ const calculateTarget = ({ pageX, pageY }) => {
 	targetY = (y / h) * 100
 }
 
-const enableParallax = () => {
-	if (isActive) return
+const toggleParallax = (enable) => {
+	isActive = enable
 
-	isActive = true
-
-	parallax.addEventListener('mousemove', calculateTarget)
-	updateParallax()
-}
-
-const disableParallax = () => {
-	if (!isActive) return
-
-	isActive = false
-
-	cancelAnimationFrame(animationId)
-	parallax.removeEventListener('mousemove', calculateTarget)
-	layers.forEach((layer) => (layer.style.transform = ''))
+	enable
+		? (parallax.addEventListener('mousemove', calculateTarget),
+		  updateParallax())
+		: (cancelAnimationFrame(animationId),
+		  parallax.removeEventListener('mousemove', calculateTarget),
+		  layers.forEach((layer) => (layer.style.transform = 'translate(0, 0)')))
 }
 
 const handleResize = () => {
-	window.innerWidth >= 1024 ? enableParallax() : disableParallax()
+	clearTimeout(resizeTimeoutId)
+
+	const shouldEnable = window.innerWidth >= 1024
+
+	if (isActive === shouldEnable) return
+
+	if (!hasInitialized && shouldEnable) {
+		resizeTimeoutId = setTimeout(() => {
+			toggleParallax(true)
+			hasInitialized = true
+		}, 1800)
+	} else {
+		toggleParallax(shouldEnable)
+	}
 }
 
-if (parallax && layers.length) {
-	handleResize()
-	window.addEventListener('resize', handleResize)
-}
+const observer = new MutationObserver(() => {
+	for (const layer of layers) {
+		if (layer.hasAttribute('data-animated-visible')) {
+			observer.disconnect()
+			handleResize()
+			break
+		}
+	}
+})
+
+Array.from(layers).some((layer) => layer.hasAttribute('data-animated-visible'))
+	? handleResize()
+	: layers.forEach((layer) => {
+			observer.observe(layer, {
+				attributes: true,
+				attributeFilter: ['data-animated-visible'],
+			})
+	  })
+
+window.addEventListener('resize', handleResize)
