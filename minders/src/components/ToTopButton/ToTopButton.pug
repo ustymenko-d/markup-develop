@@ -1,18 +1,17 @@
 -
 	const toTopButton = [
+		'to-top',
 		'z-[2] drop-shadow box-content text-white bg-neutral-black-op6 w-5 h-5 p-4 fixed bottom-4 right-4 rounded-full border-2 border-solid border-current duration-200 active:scale-95',
 		!jsDisabled && 'opacity-0 scale-75 invisible'
 	]
 
+	const tag = jsDisabled ? 'a' : 'button'
 
-if jsDisabled
-	a.to-top(
-		href="#"
-		class=toTopButton
-		aria-label="To top button"
-	)
-else
-	button#to-top.to-top(
-		class=toTopButton
-		aria-label="To top button"
-	)
+	const attr = {
+		href: jsDisabled && '#',
+		id: !jsDisabled && 'to-top',
+		'aria-label': 'To top button'
+	}
+
+
+#{tag}(class=toTopButton)&attributes(attr)
