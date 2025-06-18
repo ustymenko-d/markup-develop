@@ -1,0 +1,15 @@
+@use './reset';
+@use './fonts';
+
+@use 'base';
+
+@use '../components/Header/Header';
+@use '../components/sections/Hero/Hero';
+@use '../components/sections/About/About';
+@use '../components/sections/Team/Team';
+@use '../components/sections/Events/components/Event/Event';
+@use '../components/sections/Application/Application';
+@use '../components/Footer/Footer';
+
+@use '../components/BottomBlock/BottomBlock';
+@use '../components/ToTopButton/ToTopButton';

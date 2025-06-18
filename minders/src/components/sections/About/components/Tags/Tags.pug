@@ -31,7 +31,13 @@ div(class=containerClasses)
 				jsDisabled && 'lg:gap-6' 
 			]
 
-		div(class=rowClasses data-direction=row.direction data-duration=row.speed)
+		+AnimatedTag('div', {
+			class: rowClasses,
+			data: {
+				'data-direction': row.direction,
+				'data-duration': row.speed
+			}
+		})
 
 			each tag in tags[idx]
 

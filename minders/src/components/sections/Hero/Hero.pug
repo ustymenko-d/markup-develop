@@ -1,30 +1,51 @@
+include ../../AnimatedTag.pug
+
 section.hero.mb-16
 
 	div(class=`${jsDisabled ? "pt-16 md:pt-10" : "pt-24 lg:pt-28"}`)
 
 		div(class="px-4 mx-auto md:container lg:px-5")
 
-			h1(class="mb-10 text-center text-white hero__title title sm:text-5xl lg:mb-12 lg:text-7xl xl:text-8xl" )
+			h1.hero__title(class="mb-10 text-center text-white title sm:text-5xl lg:mb-12 lg:text-7xl xl:text-8xl" )
 
-				span.text-white-op5(data-animated data-effect-vanishIn) Discover the endless
-				span.block(data-animated data-effect-slideUp data-delay="600") possibilities of creativity
+				+AnimatedTag('span', {
+					class: 'text-white-op5',
+					data: {
+						'data-animated': true,
+						'data-effect-vanishIn': true
+					}
+				})= 'Discover the endless'
 
-			div.hero__image(
-				class="relative flex w-full overflow-hidden min-h-96 sm:aspect-video rounded-extra xl:rounded-full-xl"
-				data-animated
-				data-effect-slideUp-small
-				data-delay="800"
-				data-parallax
-			)
+				+AnimatedTag('span', {
+					class: 'block',
+					data: {
+						'data-animated': true,
+						'data-effect-slideUp': true,
+						'data-delay': 600
+					}
+				})= 'possibilities of creativity'
 
-				picture.w-full(
-					data-animated
-					data-effect-slideUp-small
-					data-delay="900"
-					data-parallax-layer
-					data-parallax-coef="80"
-					data-parallax-inverted="true"
-				)
+			+AnimatedTag('div', {
+				class: 'hero__image relative flex w-full overflow-hidden min-h-96 sm:aspect-video rounded-extra xl:rounded-full-xl',
+				data: {
+					'data-animated': true,
+					'data-effect-slideUp-small': true,
+					'data-delay': 800,
+					'data-parallax': true
+				}
+			})
+
+				+AnimatedTag('picture', {
+					class: 'w-full',
+					data: {
+						'data-animated': true,
+						'data-effect-slideUp-small': true,
+						'data-delay': 900,
+						'data-parallax-layer': true,
+						'data-parallax-coef': 80,
+						'data-parallax-inverted': true
+					}
+				})
 
 					source(
 						media="(max-width: 639px)"

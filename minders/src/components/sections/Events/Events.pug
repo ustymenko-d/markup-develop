@@ -4,8 +4,22 @@ section#events.mb-24.pt-8
 
 		h2(class="text-white title mb-9 lg:mb-10 sm:text-center lg:text-left")
 
-			span.text-white-op5(data-animated data-effect-vanishIn) Keep up to date
-			span.block(data-animated data-effect-slideUp data-delay="600") with our latest events
+			+AnimatedTag('span', {
+				class: 'text-white-op5',
+				data: {
+					'data-animated': true,
+					'data-effect-vanishIn': true
+				}
+			})= 'Keep up to date'
+
+			+AnimatedTag('span', {
+				class: 'block',
+				data: {
+					'data-animated': true,
+					'data-effect-slideUp': true,
+					'data-delay': 600
+				}
+			})= 'with our latest events'
 
 		include ./components/List.pug
 

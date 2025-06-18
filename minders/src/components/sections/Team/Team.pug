@@ -1,5 +1,6 @@
 include ./components/Slider/Slider.pug
 include ./components/Swiper/Swiper.pug
+include ../../AnimatedTag.pug
 
 -
 	const team = [
@@ -60,8 +61,22 @@ section#team.overflow-hidden.mb-16.bg-yellow
 
 		h2(class="mb-6 title text-neutral-black lg:mb-10 sm:text-center lg:text-left")
 
-			span.text-neutral-black-op6(data-animated data-effect-vanishIn) The creative minds that
-			span.block(data-animated data-effect-slideUp data-delay="600") power our projects
+			+AnimatedTag('span', {
+				class: 'text-neutral-black-op6',
+				data: {
+					'data-animated': true,
+					'data-effect-vanishIn': true
+				}
+			})= 'The creative minds that'
+
+			+AnimatedTag('span', {
+				class: 'block',
+				data: {
+					'data-animated': true,
+					'data-effect-slideUp': true,
+					'data-delay': 600
+				}
+			})= 'power our projects'
 
 		if (jsDisabled) 
 			+Slider({ team })

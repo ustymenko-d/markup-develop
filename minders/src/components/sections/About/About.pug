@@ -6,22 +6,32 @@ section#about.mb-24.pt-8
 
 			h2(class="text-white title mb-7 lg:mb-8")
 
-				span.text-white-op5(
-					data-animated
-					data-effect-vanishIn
-				) Showcasing diversity
+				+AnimatedTag('span', {
+					class: 'text-white-op5',
+					data: {
+						'data-animated': true,
+						'data-effect-vanishIn': true
+					}
+				})= 'Showcasing diversity'
 
-				span.block(
-					data-animated
-					data-effect-slideUp
-					data-delay="600"
-				) and promoting artists
+				+AnimatedTag('span', {
+					class: 'block',
+					data: {
+						'data-animated': true,
+						'data-effect-slideUp': true,
+						'data-delay': 600
+					}
+				})= 'and promoting artists'
 
-			p.text.text-white(
-				data-animated
-				data-effect-slideRight
-				data-delay="200"
-			)
+			+AnimatedTag('p', {
+				class: 'text text-white text-balance',
+				data: {
+					'data-animated': true,
+					'data-effect-slideRight': true,
+					'data-delay': 200
+				}
+			})
+
 				| Our community is made up of talented artists from around the world who share a common passion for contemporary art. We seek to showcase the diversity of artistic expressions and provide a platform for emerging artists to promote their work. With a focus on collaboration and innovation, we strive to push the boundaries of creativity and inspire future generations of artists.
 
 		include ./components/Tags/Tags.pug

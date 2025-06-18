@@ -20,7 +20,12 @@ head
 	title= title
 
 	link(rel="icon" href="img/icons/favicon.svg" type="image/x-icon")
-	link(rel="stylesheet" href="css/index.min.css")
+
+	if !jsDisabled 
+		link(rel="stylesheet" href="css/index.min.css")
+	else
+		link(rel="stylesheet" href="css/no-js.min.css")
+
 	link(rel="stylesheet" href="files/tailwind/output.css")
 
 	if !jsDisabled 
