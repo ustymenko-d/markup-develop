@@ -4,14 +4,14 @@ const layer = document.querySelector('[data-parallax-layer]')
 const SPEED = 0.05
 
 let posX = 0,
-	posY = 0,
-	targetX = 0,
-	targetY = 0
+		posY = 0,
+		targetX = 0,
+		targetY = 0
 
 let animationId = null,
-	resizeTimeoutId,
-	isActive = false,
-	hasInitialized = false
+		resizeTimeoutId,
+		isActive = false,
+		hasInitialized = false
 
 const getCoef = (axis) =>
 	Number(layer.dataset.parallaxCoef) * (axis === 'x' ? -1 : 1)
@@ -59,11 +59,11 @@ const handleResize = () => {
 	const shouldEnable =
 		window.innerWidth >= 768 && layer.hasAttribute('data-animated-visible')
 
+	if (shouldEnable === isActive) return
+
 	if (!hasInitialized && shouldEnable) {
-		resizeTimeoutId = setTimeout(() => {
-			toggleParallax(true)
-			hasInitialized = true
-		}, 1000)
+		hasInitialized = true
+		resizeTimeoutId = setTimeout(() => toggleParallax(true), 1000)
 	} else {
 		toggleParallax(shouldEnable)
 	}
