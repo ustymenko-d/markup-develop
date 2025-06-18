@@ -14,15 +14,30 @@ mixin Actions({ classes })
 
 			+Button({
 				text: 'Try Our Demo',
-				outline: true
+				outline: true,
+				attr: {
+					'data-animated': true,
+					'data-effect-slide-up': true,
+					'data-delay': 300
+				}
 			})
 
 			+Button({
 				text: 'Start For Free',
-				color: 'accent'
+				color: 'accent',
+				attr: {
+					'data-animated': true,
+					'data-effect-slide-up': true,
+					'data-delay': 400
+				}
 			})
 
-		div(class="py-4 px-8 bg-[var(--green)] rounded-4xl text-[var(--accent)] text-center lg:py-6 xl:py-8 lg:px-10 xl:px-16 flex gap-1 justify-center items-center flex-col")
+		div(
+			class="py-4 px-8 bg-[var(--green)] rounded-4xl text-[var(--accent)] text-center lg:py-6 xl:py-8 lg:px-10 xl:px-16 flex gap-1 justify-center items-center flex-col"
+			data-animated
+			data-effect-slide-up
+			data-delay="500"
+		)
 
 			span(class="leading-none text-[clamp(2.125rem,1.3999rem+3.0939vw,3.875rem)] font-(family-name:--second-font)") 30 000 +
 
