@@ -1,6 +1,6 @@
 mixin Teammate({ img, name, position, about, inSlider = false })
 
-	.teammate.w-full.overflow-hidden.rounded-extra.shadow.relative&attributes(inSlider ? {tabindex: 0} : null)
+	.teammate.w-full.overflow-hidden.rounded-extra.shadow.relative&attributes(inSlider ? {tabindex: 0} : null)(class=`${jsDisabled ? 'cursor-pointer' : ''}`)
 
 		picture
 
