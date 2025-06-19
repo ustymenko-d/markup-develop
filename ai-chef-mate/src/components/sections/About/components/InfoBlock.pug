@@ -21,13 +21,70 @@ mixin InfoBlock(info, images)
 
 				picture
 
-					source(media="(max-width: 1024px)" srcset=`${img.src}@mob.webp` type="image/webp")
-					source(media="(max-width: 1024px)" srcset=`${img.src}@mob.jpg` type="image/jpg")
-					source(srcset=`${img.src}.webp` type="image/webp")
+					source(
+						media="(max-width: 639px)"
+						srcset=`${img.src + '-nojs'}.webp 1x, ${img.src + '-nojs'}@x2.webp 2x`
+						type="image/webp"
+					)
+					source(
+						media="(max-width: 639px)"
+						srcset=`${img.src + '-nojs'}.jpg 1x, ${img.src + '-nojs'}@x2.jpg 2x`
+						type="image/jpg"
+					)
+
+					source(
+						media="(max-width: 767px)"
+						srcset=`${img.src + '-nojs'}@sm.webp 1x, ${img.src + '-nojs'}@sm@x2.webp 2x`
+						type="image/webp"
+					)
+					source(
+						media="(max-width: 767px)"
+						srcset=`${img.src + '-nojs'}@sm.jpg 1x, ${img.src + '-nojs'}@sm@x2.jpg 2x`
+						type="image/jpg"
+					)
+
+					source(
+						media="(max-width: 1023px)"
+						srcset=`${img.src + '-nojs'}@md.webp 1x, ${img.src + '-nojs'}@md@x2.webp 2x`
+						type="image/webp"
+					)
+					source(
+						media="(max-width: 1023px)"
+						srcset=`${img.src + '-nojs'}@md.jpg 1x, ${img.src + '-nojs'}@md@x2.jpg 2x`
+						type="image/jpg"
+					)
+
+					source(
+						media="(max-width: 1279px)"
+						srcset=`${img.src + '-nojs'}@lg.webp 1x, ${img.src + '-nojs'}@lg@x2.webp 2x`
+						type="image/webp"
+					)
+					source(
+						media="(max-width: 1279px)"
+						srcset=`${img.src + '-nojs'}@lg.jpg 1x, ${img.src + '-nojs'}@lg@x2.jpg 2x`
+						type="image/jpg"
+					)
+
+					source(
+						media="(max-width: 1535px)"
+						srcset=`${img.src + '-nojs'}@xl.webp 1x, ${img.src + '-nojs'}@xl@x2.webp 2x`
+						type="image/webp"
+					)
+					source(
+						media="(max-width: 1535px)"
+						srcset=`${img.src + '-nojs'}@xl.jpg 1x, ${img.src + '-nojs'}@xl@x2.jpg 2x`
+						type="image/jpg"
+					)
+
+					source(
+						srcset=`${img.src + '-nojs'}@2xl.webp 1x, ${img.src + '-nojs'}@2xl@x2.webp 2x`
+						type="image/webp"
+					)
 					img(
-						class="block overflow-hidden shadow-md max-sm:aspect-square rounded-4xl max-sm:w-full sm:h-full"
-						src=`${img.src}.jpg`
-						width="499"
-						height="598"
+						src=`${img.src + '-nojs'}@2xl.jpg`
+						srcset=`${img.src + '-nojs'}@2xl@x2.jpg 2x`
 						alt=img.alt
+						width="451"
+						height="675"
+						class="block overflow-hidden shadow-md max-sm:aspect-square rounded-4xl max-sm:w-full sm:h-full"
 					)

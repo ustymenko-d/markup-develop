@@ -9,7 +9,7 @@ include ../../AnimatedTag.pug
 			type: 'card',
 			percent: 95,
 			text: 'Improved Nutrition',
-			img: { src: 'img/bag-green', alt: 'A hand holding a green bag of vegetables' },
+			img: { src: 'img/bag-green-hero', alt: 'A hand holding a green bag of vegetables' },
 			classes: 'pt-5 sm:pt-6 lg:pt-4 lg:row-span-2',
 			attr: {
 				'data-animated': !jsDisabled && true,
@@ -19,12 +19,12 @@ include ../../AnimatedTag.pug
 		},
 		{
 			type: 'image',
-			img: { src: 'img/ramen', alt: 'Ramen' },
+			img: { src: 'img/ramen-hero', alt: 'Ramen' },
 			classes: 'row-span-2 mt-auto lg:row-start-2 lg:col-start-2 lg:self-end',
 			attr: {
 				'data-animated': !jsDisabled && true,
 				'data-effect-slide-up': !jsDisabled && true,
-				'data-delay': !jsDisabled && 450
+				'data-delay': !jsDisabled && 350
 			}
 		},
 		{
@@ -40,7 +40,7 @@ include ../../AnimatedTag.pug
 			type: 'card',
 			percent: 25,
 			text: 'Saved on Groceries',
-			img: { src: 'img/bag-white', alt: 'White shopper with products' },
+			img: { src: 'img/bag-white-hero', alt: 'White shopper with products' },
 			reverse: true,
 			classes: 'order-1 pb-5 sm:pb-6 lg:pb-4 lg:row-start-2 lg:row-span-2 lg:col-start-4 lg:self-end',
 			attr: {
@@ -51,12 +51,12 @@ include ../../AnimatedTag.pug
 		},
 		{
 			type: 'image',
-			img: { src: 'img/roots', alt: 'The hand that holds the plant with the roots' },
+			img: { src: 'img/roots-hero', alt: 'The hand that holds the plant with the roots' },
 			classes: 'row-span-2 mb-auto lg:order-2 lg:row-start-1 lg:col-start-5',
 			attr: {
 				'data-animated': !jsDisabled && true,
 				'data-effect-slide-up': !jsDisabled && true,
-				'data-delay': !jsDisabled && 350
+				'data-delay': !jsDisabled && 250
 			}
 		}
 	]
@@ -76,8 +76,7 @@ section(class="overflow-x-clip mb-16 xl:mb-28 pt-20 sm:pt-10 pb-16 sm:pb-28 cust
 				class: 'text-center max-sm:max-w-11/12 max-sm:mx-auto',
 				data: {
 					'data-animated': true,
-					'data-effect-vanish-in': true,
-					'data-delay': 50
+					'data-effect-vanish-in': true
 				}
 			})
 
@@ -102,7 +101,7 @@ section(class="overflow-x-clip mb-16 xl:mb-28 pt-20 sm:pt-10 pb-16 sm:pb-28 cust
 								data: {
 									'data-animated': true,
 									'data-effect-vanish-in': true,
-									'data-delay': 150
+									'data-delay': 200
 								}
 							})= block.text
 

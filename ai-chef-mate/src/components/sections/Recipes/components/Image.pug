@@ -15,15 +15,61 @@ include ../../../AnimatedTag.pug
 
 	picture
 
-		source(media="(max-width: 1024px)" srcset="img/explore-more@mob.webp" type="image/webp")
-		source(media="(max-width: 1024px)" srcset="img/explore-more@mob.jpg" type="image/jpg")
-		source(srcset="img/explore-more.webp" type="image/webp")
+		source(
+			media="(max-width: 767px)"
+			srcset="img/explore-more@sm.webp 1x, img/explore-more@sm@x2.webp 2x"
+			type="image/webp"
+		)
+		source(
+			media="(max-width: 767px)"
+			srcset="img/explore-more@sm.jpg 1x, img/explore-more@sm@x2.jpg 2x"
+			type="image/jpg"
+		)
+
+		source(
+			media="(max-width: 1023px)"
+			srcset="img/explore-more@md.webp 1x, img/explore-more@md@x2.webp 2x"
+			type="image/webp"
+		)
+		source(
+			media="(max-width: 1023px)"
+			srcset="img/explore-more@md.jpg 1x, img/explore-more@md@x2.jpg 2x"
+			type="image/jpg"
+		)
+
+		source(
+			media="(max-width: 1279px)"
+			srcset="img/explore-more@lg.webp 1x, img/explore-more@lg@x2.webp 2x"
+			type="image/webp"
+		)
+		source(
+			media="(max-width: 1279px)"
+			srcset="img/explore-more@lg.jpg 1x, img/explore-more@lg@x2.jpg 2x"
+			type="image/jpg"
+		)
+
+		source(
+			media="(max-width: 1535px)"
+			srcset="img/explore-more@xl.webp 1x, img/explore-more@xl@x2.webp 2x"
+			type="image/webp"
+		)
+		source(
+			media="(max-width: 1535px)"
+			srcset="img/explore-more@xl.jpg 1x, img/explore-more@xl@x2.jpg 2x"
+			type="image/jpg"
+		)
+
+		source(
+			srcset="img/explore-more@2xl.webp 1x, img/explore-more@2xl@x2.webp 2x"
+			type="image/webp"
+		)
 		img(
-			class="absolute inset-0 w-full h-full duration-300 group-hover:scale-105 group-focus-visible:scale-105"
-			src="img/explore-more.jpg"
+			src="img/explore-more@2xl.jpg"
+			srcset="img/explore-more@2xl@x2.jpg 2x"
+			alt="A table filled with various Caucasian or Middle Eastern dishes: khachapuri with egg, vegetable and meat stew, appetizers with vegetables and hummus, meat with apples, flatbread, sauces, and herbs"
 			width="643"
 			height="916"
-			alt="A table filled with various Caucasian or Middle Eastern dishes: khachapuri with egg, vegetable and meat stew, appetizers with vegetables and hummus, meat with apples, flatbread, sauces, and herbs"
+			class="absolute inset-0 w-full h-full duration-300 group-hover:scale-105 group-focus-visible:scale-105"
 		)
 
 	.custom-corner(

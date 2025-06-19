@@ -10,16 +10,11 @@ mixin Item({ text, author })
 
 		.flex.gap-4.items-center(data-swiper-parallax-x="-48")
 
-			picture
-
-				source(media="(max-width: 1024px)" srcset=`img/${author.img}@mob.webp` type="image/webp")
-				source(media="(max-width: 1024px)" srcset=`img/${author.img}@mob.jpg` type="image/jpg")
-				source(srcset=`img/${author.img}.webp` type="image/webp")
-				img.w-16.h-16.rounded-full.aspect-square(
-					src=`img/${author.img}.jpg`
-					alt=author.alt
-					width="64"
-					height="64"
-				)
+			img.w-16.h-16.rounded-full.aspect-square(
+				src=`img/${author.img}.jpg`
+				alt=author.alt
+				width="64"
+				height="64"
+			)
 
 			p= author.alt

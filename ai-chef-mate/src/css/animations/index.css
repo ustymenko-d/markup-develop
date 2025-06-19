@@ -61,7 +61,7 @@
 	}
 
 	&[data-effect-vanish-in] {
-		animation: vanishIn 0.8s both;
+		animation: vanishIn 0.6s both;
 	}
 
 	.custom-corner {
