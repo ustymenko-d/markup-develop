@@ -1,4 +1,4 @@
-import lenis from '../lenis.js'
+import { getLenis } from '../lenis.js'
 import {
 	header,
 	menuButton,
@@ -6,6 +6,8 @@ import {
 	lockPaddingElements,
 	mediaQuery,
 } from './constants.js'
+
+const lenis = getLenis()
 
 const lockPaddingValue = window.innerWidth - document.body.offsetWidth + 'px'
 
@@ -43,7 +45,7 @@ const toggleMenu = (isOpen) => {
 	toggleMenuVisibility(isOpen)
 	updatePadding(isOpen ? lockPaddingValue : '0px')
 	menuIsOpen = isOpen
-	isOpen ? lenis.stop() : lenis.start()
+	isOpen ? lenis?.stop() : lenis?.start()
 }
 
 const openMenu = () => toggleMenu(true)

@@ -1,12 +1,24 @@
 import Lenis from 'lenis'
 
-const lenis = new Lenis()
+let lenisInstance = null
 
-function raf(time) {
-	lenis.raf(time)
-	requestAnimationFrame(raf)
+export function initLenis() {
+	if (!lenisInstance) {
+		lenisInstance = new Lenis()
+
+		function raf(time) {
+			lenisInstance.raf(time)
+			requestAnimationFrame(raf)
+		}
+		requestAnimationFrame(raf)
+	}
+
+	return lenisInstance
 }
 
-requestAnimationFrame(raf)
-
-export default lenis
+export function getLenis() {
+	if (!lenisInstance) {
+		console.warn('Lenis has not been initialized yet!')
+	}
+	return lenisInstance
+}

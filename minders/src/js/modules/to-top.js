@@ -1,4 +1,6 @@
-import lenis from './lenis.js'
+import { getLenis } from './lenis.js'
+
+const lenis = getLenis()
 
 const CLASSES = {
 	visible: ['visible', 'opacity-100', 'scale-100'],
@@ -28,16 +30,18 @@ const scrollToTop = () => {
 	updateToTopVisibility(false)
 }
 
-lenis.on('scroll', () => {
-	toggleToTopVisibility()
+if (lenis) {
+	lenis.on('scroll', () => {
+		toggleToTopVisibility()
 
-	if (isManuallyScrolling) {
-		clearTimeout(scrollEndTimeout)
-		scrollEndTimeout = setTimeout(() => {
-			isManuallyScrolling = false
-			toggleToTopVisibility()
-		}, 150)
-	}
-})
+		if (isManuallyScrolling) {
+			clearTimeout(scrollEndTimeout)
+			scrollEndTimeout = setTimeout(() => {
+				isManuallyScrolling = false
+				toggleToTopVisibility()
+			}, 150)
+		}
+	})
+}
 
 toTop.addEventListener('click', scrollToTop)
