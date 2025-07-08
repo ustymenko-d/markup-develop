@@ -1,9 +1,12 @@
 doctype html
-html.scroll-smooth(lang="en")
+html(class=`scroll-smooth ${!jsDisabled ? ' overflow-hidden' : ''}` lang="en")
 
 	include Head.pug
 
-	body.page.flex.flex-col.font-regular
+	body.page(class=`flex flex-col font-regular${!jsDisabled ? ' overflow-hidden' : ''}`)
+
+		if !jsDisabled
+			include Loader/Loader.pug
 
 		include Header/Header.pug
 
@@ -18,6 +21,6 @@ html.scroll-smooth(lang="en")
 
 		if !jsDisabled
 			#offset.relative.-z-10
-		
+
 		include BottomBlock/BottomBlock.pug
 		include ToTopButton/ToTopButton.pug

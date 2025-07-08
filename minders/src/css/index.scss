@@ -3,6 +3,7 @@
 
 @use 'base';
 
+@use '../components/Loader/Loader';
 @use '../components/Header/Header';
 @use '../components/sections/Hero/Hero';
 @use '../components/sections/About/About';

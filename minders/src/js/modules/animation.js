@@ -3,19 +3,27 @@ const observer = new IntersectionObserver(
 		entries.forEach(({ isIntersecting, target }) => {
 			const delay = target.dataset.delay
 
-			if (delay) target.style.animationDelay = `${delay}ms`
+			const runAnimation = () => {
+				if (document.body.dataset.loaded === 'true' && isIntersecting) {
+					if (delay) target.style.animationDelay = `${delay}ms`
 
-			if (isIntersecting) {
-				target.setAttribute('data-animated-visible', true)
-				target.addEventListener(
-					'animationend',
-					() => {
-						target.style.animation = 'none'
-					},
-					{ once: true }
-				)
-				observer.unobserve(target)
+					target.setAttribute('data-animated-visible', true)
+
+					target.addEventListener(
+						'animationend',
+						() => {
+							target.style.animation = 'none'
+						},
+						{ once: true }
+					)
+
+					observer.unobserve(target)
+				} else {
+					requestAnimationFrame(runAnimation)
+				}
 			}
+
+			runAnimation()
 		})
 	},
 	{ threshold: 0.3 }
