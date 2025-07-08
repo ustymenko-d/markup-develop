@@ -52,12 +52,6 @@ img {
 	object-fit: cover;
 }
 
-header {
-	@media screen and (max-width: 639px) {
-		display: none;
-	}
-}
-
 section {
 	padding-inline: 0.5rem;
 
