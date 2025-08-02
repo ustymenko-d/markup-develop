@@ -15,14 +15,14 @@ mixin Card({ src, alt, variant = 'outline' })
 					: 'border-2 border-[var(--green)]'
 
 		const card = [
-			'overflow-hidden rounded-4xl grid gap-4 max-sm:gap-8 items-center p-4 sm:p-8 sm:gap-8 duration-300',
+			'overflow-hidden rounded-4xl grid gap-4 max-sm:gap-8 items-center p-4 pb-6 sm:p-8 sm:pb-8 sm:gap-8 duration-300',
 			layout,
 			background,
 			'hover:bg-[var(--green)] focus-visible:bg-[var(--green)]'
 		]
 
 		const textBlock = [
-			'flex flex-col gap-4 items-start',
+			'h-full justify-end sm:justify-center flex flex-col gap-4 items-start',
 			variant === 'accent' ? 'order-1' : 'max-sm:order-1'
 		]
 
