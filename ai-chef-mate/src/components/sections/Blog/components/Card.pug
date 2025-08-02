@@ -4,7 +4,7 @@ mixin Card({ img, title, idx })
 
 
 	+AnimatedTag('a', {
-		class: 'block overflow-hidden shadow-xs group rounded-4xl',
+		class: ['block overflow-hidden shadow-xs group rounded-4xl', idx === 0 ? 'z-[1]' : idx === 1 ? 'z-[2]' : 'z-[3]'],
 		static: {
 			href: '#'
 		},
@@ -14,7 +14,7 @@ mixin Card({ img, title, idx })
 			'data-delay': `${++idx * 100 + 100}`
 		}
 	})
-	
+
 		div(class="h-full flex flex-col items-start gap-4 p-6 overflow-hidden bg-white group-hover:bg-[var(--green)] group-focus-visible:bg-[var(--green)] md:gap-8 md:p-8 lg:max-xl:p-6 rounded-4xl duration-200")
 
 			div(class="overflow-hidden rounded-2xl aspect-square")
@@ -31,7 +31,7 @@ mixin Card({ img, title, idx })
 						srcset=`${img.src}@md.jpg 1x, ${img.src}@md@x2.jpg 2x`
 						type="image/jpg"
 					)
-					
+
 					source(
 						media="(max-width: 767px)"
 						srcset=`${img.src}@sm.webp 1x, ${img.src}@sm@x2.webp 2x`

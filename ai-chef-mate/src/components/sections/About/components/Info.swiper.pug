@@ -17,14 +17,8 @@ mixin InfoSwiper(infoSlides)
 
 						h3.mb-10= title
 
-						+AnimatedTag('p', {
-							class: 'leading-tight max-lg:max-w-4/5 lg:max-w-10/12 max-lg:mx-auto text-balance',
-							data: {
-								'data-animated': true,
-								'data-effect-slide-right': true,
-								'data-delay': 100
-							}
-						})= text
+						p(class="leading-tight max-lg:max-w-4/5 lg:max-w-10/12 max-lg:mx-auto text-balance")= text
+
 
 		.pt-10.mb-10.flex.items-center.gap-4(class="max-lg:justify-center lg:pt-20 lg:mb-20")
 

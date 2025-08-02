@@ -55,9 +55,9 @@
 	&[data-effect-slide-up] {
 		animation: slideUp 0.6s both;
 	}
-
-	&[data-effect-slide-right] {
-		animation: scaleIn 0.8s both;
+	
+	&[data-effect-slide-left] {
+		animation: slideLeft 0.6s both;
 	}
 
 	&[data-effect-vanish-in] {
